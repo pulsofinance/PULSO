@@ -478,53 +478,181 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
         - rc-block-body: tu narración detallada
      7. rc-conclusion: tu veredicto final
 ════════════════════════════════════════ -->
-  <!-- ══ WSJ · Contraterrorismo renuncia ══ -->
-<div class="rc alto" data-impact="alto">
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PULSO</title>
+
+<style>
+
+/* ===== BASE ===== */
+body {
+  background: #0b0f14;
+  font-family: Arial, sans-serif;
+  color: #e5e7eb;
+  padding: 20px;
+}
+
+/* ===== CARD ===== */
+.rc {
+  background: #111827;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+  transition: 0.3s;
+}
+
+/* Impacto dinámico */
+.rc[data-impact="alto"] { border-left: 4px solid #ef4444; }
+.rc[data-impact="medio"] { border-left: 4px solid #f59e0b; }
+.rc[data-impact="bajo"] { border-left: 4px solid #22c55e; }
+
+/* ===== HEADER ===== */
+.rc-hook {
+  padding: 16px;
+  cursor: pointer;
+}
+
+.rc-hook-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.rc-gancho {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* ===== BADGES ===== */
+.rc-bottom-row {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ibadge {
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ibdot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* COLORES */
+.ib-a { background: #ef4444; color: white; }   /* alto */
+.ib-m { background: #f59e0b; color: white; }   /* medio */
+.ib-b { background: #22c55e; color: white; }   /* bajo */
+
+/* ===== EXPANSIÓN ===== */
+.rc-l1, .rc-l2 {
+  display: none;
+  padding: 16px;
+  border-top: 1px solid #1f2937;
+}
+
+.rc.active .rc-l1 {
+  display: block;
+}
+
+.rc.full .rc-l2 {
+  display: block;
+}
+
+.rc-expand {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #60a5fa;
+  cursor: pointer;
+}
+
+/* ===== TEXTOS ===== */
+.bear { color: #ef4444; }
+.dato { color: #22c55e; }
+
+</style>
+</head>
+
+<body>
+
+<!-- ══ CARD ══ -->
+<div class="rc bajo" data-impact="bajo">
+
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
+    
     <div class="rc-hook-top">
-      <span class="rc-banco">WSJ — Contraterrorismo · Washington</span>
-      <div class="rc-hookright"><span class="rc-fecha">18 MAR</span><span class="rc-arr">▶</span></div>
+      <span>WSJ — Contraterrorismo · Washington</span>
+      <span>18 MAR ▶</span>
     </div>
-    <div class="rc-gancho">El jefe de contraterrorismo de EEUU renunció porque <em>Irán no era una amenaza</em>. La primera grieta pública dentro del gobierno de Trump.</div>
+
+    <div class="rc-gancho">
+      El jefe de contraterrorismo de EEUU renunció porque <em>Irán no era una amenaza</em>.
+    </div>
+
     <div class="rc-bottom-row">
-      <div class="rc-badges"><span class="ibadge ib-a"><span class="ibdot"></span>IMPACTO ALTO</span></div>
-      <div class="rc-pulso-hook">Primera deserción pública de la administración Trump — señal de que el relato de la guerra tiene fisuras internas</div>
+      <span class="ibadge ib-b">
+        <span class="ibdot"></span>IMPACTO BAJO
+      </span>
+      <span>Grieta interna en la narrativa de guerra</span>
     </div>
+
   </div>
+
+  <!-- L1 -->
   <div class="rc-l1">
-    <div class="rc-summary">
-      <div class="rc-sum-tag">// Lectura PULSO · Federico R.</div>
-      <div class="rc-sum-txt">
-        Joe Kent, director del Centro Nacional de Contraterrorismo, renunció en señal de protesta. Escribió en X que <span class="bear">no puede apoyar en conciencia una guerra sin fin en Irán</span> y que el conflicto fue lanzado por presión del lobby pro-israelí. Kent es veterano del Ejército con <span class="dato">11 despliegues de combate</span>, no un halcón de escritorio. Su salida es la primera grieta pública dentro del gobierno. La respuesta de Trump: lo llamó <span class="bear">"muy débil"</span>. Lo que importa para el mercado: si la disidencia crece dentro del aparato de seguridad, la narrativa de resolución rápida del conflicto se complica aún más.
-      </div>
-      <div class="rc-sum-by">— Federico R. · PULSO</div>
-    </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <p>
+      Joe Kent renunció señalando que 
+      <span class="bear">no puede apoyar una guerra sin fin</span>. 
+      Tiene <span class="dato">11 despliegues</span>.
+    </p>
+
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+      Leer análisis completo ▶
+    </button>
   </div>
+
+  <!-- L2 -->
   <div class="rc-l2">
-    <div class="rc-full">
-      <div class="rc-full-header">
-        <span class="rc-full-label">WSJ · U.S. Counterterror Chief Quits Over War · 18 Mar 2026</span>
-        <span class="rc-full-source">Dustin Volz · Washington</span>
-      </div>
-      <div class="rc-block">
-        <div class="rc-block-title">Qué dice el WSJ — por qué importa la renuncia</div>
-        <div class="rc-block-body">
-          <p>Kent no es un funcionario de segunda línea. Es director del Centro Nacional de Contraterrorismo, creado bajo George W. Bush para coordinar la lucha antiterrorista después del 11-S. Su renuncia es la primera señal de disidencia de alto rango dentro de la administración Trump desde que comenzó la operación "Shield of Judah". En su carta, Kent escribió que <span class="bear">"no puedo apoyar en buena conciencia una guerra donde los beneficios no superan los costos para el pueblo americano"</span> y que el conflicto fue iniciado por presión del lobby israelí.</p>
-          <p>El WSJ señala que Kent ya venía siendo crítico de la política exterior de Trump en X durante su primer mandato. Los demócratas usaron su declaración de inmediato. Lo que importa para el mercado: si la disidencia crece dentro del aparato de seguridad, la narrativa de resolución rápida del conflicto se complica aún más.</p>
-        </div>
-      </div>
-      <div class="rc-conclusion">
-        <div class="rc-conclusion-title">Qué pasa con Argentina y qué tenés que tener en cuenta</div>
-        <div class="rc-conclusion-body">
-          La renuncia de Kent es una señal de que el conflicto con Irán tiene más fricciones internas de las que el mercado descuenta. Cada semana que se extienda el cierre del Estrecho es otra semana de <span class="bear">Brent alto → inflación global → Fed sin margen para bajar → DXY fuerte → bonos EM presionados</span>. Para Argentina, el canal es directo: el riesgo país no puede comprimir si el contexto externo no se normaliza. Al mismo tiempo, Vaca Muerta gana con cada dólar de Brent. La contradicción seguirá siendo el tema central del portafolio las próximas semanas.
-        </div>
-        <div class="rc-by">— Análisis PULSO · Federico R.</div>
-      </div>
-    </div>
+    <p>
+      Primera disidencia interna relevante. 
+      Mercado: más incertidumbre → petróleo alto → presión global.
+    </p>
   </div>
+
 </div>
 
+<script>
+
+/* Toggle nivel 1 */
+function toggleL1(card) {
+  card.classList.toggle("active");
+}
+
+/* Toggle nivel 2 */
+function toggleL2(card) {
+  card.classList.toggle("full");
+}
+
+</script>
+
+</body>
+</html>
 
 <!-- ══ WSJ · Rusia ayuda a Irán ══ -->
 <div class="rc alto" data-impact="alto">
