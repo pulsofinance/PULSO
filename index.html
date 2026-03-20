@@ -123,7 +123,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 .rc-fecha{font-size:8px;color:var(--t4);letter-spacing:.03em}
 .rc-arr{font-size:9px;color:var(--t3);transition:transform .22s,color .15s;flex-shrink:0}
 .rc.open .rc-arr,.rc.deep .rc-arr{transform:rotate(90deg);color:var(--a)}
-.rc-gancho{font-size:14px;font-weight:700;color:var(--t);line-height:1.26;letter-spacing:-.025em;margin-bottom:.5rem;cursor:pointer;}
+.rc-gancho{font-size:15.5px;font-weight:700;color:var(--t);line-height:1.26;letter-spacing:-.025em;margin-bottom:.5rem;cursor:pointer;}
 .rc-gancho em{font-style:normal;color:var(--a)}
 .rc-gancho strong{font-weight:700;color:var(--r)}
 .rc-bottom-row{display:flex;align-items:flex-start;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
@@ -478,205 +478,14 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
         - rc-block-body: tu narración detallada
      7. rc-conclusion: tu veredicto final
 ════════════════════════════════════════ -->
-  !-- ══════════════════════════════════════════════════════
-     PEGAR ESTAS 6 CARDS AL INICIO DEL rc-grid
-     — JUSTO DESPUÉS DE <div class="research-grid" id="rc-grid">
-     — ANTES DE TODAS LAS CARDS EXISTENTES
-══════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════
+     PULSO — 5 BLOQUES NUEVOS PARA PEGAR EN rc-grid
+     Pegá estos bloques DENTRO de <div class="research-grid" id="rc-grid">
+     TAMBIÉN: en el CSS cambiá .rc-gancho { font-size: 15.5px } → font-size: 14px
+═══════════════════════════════════════════════════════ -->
 
 
-<!-- ══ JPM 1: MSCI / Brecha equity-bonos ══ -->
-<div class="rc alto" data-impact="alto">
-  <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
-    <div class="rc-hook-top">
-      <span class="rc-banco">JPMorgan — Estrategia de Mercados · Buenos Aires / Global</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
-    </div>
-    <div class="rc-gancho"><em>La brecha entre bonos y acciones argentinas</em> es la oportunidad de mercado más clara del año.</div>
-    <div class="rc-bottom-row">
-      <div class="rc-badges"><span class="ibadge ib-a"><span class="ibdot"></span>IMPACTO ALTO</span></div>
-      <div class="rc-pulso-hook">Flujos pasivos de USD 2.300mn en juego — catalizador cuantificado y con nombre propio</div>
-    </div>
-  </div>
-  <div class="rc-l1">
-    <div class="rc-summary">
-      <div class="rc-sum-tag">// Lectura PULSO · Federico R.</div>
-      <div class="rc-sum-txt">
-        Desde las elecciones de octubre 2025, el MSCI Argentina subió apenas <span class="dato">7,23%</span> en USD. El MSCI LatAm avanzó <span class="dato">26,55%</span> en el mismo período. Los soberanos argentinos ganaron <span class="dato">14,72%</span>. Los bonos cotizan entre <span class="dato">70 y 80 centavos</span> con el EMBI cerca de <span class="dato">500 bps</span> — mínimo en años. JPM lee el gap no como señal de que los bonos están caros, sino de que las acciones están baratas. El driver es estructural: Argentina es Standalone para MSCI y quedó afuera de los flujos pasivos que sí recibieron los pares regionales. El P/E forward del MSCI Argentina está en <span class="dato">9,4x</span>, casi igual al promedio histórico de diez años (<span class="dato">9,5x</span>) y muy lejos de los <span class="dato">13–15x</span> de la era Macri.
-      </div>
-      <div class="rc-sum-by">— Federico R. · PULSO</div>
-    </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
-  </div>
-  <div class="rc-l2">
-    <div class="rc-full">
-      <div class="rc-full-header">
-        <span class="rc-full-label">JPMorgan · Argentina 101 — The 2026 Country Handbook · 20 Mar 2026</span>
-        <span class="rc-full-source">Diego Celedon · Emy Shayo Cherman · Diego W. Pereira</span>
-      </div>
-      <div class="rc-block">
-        <div class="rc-block-title">Qué dice JPMorgan — por qué importa la brecha</div>
-        <div class="rc-block-body">
-          <p>El catalizador que cierra ese gap tiene nombre: consulta de reclasificación MSCI de Standalone a Emerging Market. JPM estima que podría anunciarse en 2026 con upgrade efectivo en 2027–2028. El impacto potencial son <span class="dato">USD 2.300 millones</span> en flujos puramente pasivos sobre un puñado de nombres líquidos. Los cinco principales beneficiarios: YPF (<span class="dato">USD 594mn</span>), Galicia (<span class="dato">USD 467mn</span>), Vista (<span class="dato">USD 347mn</span>), Banco Macro (<span class="dato">USD 316mn</span>) y Pampa Energía (<span class="dato">USD 269mn</span>).</p>
-          <p>Para que eso ocurra, MSCI necesita ver: eliminación completa del cepo residual, mejoras en infraestructura de mercado, más disclosure en inglés y continuidad de política más allá de las elecciones de 2027. El precedente histórico del ciclo 2016–2018 muestra que desde la consulta hasta el upgrade efectivo pasaron <span class="key">dos años</span>. Si la consulta se anuncia en el segundo semestre de 2026, el posicionamiento activo debería empezar antes — porque los fondos activos tienden a alinearse al benchmark apenas se confirma el proceso.</p>
-        </div>
-      </div>
-      <div class="rc-conclusion">
-        <div class="rc-conclusion-title">Qué pasa con Argentina y qué tenés que tener en cuenta</div>
-        <div class="rc-conclusion-body">
-          La posición de JPM es <span class="bull">Overweight en GGAL y VIST</span>. La lógica: el mercado de renta fija ya repriceó la mejora macro; el de renta variable todavía no. Mientras el EMBI siga en torno a 500 bps y los bonos operen por encima de 70 centavos, el argumento de que "Argentina es riesgosa" pierde sustento para justificar P/E de 9x. Mirá si el BCRA sigue acumulando reservas de manera consistente — esa es la variable que mantiene vivo el relato. Una consulta formal de MSCI es el <span class="key">trigger más potente que existe hoy para el equity argentino</span>.
-        </div>
-        <div class="rc-by">— Análisis PULSO · Federico R.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ══ JPM 2: Fiscal / Inflación ══ -->
-<div class="rc alto" data-impact="alto">
-  <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
-    <div class="rc-hook-top">
-      <span class="rc-banco">JPMorgan — Macroeconomía · Buenos Aires</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
-    </div>
-    <div class="rc-gancho">Milei logró el primer superávit fiscal en 14 años, <em>pero la inflación no cede tan rápido como el programa necesita.</em></div>
-    <div class="rc-bottom-row">
-      <div class="rc-badges"><span class="ibadge ib-a"><span class="ibdot"></span>IMPACTO ALTO</span></div>
-      <div class="rc-pulso-hook">El ancla fiscal aguanta; el ancla inflacionaria todavía patina en el primer semestre</div>
-    </div>
-  </div>
-  <div class="rc-l1">
-    <div class="rc-summary">
-      <div class="rc-sum-tag">// Lectura PULSO · Federico R.</div>
-      <div class="rc-sum-txt">
-        El resultado primario acumulado en los primeros dos meses de 2026 es <span class="bull">+0,4% del PBI</span>, levemente por encima del mismo período del año anterior. En doce meses rolling el superávit primario es <span class="bull">1,4% del PBI</span>. El problema está en los precios: enero y febrero 2026 vinieron por encima de lo esperado. Las tarifas de servicios aportaron <span class="dato">0,9 pp</span> al headline de febrero. La carne acumula <span class="bear">+27,2%</span> desde noviembre. JPM proyecta inflación mensual promedio de <span class="dato">2,5%</span> en el primer semestre y <span class="dato">1,5%</span> en el segundo — cierre 2026 en <span class="dato">26,5% anual</span>. Para bajar a 10–15% van a necesitar desmantelamiento completo del cepo, reforma tributaria y cierre del proceso de corrección de precios relativos.
-      </div>
-      <div class="rc-sum-by">— Federico R. · PULSO</div>
-    </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
-  </div>
-  <div class="rc-l2">
-    <div class="rc-full">
-      <div class="rc-full-header">
-        <span class="rc-full-label">JPMorgan · Argentina 101 — The 2026 Country Handbook · 20 Mar 2026</span>
-        <span class="rc-full-source">Diego W. Pereira · Lucila Barbeito</span>
-      </div>
-      <div class="rc-block">
-        <div class="rc-block-title">Qué dice JPMorgan — por qué importa la dinámica fiscal</div>
-        <div class="rc-block-body">
-          <p>El gasto primario real está <span class="bull">26% por debajo</span> del promedio 2016–2019. Los ingresos reales todavía están <span class="bear">10% abajo</span> de los niveles de 2017–2018. El gasto en capital cayó <span class="bear">79% en términos reales</span> respecto a ese período — eso explica por qué la construcción sigue rezagada. La estrategia fiscal para 2026 empieza a virar: de la contención del gasto hacia la movilización de ingresos. El presupuesto 2026 aprobado por el Congreso — el primero bajo la administración Milei — compromete al país con equilibrio fiscal estructural, algo inédito en décadas.</p>
-          <p>En el lado del gasto hay presión al alza por las concesiones políticas post-elecciones: recuperación parcial de jubilaciones (<span class="dato">46%</span> del gasto total), mayores transferencias a provincias y financiamiento universitario. Del lado de los ingresos, la cosecha gruesa 2026 y el crecimiento de exportaciones energéticas y mineras son los buffers proyectados.</p>
-        </div>
-      </div>
-      <div class="rc-conclusion">
-        <div class="rc-conclusion-title">Qué pasa con Argentina y qué tenés que tener en cuenta</div>
-        <div class="rc-conclusion-body">
-          La inflación pegajosa en el primer semestre demora la baja de tasas y mantiene presión sobre los márgenes bancarios. La TAMAR bajó desde picos de <span class="dato">133%</span> en 2023 pero todavía ronda el <span class="dato">30%</span>. El superávit primario es el ancla que le da credibilidad a todo el programa — si se fisura, el EMBI vuelve a subir y los <span class="key">GD30 y AL35 lo sienten de inmediato</span>. El dato de inflación de marzo es la señal más importante del trimestre: por debajo del 2,5% mensual el relato de desinflación retoma tracción; por encima, el mercado empieza a cuestionar el timing de la baja de tasas reales.
-        </div>
-        <div class="rc-by">— Análisis PULSO · Federico R.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ══ JPM 3: Vaca Muerta / Oil & Gas ══ -->
-<div class="rc alto" data-impact="alto">
-  <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
-    <div class="rc-hook-top">
-      <span class="rc-banco">JPMorgan — Oil & Gas · Neuquén / Global</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
-    </div>
-    <div class="rc-gancho">Vaca Muerta alcanzó un récord histórico de producción — <em>y apenas perforó el 1,5% de su inventario potencial.</em></div>
-    <div class="rc-bottom-row">
-      <div class="rc-badges"><span class="ibadge ib-a"><span class="ibdot"></span>IMPACTO ALTO</span></div>
-      <div class="rc-pulso-hook">Principal driver de exportaciones y reservas en el mediano plazo — no es un ciclo, es una transformación estructural</div>
-    </div>
-  </div>
-  <div class="rc-l1">
-    <div class="rc-summary">
-      <div class="rc-sum-tag">// Lectura PULSO · Federico R.</div>
-      <div class="rc-sum-txt">
-        La producción total de hidrocarburos tocó un máximo histórico de <span class="dato">1.817 kboed</span> en junio 2025. El shale ya representa el <span class="dato">67,5%</span> de la producción de gas (vs. <span class="dato">41,5%</span> en 2019) y el petróleo de Vaca Muerta es el <span class="dato">58%</span> del crudo total del país. Solo se perforaron aproximadamente <span class="dato">1.700 pozos</span> vs. más de <span class="dato">110.000</span> en el Permian Basin. Las exportaciones de oil y petroquímica sumaron <span class="dato">USD 11.772 millones</span> en 2025, <span class="bull">+12,8% interanual</span>. El RIGI tiene proyectos aprobados por <span class="dato">USD 14.180 millones</span> y otros <span class="dato">USD 37.850 millones</span> en evaluación. <span class="bull">Vista (VIST)</span> es el Overweight de JPM para esta tesis.
-      </div>
-      <div class="rc-sum-by">— Federico R. · PULSO</div>
-    </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
-  </div>
-  <div class="rc-l2">
-    <div class="rc-full">
-      <div class="rc-full-header">
-        <span class="rc-full-label">JPMorgan · Argentina 101 — The 2026 Country Handbook · 20 Mar 2026</span>
-        <span class="rc-full-source">Rodolfo Angele · LatAm Oil & Gas</span>
-      </div>
-      <div class="rc-block">
-        <div class="rc-block-title">Qué dice JPMorgan — por qué importa Vaca Muerta</div>
-        <div class="rc-block-body">
-          <p>La cuenca Neuquina representa el <span class="dato">68%</span> de la producción nacional. Los otros dos pilares son Golfo San Jorge (<span class="dato">18%</span>, cuenca madura y convencional) y Austral (<span class="dato">11%</span>, foco en gas natural). La comparación con el Permian Basin no es retórica: mismas características geológicas, mayor espesor que la formación americana, y términos de concesión más competitivos — 35 años de plazo con regalías del <span class="dato">12%</span>. Los operadores más relevantes son YPF, Vista, Shell, Pluspetrol y Pan American Energy.</p>
-          <p>El gasoducto Vaca Muerta Sur (YPF + socios, <span class="dato">USD 3.000 millones</span>, 70% financiado por bancos internacionales) es el eslabón crítico para escalar las exportaciones de gas. El riesgo de largo plazo: a medida que la cuenca madura, la productividad por pozo tiende a declinar — como pasó en Delaware y Midland. Por ahora Argentina está en la <span class="key">fase ascendente de esa curva</span>.</p>
-        </div>
-      </div>
-      <div class="rc-conclusion">
-        <div class="rc-conclusion-title">Qué pasa con Argentina y qué tenés que tener en cuenta</div>
-        <div class="rc-conclusion-body">
-          El canal de transmisión es directo: más producción → más liquidación de divisas → más compras del BCRA → más reservas → menor riesgo país. <span class="bull">Vista (VIST, OW)</span> es el vehículo preferido: perfil más simple que YPF, sin riesgo político de empresa estatal. YPF tiene más upside en el escenario MSCI (<span class="dato">USD 594mn</span> de flujos pasivos potenciales) pero la incertidumbre sobre la gestión corporativa es el descuento permanente. Seguí los <span class="key">volúmenes mensuales del Ministerio de Energía</span> y el avance del gasoducto Vaca Muerta Sur.
-        </div>
-        <div class="rc-by">— Análisis PULSO · Federico R.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ══ JPM 4: Sistema Financiero / Bancos ══ -->
-<div class="rc medio" data-impact="medio">
-  <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
-    <div class="rc-hook-top">
-      <span class="rc-banco">JPMorgan — Sistema Financiero · Buenos Aires</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
-    </div>
-    <div class="rc-gancho">El crédito bancario se triplica desde mínimos históricos — <strong>pero los préstamos vencidos se triplicaron también en el segundo semestre.</strong></div>
-    <div class="rc-bottom-row">
-      <div class="rc-badges"><span class="ibadge ib-m"><span class="ibdot"></span>IMPACTO MEDIO</span></div>
-      <div class="rc-pulso-hook">Mejora estructural real con ruido de corto plazo en calidad de cartera que el mercado no terminó de procesar</div>
-    </div>
-  </div>
-  <div class="rc-l1">
-    <div class="rc-summary">
-      <div class="rc-sum-tag">// Lectura PULSO · Federico R.</div>
-      <div class="rc-sum-txt">
-        El ratio préstamos/PBI rebotó de <span class="dato">7,7%</span> en 2023 a aproximadamente <span class="dato">14%</span> en los primeros nueve meses de 2025 — todavía la mitad de México y una fracción de Chile (<span class="dato">80%</span>). La relación préstamos/depósitos pasó del mínimo histórico de <span class="dato">35%</span> en 2023 al <span class="dato">70%</span> en diciembre 2025. El crecimiento nominal de préstamos en 2025 fue del <span class="bull">82% interanual</span>, bien por encima de la inflación del <span class="dato">32%</span>. El problema: los NPL del sector privado escalaron del <span class="dato">1,5–2%</span> en 2024 al <span class="bear">5,5%</span> en diciembre 2025. El ROE del sistema cayó desde <span class="dato">27%</span> en 2023 a aproximadamente <span class="bear">4%</span> en diciembre 2025. <span class="bull">Galicia (GGAL, OW)</span>: si el crédito/PBI vuelve a niveles Macri, los bancos podrían volver a cotizar cerca de <span class="dato">3x P/BV</span>.
-      </div>
-      <div class="rc-sum-by">— Federico R. · PULSO</div>
-    </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
-  </div>
-  <div class="rc-l2">
-    <div class="rc-full">
-      <div class="rc-full-header">
-        <span class="rc-full-label">JPMorgan · Argentina 101 — The 2026 Country Handbook · 20 Mar 2026</span>
-        <span class="rc-full-source">Yuri Fernandes · LatAm Financials</span>
-      </div>
-      <div class="rc-block">
-        <div class="rc-block-title">Qué dice JPMorgan — por qué importa el rebote del crédito</div>
-        <div class="rc-block-body">
-          <p>El tightening regulatorio previo a las elecciones de octubre 2025 subió la TAMAR por encima del <span class="dato">65%</span> y comprimió márgenes. Desde las elecciones, el BCRA aflojó los encajes en cuatro movimientos: eliminó el encaje extra del <span class="dato">3,5%</span> sobre depósitos a la vista, bajó el encaje mínimo efectivo del <span class="dato">95%</span> al <span class="dato">75%</span>, extendió el uso de títulos públicos para integrar encajes hasta marzo 2026 y habilitó un <span class="dato">5%</span> de déficit de posición de caja trasladable al mes siguiente. La TAMAR bajó al entorno del <span class="dato">30%</span>.</p>
-          <p>Los depósitos en dólares privados están en un récord de <span class="dato">USD 39.200 millones</span> — impulsados por el blanqueo de 2024 y la Ley de Inocencia Fiscal de enero 2026. La concentración bancaria creció: el top 5 controla el <span class="dato">60%</span> de los activos, el nivel más alto desde 2006. Galicia integró HSBC; Banco Macro integró Itaú.</p>
-        </div>
-      </div>
-      <div class="rc-conclusion">
-        <div class="rc-conclusion-title">Qué pasa con Argentina y qué tenés que tener en cuenta</div>
-        <div class="rc-conclusion-body">
-          El riesgo de corto plazo son los NPL: si la cartera vencida no empieza a normalizarse en el primer trimestre de 2026, los resultados del primer semestre van a decepcionar. La baja de la TAMAR hacia el rango del <span class="dato">20–25%</span> es la señal de que el crédito puede acelerar sin comprimir márgenes. La reforma laboral de febrero 2026 es un driver de formalización del empleo — más cuentas sueldo, más tarjetas, más demanda de crédito personal. <span class="key">Galicia y Macro son los dos nombres con más upside en el escenario de reclasificación MSCI.</span>
-        </div>
-        <div class="rc-by">— Análisis PULSO · Federico R.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <!-- ══ WSJ · Contraterrorismo renuncia ══ -->
+<!-- ══ WSJ · Contraterrorismo renuncia ══ -->
 <div class="rc alto" data-impact="alto">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
@@ -938,6 +747,14 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
     </div>
   </div>
 </div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     RECORDATORIO: cambiar en el CSS
+     .rc-gancho { font-size: 15.5px }
+     →  .rc-gancho { font-size: 14px }
+═══════════════════════════════════════════════════════ -->
+
 
   <!-- ══ 1: one618 Weekly Report ══ -->
   <div class="rc alto" data-impact="alto">
@@ -1856,21 +1673,6 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
     </div>
   </div>
-  <!-- ═══════════════════════════════════════════════════════
-     PULSO — 5 BLOQUES NUEVOS PARA PEGAR EN rc-grid
-     Pegá estos bloques DENTRO de <div class="research-grid" id="rc-grid">
-     TAMBIÉN: en el CSS cambiá .rc-gancho { font-size: 15.5px } → font-size: 14px
-═══════════════════════════════════════════════════════ -->
-
-
-
-
-
-<!-- ═══════════════════════════════════════════════════════
-     RECORDATORIO: cambiar en el CSS
-     .rc-gancho { font-size: 15.5px }
-     →  .rc-gancho { font-size: 14px }
-═══════════════════════════════════════════════════════ -->
 
 </div><!-- /rc-grid -->
 
