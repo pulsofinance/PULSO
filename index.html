@@ -483,6 +483,60 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
      Pegá estos bloques DENTRO de <div class="research-grid" id="rc-grid">
      TAMBIÉN: en el CSS cambiá .rc-gancho { font-size: 15.5px } → font-size: 14px
 ═══════════════════════════════════════════════════════ -->
+  <!-- ══ BIND Inversiones: Inflación / Estrategia CER ══ -->
+<div class="rc medio" data-impact="medio">
+  <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
+    <div class="rc-hook-top">
+      <span class="rc-banco">BIND Inversiones — Estrategia de Tasas · Buenos Aires</span>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+    </div>
+    <div class="rc-gancho">El cierre de Ormuz le agrega un trimestre de demora al sendero de desinflación — <em>la inflación de 2026 se va a 30% y el mercado todavía no lo tiene en precio.</em></div>
+    <div class="rc-bottom-row">
+      <div class="rc-badges"><span class="ibadge ib-m"><span class="ibdot"></span>IMPACTO MEDIO</span></div>
+      <div class="rc-pulso-hook">BIND modela subas de combustibles del 5–7% en los próximos dos meses y recomienda CER corto como posición defensiva en la transición.</div>
+    </div>
+  </div>
+  <div class="rc-l1">
+    <div class="rc-summary">
+      <div class="rc-sum-tag">// Lectura PULSO · Federico R.</div>
+      <div class="rc-sum-txt">
+        El mercado venía priceando una inflación anual 2026 de <span class="dato">25%</span> (breakevens) y el REM proyectaba <span class="dato">22,4%</span>. El cierre del Estrecho de Ormuz cambia ese escenario. BIND estima que la inflación del <span class="dato">2T26 se ubicará entre 2,5% y 3% mensual</span>, llevando la proyección anual a <span class="dato">~30%</span>. El canal es directo: su modelo ARMAX anticipa subas de combustibles de entre <span class="dato">5% y 7%</span> en los próximos dos meses por el pass-through del Brent. Para marzo, su modelo de árboles (GBM) estima una inflación de <span class="dato">3,15%</span> mensual. La recomendación es clara: <span class="bull">CER de 6 a 12 meses de duration como posición defensiva ahora</span>, y volver a tasa fija recién en el <span class="dato">3T26</span> cuando el shock se disipe. <span class="key">El shock es transitorio — pero en la transición hay alpha disponible en CER corto.</span>
+      </div>
+      <div class="rc-sum-by">— Federico R. · PULSO</div>
+    </div>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+  </div>
+  <div class="rc-l2">
+    <div class="rc-full">
+      <div class="rc-full-header">
+        <span class="rc-full-label">BIND Inversiones · Higher for Longer — 20 Mar 2026</span>
+        <span class="rc-full-source">Trading Desk — BIND Inversiones</span>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">El shock externo que pausa la desinflación</div>
+        <div class="rc-block-body">
+          <p>Desde las elecciones legislativas de octubre, el mercado venía construyendo una narrativa de desinflación acelerada para 2026. Los breakevens marcaban <span class="dato">25%</span> anual y el REM <span class="dato">22,4%</span>, sustentados en reservas en recuperación, riesgo país comprimiendo y mayor previsibilidad del programa económico.</p>
+          <p>El cierre del Estrecho de Ormuz introduce un shock de precios de energía con canal de transmisión directo a la inflación local vía combustibles. BIND construyó un modelo ARMAX(0,0,1) usando el precio del Brent como regresor — con variaciones expresadas en moneda local y suavizadas por media móvil de seis meses. Usando la curva de futuros de Brent y de tipo de cambio como forward guidance, el modelo anticipa subas de surtidor de <span class="dato">5–7%</span> en los próximos dos meses.</p>
+          <p>A partir del <span class="dato">3T26</span>, el modelo proyecta una fuerte desaceleración hacia variaciones de <span class="dato">1–2%</span> mensual, consistente con la naturaleza transitoria del shock. El riesgo principal: que el conflicto en Medio Oriente se prolongue y el shock deje de ser transitorio.</p>
+        </div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">Proyección de inflación: marzo en 3,15% y 2T26 entre 2,5–3% mensual</div>
+        <div class="rc-block-body">
+          <p>Para marzo, BIND utiliza un modelo de Gradient Boosting Machine (GBM) que estima una inflación de <span class="dato">3,15% mensual</span>. El modelo tiene ajuste robusto con RMSE de <span class="dato">0,53%</span> y residuos centrados en cero. Los principales drivers son inerciales — los rezagos de inflación t-1 y t-2 explican la mayor parte de la variabilidad. En segundo orden aparecen la tasa de interés, agregados monetarios y tipo de cambio oficial. Los precios internacionales de commodities tienen incidencia marginal — consecuencia de que Argentina es exportador neto.</p>
+          <p>Para el segundo trimestre, el modelo ARX(1) con sensibilidad al precio de combustibles arroja un rango de <span class="dato">2,5–3% mensual</span>. Eso eleva la proyección anual 2026 a cerca del <span class="dato">30%</span> — <span class="dato">500–750 pbs</span> por encima de lo que el mercado tenía priceado. El sendero implícito en el REM y en los breakevens queda desactualizado.</p>
+        </div>
+      </div>
+      <div class="rc-conclusion">
+        <div class="rc-conclusion-title">Estrategia recomendada y qué tenés que tener en cuenta</div>
+        <div class="rc-conclusion-body">
+          BIND mantiene visión constructiva para fin de año pero recomienda una postura defensiva en la transición. La recomendación concreta es <span class="bull">CER de 6 a 12 meses de duration</span> — los favoritos del mercado en este contexto son TZXO6, TZXD6 y TZXD7, en línea con lo que también recomienda 1816 y SBS en sus informes de esta semana. La migración de vuelta a tasa fija luce adecuada recién en el <span class="dato">3T26</span>, cuando el impacto del shock energético empiece a disiparse y la trayectoria de desinflación recupere visibilidad. <span class="key">El orden macroeconómico de fondo está intacto — este desvío es una demora, no un cambio de régimen. Pero en la transición, el CER corto protege y genera alpha.</span>
+        </div>
+        <div class="rc-by">— Análisis PULSO · Federico R.</div>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- ══ GRIT: Argentina Macro / Bonos Soberanos ══ -->
 <div class="rc alto" data-impact="alto">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
