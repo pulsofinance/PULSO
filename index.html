@@ -3,156 +3,241 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PULSO — Inteligencia Financiera ARG</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+<title>PULSO — Qué opinan los bancos de tu plata</title>
+<meta name="description" content="Síntesis semanal de lo que dicen los grandes bancos sobre Argentina, mercados y geopolítica. En lenguaje claro, para no economistas.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PULSO — Qué opinan los bancos de tu plata">
+<meta property="og:description" content="Síntesis semanal de lo que dicen los grandes bancos sobre Argentina, mercados y geopolítica. En lenguaje claro.">
+<meta property="og:url" content="https://pulsofinance.github.io/PULSO/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PULSO — Qué opinan los bancos de tu plata">
+<meta name="twitter:description" content="Síntesis semanal en lenguaje claro.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%23D4BC00' font-family='monospace' font-weight='700' font-size='34'%3EP%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 [data-theme="dark"]{
-  --bg:#000;--bg2:#0A0A0A;--bg3:#111;
-  --card:#0E0E0E;--card2:#141414;--card3:#191919;
-  --border:#1E1E1E;--border2:#2A2A2A;
-  --t:#F0F0E8;--t2:#C8C8C0;--t3:#888;--t4:#555;
-  --a:#D4BC00;--r:#E03020;--g:#22A055;
-  --cyan:#00B0CC;--orange:#E06000;
-  --a-dim:rgba(212,188,0,.12);--r-dim:rgba(224,48,32,.1);
-  --stripe:rgba(255,255,255,.018);
+  --bg:#0A0A0C;--bg2:#101014;--bg3:#15151A;
+  --card:#16161C;--card2:#1C1C24;--card3:#22222C;
+  --border:#26262E;--border2:#36363E;
+  --t:#F0F0E8;--t2:#C8C8C0;--t3:#8A8A82;--t4:#555;
+  --a:#FFD24A;--a2:#FFB800;--r:#FF5145;--g:#3FD673;
+  --a-dim:rgba(255,210,74,.12);--r-dim:rgba(255,81,69,.1);--g-dim:rgba(63,214,115,.1);
+  --glow-a:rgba(255,210,74,.4);--glow-r:rgba(255,81,69,.4);--glow-g:rgba(63,214,115,.4);
+  --grad-hero:radial-gradient(ellipse at top,rgba(255,210,74,.08),transparent 60%);
 }
 [data-theme="light"]{
-  --bg:#F2F2EC;--bg2:#EAEAE4;--bg3:#E2E2DA;
-  --card:#FFFFFF;--card2:#F5F5EE;--card3:#F0F0E8;
-  --border:#D5D5CC;--border2:#C5C5BC;
+  --bg:#FAFAF7;--bg2:#F2F2EC;--bg3:#EAEAE4;
+  --card:#FFFFFF;--card2:#F7F7F2;--card3:#F0F0E8;
+  --border:#D8D8D0;--border2:#C0C0B8;
   --t:#0E0E08;--t2:#2E2E28;--t3:#666;--t4:#AAA;
-  --a:#8A7800;--r:#C02010;--g:#1A7040;
-  --cyan:#007090;--orange:#B04000;
-  --a-dim:rgba(138,120,0,.1);--r-dim:rgba(192,32,16,.08);
-  --stripe:rgba(0,0,0,.02);
+  --a:#A88E00;--a2:#8A7800;--r:#C02010;--g:#1A7040;
+  --a-dim:rgba(168,142,0,.08);--r-dim:rgba(192,32,16,.06);--g-dim:rgba(26,112,64,.06);
+  --glow-a:rgba(168,142,0,.2);--glow-r:rgba(192,32,16,.2);--glow-g:rgba(26,112,64,.2);
+  --grad-hero:radial-gradient(ellipse at top,rgba(168,142,0,.06),transparent 60%);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--t);font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.6;min-height:100vh;background-image:repeating-linear-gradient(0deg,transparent,transparent 3px,var(--stripe) 3px,var(--stripe) 4px);transition:background .25s,color .25s;}
+body{background:var(--bg);color:var(--t);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:15px;line-height:1.6;min-height:100vh;transition:background .25s,color .25s;background-image:var(--grad-hero);background-attachment:fixed;background-repeat:no-repeat;background-size:100% 800px;}
+.mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
 a{text-decoration:none;color:inherit}
-.up{color:var(--g)}.dn{color:var(--r)}.am{color:var(--a)}.cy{color:var(--cyan)}.dim{color:var(--t3)}
-.kv{display:inline-block;font-size:9px;font-weight:700;color:var(--cyan);border:1px solid rgba(0,176,204,.22);background:rgba(0,176,204,.07);padding:0 4px;margin:0 2px;letter-spacing:.04em;vertical-align:middle}
+.up{color:var(--g)}.dn{color:var(--r)}.am{color:var(--a)}.dim{color:var(--t3)}
+.kv{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--t);border:1px solid var(--border2);padding:1px 5px;margin:0 2px;letter-spacing:.02em;vertical-align:middle}
 .hl{color:var(--a);font-weight:600}.hl-r{color:var(--r);font-weight:600}.hl-g{color:var(--g);font-weight:600}
-.reveal{opacity:0;transform:translateY(6px);transition:opacity .38s ease,transform .38s ease}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1)}
 .reveal.visible{opacity:1;transform:none}
-@keyframes pulse-glow{0%,100%{opacity:1;box-shadow:0 0 6px var(--g)}50%{opacity:.15;box-shadow:none}}
-.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--g);animation:pulse-glow 1.8s ease-in-out infinite;flex-shrink:0}
-@keyframes pulse-imp{0%,100%{opacity:1}50%{opacity:.1}}
-.ibdot{width:5px;height:5px;border-radius:50%;animation:pulse-imp 1.5s ease-in-out infinite}
+@keyframes pulse-glow{0%,100%{opacity:1;box-shadow:0 0 0 0 var(--glow-g),0 0 8px var(--g)}50%{opacity:.5;box-shadow:0 0 0 6px transparent,0 0 4px var(--g)}}
+.pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--g);animation:pulse-glow 2s ease-in-out infinite;flex-shrink:0}
+@keyframes pulse-imp{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.85)}}
+.ibdot{width:6px;height:6px;border-radius:50%;animation:pulse-imp 1.6s ease-in-out infinite;flex-shrink:0}
+
+/* Tooltip glosario */
+.glos{border-bottom:1px dotted var(--a);cursor:help;position:relative}
+.glos:hover::after,.glos:focus::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--card3);color:var(--t);font-size:12px;font-weight:400;line-height:1.45;padding:8px 11px;border:1px solid var(--a);border-radius:4px;white-space:normal;width:240px;z-index:500;box-shadow:0 6px 20px rgba(0,0,0,.4);text-align:left}
+.glos:hover::before,.glos:focus::before{content:'';position:absolute;left:50%;bottom:calc(100% + 2px);transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--a);z-index:500}
+
+/* Chip de veredicto */
+.veredicto{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:20px;border:1px solid;line-height:1}
+.veredicto::before{content:'';width:6px;height:6px;border-radius:50%}
+.v-compra{color:var(--g);background:var(--g-dim);border-color:rgba(63,214,115,.45)}
+.v-compra::before{background:var(--g);box-shadow:0 0 6px var(--glow-g)}
+.v-mantener{color:var(--a);background:var(--a-dim);border-color:rgba(255,210,74,.45)}
+.v-mantener::before{background:var(--a);box-shadow:0 0 6px var(--glow-a)}
+.v-vender{color:var(--r);background:var(--r-dim);border-color:rgba(255,81,69,.45)}
+.v-vender::before{background:var(--r);box-shadow:0 0 6px var(--glow-r)}
+.v-mirar{color:var(--t2);background:var(--bg3);border-color:var(--border2)}
+.v-mirar::before{background:var(--t2)}
+
+/* Icono de tema */
+.topic-ico{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;background:var(--bg3);border:1px solid var(--border2)}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 1.4rem;height:46px;display:flex;align-items:center;justify-content:space-between;}
-[data-theme="light"] nav{background:rgba(242,242,236,.92)}
+nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 1.4rem;height:54px;display:flex;align-items:center;justify-content:space-between;}
+[data-theme="light"] nav{background:rgba(250,250,247,.94)}
 .nav-brand{display:flex;align-items:baseline;gap:10px}
-.nav-name{font-size:16px;font-weight:700;letter-spacing:.26em;color:var(--a);text-shadow:0 0 24px rgba(212,188,0,.3)}
-.nav-sub{font-size:7.5px;letter-spacing:.13em;color:var(--t3);text-transform:uppercase}
-.nav-right{display:flex;align-items:center;gap:.8rem}
-.nav-defcon{font-size:7.5px;font-weight:700;letter-spacing:.1em;padding:2px 7px;border:1px solid rgba(224,96,0,.4);color:var(--orange);background:rgba(224,96,0,.06)}
-.nav-ed{font-size:8px;color:var(--t3);letter-spacing:.04em}
-.nav-live{font-size:8.5px;color:var(--g);display:flex;align-items:center;gap:5px;font-weight:700}
-.theme-btn{background:none;border:1px solid var(--border2);color:var(--t3);font-family:inherit;font-size:10px;letter-spacing:.06em;padding:3px 9px;cursor:pointer;transition:all .18s}
+.nav-name{font-size:20px;font-weight:700;letter-spacing:.22em;color:var(--a)}
+.nav-sub{font-size:11px;letter-spacing:.04em;color:var(--t3)}
+.nav-right{display:flex;align-items:center;gap:.9rem}
+.nav-temp{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.06em;padding:3px 9px;border:1px solid var(--border2);color:var(--t2);background:var(--bg3)}
+.nav-ed{font-size:11px;color:var(--t3);letter-spacing:.02em}
+.nav-live{font-size:11px;color:var(--g);display:flex;align-items:center;gap:6px;font-weight:600}
+.theme-btn{background:none;border:1px solid var(--border2);color:var(--t3);font-family:inherit;font-size:12px;letter-spacing:.04em;padding:5px 11px;cursor:pointer;transition:all .18s;border-radius:3px}
 .theme-btn:hover{border-color:var(--a);color:var(--a)}
 
 /* STATUS */
-.status-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:.22rem 1.4rem;display:flex;gap:1.4rem;align-items:center;font-size:7.5px;color:var(--t3);letter-spacing:.07em;overflow-x:auto;}
-.si{display:flex;gap:4px;align-items:center;white-space:nowrap}
-.si-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.status-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:.4rem 1.4rem;display:flex;gap:1.4rem;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--t3);overflow-x:auto;}
+.si{display:flex;gap:6px;align-items:center;white-space:nowrap}
+.si-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .dg{background:var(--g);box-shadow:0 0 5px var(--g)}.dr{background:var(--r)}.da{background:var(--a);box-shadow:0 0 4px var(--a)}
 
 /* TICKERS */
-.ticker-wrap{background:var(--bg);border-bottom:1px solid var(--border);overflow:hidden;height:26px;display:flex;align-items:center}
-.ticker-lbl{background:var(--a);color:#000;font-size:8px;font-weight:700;letter-spacing:.18em;padding:0 11px;height:100%;display:flex;align-items:center;flex-shrink:0}
-.geo-wrap{background:var(--bg2);border-bottom:1px solid var(--border);overflow:hidden;height:26px;display:flex;align-items:center}
-.geo-lbl{background:rgba(224,96,0,.14);color:var(--orange);font-size:8px;font-weight:700;letter-spacing:.14em;padding:0 11px;height:100%;display:flex;align-items:center;flex-shrink:0;border-right:1px solid var(--border)}
+.ticker-wrap{background:var(--bg2);border-bottom:1px solid var(--border);overflow:hidden;height:34px;display:flex;align-items:center;opacity:.92}
+.ticker-lbl{background:var(--a);color:#000;font-size:11px;font-weight:700;letter-spacing:.12em;padding:0 13px;height:100%;display:flex;align-items:center;flex-shrink:0;gap:6px}
+.ticker-lbl::before{content:'🇦🇷';font-size:14px}
+.geo-wrap{background:var(--bg2);border-bottom:1px solid var(--border);overflow:hidden;height:34px;display:flex;align-items:center;opacity:.92}
+.geo-lbl{background:var(--bg3);color:var(--t);font-size:11px;font-weight:700;letter-spacing:.12em;padding:0 13px;height:100%;display:flex;align-items:center;flex-shrink:0;border-right:1px solid var(--border2);gap:6px}
+.geo-lbl::before{content:'🌐';font-size:14px}
 .tt,.gt{display:flex;white-space:nowrap}
-.tt{animation:sl 38s linear infinite}.gt{animation:sl 65s linear infinite}
+.tt{animation:sl 60s linear infinite}.gt{animation:sl 80s linear infinite}
 .tt:hover,.gt:hover{animation-play-state:paused}
 @keyframes sl{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ti,.gi{display:flex;align-items:center;gap:4px;padding:0 1.1rem;font-size:10px;border-right:1px solid var(--border)}
-.ts{color:var(--t3);font-size:9px}.tv{font-weight:600;color:var(--t)}
-.gi{gap:6px;font-size:9.5px;color:var(--t3)}
-.gtag{font-size:7px;font-weight:700;letter-spacing:.1em;color:var(--orange);padding:0 4px;border:1px solid rgba(224,96,0,.22);background:rgba(224,96,0,.05)}
+.ti,.gi{display:flex;align-items:center;gap:6px;padding:0 1.2rem;font-family:'IBM Plex Mono',monospace;font-size:12px;border-right:1px solid var(--border)}
+.ts{color:var(--t3);font-size:11px}.tv{font-weight:600;color:var(--t)}
+.gi{gap:7px;color:var(--t3)}
+.gtag{font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--t2);padding:1px 5px;border:1px solid var(--border2)}
 .gv{font-weight:600;color:var(--t2)}
 
 /* TESIS */
-.tesis-bar{background:var(--bg3);border-bottom:2px solid var(--a);padding:.5rem 1.4rem;display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;}
-.tesis-tag{font-size:8px;font-weight:700;letter-spacing:.2em;color:#000;background:var(--a);padding:2px 8px;white-space:nowrap;flex-shrink:0}
-.tesis-txt{font-size:11.5px;font-weight:500;color:var(--t);letter-spacing:.01em;line-height:1.35;flex:1;min-width:0}
-.tesis-meta{font-size:7.5px;color:var(--t3);letter-spacing:.06em;white-space:nowrap;flex-shrink:0}
+.tesis-bar{background:var(--bg3);border-bottom:2px solid var(--a);padding:.9rem 1.4rem;display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;}
+.tesis-tag{font-size:11px;font-weight:700;letter-spacing:.14em;color:#000;background:var(--a);padding:4px 10px;white-space:nowrap;flex-shrink:0}
+.tesis-txt{font-size:16px;font-weight:500;color:var(--t);line-height:1.45;flex:1;min-width:0}
+.tesis-meta{font-size:11px;color:var(--t3);white-space:nowrap;flex-shrink:0}
 @media(max-width:640px){
-  .tesis-bar{padding:.45rem .9rem;gap:.7rem}
-  .tesis-txt{font-size:10px;line-height:1.3}
-  .tesis-tag{font-size:7px;padding:2px 6px}
+  .tesis-bar{padding:.7rem .9rem;gap:.7rem}
+  .tesis-txt{font-size:14px;line-height:1.4}
+  .tesis-tag{font-size:10px;padding:3px 7px}
   .tesis-meta{display:none}
 }
 
 /* SDIV */
-.sdiv{display:flex;align-items:center;gap:1rem;padding:.6rem 1.4rem;background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.sdiv-label{font-size:8px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--a);white-space:nowrap}
-.sdiv-label::before{content:"§ "}
+.sdiv{display:flex;align-items:center;gap:1rem;padding:1rem 1.4rem .6rem;background:var(--bg);border-top:1px solid var(--border);}
+.sdiv-label{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--t);white-space:nowrap}
 .sdiv-line{flex:1;height:1px;background:var(--border2)}
-.sdiv-meta{font-size:7.5px;color:var(--t3);letter-spacing:.06em;white-space:nowrap}
+.sdiv-meta{font-size:11px;color:var(--t3);white-space:nowrap}
 
-/* RESEARCH HEADER */
-.research-hero{padding:.52rem 1.4rem .42rem;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
-.rh-title{font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--a)}
-.rh-title::before{content:"// "}
-.filter-row{display:flex;gap:.35rem;align-items:center;flex-wrap:wrap}
-.fbtn{background:none;border:1px solid var(--border2);color:var(--t3);font-family:inherit;font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;cursor:pointer;transition:all .15s;}
-.fbtn:hover{border-color:var(--a);color:var(--a)}
-.fbtn.fa{border-color:var(--a);color:#000;background:var(--a)}
-.fbtn.fr{border-color:rgba(224,48,32,.6);color:var(--r);background:var(--r-dim)}
-.fbtn.fm{border-color:rgba(212,188,0,.5);color:var(--a);background:var(--a-dim)}
+/* ═══ GLOBO 3D (Three.js) ═══ */
+.globe-section{padding:1.8rem 1.4rem 1.8rem;background:transparent;border-bottom:1px solid var(--border);text-align:center;position:relative;overflow:hidden;}
+.globe-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 50%,var(--a-dim),transparent 70%);pointer-events:none}
+.globe-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--a);text-transform:uppercase;margin-bottom:.4rem;position:relative}
+.globe-title{font-size:24px;font-weight:700;color:var(--t);margin-bottom:.3rem;position:relative;letter-spacing:-.01em}
+.globe-help{font-size:13.5px;color:var(--t3);margin-bottom:1.2rem;position:relative}
+.globe-help kbd{font-family:'IBM Plex Mono',monospace;font-size:11px;background:var(--bg3);border:1px solid var(--border2);padding:1px 6px;border-radius:4px;color:var(--t2)}
+.globe3d-wrap{width:480px;height:480px;max-width:90vw;margin:0 auto;position:relative;cursor:grab;}
+.globe3d-wrap.dragging{cursor:grabbing}
+.globe3d-wrap canvas{display:block;width:100%;height:100%;outline:none}
+.globe3d-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--t3);font-size:13px;gap:.6rem}
+.globe3d-loading.hidden{display:none}
+.globe3d-spinner{width:36px;height:36px;border:3px solid var(--border2);border-top-color:var(--a);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.globe3d-tooltip{position:absolute;background:var(--card3);color:var(--t);font-size:12px;font-weight:600;padding:6px 12px;border-radius:18px;border:1px solid var(--a);box-shadow:0 4px 14px rgba(0,0,0,.5);pointer-events:none;opacity:0;transition:opacity .15s;white-space:nowrap;z-index:20;transform:translate(-50%,-130%)}
+.globe3d-tooltip.show{opacity:1}
+.globe3d-tooltip .tt-count{display:inline-block;background:var(--a);color:#000;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;padding:1px 6px;border-radius:10px;margin-left:6px}
+
+.region-row{display:flex;gap:.45rem;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:1.2rem;position:relative}
+.region-btn{background:var(--card);border:1px solid var(--border2);color:var(--t2);font-family:inherit;font-size:12.5px;font-weight:500;padding:6px 13px;cursor:pointer;transition:all .2s;border-radius:30px;display:inline-flex;align-items:center;gap:6px;line-height:1}
+.region-btn:hover{border-color:var(--a);color:var(--a);transform:translateY(-1px)}
+.region-btn.active{background:var(--a);color:#000;border-color:var(--a);font-weight:600;box-shadow:0 4px 14px var(--glow-a)}
+.region-btn .rcount{font-family:'IBM Plex Mono',monospace;font-size:11px;opacity:.7;font-weight:600}
+.region-btn.active .rcount{opacity:.9;color:#000}
+
+@media(max-width:640px){.globe3d-wrap{width:340px;height:340px}.globe-title{font-size:18px}.globe-help{font-size:12px}}
+
+/* HERO INTRO */
+.intro{padding:1.6rem 1.4rem 1.2rem;text-align:center;background:transparent;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.intro::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 0%,var(--a-dim),transparent 70%);pointer-events:none;}
+.intro-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--a);text-transform:uppercase;margin-bottom:.5rem;position:relative}
+.intro-h1{font-size:32px;font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--t);margin-bottom:.6rem;position:relative}
+.intro-h1 b{color:var(--a)}
+.intro-sub{font-size:15px;color:var(--t2);max-width:640px;margin:0 auto;line-height:1.55;position:relative}
+.intro-cta-row{display:flex;gap:.7rem;justify-content:center;align-items:center;margin-top:1rem;flex-wrap:wrap;position:relative}
+.intro-step{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--t3);background:var(--card);padding:7px 14px;border:1px solid var(--border);border-radius:30px}
+.intro-step b{color:var(--t);font-weight:700}
+.intro-step .num{width:20px;height:20px;border-radius:50%;background:var(--a);color:#000;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:640px){.intro{padding:1.2rem .9rem 1rem}.intro-h1{font-size:24px}.intro-sub{font-size:14px}.intro-step{font-size:12px;padding:5px 10px}}
+
+/* RESEARCH HEADER + FILTROS */
+.research-hero{padding:1rem 1.4rem;background:var(--bg);border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:.7rem;position:sticky;top:54px;z-index:300;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(10,10,12,.85)}
+[data-theme="light"] .research-hero{background:rgba(250,250,247,.9)}
+.filter-row{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
+.filter-label{font-size:11px;color:var(--t3);font-weight:600;letter-spacing:.04em;margin-right:.3rem;min-width:60px;text-transform:uppercase}
+.fbtn{background:var(--card);border:1px solid var(--border2);color:var(--t2);font-family:inherit;font-size:13px;font-weight:500;padding:7px 14px;cursor:pointer;transition:all .2s cubic-bezier(.2,.7,.2,1);border-radius:30px;display:inline-flex;align-items:center;gap:7px;line-height:1}
+.fbtn:hover{border-color:var(--a);color:var(--a);transform:translateY(-1px);box-shadow:0 4px 12px var(--glow-a)}
+.fbtn.active{border-color:var(--a);color:#000;background:var(--a);font-weight:600;box-shadow:0 4px 14px var(--glow-a)}
+.fbtn .fcount{font-family:'IBM Plex Mono',monospace;font-size:11px;opacity:.7;font-weight:600}
+.fbtn.active .fcount{opacity:.9;color:#000}
+.fbtn .topic-emoji{font-size:14px;line-height:1}
+.search-input{flex:1;max-width:260px;background:var(--card);border:1px solid var(--border2);color:var(--t);font-family:inherit;font-size:13px;padding:7px 14px;border-radius:30px;outline:none;transition:all .2s}
+.search-input::placeholder{color:var(--t3)}
+.search-input:focus{border-color:var(--a);box-shadow:0 0 0 3px var(--a-dim)}
 
 /* GRID */
-.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:14px;background:transparent;}
 
 /* ═══════════════════════════════
    RESEARCH CARD — 3 NIVELES
 ═══════════════════════════════ */
-.rc{background:var(--card);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .15s;}
-.rc::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px}
-.rc.alto::after{background:var(--r)}.rc.medio::after{background:var(--a)}.rc.bajo::after{background:var(--cyan)}
-.rc:hover{background:var(--card2)}.rc.open{background:var(--card2)}.rc.deep{background:var(--card3)}
+.rc{background:var(--card);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s,background .2s,border-color .2s;border:1px solid var(--border);border-radius:10px;}
+.rc::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:10px 0 0 10px;transition:width .25s}
+.rc.alto::after{background:var(--r);box-shadow:0 0 12px var(--glow-r)}
+.rc.medio::after{background:var(--a);box-shadow:0 0 12px var(--glow-a)}
+.rc.bajo::after{background:var(--g);box-shadow:0 0 12px var(--glow-g)}
+.rc:hover{background:var(--card2);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.35),0 0 0 1px var(--border2);border-color:var(--border2);}
+.rc:hover::after{width:4px}
+.rc.open{background:var(--card2);transform:none;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.rc.deep{background:var(--card2)}
 
 /* NIVEL 0 */
-.rc-hook{padding:.85rem 1.1rem .8rem 1.3rem;cursor:pointer;user-select:none;flex-shrink:0;}
-.rc-hook-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:.4rem;}
-.rc-banco{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);flex:1;line-height:1.3;}
-.rc-hookright{display:flex;align-items:center;gap:.4rem;flex-shrink:0}
-.rc-fecha{font-size:8px;color:var(--t4);letter-spacing:.03em}
-.rc-arr{font-size:9px;color:var(--t3);transition:transform .22s,color .15s;flex-shrink:0}
-.rc.open .rc-arr,.rc.deep .rc-arr{transform:rotate(90deg);color:var(--a)}
-.rc-gancho{font-size:15.5px;font-weight:700;color:var(--t);line-height:1.26;letter-spacing:-.025em;margin-bottom:.5rem;cursor:pointer;}
-.rc-gancho em{font-style:normal;color:var(--a)}
-.rc-gancho strong{font-weight:700;color:var(--r)}
-.rc-bottom-row{display:flex;align-items:flex-start;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
-.rc-badges{display:flex;gap:.3rem;flex-shrink:0}
-.ibadge{display:inline-flex;align-items:center;gap:3px;font-size:7px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:2px 5px;border:1px solid}
-.ib-a{color:var(--r);border-color:rgba(224,48,32,.4);background:rgba(224,48,32,.07)}
-.ib-a .ibdot{background:var(--r);box-shadow:0 0 4px var(--r)}
-.ib-m{color:var(--a);border-color:rgba(212,188,0,.4);background:rgba(212,188,0,.06)}
-.ib-m .ibdot{background:var(--a);box-shadow:0 0 4px var(--a)}
-.ib-b{color:var(--g);border-color:rgba(34,160,85,.4);background:rgba(34,160,85,.07)}
-.ib-b .ibdot{background:var(--g);box-shadow:0 0 4px var(--g)}
-.rc-pulso-hook{font-size:10px;font-style:italic;color:var(--t3);line-height:1.35;flex:1;min-width:120px;padding-left:.6rem;border-left:2px solid var(--border2);}
-.rc-pulso-hook::before{content:"→ ";color:var(--a);font-style:normal;font-weight:700;font-size:9px}
+.rc-hook{padding:1.1rem 1.2rem 1rem 1.4rem;cursor:pointer;user-select:none;flex-shrink:0;}
+.rc-hook-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:.7rem;}
+.rc-banco-wrap{display:flex;align-items:center;gap:9px;flex:1;min-width:0}
+.rc-banco-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--card3),var(--bg3));border:1px solid var(--border2);display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--a);flex-shrink:0;letter-spacing:-.02em}
+.rc-banco{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--t2);flex:1;line-height:1.3;min-width:0}
+.rc-hookright{display:flex;align-items:center;gap:.55rem;flex-shrink:0}
+.rc-fecha{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--t3);letter-spacing:.02em;background:var(--bg3);padding:3px 7px;border-radius:4px}
+.rc-arr{font-size:12px;color:var(--t3);transition:transform .25s cubic-bezier(.2,.7,.2,1),color .15s;flex-shrink:0;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:var(--bg3)}
+.rc.open .rc-arr,.rc.deep .rc-arr{transform:rotate(90deg);color:#000;background:var(--a)}
+.rc-gancho{font-size:18px;font-weight:600;color:var(--t);line-height:1.35;letter-spacing:-.015em;margin-bottom:.75rem;cursor:pointer;}
+.rc-gancho em{font-style:normal;color:var(--a);font-weight:700}
+.rc-gancho strong{font-weight:700;color:var(--t)}
+.rc-bottom-row{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.rc-badges{display:flex;gap:.4rem;flex-shrink:0;align-items:center;flex-wrap:wrap}
+.ibadge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border:1px solid;border-radius:20px;line-height:1}
+.ib-a{color:var(--r);border-color:rgba(255,81,69,.45);background:var(--r-dim)}
+.ib-a .ibdot{background:var(--r);box-shadow:0 0 6px var(--glow-r)}
+.ib-m{color:var(--a);border-color:rgba(255,210,74,.45);background:var(--a-dim)}
+.ib-m .ibdot{background:var(--a);box-shadow:0 0 6px var(--glow-a)}
+.ib-b{color:var(--g);border-color:rgba(63,214,115,.45);background:var(--g-dim)}
+.ib-b .ibdot{background:var(--g);box-shadow:0 0 6px var(--glow-g)}
+.tag-topic{font-size:10px;font-weight:600;color:var(--t3);padding:4px 9px;border:1px solid var(--border2);border-radius:20px;text-transform:uppercase;letter-spacing:.04em;display:inline-flex;align-items:center;gap:5px}
+.rc-pulso-hook{font-size:13.5px;color:var(--t2);line-height:1.5;flex:1;min-width:160px;padding:.5rem .75rem;border-left:3px solid var(--a);background:var(--a-dim);border-radius:0 6px 6px 0;font-weight:500;}
+.share-btn{background:var(--bg3);border:1px solid var(--border2);color:var(--t2);font-family:inherit;font-size:13px;padding:4px 9px;cursor:pointer;border-radius:50%;transition:all .2s;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;}
+.share-btn:hover{border-color:var(--a);color:var(--a);background:var(--a-dim);transform:translateY(-2px) scale(1.05);box-shadow:0 4px 10px var(--glow-a)}
+.share-btn.copied{border-color:var(--g);color:var(--g);background:var(--g-dim)}
 
 /* NIVEL 1 — resumen */
 .rc-l1{max-height:0;overflow:hidden;transition:max-height .32s cubic-bezier(.4,0,.2,1)}
-.rc.open .rc-l1,.rc.deep .rc-l1{max-height:1200px}
-.rc-summary{padding:.7rem 1.1rem .65rem 1.3rem;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:.5rem;}
-.rc-sum-tag{font-size:7.5px;font-weight:700;letter-spacing:.22em;color:var(--a);text-transform:uppercase}
-.rc-sum-txt{font-size:12.5px;font-weight:400;color:var(--t2);line-height:1.72;}
-.rc-sum-txt .dato{display:inline-block;font-size:9px;font-weight:700;color:var(--cyan);border:1px solid rgba(0,176,204,.2);background:rgba(0,176,204,.07);padding:0 4px;margin:0 2px;letter-spacing:.04em;vertical-align:middle}
-.rc-sum-txt .bull{color:var(--g);font-weight:700}.rc-sum-txt .bear{color:var(--r);font-weight:700}.rc-sum-txt .key{color:var(--a);font-weight:600}
-.rc-sum-by{font-size:7.5px;color:var(--t3);letter-spacing:.12em;text-transform:uppercase}
+.rc.open .rc-l1,.rc.deep .rc-l1{max-height:1400px}
+.rc-summary{padding:.9rem 1.1rem .85rem 1.3rem;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:.55rem;}
+.rc-sum-tag{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--a);text-transform:uppercase}
+.rc-sum-txt{font-size:14px;font-weight:400;color:var(--t2);line-height:1.7;}
+.rc-sum-txt .dato{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--t);padding:0 3px;letter-spacing:.01em;vertical-align:baseline;background:var(--bg3);border-radius:2px}
+.rc-sum-txt .bull{color:var(--g);font-weight:700}.rc-sum-txt .bear{color:var(--r);font-weight:700}.rc-sum-txt .key{color:var(--t);font-weight:700}
+.rc-sum-by{font-size:11px;color:var(--t3);letter-spacing:.04em}
 
-.rc-expand{display:flex;align-items:center;justify-content:space-between;padding:.42rem 1.1rem .42rem 1.3rem;border-top:1px dashed var(--border2);background:none;width:100%;font-family:inherit;cursor:pointer;transition:background .14s;}
+.rc-expand{display:flex;align-items:center;justify-content:space-between;padding:.55rem 1.1rem .55rem 1.3rem;border-top:1px dashed var(--border2);background:none;width:100%;font-family:inherit;cursor:pointer;transition:background .14s;}
 .rc-expand:hover{background:var(--bg3)}
-.rc-exp-label{font-size:7.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--t3)}
+.rc-exp-label{font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--t3);text-transform:uppercase}
 .rc.deep .rc-exp-label{color:var(--a)}
-.rc-exp-arr{font-size:9px;color:var(--t3);transition:transform .22s}
+.rc-exp-arr{font-size:11px;color:var(--t3);transition:transform .22s}
 .rc.deep .rc-exp-arr{transform:rotate(90deg);color:var(--a)}
 
 /* NIVEL 2 — análisis completo extenso */
@@ -168,36 +253,37 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 /* cabecera del análisis */
 .rc-full-header{
   display:flex;align-items:center;gap:.6rem;
-  margin-bottom:.8rem;
-  padding-bottom:.6rem;
+  margin-bottom:.9rem;
+  padding-bottom:.7rem;
   border-bottom:1px solid var(--border2);
+  flex-wrap:wrap;
 }
 .rc-full-label{
-  font-size:8px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
   color:var(--a);
 }
-.rc-full-label::before{content:"// ANÁLISIS COMPLETO · "}
+.rc-full-label::before{content:"Análisis completo · "}
 .rc-full-source{
-  font-size:7.5px;color:var(--t3);letter-spacing:.08em;
-  padding:1px 6px;border:1px solid var(--border2);
+  font-size:11px;color:var(--t3);letter-spacing:.02em;
+  padding:2px 7px;border:1px solid var(--border2);border-radius:2px;
 }
 
 /* bloques temáticos */
 .rc-block{
-  margin-bottom:.9rem;
-  padding:.6rem .8rem;
-  background:rgba(0,0,0,.25);
+  margin-bottom:1rem;
+  padding:.75rem .9rem;
+  background:rgba(0,0,0,.2);
   border-left:2px solid var(--border2);
 }
-[data-theme="light"] .rc-block{background:rgba(0,0,0,.04)}
+[data-theme="light"] .rc-block{background:rgba(0,0,0,.025)}
 .rc-block-title{
-  font-size:8px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--orange);margin-bottom:.35rem;
+  font-size:12px;font-weight:700;letter-spacing:.02em;
+  color:var(--t);margin-bottom:.45rem;
 }
 .rc-block-body{
-  font-size:12px;font-weight:400;color:var(--t2);line-height:1.78;
+  font-size:14px;font-weight:400;color:var(--t2);line-height:1.72;
 }
-.rc-block-body .dato{display:inline-block;font-size:9px;font-weight:700;color:var(--cyan);border:1px solid rgba(0,176,204,.2);background:rgba(0,176,204,.07);padding:0 4px;margin:0 2px;letter-spacing:.04em;vertical-align:middle}
+.rc-block-body .dato{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--t);padding:0 3px;letter-spacing:.01em;background:var(--bg3);border-radius:2px}
 .rc-block-body .bull{color:var(--g);font-weight:700}
 .rc-block-body .bear{color:var(--r);font-weight:700}
 .rc-block-body .key{color:var(--a);font-weight:600}
@@ -206,34 +292,32 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 
 /* bloque de conclusión */
 .rc-conclusion{
-  margin-top:.4rem;
-  padding:.65rem .9rem;
+  margin-top:.5rem;
+  padding:.85rem 1rem;
   background:var(--a-dim);
-  border:1px solid rgba(212,188,0,.2);
   border-left:3px solid var(--a);
+  border-radius:2px;
 }
 .rc-conclusion-title{
-  font-size:8px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--a);margin-bottom:.3rem;
+  font-size:12px;font-weight:700;letter-spacing:.02em;
+  color:var(--a);margin-bottom:.45rem;
 }
-.rc-conclusion-title::before{content:"// "}
 .rc-conclusion-body{
-  font-size:12px;font-weight:400;color:var(--t2);line-height:1.72;
+  font-size:14px;font-weight:400;color:var(--t2);line-height:1.7;
 }
-.rc-conclusion-body .dato{display:inline-block;font-size:9px;font-weight:700;color:var(--cyan);border:1px solid rgba(0,176,204,.2);background:rgba(0,176,204,.07);padding:0 4px;margin:0 2px;letter-spacing:.04em;vertical-align:middle}
+.rc-conclusion-body .dato{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--t);padding:0 3px;background:var(--bg3);border-radius:2px}
 .rc-conclusion-body .bull{color:var(--g);font-weight:700}
 .rc-conclusion-body .bear{color:var(--r);font-weight:700}
-.rc-conclusion-body .key{color:var(--a);font-weight:600}
-.rc-by{font-size:7.5px;color:var(--t3);letter-spacing:.12em;text-transform:uppercase;margin-top:.5rem}
+.rc-conclusion-body .key{color:var(--t);font-weight:700}
+.rc-by{font-size:11px;color:var(--t3);letter-spacing:.02em;margin-top:.6rem}
 
 /* SECCIONES COLAPSABLES */
-.section-toggle-btn{display:flex;align-items:center;justify-content:space-between;padding:.65rem 1.4rem;background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;width:100%;font-family:inherit;}
+.section-toggle-btn{display:flex;align-items:center;justify-content:space-between;padding:.95rem 1.4rem;background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;width:100%;font-family:inherit;}
 .section-toggle-btn:hover{background:var(--card)}
-.stb-left{display:flex;align-items:center;gap:.8rem}
-.stb-label{font-size:8px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--a)}
-.stb-label::before{content:"§ "}
-.stb-meta{font-size:7.5px;color:var(--t3);letter-spacing:.06em}
-.stb-arrow{font-size:11px;color:var(--t3);transition:transform .25s,color .15s}
+.stb-left{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.stb-label{font-size:14px;font-weight:700;letter-spacing:.02em;color:var(--t)}
+.stb-meta{font-size:11px;color:var(--t3)}
+.stb-arrow{font-size:14px;color:var(--t3);transition:transform .25s,color .15s}
 .stb-arrow.open{transform:rotate(90deg);color:var(--a)}
 .collapsible-section{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
 .collapsible-section.open{max-height:8000px}
@@ -241,85 +325,93 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 /* NÚMEROS */
 .nb-grid-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
 .nb-grid-row-2{border-top:none;}
-.nb{background:var(--bg2);padding:.6rem 1rem;display:flex;flex-direction:column;gap:.12rem;transition:background .15s}
+.nb{background:var(--bg2);padding:.75rem 1rem;display:flex;flex-direction:column;gap:.15rem;transition:background .15s}
 .nb:hover{background:var(--card)}
-.nb-lbl{font-size:7.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--t3)}
-.nb-val{font-size:18px;font-weight:700;line-height:1;letter-spacing:-.02em}
+.nb-lbl{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--t3)}
+.nb-val{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:700;line-height:1;letter-spacing:-.02em}
 .nb-val.r{color:var(--r)}.nb-val.g{color:var(--g)}.nb-val.a{color:var(--a)}
-.nb-sub{font-size:9px;color:var(--t3);line-height:1.3}
-.nb-src{font-size:6.5px;font-weight:700;letter-spacing:.12em;color:var(--t4);text-transform:uppercase}
+.nb-sub{font-size:11px;color:var(--t3);line-height:1.3}
+.nb-src{font-size:10px;font-weight:600;letter-spacing:.04em;color:var(--t4);text-transform:uppercase}
 /* Reservas — neto destacado */
-.nb-neto-wrap{display:flex;flex-direction:column;gap:.18rem;margin:.15rem 0 .1rem;}
+.nb-neto-wrap{display:flex;flex-direction:column;gap:.2rem;margin:.2rem 0 .15rem;}
 .nb-neto-row{display:flex;align-items:center;justify-content:space-between;gap:.4rem}
-.nb-neto-lbl{font-size:8px;color:var(--t3);letter-spacing:.06em;flex-shrink:0}
-.nb-neto-val{font-size:10px;font-weight:700;letter-spacing:-.01em}
+.nb-neto-lbl{font-size:11px;color:var(--t3);flex-shrink:0}
+.nb-neto-val{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600}
 .nb-neto-neg{
   color:var(--r);
-  background:rgba(224,48,32,.1);
+  background:var(--r-dim);
   border:1px solid rgba(224,48,32,.3);
-  padding:1px 5px;
-  font-size:9.5px;
+  padding:1px 6px;
+  border-radius:2px;
+  font-size:11px;
 }
 @media(max-width:980px){.nb-grid-row{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.nb-grid-row{grid-template-columns:1fr 1fr}}
 
 /* CARTERA */
-.cartera{background:var(--bg2);padding:.95rem 1.4rem;border-bottom:1px solid var(--border)}
-.cartera-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap;gap:.5rem;}
-.cartera-nota-top{font-size:9.5px;color:var(--t3);font-style:italic}
-.cartera-nota-top b{color:var(--a);font-style:normal}
-.cartera-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.cartera{background:var(--bg2);padding:1.2rem 1.4rem;border-bottom:1px solid var(--border)}
+.cartera-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;}
+.cartera-titulo{font-size:13px;font-weight:700;color:var(--t);letter-spacing:.02em}
+.cartera-nota-top{font-size:12px;color:var(--t3)}
+.cartera-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
 .ct{width:100%;border-collapse:collapse}
-.ct th{font-size:7.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--t3);padding:.32rem .5rem;border-bottom:1px solid var(--border);text-align:left}
-.ct td{font-size:11px;padding:.38rem .5rem;border-bottom:1px solid var(--border);color:var(--t);vertical-align:middle}
+.ct th{font-size:11px;font-weight:600;letter-spacing:.02em;color:var(--t3);padding:.45rem .5rem;border-bottom:1px solid var(--border);text-align:left}
+.ct td{font-size:13px;padding:.55rem .5rem;border-bottom:1px solid var(--border);color:var(--t);vertical-align:middle}
 .ct tr:last-child td{border-bottom:none}
 .ct tr:hover td{background:var(--card)}
 .ct-asset{font-weight:600}
-.ct-tipo{font-size:7.5px;font-weight:700;letter-spacing:.1em;padding:1px 5px;border:1px solid}
-.ct-pe{color:var(--cyan);border-color:rgba(0,176,204,.3)}.ct-rf{color:var(--a);border-color:rgba(212,188,0,.35)}.ct-ca{color:var(--t3);border-color:var(--border2)}
-.ct-peso{font-weight:700;text-align:right}.ct-ret{font-weight:600;text-align:right}.ct-rat{font-size:9px;color:var(--t3)}
-.ct-rt{font-size:7px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 4px;border:1px solid rgba(212,188,0,.3);color:var(--a);background:var(--a-dim);margin-right:3px;vertical-align:middle}
-.alloc-section{display:flex;flex-direction:column;gap:.7rem}
-.alloc-title{font-size:7.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--t3)}
-.alloc-bar-wrap{display:flex;flex-direction:column;gap:.45rem}
-.alloc-row{display:flex;align-items:center;gap:.55rem}
-.alloc-label{font-size:9.5px;font-weight:500;color:var(--t2);width:125px;flex-shrink:0}
-.alloc-track{flex:1;height:6px;background:var(--border);border-radius:1px;overflow:hidden}
-.alloc-fill{height:100%;border-radius:1px;transition:width .85s cubic-bezier(.4,0,.2,1)}
-.alloc-pct{font-size:9px;font-weight:700;color:var(--t);width:26px;text-align:right;flex-shrink:0}
-.cartera-nota{margin-top:.65rem;font-size:9.5px;color:var(--t2);line-height:1.55;padding:.42rem .6rem;border-left:2px solid var(--border2)}
+.ct-tipo{font-size:10px;font-weight:600;padding:2px 6px;border:1px solid var(--border2);color:var(--t2);border-radius:2px;white-space:nowrap}
+.ct-peso{font-family:'IBM Plex Mono',monospace;font-weight:700;text-align:right}.ct-ret{font-family:'IBM Plex Mono',monospace;font-weight:600;text-align:right}.ct-rat{font-size:11px;color:var(--t3);line-height:1.4}
+.ct-rt{font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:1px 5px;border:1px solid var(--border2);color:var(--t2);margin-right:5px;vertical-align:middle;border-radius:2px}
+.alloc-section{display:flex;flex-direction:column;gap:.85rem}
+.alloc-title{font-size:12px;font-weight:600;color:var(--t3)}
+.alloc-bar-wrap{display:flex;flex-direction:column;gap:.55rem}
+.alloc-row{display:flex;align-items:center;gap:.7rem}
+.alloc-label{font-size:12px;font-weight:500;color:var(--t2);width:130px;flex-shrink:0}
+.alloc-track{flex:1;height:8px;background:var(--border);border-radius:2px;overflow:hidden}
+.alloc-fill{height:100%;border-radius:2px;transition:width .85s cubic-bezier(.4,0,.2,1)}
+.alloc-pct{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--t);width:34px;text-align:right;flex-shrink:0}
+.cartera-nota{margin-top:.85rem;font-size:12px;color:var(--t2);line-height:1.6;padding:.55rem .75rem;border-left:2px solid var(--border2)}
 
 /* GEO */
-.geo-panel{background:var(--bg);padding:.8rem 1.4rem;border-bottom:1px solid var(--border)}
-.geo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:.65rem}
-.geo-card{background:var(--bg);padding:.6rem .85rem;transition:background .15s}
+.geo-panel{background:var(--bg);padding:1rem 1.4rem;border-bottom:1px solid var(--border)}
+.geo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:.8rem}
+.geo-card{background:var(--bg);padding:.85rem 1rem;transition:background .15s}
 .geo-card:hover{background:var(--card)}
-.geo-card-tag{font-size:7.5px;font-weight:700;letter-spacing:.14em;color:var(--orange);margin-bottom:.18rem}
-.geo-card-title{font-size:11px;font-weight:600;color:var(--t);text-transform:uppercase;line-height:1.25;margin-bottom:.18rem}
-.geo-card-body{font-size:10px;font-weight:300;color:var(--t2);line-height:1.5}
-.geo-imp{display:inline-block;font-size:7px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 5px;border:1px solid;margin-top:.28rem}
-.gc-c{color:var(--r);border-color:rgba(224,48,32,.4)}.gc-m{color:var(--a);border-color:rgba(212,188,0,.4)}.gc-l{color:var(--cyan);border-color:rgba(0,176,204,.3)}
+.geo-card-tag{font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--t3);margin-bottom:.25rem;text-transform:uppercase}
+.geo-card-title{font-size:14px;font-weight:600;color:var(--t);line-height:1.3;margin-bottom:.3rem}
+.geo-card-body{font-size:13px;font-weight:400;color:var(--t2);line-height:1.55}
+.geo-imp{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border:1px solid;margin-top:.45rem;border-radius:2px}
+.gc-c{color:var(--r);border-color:rgba(224,48,32,.4);background:var(--r-dim)}.gc-m{color:var(--a);border-color:rgba(212,188,0,.4);background:var(--a-dim)}.gc-l{color:var(--g);border-color:rgba(34,160,85,.4);background:var(--g-dim)}
 
 /* AGENDA */
-.eventos{background:var(--bg2);padding:.8rem 1.4rem;border-bottom:1px solid var(--border)}
-.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:.6rem}
-.ev-card{background:var(--bg);padding:.6rem .85rem;transition:background .15s}
+.eventos{background:var(--bg2);padding:1rem 1.4rem;border-bottom:1px solid var(--border)}
+.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:.7rem}
+.ev-card{background:var(--bg);padding:.85rem 1rem;transition:background .15s}
 .ev-card:hover{background:var(--card)}
-.ev-fecha{font-size:8px;color:var(--a);letter-spacing:.05em;margin-bottom:.18rem}
-.ev-titulo{font-size:11px;font-weight:700;color:var(--t);text-transform:uppercase;line-height:1.25;margin-bottom:.18rem}
-.ev-desc{font-size:10px;font-weight:300;color:var(--t2);line-height:1.45}
-.ev-imp{display:inline-block;font-size:7px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 5px;border:1px solid;margin-top:.28rem}
-.ea{color:var(--r);border-color:rgba(224,48,32,.4)}.em{color:var(--a);border-color:rgba(212,188,0,.4)}
+.ev-fecha{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--a);margin-bottom:.25rem;font-weight:600}
+.ev-titulo{font-size:14px;font-weight:600;color:var(--t);line-height:1.3;margin-bottom:.3rem}
+.ev-desc{font-size:13px;font-weight:400;color:var(--t2);line-height:1.55}
+.ev-imp{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border:1px solid;margin-top:.4rem;border-radius:2px}
+.ea{color:var(--r);border-color:rgba(224,48,32,.4);background:var(--r-dim)}.em{color:var(--a);border-color:rgba(212,188,0,.4);background:var(--a-dim)}
 
 /* FIRMA */
-.firma{background:var(--bg);border-top:2px solid var(--a);padding:.55rem 1.4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem}
-.firma-l{font-size:9px;color:var(--t3);letter-spacing:.07em}
+.firma{background:var(--bg);border-top:2px solid var(--a);padding:.85rem 1.4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.firma-l{font-size:12px;color:var(--t3)}
 .firma-l b{color:var(--a)}
-.firma-r{font-size:9px;color:var(--t3);letter-spacing:.06em}
+.firma-r{font-size:12px;color:var(--t3)}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--card);border:1px solid var(--a);color:var(--t);font-size:13px;padding:10px 18px;border-radius:4px;opacity:0;transition:all .25s;pointer-events:none;z-index:1000;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Card destacada por deep-link */
+.rc.highlight{box-shadow:inset 0 0 0 2px var(--a);animation:hl 2s ease-out;}
+@keyframes hl{0%{box-shadow:inset 0 0 0 2px var(--a),0 0 32px var(--a)}100%{box-shadow:inset 0 0 0 2px var(--a)}}
 
 /* MOBILE */
 @media(max-width:980px){.research-grid{grid-template-columns:1fr 1fr}.geo-grid{grid-template-columns:1fr 1fr}.cartera-grid{grid-template-columns:1fr}.numeros-band{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:640px){.research-grid{grid-template-columns:1fr}.ev-grid,.geo-grid{grid-template-columns:1fr}.cartera-grid{grid-template-columns:1fr}.numeros-band{grid-template-columns:1fr 1fr}nav{padding:0 .9rem}.nav-ed{display:none}.rc-gancho{font-size:13.5px}.rc-banco{font-size:10.5px}}
+@media(max-width:640px){.research-grid{grid-template-columns:1fr}.ev-grid,.geo-grid{grid-template-columns:1fr}.cartera-grid{grid-template-columns:1fr}.numeros-band{grid-template-columns:1fr 1fr}nav{padding:0 .9rem;height:50px}.nav-name{font-size:17px}.nav-sub,.nav-ed{display:none}.rc-gancho{font-size:15.5px}.rc-banco{font-size:11px}.research-hero{padding:.6rem .9rem}.fbtn{font-size:11px;padding:4px 9px}}
 
 /* ═══════════════════════════════════
    MACRO PANEL — 7 bloques colapsables
@@ -341,15 +433,15 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 .macro-emoji{font-size:15px;flex-shrink:0;line-height:1}
 .macro-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .macro-title{
-  font-size:11px;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--t);white-space:nowrap
+  font-size:13px;font-weight:700;letter-spacing:.02em;
+  color:var(--t);white-space:nowrap
 }
 .macro-sub{
-  font-size:9px;color:var(--t3);letter-spacing:.04em;
+  font-size:12px;color:var(--t3);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis
 }
 .macro-arr{
-  font-size:9px;color:var(--t3);flex-shrink:0;
+  font-size:12px;color:var(--t3);flex-shrink:0;
   transition:transform .22s,color .15s;margin-left:.5rem
 }
 .macro-header.is-open .macro-arr{transform:rotate(90deg);color:var(--a)}
@@ -374,22 +466,22 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   transition:background .14s;
 }
 .macro-kpi:hover{background:var(--card2)}
-.macro-kpi-lbl{font-size:7.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--t3)}
-.macro-kpi-val{font-size:16px;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:.1rem 0}
-.macro-kpi-sub{font-size:9px;color:var(--t3);line-height:1.3}
-.macro-kpi-neto{font-size:9px;color:var(--t3);margin:.12rem 0}
-.macro-kpi-src{font-size:6.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--t4);margin-top:auto;padding-top:.2rem}
+.macro-kpi-lbl{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--t3)}
+.macro-kpi-val{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:.15rem 0}
+.macro-kpi-sub{font-size:11px;color:var(--t3);line-height:1.4}
+.macro-kpi-neto{font-size:11px;color:var(--t3);margin:.15rem 0}
+.macro-kpi-src{font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--t4);margin-top:auto;padding-top:.25rem}
 
 /* nota explicativa */
 .macro-nota{
-  display:flex;gap:.4rem;align-items:flex-start;
-  padding:.6rem 1.4rem;
-  background:rgba(212,188,0,.04);
+  display:flex;gap:.55rem;align-items:flex-start;
+  padding:.85rem 1.4rem;
+  background:var(--a-dim);
   border-top:1px dashed var(--border2);
 }
-.macro-nota-ico{font-size:14px;flex-shrink:0;margin-top:.1rem}
-.macro-nota-t{font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--a);margin-bottom:.22rem}
-.macro-nota-b{font-size:11px;font-weight:300;color:var(--t2);line-height:1.65}
+.macro-nota-ico{font-size:16px;flex-shrink:0;margin-top:.05rem}
+.macro-nota-t{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--a);margin-bottom:.3rem}
+.macro-nota-b{font-size:13px;font-weight:400;color:var(--t2);line-height:1.65}
 .macro-nota-b strong{font-weight:700;color:var(--t)}
 
 /* mobile */
@@ -408,15 +500,26 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 <nav class="reveal">
   <div class="nav-brand">
     <span class="nav-name">PULSO</span>
-    <span class="nav-sub">Inteligencia Financiera · ARG</span>
+    <span class="nav-sub">Qué opinan los bancos de tu plata</span>
   </div>
   <div class="nav-right">
-    <span class="nav-defcon">DEFCON 3</span>
+    <span class="nav-temp" title="Termómetro de la semana">🌡 Semana volátil</span>
     <span class="nav-ed">Ed.002 · 17 Mar 2026</span>
-    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">☀ CLARO</button>
-    <span class="nav-live"><span class="pulse-dot"></span>ACTIVO</span>
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">☀ Claro</button>
+    <span class="nav-live"><span class="pulse-dot"></span>En vivo</span>
   </div>
 </nav>
+
+<section class="intro reveal">
+  <div class="intro-eyebrow">— Edición semanal · 17 Mar 2026 —</div>
+  <h1 class="intro-h1">Las opiniones que mueven tu plata,<br><b>en castellano simple.</b></h1>
+  <p class="intro-sub">Cada semana leemos lo que dicen Morgan Stanley, JPMorgan, BlackRock y otros 30 bancos sobre Argentina y el mundo. Te dejamos la síntesis en un párrafo, sin jerga, para que entiendas qué está pasando con tu plata.</p>
+  <div class="intro-cta-row">
+    <span class="intro-step"><span class="num">1</span><b>Elegí</b> un tema</span>
+    <span class="intro-step"><span class="num">2</span><b>Tocá</b> una card</span>
+    <span class="intro-step"><span class="num">3</span><b>Compartí</b> con quien quieras</span>
+  </div>
+</section>
 
 <div class="status-bar reveal">
   <div class="si"><span class="si-dot dg"></span>BCRA <span class="am" id="st-bcra">cargando...</span></div>
@@ -447,20 +550,53 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   <div class="tesis-meta">Federico R. · 17 Mar 2026</div>
 </div>
 
+<!-- ══ GLOBO 3D (Three.js) ══ -->
+<section class="globe-section reveal">
+  <div class="globe-eyebrow">— Mapa global —</div>
+  <h2 class="globe-title">¿Dónde está pasando la noticia?</h2>
+  <p class="globe-help">Arrastrá para girar · rueda del mouse para zoom · click en un marker para filtrar</p>
+  <div class="globe3d-wrap" id="globe3d-wrap">
+    <div class="globe3d-loading" id="globe3d-loading">
+      <div class="globe3d-spinner"></div>
+      <div>Cargando mapa…</div>
+    </div>
+    <div class="globe3d-tooltip" id="globe3d-tooltip"></div>
+  </div>
+  <div class="region-row" id="region-row">
+    <button class="region-btn active" data-region="all">🌍 Todo el mundo <span class="rcount" data-rcount="all"></span></button>
+    <button class="region-btn" data-region="argentina">🇦🇷 Argentina <span class="rcount" data-rcount="argentina"></span></button>
+    <button class="region-btn" data-region="latam">🌎 Latam <span class="rcount" data-rcount="latam"></span></button>
+    <button class="region-btn" data-region="norteamerica">🇺🇸 Norteamérica <span class="rcount" data-rcount="norteamerica"></span></button>
+    <button class="region-btn" data-region="europa">🇪🇺 Europa <span class="rcount" data-rcount="europa"></span></button>
+    <button class="region-btn" data-region="medio-oriente">🕌 Medio Oriente <span class="rcount" data-rcount="medio-oriente"></span></button>
+    <button class="region-btn" data-region="asia">🌏 Asia <span class="rcount" data-rcount="asia"></span></button>
+    <button class="region-btn" data-region="global">🌐 Global <span class="rcount" data-rcount="global"></span></button>
+  </div>
+</section>
+
 <!-- ══ RESEARCH ══ -->
 <div class="sdiv reveal">
-  <span class="sdiv-label">Lo que dicen los bancos</span>
+  <span class="sdiv-label">Qué opinan los bancos esta semana</span>
   <div class="sdiv-line"></div>
-  <span class="sdiv-meta" id="rc-meta">13 research · sem.12 · click → resumen · doble click → análisis completo</span>
+  <span class="sdiv-meta" id="rc-meta">Tocá una card para leer la síntesis</span>
 </div>
 
 <div class="research-hero reveal">
-  <div><div class="rh-title">Research del día</div></div>
-  <div class="filter-row">
-    <span style="font-size:7.5px;color:var(--t3);letter-spacing:.1em">FILTRAR:</span>
-    <button class="fbtn fa" onclick="filterRC('all',this)">Todos</button>
-    <button class="fbtn" onclick="filterRC('alto',this)">● Alto</button>
-    <button class="fbtn" onclick="filterRC('medio',this)">● Medio</button>
+  <div class="filter-row" data-filter-group="topic">
+    <span class="filter-label">Tema</span>
+    <button class="fbtn active" data-filter="topic" data-value="all"><span class="topic-emoji">📊</span>Todos <span class="fcount" data-count="all"></span></button>
+    <button class="fbtn" data-filter="topic" data-value="argentina"><span class="topic-emoji">🇦🇷</span>Argentina <span class="fcount" data-count="argentina"></span></button>
+    <button class="fbtn" data-filter="topic" data-value="internacional"><span class="topic-emoji">🌎</span>Internacional <span class="fcount" data-count="internacional"></span></button>
+    <button class="fbtn" data-filter="topic" data-value="geopolitica"><span class="topic-emoji">⚔️</span>Geopolítica <span class="fcount" data-count="geopolitica"></span></button>
+    <button class="fbtn" data-filter="topic" data-value="empresas"><span class="topic-emoji">🏢</span>Empresas <span class="fcount" data-count="empresas"></span></button>
+    <button class="fbtn" data-filter="topic" data-value="commodities"><span class="topic-emoji">🛢️</span>Commodities <span class="fcount" data-count="commodities"></span></button>
+  </div>
+  <div class="filter-row" data-filter-group="impact">
+    <span class="filter-label">Impacto</span>
+    <button class="fbtn active" data-filter="impact" data-value="all">Todos</button>
+    <button class="fbtn" data-filter="impact" data-value="alto"><span class="ibdot" style="background:var(--r)"></span>Alto</button>
+    <button class="fbtn" data-filter="impact" data-value="medio"><span class="ibdot" style="background:var(--a)"></span>Medio</button>
+    <input type="text" class="search-input" id="rc-search" placeholder="🔍 Buscar banco o tema...">
   </div>
 </div>
 
@@ -483,12 +619,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
      Pegá estos bloques DENTRO de <div class="research-grid" id="rc-grid">
      TAMBIÉN: en el CSS cambiá .rc-gancho { font-size: 15.5px } → font-size: 14px
 ═══════════════════════════════════════════════════════ -->
-  <div class="rc medio" data-impact="medio">
+  <div class="rc medio" data-impact="medio" data-topic="empresas internacional" data-region="norteamerica" id="ms-tesla-capex">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Morgan Stanley Research — Autos & Shared Mobility · Nueva York</span>
       <div class="rc-hookright">
         <span class="rc-fecha">23 ABR</span>
+        <button class="share-btn" onclick="shareCard(event,'ms-tesla-capex')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -508,7 +645,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">Tesla reportó un Q1 que superó estimados en márgenes —auto gross margin ex-créditos <span class="dato">19,2%</span>, energy gross margin <span class="dato">39,5%</span>— pero ambos números incluyeron beneficios puntuales por devoluciones de aranceles y liberaciones de reservas. El dato que reencuadra todo: la guía de capex subió <span class="dato">USD 5.000 millones</span> al año hasta superar los <span class="dato">USD 25.000 millones</span>, con FCF burn proyectado de <span class="dato">USD 11.600 millones</span> para 2026. Morgan Stanley mantiene su tesis de largo plazo en physical AI pero concluye que <span class="key">el upside de corto plazo está capeado: el robotaxi avanza más despacio que las expectativas del mercado y el HW3 no podrá correr FSD sin supervisor</span>, lo que complica la tesis de monetizar la flota existente de ~8,5 millones de vehículos. <span class="bull">Para portfolios con exposición a TSLA: el rango de valuación es extraordinariamente amplio — bear case USD 131, bull case USD 826 — lo que refleja la dificultad de pricear la optionalidad de AI en un activo con presión de corto plazo.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -552,12 +689,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
     </div>
   </div>
 </div>
-  <div class="rc medio" data-impact="medio">
+  <div class="rc medio" data-impact="medio" data-topic="empresas internacional" data-region="norteamerica" id="gs-tesla">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Goldman Sachs Research — Autos & Industrial Tech · Nueva York</span>
       <div class="rc-hookright">
         <span class="rc-fecha">23 ABR</span>
+        <button class="share-btn" onclick="shareCard(event,'gs-tesla')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -577,7 +715,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">Goldman Sachs mantiene su rating Neutral en Tesla con price target de <span class="dato">USD 375</span>, por debajo del precio actual de <span class="dato">USD 387,51</span> — una de las pocas casas de primer nivel con visión más cauta que el consenso. El Q1 superó expectativas con un gross margin automotriz ex-créditos del <span class="dato">19,2%</span> y un gross margin de energía del <span class="dato">39,5%</span>, pero Goldman estima que ajustando por beneficios puntuales de aranceles y reservas de garantía los números reales habrían sido <span class="dato">~17%</span> y <span class="dato">~29%</span> respectivamente. El dato que reencuadra todo: capex sube a más de <span class="dato">USD 25.000 millones</span> y Goldman proyecta <span class="key">FCF negativo tanto en 2026 como en 2027</span>, con retorno al positivo recién en 2028. El debate sobre si el approach de AI de Tesla escala más rápido que sus competidores en robotaxi y robótica sigue sin resolución. <span class="bull">Para inversores en TSLA: Goldman y Morgan Stanley coinciden en que el upside de corto plazo está capeado — el diferencial está en el PT: USD 375 vs USD 415.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -623,12 +761,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto">
+  <div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="1816-economia">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">1816 — Economía & Mercado · Buenos Aires</span>
       <div class="rc-hookright">
         <span class="rc-fecha">23 ABR</span>
+        <button class="share-btn" onclick="shareCard(event,'1816-economia')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -648,7 +787,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">1816 disecciona el origen de los dólares que explican el récord de compras del BCRA en 2026. El saldo comercial devengado del 1T fue <span class="dato">USD 5.508 millones</span>, el más alto desde 2009. Las empresas liquidaron <span class="dato">USD 6.800 millones</span> por ONs emitidas desde octubre. Los préstamos bancarios en dólares subieron <span class="dato">USD 3.525 millones YTD</span> —y crean un círculo virtuoso con la estabilidad cambiaria: el cepo estable incentiva endeudarse en dólares, lo que genera oferta de FX, lo que refuerza el cepo estable. El RIGI, en cambio, aportó apenas <span class="dato">USD 762 millones netos desde enero 2025</span>, apenas cubriendo los giros de dividendos del 1T. En estrategia, 1816 advierte que <span class="key">los Globales a 9,5% son atractivos solo si hay alta confianza en la reelección de Milei</span> — la semana que viene se actualizan las encuestas que el mercado más mira. <span class="bull">Valor relativo: TAMAR 2027 en primario y Boncer 2028 en adelante son las posiciones con mejor riesgo-retorno en el actual mercado de pesos.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -695,12 +834,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto">
+  <div class="rc alto" data-impact="alto" data-topic="argentina empresas" data-region="argentina" id="bull-market-rf">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Bull Market Brokers — Renta Fija Corporativa · Buenos Aires</span>
       <div class="rc-hookright">
         <span class="rc-fecha">20 ABR</span>
+        <button class="share-btn" onclick="shareCard(event,'bull-market-rf')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -720,7 +860,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">Chubut sale al mercado internacional con un bono de <span class="dato">USD 650 millones a 10 años</span>, tasa fija estimada en torno al <span class="dato">9,25%</span>, organizado por JP Morgan y Santander con BNY Mellon como trustee en Nueva York. La garantía es la pieza estructural clave: una doble capa que combina la cesión irrevocable del <span class="dato">72,15% de las regalías primarias</span> bajo ley argentina con un pledge UCC-1 sobre cuentas en dólares en Nueva York. El coverage en escenario base arranca en <span class="dato">2,4x</span> y salta a <span class="dato">3,2x</span> en 2029 cuando las áreas de PAE —Cerro Dragón y satélites— se incorporan al fideicomiso al 100% tras el repago del BOCADE. <span class="key">La estructura está diseñada para aislar el flujo de regalías del riesgo soberano argentino y del cepo cambiario.</span> <span class="bull">Para inversores en deuda provincial: es el instrumento de mayor sofisticación estructural emitido por una provincia argentina en años — la calidad del colateral y el coverage justifican un análisis profundo antes de la licitación.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -766,12 +906,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
     </div>
   </div>
 </div>
-  <div class="rc medio" data-impact="medio">
+  <div class="rc medio" data-impact="medio" data-topic="empresas internacional" data-region="latam" id="morningstar-rv">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Morningstar Equity Research — Renta Variable · Chicago</span>
       <div class="rc-hookright">
         <span class="rc-fecha">15 ABR</span>
+        <button class="share-btn" onclick="shareCard(event,'morningstar-rv')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -791,7 +932,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">Morningstar redujo levemente su precio objetivo de MELI de <span class="dato">USD 2.190 a USD 2.100</span> por un aumento en el costo de capital, pero mantiene que la acción cotiza con un descuento significativo frente a su valor intrínseco: precio actual <span class="dato">USD 1.840</span> contra fair value de <span class="dato">USD 2.100</span>, una brecha de <span class="dato">14%</span>. El fundamento es sólido: el libro de crédito creció <span class="dato">90% en 2025</span> hasta USD 12.500 millones, el GMV aceleró a <span class="dato">37% en el Q4</span> y más del <span class="dato">85% del retail latinoamericano sigue siendo offline</span>. La compresión de márgenes operativos —de 13,5% a 10,1%— es deliberada: inversión en logística y crédito que profundiza el moat. <span class="key">Morningstar califica el moat como "Wide" y la asignación de capital como "Exemplary".</span> <span class="bull">Para portfolios con horizonte de 3-5 años: MELI a estos niveles es una de las pocas compañías de calidad comprobada cotizando con descuento en Latam.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -837,12 +978,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto">
+  <div class="rc alto" data-impact="alto" data-topic="internacional" data-region="global" id="blackrock-global">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">BlackRock Investment Institute — Estrategia Global · Nueva York</span>
       <div class="rc-hookright">
         <span class="rc-fecha">13 ABR</span>
+        <button class="share-btn" onclick="shareCard(event,'blackrock-global')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -862,7 +1004,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">BlackRock Investment Institute pasó de neutral a <span class="key">overweight en acciones de EE.UU. y mercados emergentes</span>, financiando el upgrade con la venta de bonos soberanos cortos europeos. El argumento central: las negociaciones EE.UU.-Irán —aunque colapsaron el fin de semana— prueban que hay incentivos económicos reales para desescalar, y mientras tanto las expectativas de ganancias corporativas siguieron subiendo. El sector tech de EE.UU. proyecta <span class="dato">+43% en earnings para 2026</span>, con el múltiplo forward de IT en su nivel más bajo desde mediados de 2020. En emergentes, <span class="dato">Corea del Sur y Taiwán</span> lideran las revisiones al alza por su rol en el hardware de AI. La advertencia: el bono largo americano sigue en underweight —BlackRock ve presión alcista estructural en los yields de largo plazo. <span class="bull">Para carteras con exposición global: el momento de agregar riesgo selectivo en tech y EM es ahora, antes de que el mercado descuente el escenario de desescalada completa.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -902,12 +1044,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
     </div>
   </div>
 </div>
-  <div class="rc medio" data-impact="medio">
+  <div class="rc medio" data-impact="medio" data-topic="argentina" data-region="argentina" id="gargol-fiscal">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Gargol Consultoría — Fiscal · Buenos Aires</span>
       <div class="rc-hookright">
         <span class="rc-fecha">16 ABR</span>
+        <button class="share-btn" onclick="shareCard(event,'gargol-fiscal')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -927,7 +1070,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">El Sector Público Nacional cerró marzo con su <span class="dato">decimoquinto superávit primario consecutivo</span>, pero la lectura en términos reales complica el titular: ingresos y gasto crecieron <span class="dato">25% i.a. versus una inflación de 32,9%</span>, lo que implica que el resultado primario en pesos constantes se contrajo <span class="dato">5,9% respecto de marzo 2025</span>. El ajuste sigue siendo asimétrico — subsidios energéticos y de transporte cayeron <span class="dato">49,8% real</span>, retenciones <span class="dato">33,9% real</span> y Ganancias <span class="dato">23,9% real</span> — mientras que las universidades registraron un pago extraordinario de <span class="dato">+766% real</span> por deuda acumulada en meses previos. <span class="key">El superávit base caja es real, pero parte del ajuste descansa en diferimiento de pagos que no aparece en el dato mensual.</span> <span class="bull">Para inversores en deuda soberana: el ancla fiscal sigue en pie como señal política, pero su profundidad estructural todavía está en proceso.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -965,12 +1108,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto">
+  <div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="bbg-deuda-arg">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Bloomberg — Deuda Soberana · Buenos Aires</span>
       <div class="rc-hookright">
         <span class="rc-fecha">17 ABR</span>
+        <button class="share-btn" onclick="shareCard(event,'bbg-deuda-arg')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -990,7 +1134,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">Caputo prácticamente cerró el financiamiento de 2026 combinando BM, BID, repos, Bonares y privatizaciones. El problema es el año siguiente: <span class="dato">más de USD 30.000 millones en vencimientos en 2027</span>, en pleno año electoral. Las reservas netas siguen en terreno negativo —Argentina incumplió su meta en <span class="dato">USD 3.600 millones</span> en la primera revisión y relajó el objetivo en otros <span class="dato">USD 5.000 millones</span> adicionales— y el FMI desembolsó tanto por adelantado que <span class="key">perdió casi todo su leverage para presionar al gobierno</span>. Bloomberg Economics señala que el Fondo probablemente empujará a Argentina a emitir bonos globales tan pronto como las condiciones lo permitan, para acumular reservas antes del ciclo electoral. <span class="bull">La ventana para salir al mercado internacional es ahora: el riesgo es que se cierre antes de 2027.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -1030,12 +1174,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto">
+  <div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="ieb-economia">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">IEB Research — Economía & Mercado · Buenos Aires</span>
       <div class="rc-hookright">
         <span class="rc-fecha">17 ABR</span>
+        <button class="share-btn" onclick="shareCard(event,'ieb-economia')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -1055,7 +1200,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">La semana tuvo dos movimientos simultáneos que cambian el mapa: el FMI anunció el Staff-Level Agreement por <span class="dato">USD 1.000 millones</span> y el Banco Mundial confirmó una garantía de <span class="dato">USD 2.000 millones</span> para refinanciar deuda. Caputo amplió el número: un paquete total de <span class="dato">USD 10.000 millones</span> que combina BM, otros organismos, emisiones quincenales de Bonares y privatizaciones, con acceso a tasas de <span class="dato">5,5%-6,5%</span> a seis años. El riesgo país comprimió desde los <span class="dato">640 pbs</span> del pico del conflicto internacional hasta los <span class="dato">525 pbs</span>. Globales subieron <span class="dato">5% en abril</span> y ya acumulan <span class="dato">+3,8% en el año</span>. La advertencia de IEB: <span class="key">la garantía multilateral subordina a los tenedores de Globales y Bonares frente a nuevos acreedores privilegiados.</span> <span class="bull">Monitorear: evolución del flujo de cosecha gruesa en mayo como ancla del esquema de tasas bajas y FX estable.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -1102,12 +1247,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   
-  <div class="rc alto" data-impact="alto">
+  <div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="1816-economia-2">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">1816 — Economía & Mercado · Buenos Aires</span>
       <div class="rc-hookright">
         <span class="rc-fecha">16 ABR</span>
+        <button class="share-btn" onclick="shareCard(event,'1816-economia-2')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -1127,7 +1273,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">La deuda soberana ignora los datos macro: el GD35 se acerca al <span class="dato">9% de tasa</span>, umbral históricamente compatible con una emisión internacional, mientras la inflación de marzo volvió a sorprender al alza y el acumulado del 1T ya es <span class="dato">9,4%</span> contra el <span class="dato">10,1% que el Presupuesto preveía para todo 2026</span>. El BCRA endureció el cepo con la Comunicación A 8417 y en cuatro ruedas compró <span class="dato">USD 882 millones en el MLC</span>, pero las reservas netas a valor de mercado (metodología 1816) volvieron a prácticamente cero. La novedad que mueve el tablero: el FMI insinuó que podría estructurarse un <span class="key">préstamo de bancos internacionales garantizado por Banco Mundial, BID y CAF</span>. De concretarse, descomprime el Tesoro pero subordina a los tenedores de Globales y Bonares. <span class="bull">Prioridad de seguimiento: segunda vuelta del Bonar 28 y confirmación oficial del préstamo garantizado.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -1173,12 +1319,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
     </div>
   </div>
 </div>
-  <div class="rc medio" data-impact="medio">
+  <div class="rc medio" data-impact="medio" data-topic="internacional" data-region="europa" id="bofa-credit">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">BofA Global Research — Credit Strategy · Londres</span>
       <div class="rc-hookright">
         <span class="rc-fecha">17 ABR</span>
+        <button class="share-btn" onclick="shareCard(event,'bofa-credit')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -1198,7 +1345,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">Después de <span class="dato">siete semanas consecutivas de salidas</span>, los fondos de High Yield anotaron su primera entrada neta. El Investment Grade apenas empató con un ingreso marginal. La contracara: los fondos de acciones sufrieron su <span class="dato">mayor salida semanal desde diciembre 2024</span>, con ETFs de equity registrando la peor semana en un año y medio. El dinero no desapareció — migró a <span class="key">bonos soberanos, que encadenan diez semanas consecutivas de inflows</span>. BofA lee esto como una recuperación del apetito por crédito ante la caída de la volatilidad de tasas, pero advierte que para que el rally se sostenga se necesitan yields libres de riesgo más bajas. <span class="bull">Posición: seguir de cerca si el HY europeo consolida entradas en las próximas dos semanas — sería la confirmación del giro.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -1237,12 +1384,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto">
+  <div class="rc alto" data-impact="alto" data-topic="empresas internacional" data-region="global" id="ai-semis">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">EQUITY RESEARCH — IA & Semiconductores · Global</span>
       <div class="rc-hookright">
         <span class="rc-fecha">ABR 2026</span>
+        <button class="share-btn" onclick="shareCard(event,'ai-semis')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -1262,7 +1410,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">NVIDIA cerró FY2026 con <span class="dato">$215.9B en revenue (+65% YoY)</span> y <span class="dato">75% de gross margin non-GAAP</span>, con el segmento Data Center explicando <span class="dato">$197.3B</span> de ese total. El Q1 FY27 ya tiene guide de <span class="dato">$78B</span>, dando visibilidad extraordinaria de demanda. El moat no es el hardware: es <span class="key">CUDA, el sistema operativo del AI con 15 años de ecosistema</span> que hace imposible migrar en el corto plazo. El ciclo agentic AI —inference 24/7 permanente— es la siguiente curva de demanda. <span class="bull">Para portfolios con exposición AI, NVDA sigue siendo el activo de mayor convicción del universo.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -1302,12 +1450,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   
-  <div class="rc alto" data-impact="alto">
+  <div class="rc alto" data-impact="alto" data-topic="internacional" data-region="global" id="ubs-cio">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">UBS CIO — Mercados · Global</span>
       <div class="rc-hookright">
         <span class="rc-fecha">31 MAR</span>
+        <button class="share-btn" onclick="shareCard(event,'ubs-cio')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -1327,7 +1476,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       <div class="rc-sum-txt">El S&P500 cerró <span class="dato">+2,9%</span> el martes tras señales de apertura negociadora de Irán y Trump. El Brent cayó <span class="dato">3,5%</span> a <span class="dato">USD 103/bbl</span>, pero el Estrecho de Hormuz sigue cerrado. UBS advierte que <span class="key">una paz apresurada sin acuerdo sobre Hormuz puede mantener la energía cara por más tiempo</span>. NVIDIA sumó <span class="dato">+6,6%</span> tras un acuerdo de <span class="dato">USD 2.000 millones</span> con Marvell. <span class="bull">Priorizar bonos cortos de calidad, oro y posiciones en crudo ante la incertidumbre energética persistente.</span></div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -1364,12 +1513,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto">
+  <div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="btg-provincias">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">BTG Pactual Research — Provincias · Buenos Aires</span>
       <div class="rc-hookright">
         <span class="rc-fecha">01 ABR</span>
+        <button class="share-btn" onclick="shareCard(event,'btg-provincias')" title="Compartir esta card" aria-label="Compartir">↗</button>
         <span class="rc-arr">▶</span>
       </div>
     </div>
@@ -1393,7 +1543,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))">
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
       <span class="rc-exp-label">Leer análisis completo</span>
       <span class="rc-exp-arr">▶</span>
     </button>
@@ -1435,11 +1585,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   <!-- ══ Reuters: Palantir / Maven / Pentágono ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="empresas internacional" data-region="norteamerica" id="reuters-palantir">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Reuters — Tecnología / Defensa · Nueva York / Washington</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'reuters-palantir')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">El Pentágono adoptará la IA de Palantir como sistema militar central — <em><span style="color:#ff6b35;">Maven ya ejecutó miles de ataques selectivos contra Irán en tres semanas.</span></em></div>
     <div class="rc-bottom-row">
@@ -1455,7 +1606,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -1488,11 +1639,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   <!-- ══ Agrometal: Renta Variable Argentina / Maquinaria Agrícola ══ -->
-<div class="rc medio" data-impact="medio">
+<div class="rc medio" data-impact="medio" data-topic="argentina empresas" data-region="argentina" id="bbg-agrometal">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Bloomberg Línea — Renta Variable Argentina · Buenos Aires</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'bbg-agrometal')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">Agrometal vendió más sembradoras en 2025 —<em> y aun así su ganancia cayó 48%</em>. Las acciones subieron menos del 10% desde que asumió Milei.</div>
     <div class="rc-bottom-row">
@@ -1508,7 +1660,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -1542,11 +1694,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   <!-- ══ FT 5: Caos en el transporte marítimo ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="internacional commodities" data-region="global" id="ft-transporte">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Financial Times — Comercio Global / Logística · Londres</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'ft-transporte')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">3.200 barcos atrapados en el Golfo y las navieras tirando contenedores en el puerto más cercano — el comercio global entró en modo supervivencia.</div>
     <div class="rc-bottom-row">
@@ -1562,7 +1715,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -1588,11 +1741,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   <!-- ══ FT 4: Rusia y Cuba ══ -->
-<div class="rc bajo" data-impact="bajo">
+<div class="rc bajo" data-impact="bajo" data-topic="geopolitica" data-region="europa" id="ft-rusia-cuba">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Financial Times — Geopolítica / Energía · La Habana / Moscú</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'ft-rusia-cuba')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">Rusia manda petróleo a Cuba desafiando el bloqueo de Trump — dos buques llegan la semana próxima.</div>
     <div class="rc-bottom-row">
@@ -1608,7 +1762,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -1634,11 +1788,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   <!-- ══ FT 3: Takaichi / Trump / Ormuz ══ -->
-<div class="rc medio" data-impact="medio">
+<div class="rc medio" data-impact="medio" data-topic="geopolitica" data-region="asia" id="ft-takaichi">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Financial Times — Geopolítica / Diplomacia · Washington / Tokio</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'ft-takaichi')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">Trump le pide a Japón que mande barcos de guerra al Estrecho de Ormuz — Takaichi va a la Casa Blanca sin saber cómo decir que no.</div>
     <div class="rc-bottom-row">
@@ -1654,7 +1809,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -1680,11 +1835,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   <!-- ══ FT 2: Powell / Fed y la guerra ══ -->
-<div class="rc medio" data-impact="medio">
+<div class="rc medio" data-impact="medio" data-topic="internacional" data-region="norteamerica" id="ft-powell-fed">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Financial Times — Política Monetaria / Fed · Washington</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'ft-powell-fed')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">Powell dice que la guerra subirá la inflación en el corto plazo — pero mantiene que igual van a cortar tasas este año.</div>
     <div class="rc-bottom-row">
@@ -1700,7 +1856,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -1726,11 +1882,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   <!-- ══ FT 1: Ataque a Qatar / GNL ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="geopolitica commodities" data-region="medio-oriente" id="ft-qatar-gnl">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Financial Times — Energía / Geopolítica · Doha / Teherán</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'ft-qatar-gnl')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">Irán atacó Ras Laffan y un ex funcionario petrolero iraní advierte que esto es "el comienzo de una fase mucho más peligrosa".</div>
     <div class="rc-bottom-row">
@@ -1746,7 +1903,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -1772,11 +1929,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   <!-- ══ SANTANDER PB: Renta Variable — Cambios de Cartera ══ -->
-<div class="rc medio" data-impact="medio">
+<div class="rc medio" data-impact="medio" data-topic="internacional empresas" data-region="global" id="santander-pb">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Santander Private Banking — Renta Variable · Ideas de Cartera</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'santander-pb')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">Santander PB entra en NVDA y NEE — <em>ven el pesimismo sobre IA en su punto máximo y la guerra como catalizador para las renovables.</em></div>
     <div class="rc-bottom-row">
@@ -1792,7 +1950,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -1833,11 +1991,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 </div>
  
   <!-- ══ WSJ GEOP 3: Qatar / LNG ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="geopolitica commodities" data-region="medio-oriente" id="wsj-qatar-lng">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">The Wall Street Journal — Energía / Geopolítica · Doha / Washington</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'wsj-qatar-lng')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">Irán atacó Ras Laffan — el hub LNG más grande del mundo — y las reparaciones van a tardar cinco años.</div>
     <div class="rc-bottom-row">
@@ -1853,7 +2012,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -1882,11 +2041,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 
 
 <!-- ══ WSJ GEOP 4: Trump vs. Aliados ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="geopolitica" data-region="norteamerica" id="wsj-trump-aliados">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">The Wall Street Journal — Geopolítica / Diplomacia · Washington / Bruselas</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'wsj-trump-aliados')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">Trump lanzó una guerra sin avisar a sus aliados — ahora les pide ayuda y lo rechazan.</div>
     <div class="rc-bottom-row">
@@ -1902,7 +2062,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -1931,11 +2091,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 
 
 <!-- ══ WSJ GEOP 5: Pentágono pide USD 200bn ══ -->
-<div class="rc medio" data-impact="medio">
+<div class="rc medio" data-impact="medio" data-topic="geopolitica internacional" data-region="norteamerica" id="wsj-pentagono">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">The Wall Street Journal — Política / Presupuesto · Washington</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'wsj-pentagono')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">El Pentágono pide USD 200.000 millones al Congreso — y el Congreso dice que primero quiere saber cuánto va a durar esto.</div>
     <div class="rc-bottom-row">
@@ -1951,7 +2112,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -1977,11 +2138,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   <!-- ══ WSJ 1: Geopolítica / Estrecho de Ormuz ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="geopolitica commodities" data-region="medio-oriente" id="wsj-ormuz">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">The Wall Street Journal — Geopolítica / Energía · Washington / Medio Oriente</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'wsj-ormuz')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">EE.UU. manda A-10 y Apaches al Estrecho de Ormuz — <em>Arabia Saudita ya modela un barril a USD 180 y nadie sabe cuándo termina esto.</em></div>
     <div class="rc-bottom-row">
@@ -1997,7 +2159,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -2033,11 +2195,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 
 
 <!-- ══ WSJ 2: Economía Global / Fed / Mercados ══ -->
-<div class="rc medio" data-impact="medio">
+<div class="rc medio" data-impact="medio" data-topic="internacional" data-region="norteamerica" id="wsj-fed-mercados">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">The Wall Street Journal — Fed / Mercados / Macro Global · Nueva York</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'wsj-fed-mercados')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">La Fed descartó recortes, Powell no se va y el oro se desplomó 6% en un día — <em>el mercado empieza a preguntarse si el próximo movimiento en tasas es para arriba.</em></div>
     <div class="rc-bottom-row">
@@ -2053,7 +2216,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -2087,11 +2250,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   <!-- ══ SBS SEMANAL: Guerra / Macro ARG / Estrategia ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="sbs-macro">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">SBS Research — Macro & Estrategia · Buenos Aires</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'sbs-macro')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">El Brent tocó USD 114 y la Fed descartó recortes — <em>Argentina tiene la balanza energética mejor parada que nunca, pero el verdadero riesgo viene de adentro.</em></div>
     <div class="rc-bottom-row">
@@ -2107,7 +2271,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -2157,11 +2321,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
 <!-- ══ 1816 SEMANAL: Riesgo País / Estrategia ARS ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="1816-research-rp">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">1816 Research — Economía & Mercado · Buenos Aires</span>
-      <div class="rc-hookright"><span class="rc-fecha">19 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">19 MAR</span><button class="share-btn" onclick="shareCard(event,'1816-research-rp')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">Argentina tiene superávit, reservas y respaldo de EE.UU. — <em>y aun así el riesgo país volvió a 600 pbs. ¿Qué está mirando el mercado que el Gobierno no muestra?</em></div>
     <div class="rc-bottom-row">
@@ -2177,7 +2342,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -2221,11 +2386,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   </div>
 </div>
   <!-- ══ JPM 1: MSCI / Brecha equity-bonos ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="argentina internacional" data-region="argentina" id="jpm-msci">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">JPMorgan — Estrategia de Mercados · Buenos Aires / Global</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'jpm-msci')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho"><em>La brecha entre bonos y acciones argentinas</em> es la oportunidad de mercado más clara del año.</div>
     <div class="rc-bottom-row">
@@ -2241,7 +2407,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -2268,11 +2434,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 </div>
 
 <!-- ══ JPM 2: Fiscal / Inflación ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="jpm-fiscal">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">JPMorgan — Macroeconomía · Buenos Aires</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'jpm-fiscal')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">Milei logró el primer superávit fiscal en 14 años, <em>pero la inflación no cede tan rápido como el programa necesita.</em></div>
     <div class="rc-bottom-row">
@@ -2288,7 +2455,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -2315,11 +2482,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 </div>
 
 <!-- ══ JPM 3: Vaca Muerta / Oil & Gas ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="argentina commodities" data-region="argentina" id="jpm-vaca-muerta">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">JPMorgan — Oil & Gas · Neuquén / Global</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'jpm-vaca-muerta')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">Vaca Muerta alcanzó un récord histórico de producción — <em>y apenas perforó el 1,5% de su inventario potencial.</em></div>
     <div class="rc-bottom-row">
@@ -2335,7 +2503,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -2362,11 +2530,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 </div>
 
 <!-- ══ JPM 4: Sistema Financiero / Bancos ══ -->
-<div class="rc medio" data-impact="medio">
+<div class="rc medio" data-impact="medio" data-topic="argentina empresas" data-region="argentina" id="jpm-bancos">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">JPMorgan — Sistema Financiero · Buenos Aires</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'jpm-bancos')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">El crédito bancario se triplica desde mínimos históricos — <strong>pero los préstamos vencidos se triplicaron también en el segundo semestre.</strong></div>
     <div class="rc-bottom-row">
@@ -2382,7 +2551,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -2409,11 +2578,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 </div>
 
 <!-- ══ JPM 5: ARTI / Geopolítica ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="geopolitica argentina" data-region="argentina" id="jpm-arti">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">JPMorgan — Geopolítica / Relaciones Exteriores · Washington / Buenos Aires</span>
-      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">20 MAR</span><button class="share-btn" onclick="shareCard(event,'jpm-arti')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">Argentina firmó el ARTI con EE.UU. — <em>un acuerdo que reancla al país en el bloque occidental y cambia el perfil de riesgo soberano.</em></div>
     <div class="rc-bottom-row">
@@ -2429,7 +2599,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -2457,11 +2627,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
 
 
 <!-- ══ WSJ · Contraterrorismo renuncia ══ -->
-<div class="rc alto" data-impact="alto">
+<div class="rc alto" data-impact="alto" data-topic="geopolitica" data-region="norteamerica" id="wsj-contraterrorismo">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">WSJ — Contraterrorismo · Washington</span>
-      <div class="rc-hookright"><span class="rc-fecha">18 MAR</span><span class="rc-arr">▶</span></div>
+      <div class="rc-hookright"><span class="rc-fecha">18 MAR</span><button class="share-btn" onclick="shareCard(event,'wsj-contraterrorismo')" title="Compartir esta card" aria-label="Compartir">↗</button><span class="rc-arr">▶</span>
+      </div>
     </div>
     <div class="rc-gancho">El jefe de contraterrorismo de EEUU renunció porque <em>Irán no era una amenaza</em>. La primera grieta pública dentro del gobierno de Trump.</div>
     <div class="rc-bottom-row">
@@ -2477,7 +2648,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
       </div>
       <div class="rc-sum-by">— Federico R. · PULSO</div>
     </div>
-    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'))"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)"><span class="rc-exp-label">Leer análisis completo</span><span class="rc-exp-arr">▶</span></button>
   </div>
   <div class="rc-l2">
     <div class="rc-full">
@@ -2964,8 +3135,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
           <div class="alloc-row"><div class="alloc-label">CER</div><div class="alloc-track"><div class="alloc-fill" style="width:0%;background:var(--a)" data-w="25"></div></div><div class="alloc-pct">25%</div></div>
           <div class="alloc-row"><div class="alloc-label">Tasa fija</div><div class="alloc-track"><div class="alloc-fill" style="width:0%;background:#666" data-w="8"></div></div><div class="alloc-pct">8%</div></div>
           <div class="alloc-row"><div class="alloc-label">RV Argentina</div><div class="alloc-track"><div class="alloc-fill" style="width:0%;background:var(--g)" data-w="18"></div></div><div class="alloc-pct">18%</div></div>
-          <div class="alloc-row"><div class="alloc-label">CEDEARs Ext.</div><div class="alloc-track"><div class="alloc-fill" style="width:0%;background:var(--cyan)" data-w="15"></div></div><div class="alloc-pct">15%</div></div>
-          <div class="alloc-row"><div class="alloc-label">Provincial HD</div><div class="alloc-track"><div class="alloc-fill" style="width:0%;background:var(--orange)" data-w="5"></div></div><div class="alloc-pct">5%</div></div>
+          <div class="alloc-row"><div class="alloc-label">CEDEARs Ext.</div><div class="alloc-track"><div class="alloc-fill" style="width:0%;background:var(--t2)" data-w="15"></div></div><div class="alloc-pct">15%</div></div>
+          <div class="alloc-row"><div class="alloc-label">Provincial HD</div><div class="alloc-track"><div class="alloc-fill" style="width:0%;background:var(--border2)" data-w="5"></div></div><div class="alloc-pct">5%</div></div>
           <div class="alloc-row"><div class="alloc-label">Liquidez</div><div class="alloc-track"><div class="alloc-fill" style="width:0%;background:var(--t3)" data-w="7"></div></div><div class="alloc-pct">7%</div></div>
         </div>
         <div class="cartera-nota">Perfil moderado · Horizonte 6 meses · Ajustar según tolerancia al riesgo individual.<br><span style="color:var(--r)">⚠</span> CER sobreponderado por núcleo 3.1% (Inviu: +214pb en stress). Liquidez táctica por dot plot del miércoles 14hs ARG.</div>
@@ -3009,18 +3180,29 @@ nav{position:sticky;top:0;z-index:400;background:rgba(0,0,0,.92);backdrop-filter
   <div class="firma-r">No es asesoramiento de inversión</div>
 </div>
 
+<div class="toast" id="toast">Link copiado</div>
+
+<!-- Three.js + topojson-client desde CDN para el globo 3D -->
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+}}
+</script>
+
 <script>
-function toggleTheme(){const h=document.documentElement,d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('themeBtn').textContent=d?'☾ OSCURO':'☀ CLARO';}
+function toggleTheme(){const h=document.documentElement,d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('themeBtn').textContent=d?'☾ Oscuro':'☀ Claro';}
 
 function toggleL1(c){
   if(c.classList.contains('deep')){c.classList.remove('deep');return;}
   if(c.classList.contains('open')){c.classList.remove('open');return;}
   c.classList.add('open');
+  if(window.applyGlossary) applyGlossary(c);
 }
-function toggleL2(c){
-  event.stopPropagation();
+function toggleL2(c,ev){
+  if(ev) ev.stopPropagation();
   if(c.classList.contains('deep')){c.classList.remove('deep');}
-  else{c.classList.add('open','deep');}
+  else{c.classList.add('open','deep');if(window.applyGlossary) applyGlossary(c);}
 }
 
 function toggleSection(id,btn){
@@ -3041,14 +3223,204 @@ function toggleSection(id,btn){
   }
 }
 
-function filterRC(t,btn){
-  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('fa','fr','fm'));
-  if(t==='all')btn.classList.add('fa');
-  else if(t==='alto')btn.classList.add('fr');
-  else btn.classList.add('fm');
-  let v=0;
-  document.querySelectorAll('.rc').forEach(c=>{const s=t==='all'||c.dataset.impact===t;c.style.display=s?'flex':'none';if(s)v++;});
-  document.getElementById('rc-meta').textContent=`${v} research · sem.12 · click → resumen · doble click → análisis completo`;
+/* ═══ FILTROS + BÚSQUEDA ═══ */
+const filterState={topic:'all',impact:'all',region:'all',q:''};
+
+function applyFilters(){
+  const cards=document.querySelectorAll('#rc-grid .rc');
+  let visible=0;
+  cards.forEach(c=>{
+    const impactOk=filterState.impact==='all'||c.dataset.impact===filterState.impact;
+    const topics=(c.dataset.topic||'').split(/\s+/);
+    const topicOk=filterState.topic==='all'||topics.includes(filterState.topic);
+    const regionOk=filterState.region==='all'||c.dataset.region===filterState.region||(filterState.region==='latam'&&c.dataset.region==='argentina');
+    const q=filterState.q.trim().toLowerCase();
+    const text=q?c.textContent.toLowerCase():'';
+    const qOk=!q||text.includes(q);
+    const show=impactOk&&topicOk&&regionOk&&qOk;
+    c.style.display=show?'flex':'none';
+    if(show)visible++;
+  });
+  const m=document.getElementById('rc-meta');
+  if(m){
+    const total=cards.length;
+    m.textContent=visible===total?`${total} análisis · tocá una card para leer la síntesis`:`Mostrando ${visible} de ${total}`;
+  }
+}
+
+function setupFilters(){
+  document.querySelectorAll('.fbtn[data-filter]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const dim=btn.dataset.filter,val=btn.dataset.value;
+      filterState[dim]=val;
+      document.querySelectorAll(`.fbtn[data-filter="${dim}"]`).forEach(b=>b.classList.toggle('active',b===btn));
+      applyFilters();
+    });
+  });
+  const search=document.getElementById('rc-search');
+  if(search){
+    let t;search.addEventListener('input',()=>{clearTimeout(t);t=setTimeout(()=>{filterState.q=search.value;applyFilters();},120);});
+  }
+  const cards=document.querySelectorAll('#rc-grid .rc');
+  document.querySelectorAll('.fcount').forEach(el=>{
+    const v=el.dataset.count;
+    const n=v==='all'?cards.length:[...cards].filter(c=>(c.dataset.topic||'').split(/\s+/).includes(v)).length;
+    el.textContent=`(${n})`;
+  });
+  applyFilters();
+}
+
+/* ═══ COMPARTIR + DEEP-LINK ═══ */
+function showToast(msg){
+  const t=document.getElementById('toast');if(!t)return;
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(t._tid);t._tid=setTimeout(()=>t.classList.remove('show'),1800);
+}
+
+async function shareCard(ev,id){
+  ev.stopPropagation();
+  const card=document.getElementById(id);
+  const titulo=card?.querySelector('.rc-gancho')?.textContent?.trim()||'PULSO';
+  const banco=card?.querySelector('.rc-banco')?.textContent?.trim()||'';
+  const url=`${location.origin}${location.pathname}?card=${encodeURIComponent(id)}#${id}`;
+  const btn=ev.currentTarget;
+  if(navigator.share){
+    try{await navigator.share({title:`PULSO · ${banco}`,text:titulo,url});}catch(e){}
+  }else{
+    try{
+      await navigator.clipboard.writeText(url);
+      btn.classList.add('copied');btn.textContent='✓';
+      showToast('Link copiado al portapapeles');
+      setTimeout(()=>{btn.classList.remove('copied');btn.textContent='↗';},1600);
+    }catch(e){prompt('Copiá este link:',url);}
+  }
+}
+
+function openDeepLink(){
+  const params=new URLSearchParams(location.search);
+  const id=params.get('card')||location.hash.replace(/^#/,'');
+  if(!id)return;
+  const card=document.getElementById(id);
+  if(!card)return;
+  card.classList.add('open','deep','highlight');
+  setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'start'}),200);
+  setTimeout(()=>card.classList.remove('highlight'),2200);
+}
+
+/* ═══ MAPA DEL MUNDO — exposed para el modulo Three.js ═══ */
+const REGION_LABELS={argentina:'Argentina',latam:'Latam',norteamerica:'Norteamérica',europa:'Europa',africa:'África','medio-oriente':'Medio Oriente',asia:'Asia',oceania:'Oceanía',global:'Global'};
+// Lat/Lon de cada region para markers en el globo
+const REGION_LATLON={
+  argentina:    [-34.6, -58.4],   // Buenos Aires
+  norteamerica: [38.9,  -77.0],   // Washington DC
+  europa:       [50.1,    8.7],   // Frankfurt
+  africa:       [-1.3,   36.8],   // Nairobi
+  'medio-oriente':[25.3, 51.5],   // Doha
+  asia:         [35.7,  139.7],   // Tokyo
+  oceania:      [-33.9, 151.2],   // Sydney
+};
+function regionCounts(){
+  const counts={};
+  document.querySelectorAll('#rc-grid .rc').forEach(c=>{
+    const r=c.dataset.region||'global';
+    counts[r]=(counts[r]||0)+1;
+    if(r==='argentina') counts.latam=(counts.latam||0)+1;
+  });
+  return counts;
+}
+function selectRegion(r){
+  filterState.region=r;
+  document.querySelectorAll('.region-btn').forEach(b=>b.classList.toggle('active',b.dataset.region===r));
+  applyFilters();
+  if(window.globe3D&&window.globe3D.focusRegion) window.globe3D.focusRegion(r);
+  const grid=document.getElementById('rc-grid');
+  if(grid){setTimeout(()=>grid.scrollIntoView({behavior:'smooth',block:'start'}),350);}
+}
+function setupRegionButtons(){
+  document.querySelectorAll('.region-btn').forEach(b=>b.addEventListener('click',()=>selectRegion(b.dataset.region)));
+  const counts=regionCounts();
+  document.querySelectorAll('[data-rcount]').forEach(el=>{
+    const v=el.dataset.rcount;
+    const total=document.querySelectorAll('#rc-grid .rc').length;
+    el.textContent=`(${v==='all'?total:(counts[v]||0)})`;
+  });
+}
+
+/* ═══ Auto-decorar cards: avatar del banco + chip de tema con emoji ═══ */
+const TOPIC_EMOJI={argentina:'🇦🇷',internacional:'🌎',geopolitica:'⚔️',empresas:'🏢',commodities:'🛢️'};
+const TOPIC_LABEL={argentina:'Argentina',internacional:'Internacional',geopolitica:'Geopolítica',empresas:'Empresas',commodities:'Commodities'};
+
+function bankInitials(name){
+  // Quita prefijos genéricos y devuelve 1-2 iniciales
+  const clean=name.replace(/research|—.*$/i,'').trim();
+  const words=clean.split(/[\s\-]+/).filter(w=>w.length>1&&!/^(the|de|del|y|&)$/i.test(w));
+  if(words.length>=2)return (words[0][0]+words[1][0]).toUpperCase();
+  return clean.substring(0,2).toUpperCase();
+}
+
+function decorateCards(){
+  document.querySelectorAll('#rc-grid .rc').forEach(card=>{
+    const bancoEl=card.querySelector('.rc-banco');
+    if(bancoEl&&!card.querySelector('.rc-banco-avatar')){
+      const name=bancoEl.textContent.trim();
+      const avatar=document.createElement('span');
+      avatar.className='rc-banco-avatar';
+      avatar.textContent=bankInitials(name);
+      const wrap=document.createElement('div');
+      wrap.className='rc-banco-wrap';
+      bancoEl.parentNode.insertBefore(wrap,bancoEl);
+      wrap.appendChild(avatar);
+      wrap.appendChild(bancoEl);
+    }
+    const badges=card.querySelector('.rc-badges');
+    if(badges&&!badges.querySelector('.tag-topic')){
+      const topics=(card.dataset.topic||'').split(/\s+/).filter(Boolean);
+      // Mostramos hasta 2 chips de tema
+      topics.slice(0,2).forEach(tp=>{
+        if(!TOPIC_EMOJI[tp])return;
+        const tag=document.createElement('span');
+        tag.className='tag-topic';
+        tag.innerHTML=`<span class="topic-emoji">${TOPIC_EMOJI[tp]}</span>${TOPIC_LABEL[tp]}`;
+        badges.appendChild(tag);
+      });
+    }
+  });
+}
+
+/* ═══ Glosario tooltip — envuelve términos técnicos automáticamente ═══ */
+const GLOS={
+  'TIR':'Tasa Interna de Retorno: el rendimiento anual que te queda si comprás un bono y lo mantenés hasta el final.',
+  'BCRA':'Banco Central de la República Argentina.',
+  'MEP':'Dólar bolsa: tipo de cambio que surge de comprar y vender bonos en pesos y dólares.',
+  'CCL':'Contado con Liquidación: dólar que se obtiene comprando un activo en pesos y vendiéndolo en el exterior.',
+  'brecha':'Diferencia % entre el dólar oficial y los dólares paralelos.',
+  'dot plot':'Gráfico que muestra dónde cada miembro de la Fed espera que estén las tasas en el futuro.',
+  'capex':'Gasto en bienes de capital: lo que una empresa invierte en plantas, máquinas o tecnología.',
+  'FCF':'Free Cash Flow: la plata que la empresa genera después de pagar todo lo necesario para operar.',
+  'RIGI':'Régimen de Incentivo a Grandes Inversiones (Argentina, 2024).',
+  'P/E':'Price/Earnings: cuántas veces la ganancia anual paga el precio de la acción.',
+  'OW':'Overweight: el banco recomienda tener más de ese activo que el promedio del mercado.',
+  'CER':'Coeficiente de Estabilización de Referencia: índice que ajusta por inflación.',
+  'LECAP':'Letra del Tesoro a tasa fija en pesos.',
+  'bps':'Puntos básicos: 100 bps = 1%. Se usa para tasas y spreads.',
+  'spread':'Diferencia entre dos tasas (típicamente, lo que paga un bono más riesgoso vs uno seguro).',
+  'GD30':'Bono argentino soberano en dólares con vencimiento en 2030 (Ley NY).',
+  'AL30':'Bono argentino soberano en dólares con vencimiento en 2030 (Ley local).',
+  'DXY':'Índice del dólar contra una canasta de monedas globales.'
+};
+function applyGlossary(root){
+  // Solo en bloques de texto (resúmenes, conclusiones, body)
+  const targets=root.querySelectorAll('.rc-sum-txt, .rc-block-body, .rc-conclusion-body');
+  targets.forEach(el=>{
+    if(el.dataset.glosDone)return;el.dataset.glosDone='1';
+    let html=el.innerHTML;
+    Object.keys(GLOS).sort((a,b)=>b.length-a.length).forEach(term=>{
+      const escaped=term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      const re=new RegExp(`(?<![\\w>])(${escaped})(?![\\w<])`,'g');
+      html=html.replace(re,`<span class="glos" tabindex="0" data-tip="${GLOS[term].replace(/"/g,'&quot;')}">$1</span>`);
+    });
+    el.innerHTML=html;
+  });
 }
 
 function countUp(el,tgt,pre,suf,dur=950){
@@ -3076,7 +3448,7 @@ const SYMS={'CL=F':{ids:['gk-wti','gk-wti2'],fmt:v=>'USD '+v.toFixed(1)},'BZ=F':
 async function fetchCommodities(){let ok=0;for(const[sym,cfg]of Object.entries(SYMS)){try{const r=await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?interval=1d&range=2d`);const d=await r.json();const price=d?.chart?.result?.[0]?.meta?.regularMarketPrice;const prev=d?.chart?.result?.[0]?.meta?.previousClose;if(!price)continue;const pct=prev?((price-prev)/prev*100):null;const pctStr=pct?(' ('+(pct>=0?'+':'')+pct.toFixed(1)+'%)'):'';cfg.ids.forEach(id=>setEl(id,cfg.fmt(price)+pctStr,pct?(pct>=0?'gv up':'gv dn'):'gv'));ok++;}catch(e){}}if(ok>0)setEl('st-comm','OK · '+nowStr());setEl('st-time',nowStr());}
 
 window.addEventListener('DOMContentLoaded',()=>{
-  initReveal();initCounts();
+  decorateCards();setupRegionButtons();initReveal();initCounts();setupFilters();openDeepLink();
   fetchBCRA();fetchDolar();fetchMerval();fetchCommodities();
 });
 setInterval(fetchDolar,60_000);setInterval(fetchMerval,60_000);setInterval(fetchCommodities,120_000);setInterval(fetchBCRA,300_000);
@@ -3087,6 +3459,539 @@ function toggleMacro(btn){
   btn.classList.toggle('is-open', !isOpen);
   body.classList.toggle('is-open', !isOpen);
 }
+</script>
+
+<!-- ═══ GLOBO 3D — Three.js + Natural Earth GeoJSON ═══ -->
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const wrap = document.getElementById('globe3d-wrap');
+const loadingEl = document.getElementById('globe3d-loading');
+const tooltipEl = document.getElementById('globe3d-tooltip');
+if(!wrap){ throw new Error('globe wrap missing'); }
+
+const W = wrap.clientWidth, H = wrap.clientHeight;
+const RADIUS = 1;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, W/H, 0.1, 100);
+camera.position.set(0, 0, 3.2);
+
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(W, H);
+wrap.appendChild(renderer.domElement);
+
+// Luz
+scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+const dir = new THREE.DirectionalLight(0xffffff, 0.9);
+dir.position.set(3, 2, 5);
+scene.add(dir);
+const rim = new THREE.DirectionalLight(0x4a90c8, 0.45);
+rim.position.set(-3, -1, -2);
+scene.add(rim);
+
+// Esfera oceano
+const oceanMat = new THREE.MeshPhongMaterial({
+  color: 0x0a2540,
+  emissive: 0x07172a,
+  shininess: 28,
+  specular: 0x224466
+});
+const ocean = new THREE.Mesh(new THREE.SphereGeometry(RADIUS, 64, 64), oceanMat);
+scene.add(ocean);
+
+// Atmosfera (sprite/halo simple via shader minimal)
+const atmosMat = new THREE.ShaderMaterial({
+  uniforms: { c: { value: 0.5 }, p: { value: 4.0 }, glowColor: { value: new THREE.Color(0x66aadd) } },
+  vertexShader: `
+    varying vec3 vN; varying vec3 vP;
+    void main(){ vN = normalize(normalMatrix * normal); vP = normalize((modelViewMatrix * vec4(position,1.0)).xyz); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }
+  `,
+  fragmentShader: `
+    uniform float c; uniform float p; uniform vec3 glowColor;
+    varying vec3 vN; varying vec3 vP;
+    void main(){ float intensity = pow(c - dot(vN, -vP), p); gl_FragColor = vec4(glowColor, 1.0) * intensity; }
+  `,
+  side: THREE.BackSide, blending: THREE.AdditiveBlending, transparent: true
+});
+const atmos = new THREE.Mesh(new THREE.SphereGeometry(RADIUS*1.18, 64, 64), atmosMat);
+scene.add(atmos);
+
+// Grupo continentes (lo que sumamos despues al cargar geojson)
+const continents = new THREE.Group();
+scene.add(continents);
+
+// Grupo markers
+const markers = new THREE.Group();
+scene.add(markers);
+
+// Grilla de meridianos/paralelos sutiles
+const grid = new THREE.Group();
+const gridMat = new THREE.LineBasicMaterial({ color: 0x4a90c8, transparent:true, opacity:0.13 });
+for(let lat=-60; lat<=60; lat+=30){
+  const pts=[]; for(let lon=-180; lon<=180; lon+=4){ pts.push(latLonToVec3(lat, lon, RADIUS*1.001)); }
+  grid.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), gridMat));
+}
+for(let lon=-180; lon<180; lon+=30){
+  const pts=[]; for(let lat=-90; lat<=90; lat+=4){ pts.push(latLonToVec3(lat, lon, RADIUS*1.001)); }
+  grid.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), gridMat));
+}
+scene.add(grid);
+
+// Controls (rotacion + zoom)
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.08;
+controls.rotateSpeed = 0.55;
+controls.enablePan = false;
+controls.minDistance = 1.6;
+controls.maxDistance = 5.0;
+controls.autoRotate = true;
+controls.autoRotateSpeed = 0.45;
+
+renderer.domElement.addEventListener('pointerdown', ()=>{ wrap.classList.add('dragging'); controls.autoRotate=false; });
+renderer.domElement.addEventListener('pointerup', ()=>{ wrap.classList.remove('dragging'); });
+wrap.addEventListener('mouseleave', ()=>{ controls.autoRotate=true; });
+
+// === Helpers ===
+function latLonToVec3(lat, lon, r){
+  const phi = (90 - lat) * Math.PI/180;
+  const theta = (lon + 180) * Math.PI/180;
+  const x = -r * Math.sin(phi) * Math.cos(theta);
+  const z =  r * Math.sin(phi) * Math.sin(theta);
+  const y =  r * Math.cos(phi);
+  return new THREE.Vector3(x,y,z);
+}
+
+// === Carga GeoJSON de paises (Natural Earth, simplificado) ===
+// Multiples fuentes con CORS abierto, probamos en orden hasta que una funcione.
+const GEO_URLS = [
+  'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json',           // TopoJSON (Natural Earth) — jsdelivr CDN, CORS OK
+  'https://unpkg.com/world-atlas@2/countries-110m.json',                       // espejo en unpkg
+  'https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_110m_admin_0_countries.geojson'
+];
+
+// Mapeo ISO_A3 -> region nuestra
+const COUNTRY_REGION = {
+  ARG:'argentina',
+  // Latam (sin Argentina, que es su propia region pero se solapa con latam)
+  BRA:'latam', CHL:'latam', URY:'latam', PRY:'latam', BOL:'latam', PER:'latam', COL:'latam', ECU:'latam', VEN:'latam', GUY:'latam', SUR:'latam',
+  MEX:'latam', GTM:'latam', BLZ:'latam', SLV:'latam', HND:'latam', NIC:'latam', CRI:'latam', PAN:'latam', CUB:'latam', DOM:'latam', HTI:'latam', JAM:'latam', PRI:'latam', TTO:'latam', BHS:'latam',
+  // Norteamerica
+  USA:'norteamerica', CAN:'norteamerica', GRL:'norteamerica',
+  // Europa
+  GBR:'europa', IRL:'europa', FRA:'europa', DEU:'europa', ITA:'europa', ESP:'europa', PRT:'europa', BEL:'europa', NLD:'europa', LUX:'europa', CHE:'europa', AUT:'europa', POL:'europa', CZE:'europa', SVK:'europa', HUN:'europa', ROU:'europa', BGR:'europa', GRC:'europa', SWE:'europa', NOR:'europa', FIN:'europa', DNK:'europa', ISL:'europa', EST:'europa', LVA:'europa', LTU:'europa', BLR:'europa', UKR:'europa', MDA:'europa', SRB:'europa', HRV:'europa', SVN:'europa', BIH:'europa', MNE:'europa', MKD:'europa', ALB:'europa', RUS:'europa',
+  // Medio Oriente
+  SAU:'medio-oriente', ARE:'medio-oriente', QAT:'medio-oriente', KWT:'medio-oriente', BHR:'medio-oriente', OMN:'medio-oriente', YEM:'medio-oriente', IRQ:'medio-oriente', IRN:'medio-oriente', SYR:'medio-oriente', JOR:'medio-oriente', LBN:'medio-oriente', ISR:'medio-oriente', PSE:'medio-oriente', TUR:'medio-oriente',
+  // Africa
+  EGY:'africa', LBY:'africa', TUN:'africa', DZA:'africa', MAR:'africa', ESH:'africa', MRT:'africa', MLI:'africa', NER:'africa', TCD:'africa', SDN:'africa', SSD:'africa', ETH:'africa', ERI:'africa', DJI:'africa', SOM:'africa', KEN:'africa', UGA:'africa', RWA:'africa', BDI:'africa', TZA:'africa', SEN:'africa', GMB:'africa', GNB:'africa', GIN:'africa', SLE:'africa', LBR:'africa', CIV:'africa', GHA:'africa', TGO:'africa', BEN:'africa', NGA:'africa', CMR:'africa', CAF:'africa', GAB:'africa', GNQ:'africa', COG:'africa', COD:'africa', AGO:'africa', ZMB:'africa', MWI:'africa', MOZ:'africa', ZWE:'africa', BWA:'africa', NAM:'africa', ZAF:'africa', LSO:'africa', SWZ:'africa', MDG:'africa',
+  // Asia
+  CHN:'asia', JPN:'asia', KOR:'asia', PRK:'asia', MNG:'asia', KAZ:'asia', UZB:'asia', TKM:'asia', TJK:'asia', KGZ:'asia', AFG:'asia', PAK:'asia', IND:'asia', NPL:'asia', BTN:'asia', BGD:'asia', LKA:'asia', MMR:'asia', THA:'asia', LAO:'asia', VNM:'asia', KHM:'asia', MYS:'asia', SGP:'asia', IDN:'asia', PHL:'asia', BRN:'asia', TLS:'asia', TWN:'asia',
+  // Oceania
+  AUS:'oceania', NZL:'oceania', PNG:'oceania', FJI:'oceania', SLB:'oceania', VUT:'oceania', NCL:'oceania',
+};
+
+const REGION_COLORS = {
+  argentina:    new THREE.Color(0xffd24a),
+  latam:        new THREE.Color(0x3fd673),
+  norteamerica: new THREE.Color(0x6aa9ff),
+  europa:       new THREE.Color(0xb78cff),
+  africa:       new THREE.Color(0xff9d5c),
+  'medio-oriente':new THREE.Color(0xff7a8a),
+  asia:         new THREE.Color(0x77e6d4),
+  oceania:      new THREE.Color(0xffd6a8),
+  default:      new THREE.Color(0x415a78)
+};
+const HIGHLIGHT = new THREE.Color(0xffd24a);
+
+// Convierte un anillo lat/lon a Vector3 puntos sobre la esfera
+function ringToPoints(ring, r){
+  const pts = [];
+  for(let i=0;i<ring.length;i++){
+    const [lon, lat] = ring[i];
+    pts.push(latLonToVec3(lat, lon, r));
+  }
+  return pts;
+}
+
+// Calcula area firmada de un anillo (positiva = CCW, negativa = CW)
+function ringArea(ring){
+  let area = 0;
+  for(let i=0,n=ring.length-1;i<n;i++){
+    area += (ring[i+1][0]-ring[i][0]) * (ring[i+1][1]+ring[i][1]);
+  }
+  return -area/2; // signo: positivo si CCW
+}
+
+// Normaliza orientacion: outer ring CCW, holes CW (convencion GeoJSON estandar)
+function normalizeRings(coords){
+  return coords.map((ring, i)=>{
+    const a = ringArea(ring);
+    const wantCCW = i === 0;
+    if((wantCCW && a < 0) || (!wantCCW && a > 0)){
+      return ring.slice().reverse();
+    }
+    return ring;
+  });
+}
+
+// Triangula un poligono lat/lon usando earcut. Asume rings ya normalizados.
+function earcutPolygon(coords){
+  const flat = [];
+  const holes = [];
+  let idx = 0;
+  for(let r=0; r<coords.length; r++){
+    const ring = coords[r];
+    if(r>0) holes.push(idx);
+    // Ring de GeoJSON cierra con punto repetido al final; lo descartamos
+    const last = ring.length-1;
+    const skipLast = ring[0][0]===ring[last][0] && ring[0][1]===ring[last][1];
+    const lim = skipLast ? last : ring.length;
+    for(let p=0; p<lim; p++){
+      flat.push(ring[p][0], ring[p][1]);
+      idx++;
+    }
+  }
+  return { flat, holes };
+}
+
+// earcut implementation minimalista (fan-triangulation por anillo simple si el poligono es convexo,
+// pero los paises NO siempre lo son. Cargamos earcut por CDN como modulo.
+// Mejor: usar la libreria via dynamic import.
+let earcut;
+async function loadEarcut(){
+  if(earcut) return earcut;
+  const sources = [
+    'https://cdn.jsdelivr.net/npm/earcut@2.2.4/+esm',
+    'https://esm.sh/earcut@2.2.4',
+    'https://cdn.skypack.dev/earcut@2.2.4'
+  ];
+  let lastErr;
+  for(const src of sources){
+    try{
+      const mod = await import(src);
+      earcut = mod.default || mod.earcut || mod;
+      if(typeof earcut === 'function') return earcut;
+      throw new Error('export inesperado');
+    }catch(e){ lastErr = e; console.warn('earcut fallo en', src, e.message); }
+  }
+  throw lastErr || new Error('earcut no disponible');
+}
+
+// Limpia un anillo: descarta el ultimo punto si es duplicado del primero,
+// y elimina puntos consecutivos identicos.
+function cleanRing(ring){
+  const out = [];
+  for(let i=0;i<ring.length;i++){
+    const p = ring[i];
+    const prev = out[out.length-1];
+    if(!prev || prev[0]!==p[0] || prev[1]!==p[1]) out.push(p);
+  }
+  // Si cierra duplicando el primero, lo quitamos
+  if(out.length>1){
+    const first = out[0], last = out[out.length-1];
+    if(first[0]===last[0] && first[1]===last[1]) out.pop();
+  }
+  return out;
+}
+
+// Subdivide un segmento para que sobre la esfera no atraviese el interior.
+function subdivideTriangle(a, b, c, maxStepDeg, out){
+  const dab = Math.hypot(b[0]-a[0], b[1]-a[1]);
+  const dbc = Math.hypot(c[0]-b[0], c[1]-b[1]);
+  const dca = Math.hypot(a[0]-c[0], a[1]-c[1]);
+  const maxD = Math.max(dab, dbc, dca);
+  if(maxD < maxStepDeg){
+    out.push(a, b, c);
+    return;
+  }
+  // Subdividir el lado mas largo
+  if(dab >= dbc && dab >= dca){
+    const m = [(a[0]+b[0])/2, (a[1]+b[1])/2];
+    subdivideTriangle(a, m, c, maxStepDeg, out);
+    subdivideTriangle(m, b, c, maxStepDeg, out);
+  } else if(dbc >= dca){
+    const m = [(b[0]+c[0])/2, (b[1]+c[1])/2];
+    subdivideTriangle(a, b, m, maxStepDeg, out);
+    subdivideTriangle(a, m, c, maxStepDeg, out);
+  } else {
+    const m = [(c[0]+a[0])/2, (c[1]+a[1])/2];
+    subdivideTriangle(a, b, m, maxStepDeg, out);
+    subdivideTriangle(m, b, c, maxStepDeg, out);
+  }
+}
+
+function buildCountryMesh(geometry, region){
+  const polys = geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates;
+  const positions = [];
+  const indices  = [];
+  let vCount = 0;
+  for(let polyRaw of polys){
+    // 1. Normalizar orientacion (outer CCW, holes CW)
+    const poly = normalizeRings(polyRaw).map(cleanRing).filter(r => r.length >= 3);
+    if(poly.length === 0) continue;
+
+    // 2. Aplanar para earcut (todo en coords lat/lon planas, SIN densificar)
+    const flat = [];
+    const holes = [];
+    let idx = 0;
+    for(let r=0; r<poly.length; r++){
+      if(r>0) holes.push(idx);
+      for(const p of poly[r]){ flat.push(p[0], p[1]); idx++; }
+    }
+    if(flat.length < 6) continue;
+
+    // 3. Triangular en 2D
+    const tris = earcut(flat, holes, 2);
+    if(!tris || tris.length === 0) continue;
+
+    // 4. Para cada triangulo 2D, subdividirlo y proyectar a la esfera
+    for(let t=0; t<tris.length; t+=3){
+      const ia = tris[t]*2, ib = tris[t+1]*2, ic = tris[t+2]*2;
+      const a = [flat[ia],   flat[ia+1]];
+      const b = [flat[ib],   flat[ib+1]];
+      const c = [flat[ic],   flat[ic+1]];
+      const subTris = [];
+      subdivideTriangle(a, b, c, 5, subTris);
+      for(let i=0;i<subTris.length;i+=3){
+        const p1=subTris[i], p2=subTris[i+1], p3=subTris[i+2];
+        const v1=latLonToVec3(p1[1], p1[0], RADIUS*1.002);
+        const v2=latLonToVec3(p2[1], p2[0], RADIUS*1.002);
+        const v3=latLonToVec3(p3[1], p3[0], RADIUS*1.002);
+        positions.push(v1.x,v1.y,v1.z, v2.x,v2.y,v2.z, v3.x,v3.y,v3.z);
+        indices.push(vCount, vCount+1, vCount+2);
+        vCount += 3;
+      }
+    }
+  }
+  if(positions.length===0) return null;
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  g.setIndex(indices);
+  g.computeVertexNormals();
+  const color = REGION_COLORS[region] || REGION_COLORS.default;
+  const mat = new THREE.MeshPhongMaterial({
+    color: color.clone().multiplyScalar(0.75),
+    emissive: color.clone().multiplyScalar(0.18),
+    shininess: 14,
+    specular: 0x222222,
+    side: THREE.DoubleSide
+  });
+  const mesh = new THREE.Mesh(g, mat);
+  mesh.userData.region = region;
+  mesh.userData.baseColor = color.clone().multiplyScalar(0.75);
+  // Borde del pais
+  const edges = new THREE.LineSegments(
+    new THREE.EdgesGeometry(g, 22),
+    new THREE.LineBasicMaterial({ color: 0x000000, transparent:true, opacity:0.35 })
+  );
+  mesh.add(edges);
+  return mesh;
+}
+
+// Markers 3D para cada region con cards
+function buildMarkers(){
+  // limpiar
+  while(markers.children.length){ const c = markers.children[0]; markers.remove(c); c.geometry?.dispose?.(); c.material?.dispose?.(); }
+  const counts = window.regionCounts ? window.regionCounts() : {};
+  for(const [region, latlon] of Object.entries(REGION_LATLON)){
+    const n = counts[region] || 0;
+    if(!n) continue;
+    const pos = latLonToVec3(latlon[0], latlon[1], RADIUS*1.04);
+    const isHot = n>=5, isCool = n<=2;
+    const color = isHot ? 0xff5145 : (isCool ? 0x3fd673 : 0xffd24a);
+    // Pin
+    const pinH = 0.16 + Math.min(n,8)*0.015;
+    const pinG = new THREE.ConeGeometry(0.025, pinH, 12);
+    pinG.translate(0, pinH/2, 0);
+    const pinM = new THREE.MeshPhongMaterial({ color, emissive:color, emissiveIntensity:0.45, shininess:30 });
+    const pin = new THREE.Mesh(pinG, pinM);
+    pin.position.copy(pos);
+    pin.lookAt(new THREE.Vector3(0,0,0));
+    pin.rotateX(Math.PI/2);
+    pin.userData = { region, count:n, isMarker:true };
+    markers.add(pin);
+    // Halo pulsante
+    const haloG = new THREE.RingGeometry(0.04, 0.07, 24);
+    const haloM = new THREE.MeshBasicMaterial({ color, transparent:true, opacity:0.55, side:THREE.DoubleSide });
+    const halo = new THREE.Mesh(haloG, haloM);
+    halo.position.copy(pos);
+    halo.lookAt(new THREE.Vector3(0,0,0));
+    halo.userData = { region, count:n, isMarker:true, isHalo:true, baseScale:1 };
+    markers.add(halo);
+  }
+}
+window.regionCounts = regionCounts; // expose
+
+// === Raycasting para hover/click ===
+const raycaster = new THREE.Raycaster();
+const pointer = new THREE.Vector2();
+let hoverRegion = null;
+
+function onPointerMove(e){
+  const rect = renderer.domElement.getBoundingClientRect();
+  pointer.x = ((e.clientX - rect.left) / rect.width)*2 - 1;
+  pointer.y = -((e.clientY - rect.top) / rect.height)*2 + 1;
+  raycaster.setFromCamera(pointer, camera);
+  // primero markers
+  const mHits = raycaster.intersectObjects(markers.children, false);
+  if(mHits.length){
+    const o = mHits[0].object;
+    setHover(o.userData.region, e.clientX - rect.left, e.clientY - rect.top, o.userData.count);
+    return;
+  }
+  // luego continentes
+  const cHits = raycaster.intersectObjects(continents.children, false);
+  if(cHits.length){
+    const o = cHits[0].object;
+    const counts = regionCounts();
+    setHover(o.userData.region, e.clientX - rect.left, e.clientY - rect.top, counts[o.userData.region]||0);
+  }else{
+    setHover(null);
+  }
+}
+function setHover(region, x, y, count){
+  // Limpia highlight previo
+  continents.children.forEach(m=>{
+    const baseRegion = m.userData.region;
+    const isCurrent = baseRegion === region;
+    m.material.color.copy(isCurrent ? HIGHLIGHT : m.userData.baseColor);
+    m.material.emissiveIntensity = isCurrent ? 0.4 : 0.2;
+  });
+  if(region){
+    tooltipEl.textContent = '';
+    const label = REGION_LABELS[region] || region;
+    tooltipEl.innerHTML = `${label}${count>0?`<span class="tt-count">${count}</span>`:''}`;
+    tooltipEl.style.left = x + 'px';
+    tooltipEl.style.top  = y + 'px';
+    tooltipEl.classList.add('show');
+    renderer.domElement.style.cursor = count>0 ? 'pointer' : 'default';
+  }else{
+    tooltipEl.classList.remove('show');
+    renderer.domElement.style.cursor = '';
+  }
+  hoverRegion = region;
+}
+function onClick(e){
+  if(hoverRegion && (regionCounts()[hoverRegion]||0)>0){
+    window.selectRegion(hoverRegion);
+  }
+}
+renderer.domElement.addEventListener('pointermove', onPointerMove);
+renderer.domElement.addEventListener('click', onClick);
+
+// Resize
+function onResize(){
+  const w = wrap.clientWidth, h = wrap.clientHeight;
+  camera.aspect = w/h; camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+}
+window.addEventListener('resize', onResize);
+
+// Focus de camara al seleccionar region
+window.globe3D = {
+  focusRegion(region){
+    if(region==='all'||region==='global'){
+      // resetear vista
+      animateCameraTo({ x:0, y:0, z:3.2 });
+      controls.autoRotate = true;
+      return;
+    }
+    const ll = REGION_LATLON[region] || REGION_LATLON.argentina;
+    const target = latLonToVec3(ll[0], ll[1], 2.6);
+    animateCameraTo({ x:target.x, y:target.y, z:target.z });
+    controls.autoRotate = false;
+  }
+};
+function animateCameraTo(end){
+  const start = { x:camera.position.x, y:camera.position.y, z:camera.position.z };
+  const t0 = performance.now();
+  const dur = 900;
+  function step(now){
+    const t = Math.min((now-t0)/dur, 1);
+    const e = 1 - Math.pow(1-t, 3);
+    camera.position.set(
+      start.x + (end.x - start.x)*e,
+      start.y + (end.y - start.y)*e,
+      start.z + (end.z - start.z)*e
+    );
+    camera.lookAt(0,0,0);
+    if(t<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// Loop
+let t0 = performance.now();
+function tick(){
+  const t = (performance.now() - t0)/1000;
+  // pulso de halos
+  markers.children.forEach(m=>{
+    if(m.userData.isHalo){
+      const s = 1 + Math.sin(t*2 + m.position.x*8) * 0.35;
+      m.scale.setScalar(s);
+      m.material.opacity = 0.55 - (s-1)*0.5;
+    }
+  });
+  controls.update();
+  renderer.render(scene, camera);
+  requestAnimationFrame(tick);
+}
+tick();
+
+// world-atlas usa codigos numericos ISO 3166-1, mapeamos los relevantes
+const NUMERIC_TO_ISO3 = {
+  '004':'AFG','008':'ALB','012':'DZA','020':'AND','024':'AGO','032':'ARG','036':'AUS','040':'AUT','044':'BHS','048':'BHR','050':'BGD','051':'ARM','052':'BRB','056':'BEL','060':'BMU','064':'BTN','068':'BOL','070':'BIH','072':'BWA','076':'BRA','084':'BLZ','090':'SLB','096':'BRN','100':'BGR','104':'MMR','108':'BDI','112':'BLR','116':'KHM','120':'CMR','124':'CAN','132':'CPV','140':'CAF','144':'LKA','148':'TCD','152':'CHL','156':'CHN','158':'TWN','170':'COL','174':'COM','178':'COG','180':'COD','188':'CRI','191':'HRV','192':'CUB','196':'CYP','203':'CZE','204':'BEN','208':'DNK','214':'DOM','218':'ECU','222':'SLV','226':'GNQ','231':'ETH','232':'ERI','233':'EST','242':'FJI','246':'FIN','250':'FRA','260':'ATF','262':'DJI','266':'GAB','268':'GEO','270':'GMB','275':'PSE','276':'DEU','288':'GHA','296':'KIR','300':'GRC','304':'GRL','308':'GRD','320':'GTM','324':'GIN','328':'GUY','332':'HTI','340':'HND','348':'HUN','352':'ISL','356':'IND','360':'IDN','364':'IRN','368':'IRQ','372':'IRL','376':'ISR','380':'ITA','384':'CIV','388':'JAM','392':'JPN','398':'KAZ','400':'JOR','404':'KEN','408':'PRK','410':'KOR','414':'KWT','417':'KGZ','418':'LAO','422':'LBN','426':'LSO','428':'LVA','430':'LBR','434':'LBY','438':'LIE','440':'LTU','442':'LUX','450':'MDG','454':'MWI','458':'MYS','466':'MLI','478':'MRT','480':'MUS','484':'MEX','492':'MCO','496':'MNG','498':'MDA','499':'MNE','504':'MAR','508':'MOZ','512':'OMN','516':'NAM','524':'NPL','528':'NLD','540':'NCL','548':'VUT','554':'NZL','558':'NIC','562':'NER','566':'NGA','578':'NOR','586':'PAK','591':'PAN','598':'PNG','600':'PRY','604':'PER','608':'PHL','616':'POL','620':'PRT','626':'TLS','630':'PRI','634':'QAT','642':'ROU','643':'RUS','646':'RWA','662':'LCA','682':'SAU','686':'SEN','688':'SRB','694':'SLE','702':'SGP','703':'SVK','704':'VNM','705':'SVN','706':'SOM','710':'ZAF','716':'ZWE','724':'ESP','728':'SSD','729':'SDN','740':'SUR','748':'SWZ','752':'SWE','756':'CHE','760':'SYR','762':'TJK','764':'THA','768':'TGO','780':'TTO','784':'ARE','788':'TUN','792':'TUR','795':'TKM','798':'TUV','800':'UGA','804':'UKR','807':'MKD','818':'EGY','826':'GBR','834':'TZA','840':'USA','854':'BFA','858':'URY','860':'UZB','862':'VEN','882':'WSM','887':'YEM','894':'ZMB'
+};
+
+async function fetchFirstAvailable(urls){
+  for(const url of urls){
+    try{
+      const r = await fetch(url);
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      return { url, json: await r.json() };
+    }catch(e){
+      console.warn('Intento fallido con', url, e.message);
+    }
+  }
+  throw new Error('Ningun CDN disponible');
+}
+
+(async ()=>{
+  try{
+    await loadEarcut();
+    const { url, json } = await fetchFirstAvailable(GEO_URLS);
+    let features;
+    if(json.type === 'Topology'){
+      // TopoJSON -> GeoJSON usando topojson-client desde CDN
+      const topo = await import('https://cdn.jsdelivr.net/npm/topojson-client@3/+esm');
+      const objKey = Object.keys(json.objects)[0]; // "countries"
+      const fc = topo.feature(json, json.objects[objKey]);
+      features = fc.features.map(f => ({
+        ...f,
+        properties: { ...f.properties, ISO_A3: NUMERIC_TO_ISO3[String(f.id).padStart(3,'0')] || '' }
+      }));
+    }else{
+      features = json.features;
+    }
+    let added = 0;
+    for(const f of features){
+      const iso = f.properties.ISO_A3 || f.properties.ADM0_A3 || '';
+      const region = COUNTRY_REGION[iso];
+      if(!region) continue;
+      const mesh = buildCountryMesh(f.geometry, region);
+      if(mesh){ continents.add(mesh); added++; }
+    }
+    console.log('Mapa cargado desde', url, '·', added, 'paises');
+    buildMarkers();
+    loadingEl.classList.add('hidden');
+  }catch(err){
+    console.error('No se pudo cargar el mapa', err);
+    loadingEl.innerHTML = `<div style="color:var(--r);font-size:13px;text-align:center">No se pudo cargar el mapa.<br><span style="color:var(--t3);font-size:11px">${err.message}</span><br>Revisá tu conexión y refrescá.</div>`;
+  }
+})();
 </script>
 </body>
 </html>
