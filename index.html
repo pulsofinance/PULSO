@@ -619,6 +619,78 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
      Pegá estos bloques DENTRO de <div class="research-grid" id="rc-grid">
      TAMBIÉN: en el CSS cambiá .rc-gancho { font-size: 15.5px } → font-size: 14px
 ═══════════════════════════════════════════════════════ -->
+  <div class="rc medio" data-impact="medio" data-topic="renta fija argentina" data-region="argentina" id="bind-dual-txmj9-mayo26">
+  <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
+    <div class="rc-hook-top">
+      <span class="rc-banco">BIND Inversiones — Trade Idea · Buenos Aires</span>
+      <div class="rc-hookright">
+        <span class="rc-fecha">05 MAY</span>
+        <button class="share-btn" onclick="shareCard(event,'bind-dual-txmj9-mayo26')" title="Compartir esta card" aria-label="Compartir">↗</button>
+        <span class="rc-arr">▶</span>
+      </div>
+    </div>
+    <div class="rc-gancho">El nuevo Dual TXMJ9 es un bono CER puro más una opción TAMAR implícita — <em><span style="color:#ff6b35;">Monte Carlo de 1.000 escenarios le pone precio: equivale a CER+6,6% en escenario base</span></em></div>
+    <div class="rc-bottom-row">
+      <div class="rc-badges">
+        <span class="ibadge ib-m">
+          <span class="ibdot"></span>IMPACTO MEDIO
+        </span>
+      </div>
+      <div class="rc-pulso-hook">La opción TAMAR vale entre 150 y 350 bps sobre CER</div>
+    </div>
+  </div>
+  <div class="rc-l1">
+    <div class="rc-summary">
+      <div class="rc-sum-tag">// Lectura PULSO</div>
+      <div class="rc-sum-txt">BIND Inversiones cuantifica formalmente la opcionalidad implícita del nuevo Dual TXMJ9 (vence junio 2029, zero-coupon bullet, paga el máximo entre CER y TAMAR+3% TEM). El análisis descompone el instrumento en dos piezas: un bono CER puro que rinde aproximadamente <span class="dato">8% real anual</span> para ese plazo, más una opción call sobre el diferencial de la tasa TAMAR real. Usando simulación de Monte Carlo con modelo Hull-White sobre <span class="dato">1.000 escenarios</span> y dos regímenes de volatilidad calibrados con datos históricos, BIND concluye que la pata TAMAR supera al benchmark CER en aproximadamente el <span class="dato">25%</span> de los escenarios, con un exceso promedio de <span class="dato">$150 reales por VN100</span> cuando se activa. El valor esperado de esa opción ubica el equilibrio teórico del instrumento en <span class="dato">CER+6,6%</span> en volatilidad acotada y hasta <span class="dato">CER+9,5%</span> en volatilidad disruptiva. <span class="key">La paradoja central: la alta volatilidad que matemáticamente encarece la opción, en la práctica argentina suele coincidir con tasas reales negativas — lo que limita el payoff real de la pata TAMAR.</span> <span class="bull">Para inversores institucionales: el ejercicio de BIND es la herramienta más rigurosa disponible hasta ahora para pricear si el TXMJ9 está caro o barato respecto a un Boncer puro equivalente.</span></div>
+      <div class="rc-sum-by">— PULSO</div>
+    </div>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
+      <span class="rc-exp-label">Leer análisis completo</span>
+      <span class="rc-exp-arr">▶</span>
+    </button>
+  </div>
+  <div class="rc-l2">
+    <div class="rc-full">
+      <div class="rc-full-header">
+        <span class="rc-full-label">BIND Inversiones · 05 MAY — Trade Idea: Juego de Gemelas (tasas)</span>
+        <span class="rc-full-source">Trading Desk · BIND Inversiones / Industrial Valores S.A.</span>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">La estructura del TXMJ9: qué es lo que realmente se está comprando</div>
+        <div class="rc-block-body">
+          <p>El Bono Dual TXMJ9, emitido el 30 de abril con vencimiento el 29 de junio de 2029, es un instrumento zero-coupon con estructura bullet: no paga cupones intermedios y al vencimiento liquida el máximo entre el ajuste CER acumulado y la TAMAR capitalizada con un margen de <span class="dato">+3% TEM</span>. BIND lo descompone en dos partes analíticamente separables: un bono CER puro equivalente —que para ese plazo rinde aproximadamente <span class="dato">8% real anual</span> en el mercado secundario— más una opción call implícita que solo tiene valor si la TAMAR real supera al CER durante la vida del instrumento.</p>
+          <p>La analogía es precisa: quien compra el TXMJ9 está pagando por la certeza del rendimiento CER y recibiendo gratuitamente —o a bajo costo— la posibilidad de que la pata TAMAR lo supere. El desafío cuantitativo es determinar cuánto vale esa opcionalidad para saber si el precio al que cotiza el instrumento es justo, caro o barato respecto a un Boncer puro de plazo equivalente.</p>
+        </div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">La metodología: Hull-White, Monte Carlo y dos regímenes de volatilidad</div>
+        <div class="rc-block-body">
+          <p>Para valuar la opción implícita, BIND modeló las variaciones de la tasa TAMAR en términos reales efectivos anuales mediante una simulación de Monte Carlo de <span class="dato">1.000 escenarios</span> usando el modelo estocástico Hull-White. Este modelo incorpora el efecto pull-to-par —la volatilidad del precio cae a medida que el bono se acerca al vencimiento— y proyecta <span class="dato">756 ruedas operativas</span> partiendo de una tasa real inicial de <span class="dato">-10%</span> anual efectivo, que es donde estaba la TAMAR real al momento del análisis.</p>
+          <p>La calibración usa dos regímenes históricos. El régimen de estabilidad (2016-2018) muestra una volatilidad mensual de la tasa real de <span class="dato">7%</span>. El régimen de estrés (2018-2019) sube a <span class="dato">12,52%</span> mensual. El período actual de TAMAR (2024-2026) es el de mayor volatilidad del panel con <span class="dato">14,03%</span> mensual, pero con una particularidad: a diferencia del estrés histórico, la distribución tiene una cola pesada en el extremo positivo capturando tasas reales superiores al <span class="dato">20%</span> anual —algo inédito en los períodos anteriores. El modelo asume reversión a la media hacia el <span class="dato">8%</span> anual con velocidad de <span class="dato">0,10 mensual</span>.</p>
+        </div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">El resultado: la opción vale entre 150 y 350 bps, equivalente a CER+6,6% en base</div>
+        <div class="rc-block-body">
+          <p>El benchmark de referencia para el ejercicio es el precio futuro esperado de un Boncer puro con vencimiento en marzo 2029, estimado en <span class="dato">$127 reales por VN100</span>. Sobre esa base, los resultados de la simulación muestran que la pata TAMAR supera al benchmark CER en aproximadamente el <span class="dato">25%</span> de los escenarios simulados. En esos escenarios donde la opción "entra in the money", el exceso promedio sobre el CER base es de <span class="dato">$150 reales por VN100</span>.</p>
+          <p>Multiplicando la magnitud del payoff por su probabilidad de ocurrencia y descontando a valor presente, BIND concluye que en el escenario de volatilidad acotada la opción vale aproximadamente <span class="dato">150 bps</span>, lo que ubica el equilibrio teórico del instrumento en <span class="dato">CER+6,6%</span>. En el escenario de volatilidad disruptiva la prima puede llegar a <span class="dato">350 bps</span>, equivalente a <span class="dato">CER+9,5%</span>, aunque en ese escenario la evidencia empírica sugiere que la tasa real puede no ser sostenible.</p>
+        </div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">La paradoja argentina: más volatilidad no siempre es mejor para el tenedor</div>
+        <div class="rc-block-body">
+          <p>El análisis de BIND revela una contradicción estructural entre la teoría de opciones y la realidad argentina. En la teoría clásica, mayor volatilidad implica opciones más valiosas —a mayor dispersión de outcomes, mayor probabilidad de que el call entre in the money. Pero en Argentina, los episodios de alta volatilidad macroeconómica o cambiaria históricamente coinciden con tasas reales negativas, no positivas. <span class="key">La volatilidad que matemáticamente encarece la opción TAMAR es la misma que en la práctica destruye el rendimiento real de la pata variable.</span> Esto implica que el valor esperado de la opción en escenarios de estrés es inferior a lo que sugeriría una valuación puramente teórica, y que el instrumento protege más eficazmente en escenarios de normalidad con sorpresas positivas de tasas que en escenarios de crisis.</p>
+        </div>
+      </div>
+      <div class="rc-conclusion">
+        <div class="rc-conclusion-title">Qué pasa con Argentina y qué tenés que tener en cuenta</div>
+        <div class="rc-conclusion-body">El ejercicio de BIND complementa perfectamente el análisis de 1816 de la semana pasada sobre el mismo instrumento. Mientras 1816 cuantificó el partial fixing risk y concluyó que el TXMJ9 cubre entre el <span class="dato">62% y 98%</span> de un shock de tasa según el plazo remanente, BIND ahora pone precio a la opcionalidad implícita usando un marco formal de derivados. La conclusión práctica es que si el TXMJ9 cotiza por encima de lo que equivaldría a <span class="dato">CER+6,6%</span> en el mercado secundario, el inversor está pagando más que el valor esperado teórico de la opción en un escenario de volatilidad normal. Si cotiza por debajo, está comprando la opción con descuento. Hoy, con el instrumento rindiendo en torno a <span class="dato">TAMAR+7,95%</span> según 1816 y un Boncer 2029 en la zona de <span class="dato">CER+7%</span>, la lectura conjunta sugiere que <span class="key">el instrumento está aproximadamente bien priceado en el escenario base, con valor adicional si la volatilidad de tasas se mantiene en el régimen actual —el de mayor desvío histórico pero con cola positiva inédita.</span> Para carteras institucionales con tolerancia al mark to market, el TXMJ9 sigue siendo la posición más interesante del tramo largo en pesos.</div>
+        <div class="rc-by">— Análisis PULSO</div>
+      </div>
+    </div>
+  </div>
+</div>
   <div class="rc alto" data-impact="alto" data-topic="mercado local acciones" data-region="argentina" id="1816-fgs-compras-acciones-mayo26">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
