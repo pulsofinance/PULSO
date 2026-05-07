@@ -180,13 +180,17 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 .search-input:focus{border-color:var(--a);box-shadow:0 0 0 3px var(--a-dim)}
 
 /* GRID */
-.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:14px;background:transparent;}
+.research-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding:16px;background:transparent;}
 
 /* ═══════════════════════════════
    RESEARCH CARD — 3 NIVELES
 ═══════════════════════════════ */
 .rc{background:var(--card);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s,background .2s,border-color .2s;border:1px solid var(--border);border-radius:10px;}
 .rc::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:10px 0 0 10px;transition:width .25s}
+.rc-new-badge{position:absolute;top:10px;left:14px;font-size:7px;font-weight:700;letter-spacing:.1em;color:#000;background:var(--g);padding:1px 5px;border-radius:20px;text-transform:uppercase;z-index:10;box-shadow:0 0 6px var(--glow-g)}
+.rc-week-sep{grid-column:1/-1;display:flex;align-items:center;gap:1rem;padding:.2rem 0}
+.rc-week-sep-line{flex:1;height:1px;background:var(--border2)}
+.rc-week-sep-label{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--a);text-transform:uppercase;white-space:nowrap}
 .rc.alto::after{background:var(--r);box-shadow:0 0 12px var(--glow-r)}
 .rc.medio::after{background:var(--a);box-shadow:0 0 12px var(--glow-a)}
 .rc.bajo::after{background:var(--g);box-shadow:0 0 12px var(--glow-g)}
@@ -411,7 +415,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 
 /* MOBILE */
 @media(max-width:980px){.research-grid{grid-template-columns:1fr 1fr}.geo-grid{grid-template-columns:1fr 1fr}.cartera-grid{grid-template-columns:1fr}.numeros-band{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:640px){.research-grid{grid-template-columns:1fr}.ev-grid,.geo-grid{grid-template-columns:1fr}.cartera-grid{grid-template-columns:1fr}.numeros-band{grid-template-columns:1fr 1fr}nav{padding:0 .9rem;height:50px}.nav-name{font-size:17px}.nav-sub,.nav-ed{display:none}.rc-gancho{font-size:15.5px}.rc-banco{font-size:11px}.research-hero{padding:.6rem .9rem}.fbtn{font-size:11px;padding:4px 9px}}
+@media(max-width:640px){.research-grid{grid-template-columns:1fr}.ev-grid,.geo-grid{grid-template-columns:1fr}.cartera-grid{grid-template-columns:1fr}.numeros-band{grid-template-columns:1fr 1fr}nav{padding:0 .9rem;height:50px}.nav-name{font-size:17px}.nav-sub,.nav-ed,.nav-temp,.nav-live{display:none}.rc-gancho{font-size:15.5px}.rc-banco{font-size:11px}.research-hero{padding:.6rem .9rem}.fbtn{font-size:11px;padding:4px 9px}}
 
 /* ═══════════════════════════════════
    MACRO PANEL — 7 bloques colapsables
@@ -504,7 +508,6 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
   <div class="nav-right">
     <span class="nav-temp" title="Termómetro de la semana">🌡 Semana volátil</span>
-    <span class="nav-ed">Ed.002 · 17 Mar 2026</span>
     <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">☀ Claro</button>
     <span class="nav-live"><span class="pulse-dot"></span>En vivo</span>
   </div>
@@ -528,21 +531,6 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   <div class="si"><span class="si-dot dr"></span>UPDT <span id="st-time">—</span></div>
 </div>
 
-<div class="ticker-wrap reveal">
-  <div class="ticker-lbl">ARG</div>
-  <div class="tt">
-    <div class="ti"><span class="ts">OFICIAL</span><span class="tv" id="tk-of">—</span></div><div class="ti"><span class="ts">BLUE</span><span class="tv dn" id="tk-bl">—</span></div><div class="ti"><span class="ts">MEP</span><span class="tv" id="tk-mep">—</span></div><div class="ti"><span class="ts">BRECHA</span><span class="tv dn" id="tk-br">—</span></div><div class="ti"><span class="ts">RESERVAS</span><span class="tv" id="tk-res">—</span></div><div class="ti"><span class="ts">RIESGO PAÍS</span><span class="tv dn">582 bps</span></div><div class="ti"><span class="ts">MERVAL</span><span class="tv up" id="tk-mv">—</span></div><div class="ti"><span class="ts">INFLACIÓN</span><span class="tv dn">2.9%</span></div><div class="ti"><span class="ts">GD30</span><span class="tv dn">9.6% TIR</span></div><div class="ti"><span class="ts">AL30</span><span class="tv dn">11.0% TIR</span></div><div class="ti"><span class="ts">YPF</span><span class="tv up">USD 38 · OW USD 61</span></div><div class="ti"><span class="ts">SANTA FE 34</span><span class="tv">8.7% TIR</span></div><div class="ti"><span class="ts">GASTO PRIMARIO</span><span class="tv up">14.2% PIB · mín. 2007</span></div>
-    <div class="ti"><span class="ts">OFICIAL</span><span class="tv" id="tk-of2">—</span></div><div class="ti"><span class="ts">BLUE</span><span class="tv dn" id="tk-bl2">—</span></div><div class="ti"><span class="ts">MEP</span><span class="tv" id="tk-mep2">—</span></div><div class="ti"><span class="ts">BRECHA</span><span class="tv dn" id="tk-br2">—</span></div><div class="ti"><span class="ts">RESERVAS</span><span class="tv" id="tk-res2">—</span></div><div class="ti"><span class="ts">RIESGO PAÍS</span><span class="tv dn">582 bps</span></div><div class="ti"><span class="ts">MERVAL</span><span class="tv up" id="tk-mv2">—</span></div><div class="ti"><span class="ts">INFLACIÓN</span><span class="tv dn">2.9%</span></div><div class="ti"><span class="ts">GD30</span><span class="tv dn">9.6% TIR</span></div><div class="ti"><span class="ts">AL30</span><span class="tv dn">11.0% TIR</span></div><div class="ti"><span class="ts">YPF</span><span class="tv up">USD 38 · OW USD 61</span></div><div class="ti"><span class="ts">SANTA FE 34</span><span class="tv">8.7% TIR</span></div><div class="ti"><span class="ts">GASTO PRIMARIO</span><span class="tv up">14.2% PIB · mín. 2007</span></div>
-  </div>
-</div>
-
-<div class="geo-wrap reveal">
-  <div class="geo-lbl">GEO</div>
-  <div class="gt">
-    <div class="gi"><span class="gtag">WTI</span><span class="gv" id="gk-wti">—</span></div><div class="gi"><span class="gtag">BRENT</span><span class="gv" id="gk-brent">—</span></div><div class="gi"><span class="gtag">ORO</span><span class="gv" id="gk-gold">—</span></div><div class="gi"><span class="gtag">SOJA</span><span class="gv am">USD 445/t</span></div><div class="gi"><span class="gtag">DXY</span><span class="gv" id="gk-dxy">—</span></div><div class="gi"><span class="gtag">S&P 500</span><span class="gv" id="gk-spx">—</span></div><div class="gi"><span class="gtag">COBRE</span><span class="gv" id="gk-copper">—</span></div><div class="gi"><span class="gtag">IRÁN</span><span class="gv dn">Hormuz · Brent +50% YTD</span></div><div class="gi"><span class="gtag">FED</span><span class="gv dim">Miérc 18 · dot plot clave</span></div><div class="gi"><span class="gtag">MSFT</span><span class="gv up">P/E 22.9x · mín. 10 años</span></div>
-    <div class="gi"><span class="gtag">WTI</span><span class="gv" id="gk-wti2">—</span></div><div class="gi"><span class="gtag">BRENT</span><span class="gv" id="gk-brent2">—</span></div><div class="gi"><span class="gtag">ORO</span><span class="gv" id="gk-gold2">—</span></div><div class="gi"><span class="gtag">SOJA</span><span class="gv am">USD 445/t</span></div><div class="gi"><span class="gtag">DXY</span><span class="gv" id="gk-dxy2">—</span></div><div class="gi"><span class="gtag">S&P 500</span><span class="gv" id="gk-spx2">—</span></div><div class="gi"><span class="gtag">COBRE</span><span class="gv" id="gk-copper2">—</span></div><div class="gi"><span class="gtag">IRÁN</span><span class="gv dn">Hormuz · Brent +50% YTD</span></div><div class="gi"><span class="gtag">FED</span><span class="gv dim">Miérc 18 · dot plot clave</span></div><div class="gi"><span class="gtag">MSFT</span><span class="gv up">P/E 22.9x · mín. 10 años</span></div>
-  </div>
-</div>
 
 <!-- ══ GLOBO 3D (Three.js) ══ -->
 <section class="globe-section reveal">
@@ -608,12 +596,13 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
         - rc-block-body: tu narración detallada
      7. rc-conclusion: tu veredicto final
 ════════════════════════════════════════ -->
-  <!-- ═══════════════════════════════════════════════════════
-     PULSO — 5 BLOQUES NUEVOS PARA PEGAR EN rc-grid
-     Pegá estos bloques DENTRO de <div class="research-grid" id="rc-grid">
-     TAMBIÉN: en el CSS cambiá .rc-gancho { font-size: 15.5px } → font-size: 14px
-═══════════════════════════════════════════════════════ -->
+  <div class="rc-week-sep">
+    <div class="rc-week-sep-line"></div>
+    <div class="rc-week-sep-label">⬤ Esta semana · May 2026</div>
+    <div class="rc-week-sep-line"></div>
+  </div>
   <div class="rc medio" data-impact="medio" data-topic="economia argentina" data-region="argentina" id="ojf-iga-marzo26">
+  <span class="rc-new-badge">NUEVO</span>
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">OJF & Asociados — Actividad Económica · Buenos Aires</span>
@@ -674,6 +663,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   <div class="rc alto" data-impact="alto" data-topic="economia argentina" data-region="argentina" id="barclays-credito-popularidad-milei-mayo26">
+  <span class="rc-new-badge">NUEVO</span>
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Barclays Research — EM Strategy · Nueva York</span>
@@ -741,6 +731,11 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
+  <div class="rc-week-sep">
+    <div class="rc-week-sep-line"></div>
+    <div class="rc-week-sep-label">Ediciones anteriores · Mar 2026</div>
+    <div class="rc-week-sep-line"></div>
+  </div>
   <div class="rc medio" data-impact="medio" data-topic="renta fija argentina" data-region="argentina" id="bind-dual-txmj9-mayo26">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
@@ -3642,7 +3637,6 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 </div>
 
 <div class="firma reveal">
-  <div class="firma-l">PULSO · <b>Federico R.</b> · La Plata, Argentina · Ed.002 · 17 Mar 2026</div>
   <div class="firma-r">No es asesoramiento de inversión</div>
 </div>
 
@@ -3657,6 +3651,38 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 </script>
 
 <script>
+async function loadBCRA(){
+  try {
+    const r = await fetch('https://api.bcra.gob.ar/estadisticas/v2.0/principalesvariables');
+    const d = await r.json();
+    const vars = d.results;
+    const find = kw => vars.find(v => v.descripcion.toLowerCase().includes(kw.toLowerCase()));
+
+    const res = find('Reservas Internacionales');
+    if(res){
+      const val = 'USD ' + Number(res.valor).toLocaleString('es-AR') + 'M';
+      ['tk-res','tk-res2'].forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent=val; });
+    }
+
+    const tc = find('tipo de cambio');
+    if(tc){
+      const val = '$' + Number(tc.valor).toLocaleString('es-AR',{minimumFractionDigits:2,maximumFractionDigits:2});
+      ['tk-tc','tk-tc2'].forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent=val; });
+    }
+
+    const tpm = find('política monetaria') || find('pases pasivos') || find('tasa de política');
+    if(tpm){
+      const val = Number(tpm.valor).toFixed(1) + '% TNA';
+      ['tk-tpm','tk-tpm2'].forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent=val; });
+    }
+
+    const updt = document.getElementById('st-time');
+    if(updt){ const n=new Date(); updt.textContent=n.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'})+' hs'; }
+
+  } catch(e){ console.warn('BCRA API error:', e); }
+}
+loadBCRA();
+
 function toggleTheme(){const h=document.documentElement,d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('themeBtn').textContent=d?'☾ Oscuro':'☀ Claro';}
 
 function toggleL1(c){
