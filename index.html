@@ -238,6 +238,15 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 .rc-week-sep{grid-column:1/-1;display:flex;align-items:center;gap:1rem;padding:.2rem 0}
 .rc-week-sep-line{flex:1;height:1px;background:var(--border2)}
 .rc-week-sep-label{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--a);text-transform:uppercase;white-space:nowrap}
+
+/* Section headers */
+.rc-shdr{grid-column:1/-1;display:flex;align-items:center;gap:1rem;padding:1.4rem 0 .5rem;margin-top:.2rem}
+.rc-shdr-ico{width:40px;height:40px;border-radius:10px;background:var(--bg3);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.rc-shdr-body{display:flex;flex-direction:column;gap:2px;flex:1}
+.rc-shdr-title{font-size:17px;font-weight:700;color:var(--t);letter-spacing:-.02em;line-height:1.2}
+.rc-shdr-sub{font-size:11px;color:var(--t3);letter-spacing:.04em;text-transform:uppercase}
+.rc-shdr-count{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;color:var(--t3);background:var(--bg3);border:1px solid var(--border);padding:3px 8px;border-radius:4px;white-space:nowrap;letter-spacing:.04em;flex-shrink:0}
+.rc-shdr-line{flex:1;height:1px;background:var(--border);display:none}
 .rc.alto::after{background:var(--r);box-shadow:0 0 12px var(--glow-r)}
 .rc.medio::after{background:var(--a);box-shadow:0 0 12px var(--glow-a)}
 .rc.bajo::after{background:var(--g);box-shadow:0 0 12px var(--glow-g)}
@@ -773,12 +782,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   <div class="filter-row" data-filter-group="topic">
     <span class="filter-label">Tema</span>
     <button class="fbtn active" data-filter="topic" data-value="all"><span class="topic-emoji">📊</span>Todos <span class="fcount" data-count="all"></span></button>
-    <button class="fbtn" data-filter="topic" data-value="argentina"><span class="topic-emoji">🇦🇷</span>Argentina <span class="fcount" data-count="argentina"></span></button>
-    <button class="fbtn" data-filter="topic" data-value="internacional"><span class="topic-emoji">🌎</span>Internacional <span class="fcount" data-count="internacional"></span></button>
-    <button class="fbtn" data-filter="topic" data-value="geopolitica"><span class="topic-emoji">⚔️</span>Geopolítica <span class="fcount" data-count="geopolitica"></span></button>
-    <button class="fbtn" data-filter="topic" data-value="empresas"><span class="topic-emoji">🏢</span>Empresas <span class="fcount" data-count="empresas"></span></button>
-    <button class="fbtn" data-filter="topic" data-value="commodities"><span class="topic-emoji">🛢️</span>Commodities <span class="fcount" data-count="commodities"></span></button>
-    <button class="fbtn" data-filter="topic" data-value="tecnologia"><span class="topic-emoji">🤖</span>Tecnología <span class="fcount" data-count="tecnologia"></span></button>
+    <button class="fbtn" data-filter="topic" data-value="research"><span class="topic-emoji">📈</span>Research <span class="fcount" data-count="research"></span></button>
+    <button class="fbtn" data-filter="topic" data-value="diarios"><span class="topic-emoji">📰</span>Diarios <span class="fcount" data-count="diarios"></span></button>
   </div>
   <div class="filter-row" data-filter-group="impact">
     <span class="filter-label">Impacto</span>
@@ -803,12 +808,15 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
         - rc-block-body: tu narración detallada
      7. rc-conclusion: tu veredicto final
 ════════════════════════════════════════ -->
-  <div class="rc-week-sep">
-    <div class="rc-week-sep-line"></div>
-    <div class="rc-week-sep-label">⬤ Esta semana · May 2026</div>
-    <div class="rc-week-sep-line"></div>
+  <div class="rc-shdr">
+    <div class="rc-shdr-ico">🇦🇷</div>
+    <div class="rc-shdr-body">
+      <div class="rc-shdr-title">Argentina esta semana</div>
+      <div class="rc-shdr-sub">Reportes de bancos · May 2026</div>
+    </div>
+    <div class="rc-shdr-count">2 reportes</div>
   </div>
-  <div class="rc alto" data-impact="alto" data-topic="mercados argentina" data-region="argentina" id="mariva-argentina-fi-mayo26">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="mariva-argentina-fi-mayo26">
   <span class="rc-new-badge">NUEVO</span>
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
@@ -892,7 +900,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto" data-topic="economia argentina" data-region="argentina" id="bcra-rem-abril26">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="bcra-rem-abril26">
   <span class="rc-new-badge">NUEVO</span>
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
@@ -968,7 +976,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc medio" data-impact="medio" data-topic="economia argentina" data-region="argentina" id="ojf-iga-marzo26">
+  <div class="rc medio" data-impact="medio" data-topic="research" data-region="argentina" id="ojf-iga-marzo26">
   <span class="rc-new-badge">NUEVO</span>
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
@@ -1029,7 +1037,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto" data-topic="economia argentina" data-region="argentina" id="barclays-credito-popularidad-milei-mayo26">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="barclays-credito-popularidad-milei-mayo26">
   <span class="rc-new-badge">NUEVO</span>
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
@@ -1098,14 +1106,17 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc-week-sep">
-    <div class="rc-week-sep-line"></div>
-    <div class="rc-week-sep-label">📰 WSJ · 7 MAY 2026</div>
-    <div class="rc-week-sep-line"></div>
+  <div class="rc-shdr">
+    <div class="rc-shdr-ico">🌍</div>
+    <div class="rc-shdr-body">
+      <div class="rc-shdr-title">Macro Global</div>
+      <div class="rc-shdr-sub">WSJ · 7 May 2026 — Fed, petróleo, commodities</div>
+    </div>
+    <div class="rc-shdr-count">3 noticias</div>
   </div>
 
   <!-- WSJ 1: FED / WARSH -->
-  <div class="rc alto" data-impact="alto" data-topic="internacional" data-region="global" id="wsj-fed-warsh-mayo26">
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="global" id="wsj-fed-warsh-mayo26">
   <span class="rc-new-badge">NUEVO</span>
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
@@ -1162,7 +1173,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 </div>
 
   <!-- WSJ 2: EEUU-IRÁN / PETRÓLEO -->
-  <div class="rc alto" data-impact="alto" data-topic="commodities" data-region="global" id="wsj-iran-petroleo-mayo26">
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="global" id="wsj-iran-petroleo-mayo26">
   <span class="rc-new-badge">NUEVO</span>
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
@@ -1218,7 +1229,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 </div>
 
   <!-- WSJ 3: UCRANIA / GRANOS -->
-  <div class="rc alto" data-impact="alto" data-topic="commodities" data-region="global" id="wsj-ucrania-granos-mayo26">
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="global" id="wsj-ucrania-granos-mayo26">
   <span class="rc-new-badge">NUEVO</span>
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
@@ -1273,8 +1284,17 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
 
+  <div class="rc-shdr">
+    <div class="rc-shdr-ico">🤖</div>
+    <div class="rc-shdr-body">
+      <div class="rc-shdr-title">Tecnología & Geopolítica digital</div>
+      <div class="rc-shdr-sub">WSJ · 7 May 2026 — IA, DeepSeek, China-EEUU</div>
+    </div>
+    <div class="rc-shdr-count">2 noticias</div>
+  </div>
+
   <!-- WSJ 4: IA / DEEPSEEK + ANTHROPIC -->
-  <div class="rc alto" data-impact="alto" data-topic="tecnologia" data-region="global" id="wsj-ia-deepseek-anthropic-mayo26">
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="global" id="wsj-ia-deepseek-anthropic-mayo26">
   <span class="rc-new-badge">NUEVO</span>
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
@@ -1336,7 +1356,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 </div>
 
   <!-- WSJ 5: CHINA-EEUU / IA DIPLOMACIA -->
-  <div class="rc alto" data-impact="alto" data-topic="geopolitica" data-region="global" id="wsj-china-eeuu-ia-mayo26">
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="global" id="wsj-china-eeuu-ia-mayo26">
   <span class="rc-new-badge">NUEVO</span>
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
@@ -1391,12 +1411,14 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
 
-  <div class="rc-week-sep">
-    <div class="rc-week-sep-line"></div>
-    <div class="rc-week-sep-label">Ediciones anteriores · Mar 2026</div>
-    <div class="rc-week-sep-line"></div>
+  <div class="rc-shdr" style="padding-top:2rem;opacity:.7">
+    <div class="rc-shdr-ico" style="font-size:16px">📁</div>
+    <div class="rc-shdr-body">
+      <div class="rc-shdr-title" style="font-size:14px">Ediciones anteriores</div>
+      <div class="rc-shdr-sub">Mar 2026</div>
+    </div>
   </div>
-  <div class="rc medio" data-impact="medio" data-topic="renta fija argentina" data-region="argentina" id="bind-dual-txmj9-mayo26">
+  <div class="rc medio" data-impact="medio" data-topic="research" data-region="argentina" id="bind-dual-txmj9-mayo26">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">BIND Inversiones — Trade Idea · Buenos Aires</span>
@@ -1468,7 +1490,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto" data-topic="mercado local acciones" data-region="argentina" id="1816-fgs-compras-acciones-mayo26">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="1816-fgs-compras-acciones-mayo26">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">1816 — Informe Especial · Buenos Aires</span>
@@ -1532,7 +1554,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto" data-topic="politica monetaria argentina" data-region="argentina" id="1816-demanda-pesos-mayo26">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="1816-demanda-pesos-mayo26">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">1816 — Economía & Mercado · Buenos Aires</span>
@@ -1604,7 +1626,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc medio" data-impact="medio" data-topic="mercados internacionales" data-region="norteamerica" id="balanz-midterms-sp500-mayo26">
+  <div class="rc medio" data-impact="medio" data-topic="research" data-region="norteamerica" id="balanz-midterms-sp500-mayo26">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Balanz Research — Estrategia Global · Buenos Aires</span>
@@ -1675,7 +1697,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc medio" data-impact="medio" data-topic="politica monetaria argentina" data-region="argentina" id="bcra-corredor-tasas-abril26">
+  <div class="rc medio" data-impact="medio" data-topic="research" data-region="argentina" id="bcra-corredor-tasas-abril26">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Bloomberg — Política Monetaria · Buenos Aires</span>
@@ -1740,7 +1762,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc medio" data-impact="medio" data-topic="empresas internacional" data-region="norteamerica" id="ms-tesla-capex">
+  <div class="rc medio" data-impact="medio" data-topic="research" data-region="norteamerica" id="ms-tesla-capex">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Morgan Stanley Research — Autos & Shared Mobility · Nueva York</span>
@@ -1810,7 +1832,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc medio" data-impact="medio" data-topic="empresas internacional" data-region="norteamerica" id="gs-tesla">
+  <div class="rc medio" data-impact="medio" data-topic="research" data-region="norteamerica" id="gs-tesla">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Goldman Sachs Research — Autos & Industrial Tech · Nueva York</span>
@@ -1882,7 +1904,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="1816-economia">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="1816-economia">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">1816 — Economía & Mercado · Buenos Aires</span>
@@ -1955,7 +1977,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto" data-topic="argentina empresas" data-region="argentina" id="bull-market-rf">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="bull-market-rf">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Bull Market Brokers — Renta Fija Corporativa · Buenos Aires</span>
@@ -2027,7 +2049,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc medio" data-impact="medio" data-topic="empresas internacional" data-region="latam" id="morningstar-rv">
+  <div class="rc medio" data-impact="medio" data-topic="research" data-region="latam" id="morningstar-rv">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Morningstar Equity Research — Renta Variable · Chicago</span>
@@ -2099,7 +2121,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto" data-topic="internacional" data-region="global" id="blackrock-global">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="global" id="blackrock-global">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">BlackRock Investment Institute — Estrategia Global · Nueva York</span>
@@ -2165,7 +2187,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc medio" data-impact="medio" data-topic="argentina" data-region="argentina" id="gargol-fiscal">
+  <div class="rc medio" data-impact="medio" data-topic="research" data-region="argentina" id="gargol-fiscal">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Gargol Consultoría — Fiscal · Buenos Aires</span>
@@ -2229,7 +2251,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="bbg-deuda-arg">
+  
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="argentina" id="bbg-deuda-arg">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Bloomberg — Deuda Soberana · Buenos Aires</span>
@@ -2295,7 +2318,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="ieb-economia">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="ieb-economia">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">IEB Research — Economía & Mercado · Buenos Aires</span>
@@ -2368,7 +2391,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   
-  <div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="1816-economia-2">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="1816-economia-2">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">1816 — Economía & Mercado · Buenos Aires</span>
@@ -2440,7 +2463,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc medio" data-impact="medio" data-topic="internacional" data-region="europa" id="bofa-credit">
+  <div class="rc medio" data-impact="medio" data-topic="research" data-region="europa" id="bofa-credit">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">BofA Global Research — Credit Strategy · Londres</span>
@@ -2505,7 +2528,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto" data-topic="empresas internacional" data-region="global" id="ai-semis">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="global" id="ai-semis">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">EQUITY RESEARCH — IA & Semiconductores · Global</span>
@@ -2571,7 +2594,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   
-  <div class="rc alto" data-impact="alto" data-topic="internacional" data-region="global" id="ubs-cio">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="global" id="ubs-cio">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">UBS CIO — Mercados · Global</span>
@@ -2634,7 +2657,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="btg-provincias">
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="btg-provincias">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">BTG Pactual Research — Provincias · Buenos Aires</span>
@@ -2706,7 +2729,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   <!-- ══ Reuters: Palantir / Maven / Pentágono ══ -->
-<div class="rc alto" data-impact="alto" data-topic="empresas internacional" data-region="norteamerica" id="reuters-palantir">
+
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="norteamerica" id="reuters-palantir">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Reuters — Tecnología / Defensa · Nueva York / Washington</span>
@@ -2760,7 +2784,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   <!-- ══ Agrometal: Renta Variable Argentina / Maquinaria Agrícola ══ -->
-<div class="rc medio" data-impact="medio" data-topic="argentina empresas" data-region="argentina" id="bbg-agrometal">
+
+  <div class="rc medio" data-impact="medio" data-topic="diarios" data-region="argentina" id="bbg-agrometal">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Bloomberg Línea — Renta Variable Argentina · Buenos Aires</span>
@@ -2815,7 +2840,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   <!-- ══ FT 5: Caos en el transporte marítimo ══ -->
-<div class="rc alto" data-impact="alto" data-topic="internacional commodities" data-region="global" id="ft-transporte">
+
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="global" id="ft-transporte">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Financial Times — Comercio Global / Logística · Londres</span>
@@ -2862,7 +2888,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   <!-- ══ FT 4: Rusia y Cuba ══ -->
-<div class="rc bajo" data-impact="bajo" data-topic="geopolitica" data-region="europa" id="ft-rusia-cuba">
+
+  <div class="rc bajo" data-impact="bajo" data-topic="diarios" data-region="europa" id="ft-rusia-cuba">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Financial Times — Geopolítica / Energía · La Habana / Moscú</span>
@@ -2909,7 +2936,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   <!-- ══ FT 3: Takaichi / Trump / Ormuz ══ -->
-<div class="rc medio" data-impact="medio" data-topic="geopolitica" data-region="asia" id="ft-takaichi">
+
+  <div class="rc medio" data-impact="medio" data-topic="diarios" data-region="asia" id="ft-takaichi">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Financial Times — Geopolítica / Diplomacia · Washington / Tokio</span>
@@ -2956,7 +2984,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   <!-- ══ FT 2: Powell / Fed y la guerra ══ -->
-<div class="rc medio" data-impact="medio" data-topic="internacional" data-region="norteamerica" id="ft-powell-fed">
+
+  <div class="rc medio" data-impact="medio" data-topic="diarios" data-region="norteamerica" id="ft-powell-fed">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Financial Times — Política Monetaria / Fed · Washington</span>
@@ -3003,7 +3032,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   <!-- ══ FT 1: Ataque a Qatar / GNL ══ -->
-<div class="rc alto" data-impact="alto" data-topic="geopolitica commodities" data-region="medio-oriente" id="ft-qatar-gnl">
+
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="medio-oriente" id="ft-qatar-gnl">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Financial Times — Energía / Geopolítica · Doha / Teherán</span>
@@ -3050,7 +3080,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   <!-- ══ SANTANDER PB: Renta Variable — Cambios de Cartera ══ -->
-<div class="rc medio" data-impact="medio" data-topic="internacional empresas" data-region="global" id="santander-pb">
+<div class="rc medio" data-impact="medio" data-topic="research" data-region="global" id="santander-pb">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">Santander Private Banking — Renta Variable · Ideas de Cartera</span>
@@ -3112,7 +3142,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 </div>
  
   <!-- ══ WSJ GEOP 3: Qatar / LNG ══ -->
-<div class="rc alto" data-impact="alto" data-topic="geopolitica commodities" data-region="medio-oriente" id="wsj-qatar-lng">
+
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="medio-oriente" id="wsj-qatar-lng">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">The Wall Street Journal — Energía / Geopolítica · Doha / Washington</span>
@@ -3162,7 +3193,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 
 
 <!-- ══ WSJ GEOP 4: Trump vs. Aliados ══ -->
-<div class="rc alto" data-impact="alto" data-topic="geopolitica" data-region="norteamerica" id="wsj-trump-aliados">
+
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="norteamerica" id="wsj-trump-aliados">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">The Wall Street Journal — Geopolítica / Diplomacia · Washington / Bruselas</span>
@@ -3212,7 +3244,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 
 
 <!-- ══ WSJ GEOP 5: Pentágono pide USD 200bn ══ -->
-<div class="rc medio" data-impact="medio" data-topic="geopolitica internacional" data-region="norteamerica" id="wsj-pentagono">
+
+  <div class="rc medio" data-impact="medio" data-topic="diarios" data-region="norteamerica" id="wsj-pentagono">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">The Wall Street Journal — Política / Presupuesto · Washington</span>
@@ -3259,7 +3292,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   <!-- ══ WSJ 1: Geopolítica / Estrecho de Ormuz ══ -->
-<div class="rc alto" data-impact="alto" data-topic="geopolitica commodities" data-region="medio-oriente" id="wsj-ormuz">
+
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="medio-oriente" id="wsj-ormuz">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">The Wall Street Journal — Geopolítica / Energía · Washington / Medio Oriente</span>
@@ -3316,7 +3350,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 
 
 <!-- ══ WSJ 2: Economía Global / Fed / Mercados ══ -->
-<div class="rc medio" data-impact="medio" data-topic="internacional" data-region="norteamerica" id="wsj-fed-mercados">
+
+  <div class="rc medio" data-impact="medio" data-topic="diarios" data-region="norteamerica" id="wsj-fed-mercados">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">The Wall Street Journal — Fed / Mercados / Macro Global · Nueva York</span>
@@ -3371,7 +3406,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   <!-- ══ SBS SEMANAL: Guerra / Macro ARG / Estrategia ══ -->
-<div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="sbs-macro">
+<div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="sbs-macro">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">SBS Research — Macro & Estrategia · Buenos Aires</span>
@@ -3442,7 +3477,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
 <!-- ══ 1816 SEMANAL: Riesgo País / Estrategia ARS ══ -->
-<div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="1816-research-rp">
+<div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="1816-research-rp">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">1816 Research — Economía & Mercado · Buenos Aires</span>
@@ -3507,7 +3542,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
   <!-- ══ JPM 1: MSCI / Brecha equity-bonos ══ -->
-<div class="rc alto" data-impact="alto" data-topic="argentina internacional" data-region="argentina" id="jpm-msci">
+<div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="jpm-msci">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">JPMorgan — Estrategia de Mercados · Buenos Aires / Global</span>
@@ -3555,7 +3590,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 </div>
 
 <!-- ══ JPM 2: Fiscal / Inflación ══ -->
-<div class="rc alto" data-impact="alto" data-topic="argentina" data-region="argentina" id="jpm-fiscal">
+<div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="jpm-fiscal">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">JPMorgan — Macroeconomía · Buenos Aires</span>
@@ -3603,7 +3638,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 </div>
 
 <!-- ══ JPM 3: Vaca Muerta / Oil & Gas ══ -->
-<div class="rc alto" data-impact="alto" data-topic="argentina commodities" data-region="argentina" id="jpm-vaca-muerta">
+<div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="jpm-vaca-muerta">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">JPMorgan — Oil & Gas · Neuquén / Global</span>
@@ -3651,7 +3686,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 </div>
 
 <!-- ══ JPM 4: Sistema Financiero / Bancos ══ -->
-<div class="rc medio" data-impact="medio" data-topic="argentina empresas" data-region="argentina" id="jpm-bancos">
+<div class="rc medio" data-impact="medio" data-topic="research" data-region="argentina" id="jpm-bancos">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">JPMorgan — Sistema Financiero · Buenos Aires</span>
@@ -3699,7 +3734,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 </div>
 
 <!-- ══ JPM 5: ARTI / Geopolítica ══ -->
-<div class="rc alto" data-impact="alto" data-topic="geopolitica argentina" data-region="argentina" id="jpm-arti">
+<div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="jpm-arti">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">JPMorgan — Geopolítica / Relaciones Exteriores · Washington / Buenos Aires</span>
@@ -3748,7 +3783,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 
 
 <!-- ══ WSJ · Contraterrorismo renuncia ══ -->
-<div class="rc alto" data-impact="alto" data-topic="geopolitica" data-region="norteamerica" id="wsj-contraterrorismo">
+
+  <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="norteamerica" id="wsj-contraterrorismo">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
       <span class="rc-banco">WSJ — Contraterrorismo · Washington</span>
@@ -4491,8 +4527,8 @@ function setupRegionButtons(){
 }
 
 /* ═══ Auto-decorar cards: avatar del banco + chip de tema con emoji ═══ */
-const TOPIC_EMOJI={argentina:'🇦🇷',internacional:'🌎',geopolitica:'⚔️',empresas:'🏢',commodities:'🛢️',tecnologia:'🤖'};
-const TOPIC_LABEL={argentina:'Argentina',internacional:'Internacional',geopolitica:'Geopolítica',empresas:'Empresas',commodities:'Commodities',tecnologia:'Tecnología'};
+const TOPIC_EMOJI={research:'📈',diarios:'📰'};
+const TOPIC_LABEL={research:'Research',diarios:'Diarios'};
 
 function bankInitials(name){
   // Quita prefijos genéricos y devuelve 1-2 iniciales
