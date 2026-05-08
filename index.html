@@ -583,49 +583,6 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 
 
 <!-- ══ MAPA DE CALOR ARGENTINA ══ -->
-<section class="argmap-section reveal">
-  <div class="heatmap-eyebrow">— Actividad por provincia —</div>
-  <h2 class="heatmap-title">Argentina · Economía por provincia</h2>
-  <p class="heatmap-sub">Hacé click en cualquier provincia para ver su actividad económica · colores según nivel de inversión activa</p>
-  <div class="argmap-layout">
-    <div class="argmap-map-wrap">
-      <svg id="argmap-svg" viewBox="0 0 260 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;display:block;min-height:300px;">
-        <text x="130" y="260" text-anchor="middle" fill="var(--muted)" font-size="11">Cargando mapa…</text>
-      </svg>
-      <div class="argmap-legend">
-        <span class="aml-item"><span class="aml-dot" style="background:#3FD673"></span>Alta inversión</span>
-        <span class="aml-item"><span class="aml-dot" style="background:#FFD24A"></span>Media</span>
-        <span class="aml-item"><span class="aml-dot" style="background:var(--border)"></span>Baja</span>
-      </div>
-    </div>
-    <div class="argmap-card" id="argmap-card">
-      <div class="argmap-card-default" id="argmap-default">
-        <div style="font-size:32px;margin-bottom:12px">🗺️</div>
-        <div style="font-size:13px;font-weight:600;color:var(--fg);margin-bottom:6px">Seleccioná una provincia</div>
-        <div style="font-size:11px;color:var(--muted);line-height:1.5">Hacé click sobre el mapa para ver la actividad económica, sectores clave e inversiones activas de cada provincia.</div>
-      </div>
-      <div class="argmap-card-info" id="argmap-info" style="display:none">
-        <div class="argmap-info-header">
-          <span class="argmap-info-badge" id="ai-badge"></span>
-          <span class="argmap-info-name" id="ai-name"></span>
-        </div>
-        <div class="argmap-info-sector" id="ai-sector"></div>
-        <div class="argmap-info-desc" id="ai-desc"></div>
-        <div class="argmap-info-tags" id="ai-tags"></div>
-      </div>
-    </div>
-  </div>
-  <div class="region-row" id="region-row">
-    <button class="region-btn active" data-region="all">🌍 Todo <span class="rcount" data-rcount="all"></span></button>
-    <button class="region-btn" data-region="argentina">🇦🇷 Argentina <span class="rcount" data-rcount="argentina"></span></button>
-    <button class="region-btn" data-region="latam">🌎 Latam <span class="rcount" data-rcount="latam"></span></button>
-    <button class="region-btn" data-region="norteamerica">🇺🇸 Norteamérica <span class="rcount" data-rcount="norteamerica"></span></button>
-    <button class="region-btn" data-region="europa">🇪🇺 Europa <span class="rcount" data-rcount="europa"></span></button>
-    <button class="region-btn" data-region="medio-oriente">🕌 Medio Oriente <span class="rcount" data-rcount="medio-oriente"></span></button>
-    <button class="region-btn" data-region="asia">🌏 Asia <span class="rcount" data-rcount="asia"></span></button>
-    <button class="region-btn" data-region="global">🌐 Global <span class="rcount" data-rcount="global"></span></button>
-  </div>
-</section>
 <script>
 (function(){
   const PROVS = {
@@ -1106,15 +1063,6 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     </div>
   </div>
 </div>
-  <div class="rc-shdr">
-    <div class="rc-shdr-ico">🌍</div>
-    <div class="rc-shdr-body">
-      <div class="rc-shdr-title">Macro Global</div>
-      <div class="rc-shdr-sub">WSJ · 7 May 2026 — Fed, petróleo, commodities</div>
-    </div>
-    <div class="rc-shdr-count">3 noticias</div>
-  </div>
-
   <!-- WSJ 1: FED / WARSH -->
   <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="global" id="wsj-fed-warsh-mayo26">
   <span class="rc-new-badge">NUEVO</span>
@@ -1284,15 +1232,6 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
 
-  <div class="rc-shdr">
-    <div class="rc-shdr-ico">🤖</div>
-    <div class="rc-shdr-body">
-      <div class="rc-shdr-title">Tecnología & Geopolítica digital</div>
-      <div class="rc-shdr-sub">WSJ · 7 May 2026 — IA, DeepSeek, China-EEUU</div>
-    </div>
-    <div class="rc-shdr-count">2 noticias</div>
-  </div>
-
   <!-- WSJ 4: IA / DEEPSEEK + ANTHROPIC -->
   <div class="rc alto" data-impact="alto" data-topic="diarios" data-region="global" id="wsj-ia-deepseek-anthropic-mayo26">
   <span class="rc-new-badge">NUEVO</span>
@@ -1411,13 +1350,6 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </div>
 
-  <div class="rc-shdr" style="padding-top:2rem;opacity:.7">
-    <div class="rc-shdr-ico" style="font-size:16px">📁</div>
-    <div class="rc-shdr-body">
-      <div class="rc-shdr-title" style="font-size:14px">Ediciones anteriores</div>
-      <div class="rc-shdr-sub">Mar 2026</div>
-    </div>
-  </div>
   <div class="rc medio" data-impact="medio" data-topic="research" data-region="argentina" id="bind-dual-txmj9-mayo26">
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
     <div class="rc-hook-top">
