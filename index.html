@@ -580,55 +580,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   <p class="heatmap-sub">Hacé click en cualquier provincia para ver su actividad económica · colores según nivel de inversión activa</p>
   <div class="argmap-layout">
     <div class="argmap-map-wrap">
-      <svg id="argmap-svg" viewBox="0 0 260 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:340px;display:block;">
-        <!-- Jujuy -->
-        <polygon class="prov-path prov-alto" data-prov="jujuy" points="62,8 88,8 92,14 92,52 72,56 60,46 58,28"/>
-        <!-- Salta -->
-        <polygon class="prov-path prov-alto" data-prov="salta" points="40,8 62,8 58,28 60,46 72,56 92,52 100,72 75,86 56,80 38,64 36,44"/>
-        <!-- Formosa -->
-        <polygon class="prov-path prov-bajo" data-prov="formosa" points="100,8 166,8 168,24 164,60 130,64 100,72 92,52 92,14 96,8"/>
-        <!-- Chaco -->
-        <polygon class="prov-path prov-bajo" data-prov="chaco" points="100,72 130,64 164,60 166,76 162,112 128,118 106,110 98,96"/>
-        <!-- Misiones -->
-        <polygon class="prov-path prov-bajo" data-prov="misiones" points="166,60 200,56 206,72 200,108 174,116 162,112 166,76"/>
-        <!-- Tucumán -->
-        <polygon class="prov-path prov-medio" data-prov="tucuman" points="72,56 92,52 100,72 98,96 80,100 68,92 68,72"/>
-        <!-- Santiago del Estero -->
-        <polygon class="prov-path prov-bajo" data-prov="santiago" points="98,96 106,110 128,118 130,148 112,160 90,154 76,134 76,110 80,100"/>
-        <!-- Catamarca -->
-        <polygon class="prov-path prov-medio" data-prov="catamarca" points="50,80 68,72 68,92 80,100 76,110 76,134 60,138 44,122 42,100"/>
-        <!-- La Rioja -->
-        <polygon class="prov-path prov-bajo" data-prov="larioja" points="44,122 60,138 76,134 76,160 66,170 48,164 38,150 38,134"/>
-        <!-- Corrientes -->
-        <polygon class="prov-path prov-bajo" data-prov="corrientes" points="162,112 174,116 200,108 208,128 200,164 174,170 156,156 156,130"/>
-        <!-- San Juan -->
-        <polygon class="prov-path prov-alto" data-prov="sanjuan" points="34,148 48,164 66,170 68,196 52,204 30,196 26,178 28,158"/>
-        <!-- Córdoba -->
-        <polygon class="prov-path prov-medio" data-prov="cordoba" points="90,154 112,160 130,148 148,152 152,188 144,210 118,216 96,210 80,196 80,176 76,160"/>
-        <!-- Santa Fe -->
-        <polygon class="prov-path prov-medio" data-prov="santafe" points="128,118 162,112 156,130 156,156 174,170 170,200 148,204 148,152 130,148"/>
-        <!-- Entre Ríos -->
-        <polygon class="prov-path prov-bajo" data-prov="entrerrios" points="156,156 174,170 200,164 200,196 184,208 164,208 156,196 156,180"/>
-        <!-- San Luis -->
-        <polygon class="prov-path prov-bajo" data-prov="sanluis" points="80,196 96,210 118,216 114,238 92,244 72,234 68,218 72,204"/>
-        <!-- Mendoza -->
-        <polygon class="prov-path prov-alto" data-prov="mendoza" points="26,178 30,196 52,204 68,218 64,252 46,262 24,252 18,230 18,200"/>
-        <!-- Buenos Aires (prov) -->
-        <polygon class="prov-path prov-medio" data-prov="bsas" points="148,204 170,200 200,196 210,216 218,248 216,284 196,310 168,316 144,296 134,262 136,232 144,212"/>
-        <!-- CABA -->
-        <rect class="prov-path prov-alto" data-prov="caba" x="204" y="210" width="10" height="8" rx="1"/>
-        <!-- La Pampa -->
-        <polygon class="prov-path prov-bajo" data-prov="lapampa" points="72,234 92,244 114,238 134,262 126,294 100,302 72,292 62,268 62,248"/>
-        <!-- Neuquén -->
-        <polygon class="prov-path prov-alto" data-prov="neuquen" points="18,252 46,262 64,252 68,280 58,306 36,312 16,296 14,274"/>
-        <!-- Río Negro -->
-        <polygon class="prov-path prov-alto" data-prov="rionegro" points="16,296 36,312 58,306 68,310 100,302 126,294 134,306 120,322 68,328 30,324 14,314"/>
-        <!-- Chubut -->
-        <polygon class="prov-path prov-medio" data-prov="chubut" points="14,324 68,328 120,322 136,330 138,372 110,380 60,372 18,368 12,346"/>
-        <!-- Santa Cruz -->
-        <polygon class="prov-path prov-alto" data-prov="santacruz" points="12,372 60,372 110,380 138,390 138,442 110,454 60,450 20,438 10,408"/>
-        <!-- Tierra del Fuego -->
-        <polygon class="prov-path prov-bajo" data-prov="tdf" points="60,454 110,454 118,466 108,484 80,490 58,480 52,466"/>
+      <svg id="argmap-svg" viewBox="0 0 260 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;display:block;min-height:300px;">
+        <text x="130" y="260" text-anchor="middle" fill="var(--muted)" font-size="11">Cargando mapa…</text>
       </svg>
       <div class="argmap-legend">
         <span class="aml-item"><span class="aml-dot" style="background:#3FD673"></span>Alta inversión</span>
@@ -667,53 +620,145 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 <script>
 (function(){
   const PROVS = {
-    jujuy:    {name:'Jujuy',nivel:'ALTO',sector:'Litio · Minería',desc:'Triángulo del litio · proyectos RIGI activos · exportación a baterías EV globales. Comparte cuenca con Salta y Chile.',tags:['Litio','RIGI','Minería']},
-    salta:    {name:'Salta',nivel:'ALTO',sector:'Litio · Oil & Gas · Agro',desc:'Litio en Puna + petróleo convencional en el NOA + soja y tabaco. Uno de los grandes ganadores del RIGI 2024.',tags:['Litio','RIGI','Oil & Gas']},
-    formosa:  {name:'Formosa',nivel:'BAJO',sector:'Agro · Ganadería',desc:'Economía de subsistencia con ganadería extensiva y algodón. Alta dependencia de transferencias nacionales. Sin inversión RIGI relevante.',tags:['Ganadería','Algodón']},
-    chaco:    {name:'Chaco',nivel:'BAJO',sector:'Algodón · Soja · Forestal',desc:'Economía primaria con soja, algodón y madera. Elevado desempleo estructural. Sin proyectos de inversión grande en curso.',tags:['Soja','Forestal']},
-    misiones: {name:'Misiones',nivel:'BAJO',sector:'Yerba mate · Turismo · Forestal',desc:'Monocultivo de yerba mate + turismo en Cataratas. Forestal en expansión pero sin capital intensivo ni RIGI.',tags:['Yerba mate','Turismo']},
-    tucuman:  {name:'Tucumán',nivel:'MEDIO',sector:'Agroindustria · Azúcar · Limón',desc:'Principal productor de limón del mundo · azúcar y arándanos. Polo industrial en San Miguel con economías de escala.',tags:['Limón','Azúcar','Agro']},
-    santiago: {name:'Santiago del Estero',nivel:'BAJO',sector:'Agro · Algodón · Ganadería',desc:'Economía primaria tradicional. Expansión sojera en el este. Sin proyectos mineros o energéticos de escala nacional.',tags:['Soja','Ganadería']},
-    catamarca:{name:'Catamarca',nivel:'MEDIO',sector:'Minería · Cobre · Litio',desc:'Bajo La Alumbrera (cobre-oro) + proyectos litio en Fiambalá. RIGI en evaluación. Potencial minero enorme subutilizado.',tags:['Cobre','Litio','Minería']},
-    larioja:  {name:'La Rioja',nivel:'BAJO',sector:'Vitivinicultura · Olivicultura',desc:'Olivos, vides y nueces en valles irrigados. Sin grandes proyectos de inversión activos. Dependiente del sector público.',tags:['Olivos','Vides']},
+    jujuy:     {name:'Jujuy',nivel:'ALTO',sector:'Litio · Minería',desc:'Triángulo del litio · proyectos RIGI activos · exportación a baterías EV globales. Comparte cuenca con Salta y Chile.',tags:['Litio','RIGI','Minería']},
+    salta:     {name:'Salta',nivel:'ALTO',sector:'Litio · Oil & Gas · Agro',desc:'Litio en Puna + petróleo convencional en el NOA + soja y tabaco. Uno de los grandes ganadores del RIGI 2024.',tags:['Litio','RIGI','Oil & Gas']},
+    formosa:   {name:'Formosa',nivel:'BAJO',sector:'Agro · Ganadería',desc:'Economía de subsistencia con ganadería extensiva y algodón. Alta dependencia de transferencias nacionales. Sin inversión RIGI relevante.',tags:['Ganadería','Algodón']},
+    chaco:     {name:'Chaco',nivel:'BAJO',sector:'Algodón · Soja · Forestal',desc:'Economía primaria con soja, algodón y madera. Elevado desempleo estructural. Sin proyectos de inversión grande en curso.',tags:['Soja','Forestal']},
+    misiones:  {name:'Misiones',nivel:'BAJO',sector:'Yerba mate · Turismo · Forestal',desc:'Monocultivo de yerba mate + turismo en Cataratas. Forestal en expansión pero sin capital intensivo ni RIGI.',tags:['Yerba mate','Turismo']},
+    tucuman:   {name:'Tucumán',nivel:'MEDIO',sector:'Agroindustria · Azúcar · Limón',desc:'Principal productor de limón del mundo · azúcar y arándanos. Polo industrial en San Miguel con economías de escala.',tags:['Limón','Azúcar','Agro']},
+    santiago:  {name:'Santiago del Estero',nivel:'BAJO',sector:'Agro · Algodón · Ganadería',desc:'Economía primaria tradicional. Expansión sojera en el este. Sin proyectos mineros o energéticos de escala nacional.',tags:['Soja','Ganadería']},
+    catamarca: {name:'Catamarca',nivel:'MEDIO',sector:'Minería · Cobre · Litio',desc:'Bajo La Alumbrera (cobre-oro) + proyectos litio en Fiambalá. RIGI en evaluación. Potencial minero enorme subutilizado.',tags:['Cobre','Litio','Minería']},
+    larioja:   {name:'La Rioja',nivel:'BAJO',sector:'Vitivinicultura · Olivicultura',desc:'Olivos, vides y nueces en valles irrigados. Sin grandes proyectos de inversión activos. Dependiente del sector público.',tags:['Olivos','Vides']},
     corrientes:{name:'Corrientes',nivel:'BAJO',sector:'Ganadería · Arrocero · Turismo',desc:'Ganadería bovina extensiva + arroz en el litoral. Turismo de naturaleza. Sin inversión de capital intensivo.',tags:['Ganadería','Arroz']},
-    sanjuan:  {name:'San Juan',nivel:'ALTO',sector:'Minería · Oro · Cobre',desc:'Veladero (oro-plata) + Josemaría (cobre). RIGI minero activo. Potencial para triplicar exportaciones en la próxima década.',tags:['Oro','Cobre','RIGI']},
-    cordoba:  {name:'Córdoba',nivel:'MEDIO',sector:'Agro · Industria · Servicios',desc:'Segunda economía provincial. Soja + industria automotriz (Renault, Fiat) + economía del conocimiento. Estabilidad y diversificación.',tags:['Soja','Automotriz','Tech']},
-    santafe:  {name:'Santa Fe',nivel:'MEDIO',sector:'Agroindustria · Puerto Rosario',desc:'Complejo oleaginoso más grande del mundo en Rosario. Exportaciones de soja y derivados lideran el PBI provincial.',tags:['Soja','Puerto','Agro']},
+    sanjuan:   {name:'San Juan',nivel:'ALTO',sector:'Minería · Oro · Cobre',desc:'Veladero (oro-plata) + Josemaría (cobre). RIGI minero activo. Potencial para triplicar exportaciones en la próxima década.',tags:['Oro','Cobre','RIGI']},
+    cordoba:   {name:'Córdoba',nivel:'MEDIO',sector:'Agro · Industria · Servicios',desc:'Segunda economía provincial. Soja + industria automotriz (Renault, Fiat) + economía del conocimiento. Estabilidad y diversificación.',tags:['Soja','Automotriz','Tech']},
+    santafe:   {name:'Santa Fe',nivel:'MEDIO',sector:'Agroindustria · Puerto Rosario',desc:'Complejo oleaginoso más grande del mundo en Rosario. Exportaciones de soja y derivados lideran el PBI provincial.',tags:['Soja','Puerto','Agro']},
     entrerrios:{name:'Entre Ríos',nivel:'BAJO',sector:'Agro · Avicultura · Turismo',desc:'Avicultura nacional + arándanos y cítricos. Turismo termal. Sin proyectos industriales o mineros de escala.',tags:['Avicultura','Agro']},
-    sanluis:  {name:'San Luis',nivel:'BAJO',sector:'Industria · Agroindustria',desc:'Beneficios promocionales históricos atrajeron industria textil y plásticos. En declive desde el fin de las exenciones impositivas.',tags:['Industria','Plásticos']},
-    mendoza:  {name:'Mendoza',nivel:'ALTO',sector:'Vitivinicultura · Oil & Gas · Minería',desc:'Vinos premium de exportación + petróleo convencional en declinación + proyecto Potasio Río Colorado (RIGI). Economía diversificada.',tags:['Vinos','Oil & Gas','RIGI']},
-    bsas:     {name:'Buenos Aires (Prov.)',nivel:'MEDIO',sector:'Industria · Agro · Servicios',desc:'Mayor economía provincial. Cinturón industrial GBA + agro pampeano + pesca marítima. Fiscalmente complicada pero motor del PBI nacional.',tags:['Industria','Agro','PBI']},
-    caba:     {name:'CABA',nivel:'ALTO',sector:'Financiero · Servicios · Tech',desc:'Centro financiero del país. MERVAL, bonos y FCI concentrados aquí. Economía del conocimiento en Palermo y microcentro. Mayor PBI per cápita del país.',tags:['Finanzas','Tech','MERVAL']},
-    lapampa:  {name:'La Pampa',nivel:'BAJO',sector:'Ganadería · Agro',desc:'Ganadería extensiva + soja en el norte. Actividad minera incipiente. Sin proyectos de inversión de envergadura nacional.',tags:['Ganadería','Soja']},
-    neuquen:  {name:'Neuquén',nivel:'ALTO',sector:'Oil & Gas · Vaca Muerta',desc:'Vaca Muerta: mayor yacimiento no convencional de Sudamérica. YPF + Shell + TotalEnergies + Vista. RIGI estrella. USD 30.000M en inversiones proyectadas.',tags:['Vaca Muerta','RIGI','Oil & Gas']},
-    rionegro: {name:'Río Negro',nivel:'ALTO',sector:'Fruticultura · Oil & Gas · Litio',desc:'Valle del Río Negro (manzanas y peras) + oil & gas no convencional en expansión desde Neuquén + proyectos litio en la meseta.',tags:['Oil & Gas','Fruticultura','Litio']},
-    chubut:   {name:'Chubut',nivel:'MEDIO',sector:'Petróleo · Pesca · Ovinos',desc:'Petróleo offshore y convencional + pesca de merluza y langostinos + lana ovina. Recursos naturales abundantes, conflictos sociales frecuentes.',tags:['Petróleo','Pesca','Offshore']},
-    santacruz:{name:'Santa Cruz',nivel:'ALTO',sector:'Petróleo · Minería · Energía',desc:'Petróleo convencional + proyecto Cerro Negro (oro) + parques eólicos Patagonia. RIGI energético y minero activo.',tags:['Petróleo','Oro','RIGI']},
-    tdf:      {name:'Tierra del Fuego',nivel:'BAJO',sector:'Industria · Pesca · Turismo',desc:'Régimen de promoción industrial (electrónica, teléfonos) artificialmente sostenido. Pesca costera + turismo fin del mundo.',tags:['Industria','Pesca','Turismo']},
+    sanluis:   {name:'San Luis',nivel:'BAJO',sector:'Industria · Agroindustria',desc:'Beneficios promocionales históricos atrajeron industria textil y plásticos. En declive desde el fin de las exenciones impositivas.',tags:['Industria','Plásticos']},
+    mendoza:   {name:'Mendoza',nivel:'ALTO',sector:'Vitivinicultura · Oil & Gas · Minería',desc:'Vinos premium de exportación + petróleo convencional en declinación + proyecto Potasio Río Colorado (RIGI). Economía diversificada.',tags:['Vinos','Oil & Gas','RIGI']},
+    bsas:      {name:'Buenos Aires (Prov.)',nivel:'MEDIO',sector:'Industria · Agro · Servicios',desc:'Mayor economía provincial. Cinturón industrial GBA + agro pampeano + pesca marítima. Fiscalmente complicada pero motor del PBI nacional.',tags:['Industria','Agro','PBI']},
+    caba:      {name:'CABA',nivel:'ALTO',sector:'Financiero · Servicios · Tech',desc:'Centro financiero del país. MERVAL, bonos y FCI concentrados aquí. Economía del conocimiento en Palermo y microcentro. Mayor PBI per cápita del país.',tags:['Finanzas','Tech','MERVAL']},
+    lapampa:   {name:'La Pampa',nivel:'BAJO',sector:'Ganadería · Agro',desc:'Ganadería extensiva + soja en el norte. Actividad minera incipiente. Sin proyectos de inversión de envergadura nacional.',tags:['Ganadería','Soja']},
+    neuquen:   {name:'Neuquén',nivel:'ALTO',sector:'Oil & Gas · Vaca Muerta',desc:'Vaca Muerta: mayor yacimiento no convencional de Sudamérica. YPF + Shell + TotalEnergies + Vista. RIGI estrella. USD 30.000M en inversiones proyectadas.',tags:['Vaca Muerta','RIGI','Oil & Gas']},
+    rionegro:  {name:'Río Negro',nivel:'ALTO',sector:'Fruticultura · Oil & Gas · Litio',desc:'Valle del Río Negro (manzanas y peras) + oil & gas no convencional en expansión desde Neuquén + proyectos litio en la meseta.',tags:['Oil & Gas','Fruticultura','Litio']},
+    chubut:    {name:'Chubut',nivel:'MEDIO',sector:'Petróleo · Pesca · Ovinos',desc:'Petróleo offshore y convencional + pesca de merluza y langostinos + lana ovina. Recursos naturales abundantes, conflictos sociales frecuentes.',tags:['Petróleo','Pesca','Offshore']},
+    santacruz: {name:'Santa Cruz',nivel:'ALTO',sector:'Petróleo · Minería · Energía',desc:'Petróleo convencional + proyecto Cerro Negro (oro) + parques eólicos Patagonia. RIGI energético y minero activo.',tags:['Petróleo','Oro','RIGI']},
+    tdf:       {name:'Tierra del Fuego',nivel:'BAJO',sector:'Industria · Pesca · Turismo',desc:'Régimen de promoción industrial (electrónica, teléfonos) artificialmente sostenido. Pesca costera + turismo fin del mundo.',tags:['Industria','Pesca','Turismo']},
   };
-  const NIVEL_LABEL = {ALTO:'🟢 Alta inversión',MEDIO:'🟡 Actividad media',BAJO:'⚪ Baja actividad'};
-  const card = document.getElementById('argmap-info');
-  const def  = document.getElementById('argmap-default');
-  document.querySelectorAll('.prov-path').forEach(el=>{
-    el.addEventListener('click',function(){
-      const id = this.getAttribute('data-prov');
-      const p = PROVS[id]; if(!p) return;
-      document.querySelectorAll('.prov-path').forEach(e=>e.style.opacity='0.55');
-      this.style.opacity='1';
-      document.getElementById('ai-badge').textContent = NIVEL_LABEL[p.nivel];
-      document.getElementById('ai-badge').className = 'argmap-info-badge abadge-'+p.nivel.toLowerCase();
-      document.getElementById('ai-name').textContent = p.name;
-      document.getElementById('ai-sector').textContent = p.sector;
-      document.getElementById('ai-desc').textContent = p.desc;
-      const tagsEl = document.getElementById('ai-tags');
-      tagsEl.innerHTML = p.tags.map(t=>`<span class="argmap-tag">${t}</span>`).join('');
-      def.style.display='none';
-      card.style.display='block';
-    });
-    el.addEventListener('mouseenter',function(){ this.style.filter='brightness(1.25)'; });
-    el.addEventListener('mouseleave',function(){ this.style.filter=''; });
-  });
+
+  const COLOR = {ALTO:'#3FD673', MEDIO:'#FFD24A', BAJO:'#2a2a35'};
+  const NIVEL_LABEL = {ALTO:'🟢 Alta inversión', MEDIO:'🟡 Actividad media', BAJO:'⚪ Baja actividad'};
+
+  // Normalize province name from GeoJSON to our key
+  function provKey(name){
+    if(!name) return '';
+    const n = name.toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g,'').trim();
+    const MAP = {
+      'buenos aires':'bsas',
+      'ciudad autonoma de buenos aires':'caba',
+      'capital federal':'caba',
+      'catamarca':'catamarca',
+      'chaco':'chaco',
+      'chubut':'chubut',
+      'cordoba':'cordoba',
+      'corrientes':'corrientes',
+      'entre rios':'entrerrios',
+      'formosa':'formosa',
+      'jujuy':'jujuy',
+      'la pampa':'lapampa',
+      'la rioja':'larioja',
+      'mendoza':'mendoza',
+      'misiones':'misiones',
+      'neuquen':'neuquen',
+      'rio negro':'rionegro',
+      'salta':'salta',
+      'san juan':'sanjuan',
+      'san luis':'sanluis',
+      'santa cruz':'santacruz',
+      'santa fe':'santafe',
+      'santiago del estero':'santiago',
+      'tierra del fuego':'tdf',
+      'tierra del fuego, antartida e islas del atlantico sur':'tdf',
+      'tucuman':'tucuman',
+    };
+    return MAP[n]||'';
+  }
+
+  function showProv(id){
+    const p = PROVS[id]; if(!p) return;
+    document.getElementById('ai-badge').textContent = NIVEL_LABEL[p.nivel];
+    document.getElementById('ai-badge').className = 'argmap-info-badge abadge-'+p.nivel.toLowerCase();
+    document.getElementById('ai-name').textContent = p.name;
+    document.getElementById('ai-sector').textContent = p.sector;
+    document.getElementById('ai-desc').textContent = p.desc;
+    document.getElementById('ai-tags').innerHTML = p.tags.map(t=>`<span class="argmap-tag">${t}</span>`).join('');
+    document.getElementById('argmap-default').style.display='none';
+    document.getElementById('argmap-info').style.display='block';
+  }
+
+  function renderMap(geojson){
+    const svgEl = document.getElementById('argmap-svg');
+    if(!svgEl) return;
+    const W=260, H=520;
+    const proj = d3.geoMercator()
+      .center([-65,-38])
+      .scale(720)
+      .translate([W/2, H/2+15]);
+    const pathGen = d3.geoPath().projection(proj);
+    const svg = d3.select(svgEl);
+    svg.selectAll('*').remove();
+
+    svg.selectAll('path')
+      .data(geojson.features)
+      .enter().append('path')
+      .attr('d', pathGen)
+      .attr('fill', d=>{
+        const nm = d.properties.nombre||d.properties.name||d.properties.NAME_1||'';
+        const k = provKey(nm);
+        return k&&PROVS[k] ? COLOR[PROVS[k].nivel] : '#23232e';
+      })
+      .attr('stroke','#0f0f13')
+      .attr('stroke-width','0.6')
+      .attr('opacity','0.88')
+      .style('cursor','pointer')
+      .on('mouseover',function(){ d3.select(this).attr('opacity','1').attr('stroke-width','1.2'); })
+      .on('mouseout',function(ev,d){
+        const k=provKey(d.properties.nombre||d.properties.name||d.properties.NAME_1||'');
+        d3.select(this).attr('opacity', k===window._selProv?'1':'0.88').attr('stroke-width','0.6');
+      })
+      .on('click',function(ev,d){
+        const nm=d.properties.nombre||d.properties.name||d.properties.NAME_1||'';
+        const k=provKey(nm);
+        if(!k||!PROVS[k]) return;
+        window._selProv=k;
+        svg.selectAll('path').attr('opacity','0.45');
+        d3.select(this).attr('opacity','1');
+        showProv(k);
+      });
+  }
+
+  function init(){
+    fetch('https://raw.githubusercontent.com/codeforgermany/click_that_hood/main/public/data/argentina-states.geojson')
+      .then(r=>r.json())
+      .then(renderMap)
+      .catch(()=>{
+        // fallback URL
+        fetch('https://raw.githubusercontent.com/deldersveld/topojson/master/countries/argentina/argentina-provinces.json')
+          .then(r=>r.json())
+          .then(topo=>{
+            const geojson = topojson.feature(topo, Object.values(topo.objects)[0]);
+            renderMap(geojson);
+          }).catch(e=>console.warn('Mapa no disponible',e));
+      });
+  }
+
+  if(typeof d3==='undefined'){
+    const s=document.createElement('script');
+    s.src='https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js';
+    s.onload=init;
+    document.head.appendChild(s);
+  } else { init(); }
 })();
 </script>
 
