@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" data-theme="dark">
 <head>
 <meta charset="UTF-8">
@@ -150,6 +150,53 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 .region-btn.active .rcount{opacity:.9;color:#000}
 
 @media(max-width:640px){.globe3d-wrap{width:340px;height:340px}.globe-title{font-size:18px}.globe-help{font-size:12px}}
+
+/* MAPA INTERACTIVO ARGENTINA */
+.argmap-section{padding:1.8rem 1.4rem;background:transparent;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.argmap-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 50%,var(--a-dim),transparent 70%);pointer-events:none}
+.argmap-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--a);text-transform:uppercase;margin-bottom:.4rem;text-align:center}
+.argmap-title{font-size:22px;font-weight:700;color:var(--t);margin-bottom:.3rem;letter-spacing:-.01em;text-align:center}
+.argmap-sub{font-size:13px;color:var(--t3);margin-bottom:1.4rem;text-align:center}
+.argmap-layout{display:flex;gap:1.8rem;align-items:flex-start;max-width:860px;margin:0 auto;position:relative}
+.argmap-left{flex-shrink:0;width:220px}
+.argmap-svg{width:100%;height:auto;display:block}
+.prov-path{cursor:pointer;transition:opacity .15s,filter .15s;stroke:var(--bg);stroke-width:1.2}
+.prov-path:hover{opacity:.75;filter:brightness(1.25)}
+.prov-path.active{stroke:var(--t);stroke-width:2;filter:brightness(1.35)}
+.prov-alto{fill:#3FD673}.prov-medio{fill:#FFD24A}.prov-bajo{fill:#2E2E38}
+.argmap-legend{display:flex;gap:.9rem;justify-content:center;margin-top:.8rem;flex-wrap:wrap}
+.aml-item{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--t3)}
+.aml-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+.aml-a{background:#3FD673}.aml-m{background:#FFD24A}.aml-b{background:#2E2E38;border:1px solid var(--border2)}
+.argmap-right{flex:1;min-width:0}
+.argmap-default{font-size:13px;color:var(--t3);padding:2.5rem 1.5rem;text-align:center;border:1px dashed var(--border2);border-radius:10px;line-height:1.6}
+.argmap-card{background:var(--card);border:1px solid var(--border2);border-radius:10px;overflow:hidden;animation:amFadeIn .2s ease}
+@keyframes amFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.argmap-card-header{padding:1rem 1.2rem .8rem;border-bottom:1px solid var(--border)}
+.argmap-card-prov{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--t3);text-transform:uppercase}
+.argmap-card-name{font-size:24px;font-weight:700;color:var(--t);letter-spacing:-.02em;margin-top:.2rem}
+.argmap-card-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-top:.6rem}
+.argmap-card-badge.alto{background:rgba(63,214,115,.12);color:#3FD673;border:1px solid rgba(63,214,115,.4)}
+.argmap-card-badge.medio{background:rgba(255,210,74,.1);color:#FFD24A;border:1px solid rgba(255,210,74,.4)}
+.argmap-card-badge.bajo{background:var(--bg3);color:var(--t2);border:1px solid var(--border2)}
+.argmap-card-body{padding:1rem 1.2rem}
+.argmap-card-sector{font-size:11px;font-weight:700;color:var(--a);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem}
+.argmap-card-desc{font-size:13.5px;color:var(--t2);line-height:1.65}
+.argmap-card-default{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 1.5rem;min-height:200px}
+.argmap-card-info{padding:1.2rem 1.4rem;display:flex;flex-direction:column;gap:.7rem}
+.argmap-info-header{display:flex;flex-direction:column;gap:.4rem}
+.argmap-info-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:20px;align-self:flex-start}
+.abadge-alto{background:rgba(63,214,115,.12);color:#3FD673;border:1px solid rgba(63,214,115,.4)}
+.abadge-medio{background:rgba(255,210,74,.1);color:#FFD24A;border:1px solid rgba(255,210,74,.4)}
+.abadge-bajo{background:var(--bg3);color:var(--t2);border:1px solid var(--border2)}
+.argmap-info-name{font-size:22px;font-weight:700;color:var(--fg);letter-spacing:-.02em}
+.argmap-info-sector{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--a)}
+.argmap-info-desc{font-size:13px;color:var(--muted);line-height:1.65}
+.argmap-info-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:.2rem}
+.argmap-tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;background:var(--bg3);color:var(--t2);border:1px solid var(--border2);letter-spacing:.04em}
+.argmap-map-wrap{display:flex;flex-direction:column;align-items:center;gap:.8rem}
+.argmap-legend{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+@media(max-width:700px){.argmap-layout{flex-direction:column;align-items:center}.argmap-card{width:100%;max-width:340px}}
 
 /* HERO INTRO */
 .intro{padding:1.6rem 1.4rem 1.2rem;text-align:center;background:transparent;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
@@ -524,28 +571,90 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 </section>
 
-<div class="status-bar reveal">
-  <div class="si"><span class="si-dot dg"></span>BCRA <span class="am" id="st-bcra">cargando...</span></div>
-  <div class="si"><span class="si-dot da"></span>DÓLAR <span id="st-dolar">cargando...</span></div>
-  <div class="si"><span class="si-dot dg"></span>COMDTS <span id="st-comm">cargando...</span></div>
-  <div class="si"><span class="si-dot dr"></span>UPDT <span id="st-time">—</span></div>
-</div>
 
 
-<!-- ══ GLOBO 3D (Three.js) ══ -->
-<section class="globe-section reveal">
-  <div class="globe-eyebrow">— Mapa global —</div>
-  <h2 class="globe-title">¿Dónde está pasando la noticia?</h2>
-  <p class="globe-help">Arrastrá para girar · rueda del mouse para zoom · click en un marker para filtrar</p>
-  <div class="globe3d-wrap" id="globe3d-wrap">
-    <div class="globe3d-loading" id="globe3d-loading">
-      <div class="globe3d-spinner"></div>
-      <div>Cargando mapa…</div>
+<!-- ══ MAPA DE CALOR ARGENTINA ══ -->
+<section class="argmap-section reveal">
+  <div class="heatmap-eyebrow">— Actividad por provincia —</div>
+  <h2 class="heatmap-title">Argentina · Economía por provincia</h2>
+  <p class="heatmap-sub">Hacé click en cualquier provincia para ver su actividad económica · colores según nivel de inversión activa</p>
+  <div class="argmap-layout">
+    <div class="argmap-map-wrap">
+      <svg id="argmap-svg" viewBox="0 0 260 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:340px;display:block;">
+        <!-- Jujuy -->
+        <polygon class="prov-path prov-alto" data-prov="jujuy" points="62,8 88,8 92,14 92,52 72,56 60,46 58,28"/>
+        <!-- Salta -->
+        <polygon class="prov-path prov-alto" data-prov="salta" points="40,8 62,8 58,28 60,46 72,56 92,52 100,72 75,86 56,80 38,64 36,44"/>
+        <!-- Formosa -->
+        <polygon class="prov-path prov-bajo" data-prov="formosa" points="100,8 166,8 168,24 164,60 130,64 100,72 92,52 92,14 96,8"/>
+        <!-- Chaco -->
+        <polygon class="prov-path prov-bajo" data-prov="chaco" points="100,72 130,64 164,60 166,76 162,112 128,118 106,110 98,96"/>
+        <!-- Misiones -->
+        <polygon class="prov-path prov-bajo" data-prov="misiones" points="166,60 200,56 206,72 200,108 174,116 162,112 166,76"/>
+        <!-- Tucumán -->
+        <polygon class="prov-path prov-medio" data-prov="tucuman" points="72,56 92,52 100,72 98,96 80,100 68,92 68,72"/>
+        <!-- Santiago del Estero -->
+        <polygon class="prov-path prov-bajo" data-prov="santiago" points="98,96 106,110 128,118 130,148 112,160 90,154 76,134 76,110 80,100"/>
+        <!-- Catamarca -->
+        <polygon class="prov-path prov-medio" data-prov="catamarca" points="50,80 68,72 68,92 80,100 76,110 76,134 60,138 44,122 42,100"/>
+        <!-- La Rioja -->
+        <polygon class="prov-path prov-bajo" data-prov="larioja" points="44,122 60,138 76,134 76,160 66,170 48,164 38,150 38,134"/>
+        <!-- Corrientes -->
+        <polygon class="prov-path prov-bajo" data-prov="corrientes" points="162,112 174,116 200,108 208,128 200,164 174,170 156,156 156,130"/>
+        <!-- San Juan -->
+        <polygon class="prov-path prov-alto" data-prov="sanjuan" points="34,148 48,164 66,170 68,196 52,204 30,196 26,178 28,158"/>
+        <!-- Córdoba -->
+        <polygon class="prov-path prov-medio" data-prov="cordoba" points="90,154 112,160 130,148 148,152 152,188 144,210 118,216 96,210 80,196 80,176 76,160"/>
+        <!-- Santa Fe -->
+        <polygon class="prov-path prov-medio" data-prov="santafe" points="128,118 162,112 156,130 156,156 174,170 170,200 148,204 148,152 130,148"/>
+        <!-- Entre Ríos -->
+        <polygon class="prov-path prov-bajo" data-prov="entrerrios" points="156,156 174,170 200,164 200,196 184,208 164,208 156,196 156,180"/>
+        <!-- San Luis -->
+        <polygon class="prov-path prov-bajo" data-prov="sanluis" points="80,196 96,210 118,216 114,238 92,244 72,234 68,218 72,204"/>
+        <!-- Mendoza -->
+        <polygon class="prov-path prov-alto" data-prov="mendoza" points="26,178 30,196 52,204 68,218 64,252 46,262 24,252 18,230 18,200"/>
+        <!-- Buenos Aires (prov) -->
+        <polygon class="prov-path prov-medio" data-prov="bsas" points="148,204 170,200 200,196 210,216 218,248 216,284 196,310 168,316 144,296 134,262 136,232 144,212"/>
+        <!-- CABA -->
+        <rect class="prov-path prov-alto" data-prov="caba" x="204" y="210" width="10" height="8" rx="1"/>
+        <!-- La Pampa -->
+        <polygon class="prov-path prov-bajo" data-prov="lapampa" points="72,234 92,244 114,238 134,262 126,294 100,302 72,292 62,268 62,248"/>
+        <!-- Neuquén -->
+        <polygon class="prov-path prov-alto" data-prov="neuquen" points="18,252 46,262 64,252 68,280 58,306 36,312 16,296 14,274"/>
+        <!-- Río Negro -->
+        <polygon class="prov-path prov-alto" data-prov="rionegro" points="16,296 36,312 58,306 68,310 100,302 126,294 134,306 120,322 68,328 30,324 14,314"/>
+        <!-- Chubut -->
+        <polygon class="prov-path prov-medio" data-prov="chubut" points="14,324 68,328 120,322 136,330 138,372 110,380 60,372 18,368 12,346"/>
+        <!-- Santa Cruz -->
+        <polygon class="prov-path prov-alto" data-prov="santacruz" points="12,372 60,372 110,380 138,390 138,442 110,454 60,450 20,438 10,408"/>
+        <!-- Tierra del Fuego -->
+        <polygon class="prov-path prov-bajo" data-prov="tdf" points="60,454 110,454 118,466 108,484 80,490 58,480 52,466"/>
+      </svg>
+      <div class="argmap-legend">
+        <span class="aml-item"><span class="aml-dot" style="background:#3FD673"></span>Alta inversión</span>
+        <span class="aml-item"><span class="aml-dot" style="background:#FFD24A"></span>Media</span>
+        <span class="aml-item"><span class="aml-dot" style="background:var(--border)"></span>Baja</span>
+      </div>
     </div>
-    <div class="globe3d-tooltip" id="globe3d-tooltip"></div>
+    <div class="argmap-card" id="argmap-card">
+      <div class="argmap-card-default" id="argmap-default">
+        <div style="font-size:32px;margin-bottom:12px">🗺️</div>
+        <div style="font-size:13px;font-weight:600;color:var(--fg);margin-bottom:6px">Seleccioná una provincia</div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.5">Hacé click sobre el mapa para ver la actividad económica, sectores clave e inversiones activas de cada provincia.</div>
+      </div>
+      <div class="argmap-card-info" id="argmap-info" style="display:none">
+        <div class="argmap-info-header">
+          <span class="argmap-info-badge" id="ai-badge"></span>
+          <span class="argmap-info-name" id="ai-name"></span>
+        </div>
+        <div class="argmap-info-sector" id="ai-sector"></div>
+        <div class="argmap-info-desc" id="ai-desc"></div>
+        <div class="argmap-info-tags" id="ai-tags"></div>
+      </div>
+    </div>
   </div>
   <div class="region-row" id="region-row">
-    <button class="region-btn active" data-region="all">🌍 Todo el mundo <span class="rcount" data-rcount="all"></span></button>
+    <button class="region-btn active" data-region="all">🌍 Todo <span class="rcount" data-rcount="all"></span></button>
     <button class="region-btn" data-region="argentina">🇦🇷 Argentina <span class="rcount" data-rcount="argentina"></span></button>
     <button class="region-btn" data-region="latam">🌎 Latam <span class="rcount" data-rcount="latam"></span></button>
     <button class="region-btn" data-region="norteamerica">🇺🇸 Norteamérica <span class="rcount" data-rcount="norteamerica"></span></button>
@@ -555,6 +664,58 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     <button class="region-btn" data-region="global">🌐 Global <span class="rcount" data-rcount="global"></span></button>
   </div>
 </section>
+<script>
+(function(){
+  const PROVS = {
+    jujuy:    {name:'Jujuy',nivel:'ALTO',sector:'Litio · Minería',desc:'Triángulo del litio · proyectos RIGI activos · exportación a baterías EV globales. Comparte cuenca con Salta y Chile.',tags:['Litio','RIGI','Minería']},
+    salta:    {name:'Salta',nivel:'ALTO',sector:'Litio · Oil & Gas · Agro',desc:'Litio en Puna + petróleo convencional en el NOA + soja y tabaco. Uno de los grandes ganadores del RIGI 2024.',tags:['Litio','RIGI','Oil & Gas']},
+    formosa:  {name:'Formosa',nivel:'BAJO',sector:'Agro · Ganadería',desc:'Economía de subsistencia con ganadería extensiva y algodón. Alta dependencia de transferencias nacionales. Sin inversión RIGI relevante.',tags:['Ganadería','Algodón']},
+    chaco:    {name:'Chaco',nivel:'BAJO',sector:'Algodón · Soja · Forestal',desc:'Economía primaria con soja, algodón y madera. Elevado desempleo estructural. Sin proyectos de inversión grande en curso.',tags:['Soja','Forestal']},
+    misiones: {name:'Misiones',nivel:'BAJO',sector:'Yerba mate · Turismo · Forestal',desc:'Monocultivo de yerba mate + turismo en Cataratas. Forestal en expansión pero sin capital intensivo ni RIGI.',tags:['Yerba mate','Turismo']},
+    tucuman:  {name:'Tucumán',nivel:'MEDIO',sector:'Agroindustria · Azúcar · Limón',desc:'Principal productor de limón del mundo · azúcar y arándanos. Polo industrial en San Miguel con economías de escala.',tags:['Limón','Azúcar','Agro']},
+    santiago: {name:'Santiago del Estero',nivel:'BAJO',sector:'Agro · Algodón · Ganadería',desc:'Economía primaria tradicional. Expansión sojera en el este. Sin proyectos mineros o energéticos de escala nacional.',tags:['Soja','Ganadería']},
+    catamarca:{name:'Catamarca',nivel:'MEDIO',sector:'Minería · Cobre · Litio',desc:'Bajo La Alumbrera (cobre-oro) + proyectos litio en Fiambalá. RIGI en evaluación. Potencial minero enorme subutilizado.',tags:['Cobre','Litio','Minería']},
+    larioja:  {name:'La Rioja',nivel:'BAJO',sector:'Vitivinicultura · Olivicultura',desc:'Olivos, vides y nueces en valles irrigados. Sin grandes proyectos de inversión activos. Dependiente del sector público.',tags:['Olivos','Vides']},
+    corrientes:{name:'Corrientes',nivel:'BAJO',sector:'Ganadería · Arrocero · Turismo',desc:'Ganadería bovina extensiva + arroz en el litoral. Turismo de naturaleza. Sin inversión de capital intensivo.',tags:['Ganadería','Arroz']},
+    sanjuan:  {name:'San Juan',nivel:'ALTO',sector:'Minería · Oro · Cobre',desc:'Veladero (oro-plata) + Josemaría (cobre). RIGI minero activo. Potencial para triplicar exportaciones en la próxima década.',tags:['Oro','Cobre','RIGI']},
+    cordoba:  {name:'Córdoba',nivel:'MEDIO',sector:'Agro · Industria · Servicios',desc:'Segunda economía provincial. Soja + industria automotriz (Renault, Fiat) + economía del conocimiento. Estabilidad y diversificación.',tags:['Soja','Automotriz','Tech']},
+    santafe:  {name:'Santa Fe',nivel:'MEDIO',sector:'Agroindustria · Puerto Rosario',desc:'Complejo oleaginoso más grande del mundo en Rosario. Exportaciones de soja y derivados lideran el PBI provincial.',tags:['Soja','Puerto','Agro']},
+    entrerrios:{name:'Entre Ríos',nivel:'BAJO',sector:'Agro · Avicultura · Turismo',desc:'Avicultura nacional + arándanos y cítricos. Turismo termal. Sin proyectos industriales o mineros de escala.',tags:['Avicultura','Agro']},
+    sanluis:  {name:'San Luis',nivel:'BAJO',sector:'Industria · Agroindustria',desc:'Beneficios promocionales históricos atrajeron industria textil y plásticos. En declive desde el fin de las exenciones impositivas.',tags:['Industria','Plásticos']},
+    mendoza:  {name:'Mendoza',nivel:'ALTO',sector:'Vitivinicultura · Oil & Gas · Minería',desc:'Vinos premium de exportación + petróleo convencional en declinación + proyecto Potasio Río Colorado (RIGI). Economía diversificada.',tags:['Vinos','Oil & Gas','RIGI']},
+    bsas:     {name:'Buenos Aires (Prov.)',nivel:'MEDIO',sector:'Industria · Agro · Servicios',desc:'Mayor economía provincial. Cinturón industrial GBA + agro pampeano + pesca marítima. Fiscalmente complicada pero motor del PBI nacional.',tags:['Industria','Agro','PBI']},
+    caba:     {name:'CABA',nivel:'ALTO',sector:'Financiero · Servicios · Tech',desc:'Centro financiero del país. MERVAL, bonos y FCI concentrados aquí. Economía del conocimiento en Palermo y microcentro. Mayor PBI per cápita del país.',tags:['Finanzas','Tech','MERVAL']},
+    lapampa:  {name:'La Pampa',nivel:'BAJO',sector:'Ganadería · Agro',desc:'Ganadería extensiva + soja en el norte. Actividad minera incipiente. Sin proyectos de inversión de envergadura nacional.',tags:['Ganadería','Soja']},
+    neuquen:  {name:'Neuquén',nivel:'ALTO',sector:'Oil & Gas · Vaca Muerta',desc:'Vaca Muerta: mayor yacimiento no convencional de Sudamérica. YPF + Shell + TotalEnergies + Vista. RIGI estrella. USD 30.000M en inversiones proyectadas.',tags:['Vaca Muerta','RIGI','Oil & Gas']},
+    rionegro: {name:'Río Negro',nivel:'ALTO',sector:'Fruticultura · Oil & Gas · Litio',desc:'Valle del Río Negro (manzanas y peras) + oil & gas no convencional en expansión desde Neuquén + proyectos litio en la meseta.',tags:['Oil & Gas','Fruticultura','Litio']},
+    chubut:   {name:'Chubut',nivel:'MEDIO',sector:'Petróleo · Pesca · Ovinos',desc:'Petróleo offshore y convencional + pesca de merluza y langostinos + lana ovina. Recursos naturales abundantes, conflictos sociales frecuentes.',tags:['Petróleo','Pesca','Offshore']},
+    santacruz:{name:'Santa Cruz',nivel:'ALTO',sector:'Petróleo · Minería · Energía',desc:'Petróleo convencional + proyecto Cerro Negro (oro) + parques eólicos Patagonia. RIGI energético y minero activo.',tags:['Petróleo','Oro','RIGI']},
+    tdf:      {name:'Tierra del Fuego',nivel:'BAJO',sector:'Industria · Pesca · Turismo',desc:'Régimen de promoción industrial (electrónica, teléfonos) artificialmente sostenido. Pesca costera + turismo fin del mundo.',tags:['Industria','Pesca','Turismo']},
+  };
+  const NIVEL_LABEL = {ALTO:'🟢 Alta inversión',MEDIO:'🟡 Actividad media',BAJO:'⚪ Baja actividad'};
+  const card = document.getElementById('argmap-info');
+  const def  = document.getElementById('argmap-default');
+  document.querySelectorAll('.prov-path').forEach(el=>{
+    el.addEventListener('click',function(){
+      const id = this.getAttribute('data-prov');
+      const p = PROVS[id]; if(!p) return;
+      document.querySelectorAll('.prov-path').forEach(e=>e.style.opacity='0.55');
+      this.style.opacity='1';
+      document.getElementById('ai-badge').textContent = NIVEL_LABEL[p.nivel];
+      document.getElementById('ai-badge').className = 'argmap-info-badge abadge-'+p.nivel.toLowerCase();
+      document.getElementById('ai-name').textContent = p.name;
+      document.getElementById('ai-sector').textContent = p.sector;
+      document.getElementById('ai-desc').textContent = p.desc;
+      const tagsEl = document.getElementById('ai-tags');
+      tagsEl.innerHTML = p.tags.map(t=>`<span class="argmap-tag">${t}</span>`).join('');
+      def.style.display='none';
+      card.style.display='block';
+    });
+    el.addEventListener('mouseenter',function(){ this.style.filter='brightness(1.25)'; });
+    el.addEventListener('mouseleave',function(){ this.style.filter=''; });
+  });
+})();
+</script>
 
 <!-- ══ RESEARCH ══ -->
 <div class="sdiv reveal">
@@ -601,6 +762,82 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     <div class="rc-week-sep-label">⬤ Esta semana · May 2026</div>
     <div class="rc-week-sep-line"></div>
   </div>
+  <div class="rc alto" data-impact="alto" data-topic="economia argentina" data-region="argentina" id="bcra-rem-abril26">
+  <span class="rc-new-badge">NUEVO</span>
+  <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
+    <div class="rc-hook-top">
+      <span class="rc-banco">BCRA — REM Abril 2026 · Buenos Aires</span>
+      <div class="rc-hookright">
+        <span class="rc-fecha">07 MAY</span>
+        <button class="share-btn" onclick="shareCard(event,'bcra-rem-abril26')" title="Compartir esta card" aria-label="Compartir">↗</button>
+        <span class="rc-arr">▶</span>
+      </div>
+    </div>
+    <div class="rc-gancho">El consenso baja el PIB 2026 a <span style="color:#FFD24A;">+2,8%</span> — inflación estable en 2,6%, dólar a <span style="color:#3FD673;">$1.676</span> en diciembre y tasa cayendo</div>
+    <div class="rc-bottom-row">
+      <div class="rc-badges">
+        <span class="ibadge ib-a">
+          <span class="ibdot"></span>IMPACTO ALTO
+        </span>
+      </div>
+      <div class="rc-pulso-hook">Desinflación en curso, crecimiento revisado a la baja</div>
+    </div>
+  </div>
+  <div class="rc-l1">
+    <div class="rc-summary">
+      <div class="rc-sum-tag">// Qué pasa con Argentina y qué tenés que tener en cuenta</div>
+      <div class="rc-sum-txt">El REM de abril muestra un mercado que sigue comprando el proceso de desinflación, pero que ajusta a la baja las expectativas de crecimiento. <span class="key">El consenso redujo la proyección del PIB 2026 a 2,8% anual (-0,5 p.p.) y el Top 10 ya la ubica en 2,5% — una revisión importante que refleja el Q1 más débil de lo esperado.</span> La inflación se mantiene en 2,6% mensual para abril —sin cambios— y el mercado no ve una aceleración en el horizonte, lo que le da aire al BCRA para seguir bajando tasas. La TAMAR cae a 23,1% TNA en mayo (-2,9 p.p.), señal de que el ciclo de relajación monetaria está activo. El tipo de cambio esperado para diciembre es $1.676/USD, que implica una devaluación nominal del 15,8% interanual —consistente con la banda del crawling peg y por debajo de la inflación esperada, es decir: apreciación real implícita. El superávit comercial de USD 16.506M proyectado para 2026 es el ancla de la historia de reservas. <span class="bull">Para carteras locales: el REM valida el escenario de desinflación + baja de tasas + dólar controlado. El riesgo es que el crecimiento decepcione y genere presión política sobre el programa fiscal.</span></div>
+      <div class="rc-sum-tag" style="margin-top:.9rem;">// Lectura PULSO</div>
+      <div class="rc-sum-txt">El BCRA publicó el REM de abril el 7 de mayo, con respuestas de <span class="dato">45 participantes</span> (33 consultoras y 12 entidades financieras). Inflación abril: <span class="dato">2,6% mensual</span> (mediana, sin variación vs. REM anterior); IPC núcleo: <span class="dato">2,6%</span> (+0,1 p.p.). PIB Q1-26: <span class="dato">+0,3% s.e.</span> trimestral (-1,0 p.p. vs. relevamiento previo); Q2-26: <span class="dato">+1,0% s.e.</span>; PIB 2026: <span class="dato">+2,8% anual</span> (-0,5 p.p.). TAMAR mayo: <span class="dato">23,1% TNA</span> (-2,9 p.p.), equivalente a TEM de 1,9%. TC promedio mayo: <span class="dato">$1.410/USD</span> (-$39); diciembre: <span class="dato">$1.676/USD</span> (+15,8% ia). Exportaciones 2026: <span class="dato">USD 96.056M</span>; Importaciones: <span class="dato">USD 79.550M</span>; superávit comercial esperado: <span class="dato">USD 16.506M</span>. Desocupación Q1-26: <span class="dato">7,7% PEA</span>. Superávit fiscal primario SPNF 2026: <span class="dato">$15,9 billones</span>.</div>
+      <div class="rc-sum-by">— PULSO</div>
+    </div>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
+      <span class="rc-exp-label">Leer análisis completo</span>
+      <span class="rc-exp-arr">▶</span>
+    </button>
+  </div>
+  <div class="rc-l2">
+    <div class="rc-full">
+      <div class="rc-full-header">
+        <span class="rc-full-label">BCRA · 07 MAY — Relevamiento de Expectativas de Mercado: Abril 2026</span>
+        <span class="rc-full-source">Banco Central de la República Argentina · Relevamiento de 45 participantes · 28–30 abril 2026</span>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">Inflación: el mercado sostiene 2,6% para abril y no ve repunte</div>
+        <div class="rc-block-body">
+          <p>La mediana del REM ubica la inflación de abril en <span class="dato">2,6% mensual</span>, sin cambios respecto al relevamiento anterior. El IPC núcleo también se proyecta en <span class="dato">2,6%</span>, con un leve ajuste de +0,1 p.p. El Top 10 —los analistas que mejor predicen la inflación— estima <span class="dato">2,7%</span> para ambos índices. El mensaje es claro: el mercado no ve ni aceleración ni desaceleración brusca. La desinflación continúa pero a un ritmo cada vez más gradual, en la zona del 2,5%-2,7% mensual que se mantiene estable desde hace varias ediciones del REM.</p>
+        </div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">Crecimiento: revisión a la baja en el PIB 2026</div>
+        <div class="rc-block-body">
+          <p>El dato más relevante de esta edición es la revisión del crecimiento. El Q1-26 se estimó en <span class="dato">+0,3% s.e.</span> trimestral, una baja de <span class="dato">1,0 p.p.</span> respecto al REM previo —señal de que el mercado reconoció que el primer trimestre fue más débil de lo esperado. Para el año completo, el consenso proyecta un PIB real <span class="dato">2,8% superior</span> al promedio de 2025 (-0,5 p.p. vs. el relevamiento anterior); el Top 10 ya baja a <span class="dato">2,5%</span> (-0,7 p.p.). La recuperación existe pero viene más lenta y pareja de lo que el mercado anticipaba a comienzos de año. Q2-26 proyectado: <span class="dato">+1,0% s.e.</span>; Q3-26: <span class="dato">+0,9% s.e.</span></p>
+        </div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">Tasa y tipo de cambio: relajación monetaria y dólar controlado</div>
+        <div class="rc-block-body">
+          <p>La TAMAR de bancos privados para mayo se proyecta en <span class="dato">23,1% TNA</span> (-2,9 p.p. vs. REM anterior), equivalente a una TEM de <span class="dato">1,9%</span>. Para diciembre cae a <span class="dato">22,0% TNA</span>. El ciclo de baja de tasas está en curso y el mercado lo incorpora. En cuanto al tipo de cambio, la mediana para el promedio de mayo es <span class="dato">$1.410/USD</span> (-$39 vs. relevamiento previo) y para diciembre <span class="dato">$1.676/USD</span>, lo que implica una devaluación nominal interanual de <span class="dato">15,8%</span> —por debajo de la inflación proyectada, es decir: apreciación real implícita que el mercado no pone en duda por ahora. El Top 10 es más conservador en el dólar: proyecta <span class="dato">$1.611/USD</span> para diciembre.</p>
+        </div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">Sector externo: superávit comercial robusto como ancla del programa</div>
+        <div class="rc-block-body">
+          <p>Las exportaciones (FOB) proyectadas para 2026 son <span class="dato">USD 96.056M</span> (+USD 2.821M vs. REM anterior), las importaciones (CIF) <span class="dato">USD 79.550M</span> (+USD 429M), con un superávit comercial de <span class="dato">USD 16.506M</span> (+USD 2.392M vs. edición previa). El mercado mejora las perspectivas de exportaciones —probablemente traccionado por la cosecha gruesa y la expansión energética— y mantiene las importaciones acotadas. Este saldo es el principal soporte de la acumulación de reservas del BCRA y el ancla del programa cambiario.</p>
+        </div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">Fiscal y desempleo: superávit sin fisuras, desocupación estable</div>
+        <div class="rc-block-body">
+          <p>El consenso proyecta un superávit primario del SPNF de <span class="dato">$15,9 billones</span> para 2026 (-$100 mil millones vs. REM previo), con el Top 10 en <span class="dato">$16,5 billones</span>. Ningún participante espera un superávit inferior a $9,0 billones —el piso del consenso es sólido. La tasa de desocupación abierta para Q1-26 se estima en <span class="dato">7,7% de la PEA</span> (+0,1 p.p.), y para Q4-26 en <span class="dato">7,4%</span>. El mercado de trabajo no colapsa pero tampoco mejora aceleradamente: la recuperación del empleo viene lenta, consistente con el crecimiento moderado del PIB.</p>
+        </div>
+      </div>
+      <div class="rc-conclusion">
+        El REM de abril confirma el escenario base: desinflación gradual, tasa a la baja, dólar controlado por la banda y superávit fiscal sin fisuras. El único ruido es la revisión del crecimiento — el mercado ya no espera un 2026 de recuperación vigorosa sino moderada. Para el inversor local, el REM valida bonos en pesos (CER con inflación estable, tasa fija con curva cayendo) y no cambia la foto del tipo de cambio. El riesgo a monitorear: si el PIB sigue decepcionando, la presión sobre el gasto social puede tensionar la meta fiscal en el segundo semestre.
+      </div>
+    </div>
+  </div>
+</div>
   <div class="rc medio" data-impact="medio" data-topic="economia argentina" data-region="argentina" id="ojf-iga-marzo26">
   <span class="rc-new-badge">NUEVO</span>
   <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
@@ -3642,14 +3879,6 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 
 <div class="toast" id="toast">Link copiado</div>
 
-<!-- Three.js + topojson-client desde CDN para el globo 3D -->
-<script type="importmap">
-{ "imports": {
-  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-}}
-</script>
-
 <script>
 async function loadBCRA(){
   try {
@@ -3953,537 +4182,6 @@ function toggleMacro(btn){
 }
 </script>
 
-<!-- ═══ GLOBO 3D — Three.js + Natural Earth GeoJSON ═══ -->
-<script type="module">
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-const wrap = document.getElementById('globe3d-wrap');
-const loadingEl = document.getElementById('globe3d-loading');
-const tooltipEl = document.getElementById('globe3d-tooltip');
-if(!wrap){ throw new Error('globe wrap missing'); }
-
-const W = wrap.clientWidth, H = wrap.clientHeight;
-const RADIUS = 1;
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(45, W/H, 0.1, 100);
-camera.position.set(0, 0, 3.2);
-
-const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.setSize(W, H);
-wrap.appendChild(renderer.domElement);
-
-// Luz
-scene.add(new THREE.AmbientLight(0xffffff, 0.55));
-const dir = new THREE.DirectionalLight(0xffffff, 0.9);
-dir.position.set(3, 2, 5);
-scene.add(dir);
-const rim = new THREE.DirectionalLight(0x4a90c8, 0.45);
-rim.position.set(-3, -1, -2);
-scene.add(rim);
-
-// Esfera oceano
-const oceanMat = new THREE.MeshPhongMaterial({
-  color: 0x0a2540,
-  emissive: 0x07172a,
-  shininess: 28,
-  specular: 0x224466
-});
-const ocean = new THREE.Mesh(new THREE.SphereGeometry(RADIUS, 64, 64), oceanMat);
-scene.add(ocean);
-
-// Atmosfera (sprite/halo simple via shader minimal)
-const atmosMat = new THREE.ShaderMaterial({
-  uniforms: { c: { value: 0.5 }, p: { value: 4.0 }, glowColor: { value: new THREE.Color(0x66aadd) } },
-  vertexShader: `
-    varying vec3 vN; varying vec3 vP;
-    void main(){ vN = normalize(normalMatrix * normal); vP = normalize((modelViewMatrix * vec4(position,1.0)).xyz); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }
-  `,
-  fragmentShader: `
-    uniform float c; uniform float p; uniform vec3 glowColor;
-    varying vec3 vN; varying vec3 vP;
-    void main(){ float intensity = pow(c - dot(vN, -vP), p); gl_FragColor = vec4(glowColor, 1.0) * intensity; }
-  `,
-  side: THREE.BackSide, blending: THREE.AdditiveBlending, transparent: true
-});
-const atmos = new THREE.Mesh(new THREE.SphereGeometry(RADIUS*1.18, 64, 64), atmosMat);
-scene.add(atmos);
-
-// Grupo continentes (lo que sumamos despues al cargar geojson)
-const continents = new THREE.Group();
-scene.add(continents);
-
-// Grupo markers
-const markers = new THREE.Group();
-scene.add(markers);
-
-// Grilla de meridianos/paralelos sutiles
-const grid = new THREE.Group();
-const gridMat = new THREE.LineBasicMaterial({ color: 0x4a90c8, transparent:true, opacity:0.13 });
-for(let lat=-60; lat<=60; lat+=30){
-  const pts=[]; for(let lon=-180; lon<=180; lon+=4){ pts.push(latLonToVec3(lat, lon, RADIUS*1.001)); }
-  grid.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), gridMat));
-}
-for(let lon=-180; lon<180; lon+=30){
-  const pts=[]; for(let lat=-90; lat<=90; lat+=4){ pts.push(latLonToVec3(lat, lon, RADIUS*1.001)); }
-  grid.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), gridMat));
-}
-scene.add(grid);
-
-// Controls (rotacion + zoom)
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.08;
-controls.rotateSpeed = 0.55;
-controls.enablePan = false;
-controls.minDistance = 1.6;
-controls.maxDistance = 5.0;
-controls.autoRotate = true;
-controls.autoRotateSpeed = 0.45;
-
-renderer.domElement.addEventListener('pointerdown', ()=>{ wrap.classList.add('dragging'); controls.autoRotate=false; });
-renderer.domElement.addEventListener('pointerup', ()=>{ wrap.classList.remove('dragging'); });
-wrap.addEventListener('mouseleave', ()=>{ controls.autoRotate=true; });
-
-// === Helpers ===
-function latLonToVec3(lat, lon, r){
-  const phi = (90 - lat) * Math.PI/180;
-  const theta = (lon + 180) * Math.PI/180;
-  const x = -r * Math.sin(phi) * Math.cos(theta);
-  const z =  r * Math.sin(phi) * Math.sin(theta);
-  const y =  r * Math.cos(phi);
-  return new THREE.Vector3(x,y,z);
-}
-
-// === Carga GeoJSON de paises (Natural Earth, simplificado) ===
-// Multiples fuentes con CORS abierto, probamos en orden hasta que una funcione.
-const GEO_URLS = [
-  'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json',           // TopoJSON (Natural Earth) — jsdelivr CDN, CORS OK
-  'https://unpkg.com/world-atlas@2/countries-110m.json',                       // espejo en unpkg
-  'https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_110m_admin_0_countries.geojson'
-];
-
-// Mapeo ISO_A3 -> region nuestra
-const COUNTRY_REGION = {
-  ARG:'argentina',
-  // Latam (sin Argentina, que es su propia region pero se solapa con latam)
-  BRA:'latam', CHL:'latam', URY:'latam', PRY:'latam', BOL:'latam', PER:'latam', COL:'latam', ECU:'latam', VEN:'latam', GUY:'latam', SUR:'latam',
-  MEX:'latam', GTM:'latam', BLZ:'latam', SLV:'latam', HND:'latam', NIC:'latam', CRI:'latam', PAN:'latam', CUB:'latam', DOM:'latam', HTI:'latam', JAM:'latam', PRI:'latam', TTO:'latam', BHS:'latam',
-  // Norteamerica
-  USA:'norteamerica', CAN:'norteamerica', GRL:'norteamerica',
-  // Europa
-  GBR:'europa', IRL:'europa', FRA:'europa', DEU:'europa', ITA:'europa', ESP:'europa', PRT:'europa', BEL:'europa', NLD:'europa', LUX:'europa', CHE:'europa', AUT:'europa', POL:'europa', CZE:'europa', SVK:'europa', HUN:'europa', ROU:'europa', BGR:'europa', GRC:'europa', SWE:'europa', NOR:'europa', FIN:'europa', DNK:'europa', ISL:'europa', EST:'europa', LVA:'europa', LTU:'europa', BLR:'europa', UKR:'europa', MDA:'europa', SRB:'europa', HRV:'europa', SVN:'europa', BIH:'europa', MNE:'europa', MKD:'europa', ALB:'europa', RUS:'europa',
-  // Medio Oriente
-  SAU:'medio-oriente', ARE:'medio-oriente', QAT:'medio-oriente', KWT:'medio-oriente', BHR:'medio-oriente', OMN:'medio-oriente', YEM:'medio-oriente', IRQ:'medio-oriente', IRN:'medio-oriente', SYR:'medio-oriente', JOR:'medio-oriente', LBN:'medio-oriente', ISR:'medio-oriente', PSE:'medio-oriente', TUR:'medio-oriente',
-  // Africa
-  EGY:'africa', LBY:'africa', TUN:'africa', DZA:'africa', MAR:'africa', ESH:'africa', MRT:'africa', MLI:'africa', NER:'africa', TCD:'africa', SDN:'africa', SSD:'africa', ETH:'africa', ERI:'africa', DJI:'africa', SOM:'africa', KEN:'africa', UGA:'africa', RWA:'africa', BDI:'africa', TZA:'africa', SEN:'africa', GMB:'africa', GNB:'africa', GIN:'africa', SLE:'africa', LBR:'africa', CIV:'africa', GHA:'africa', TGO:'africa', BEN:'africa', NGA:'africa', CMR:'africa', CAF:'africa', GAB:'africa', GNQ:'africa', COG:'africa', COD:'africa', AGO:'africa', ZMB:'africa', MWI:'africa', MOZ:'africa', ZWE:'africa', BWA:'africa', NAM:'africa', ZAF:'africa', LSO:'africa', SWZ:'africa', MDG:'africa',
-  // Asia
-  CHN:'asia', JPN:'asia', KOR:'asia', PRK:'asia', MNG:'asia', KAZ:'asia', UZB:'asia', TKM:'asia', TJK:'asia', KGZ:'asia', AFG:'asia', PAK:'asia', IND:'asia', NPL:'asia', BTN:'asia', BGD:'asia', LKA:'asia', MMR:'asia', THA:'asia', LAO:'asia', VNM:'asia', KHM:'asia', MYS:'asia', SGP:'asia', IDN:'asia', PHL:'asia', BRN:'asia', TLS:'asia', TWN:'asia',
-  // Oceania
-  AUS:'oceania', NZL:'oceania', PNG:'oceania', FJI:'oceania', SLB:'oceania', VUT:'oceania', NCL:'oceania',
-};
-
-const REGION_COLORS = {
-  argentina:    new THREE.Color(0xffd24a),
-  latam:        new THREE.Color(0x3fd673),
-  norteamerica: new THREE.Color(0x6aa9ff),
-  europa:       new THREE.Color(0xb78cff),
-  africa:       new THREE.Color(0xff9d5c),
-  'medio-oriente':new THREE.Color(0xff7a8a),
-  asia:         new THREE.Color(0x77e6d4),
-  oceania:      new THREE.Color(0xffd6a8),
-  default:      new THREE.Color(0x415a78)
-};
-const HIGHLIGHT = new THREE.Color(0xffd24a);
-
-// Convierte un anillo lat/lon a Vector3 puntos sobre la esfera
-function ringToPoints(ring, r){
-  const pts = [];
-  for(let i=0;i<ring.length;i++){
-    const [lon, lat] = ring[i];
-    pts.push(latLonToVec3(lat, lon, r));
-  }
-  return pts;
-}
-
-// Calcula area firmada de un anillo (positiva = CCW, negativa = CW)
-function ringArea(ring){
-  let area = 0;
-  for(let i=0,n=ring.length-1;i<n;i++){
-    area += (ring[i+1][0]-ring[i][0]) * (ring[i+1][1]+ring[i][1]);
-  }
-  return -area/2; // signo: positivo si CCW
-}
-
-// Normaliza orientacion: outer ring CCW, holes CW (convencion GeoJSON estandar)
-function normalizeRings(coords){
-  return coords.map((ring, i)=>{
-    const a = ringArea(ring);
-    const wantCCW = i === 0;
-    if((wantCCW && a < 0) || (!wantCCW && a > 0)){
-      return ring.slice().reverse();
-    }
-    return ring;
-  });
-}
-
-// Triangula un poligono lat/lon usando earcut. Asume rings ya normalizados.
-function earcutPolygon(coords){
-  const flat = [];
-  const holes = [];
-  let idx = 0;
-  for(let r=0; r<coords.length; r++){
-    const ring = coords[r];
-    if(r>0) holes.push(idx);
-    // Ring de GeoJSON cierra con punto repetido al final; lo descartamos
-    const last = ring.length-1;
-    const skipLast = ring[0][0]===ring[last][0] && ring[0][1]===ring[last][1];
-    const lim = skipLast ? last : ring.length;
-    for(let p=0; p<lim; p++){
-      flat.push(ring[p][0], ring[p][1]);
-      idx++;
-    }
-  }
-  return { flat, holes };
-}
-
-// earcut implementation minimalista (fan-triangulation por anillo simple si el poligono es convexo,
-// pero los paises NO siempre lo son. Cargamos earcut por CDN como modulo.
-// Mejor: usar la libreria via dynamic import.
-let earcut;
-async function loadEarcut(){
-  if(earcut) return earcut;
-  const sources = [
-    'https://cdn.jsdelivr.net/npm/earcut@2.2.4/+esm',
-    'https://esm.sh/earcut@2.2.4',
-    'https://cdn.skypack.dev/earcut@2.2.4'
-  ];
-  let lastErr;
-  for(const src of sources){
-    try{
-      const mod = await import(src);
-      earcut = mod.default || mod.earcut || mod;
-      if(typeof earcut === 'function') return earcut;
-      throw new Error('export inesperado');
-    }catch(e){ lastErr = e; console.warn('earcut fallo en', src, e.message); }
-  }
-  throw lastErr || new Error('earcut no disponible');
-}
-
-// Limpia un anillo: descarta el ultimo punto si es duplicado del primero,
-// y elimina puntos consecutivos identicos.
-function cleanRing(ring){
-  const out = [];
-  for(let i=0;i<ring.length;i++){
-    const p = ring[i];
-    const prev = out[out.length-1];
-    if(!prev || prev[0]!==p[0] || prev[1]!==p[1]) out.push(p);
-  }
-  // Si cierra duplicando el primero, lo quitamos
-  if(out.length>1){
-    const first = out[0], last = out[out.length-1];
-    if(first[0]===last[0] && first[1]===last[1]) out.pop();
-  }
-  return out;
-}
-
-// Subdivide un segmento para que sobre la esfera no atraviese el interior.
-function subdivideTriangle(a, b, c, maxStepDeg, out){
-  const dab = Math.hypot(b[0]-a[0], b[1]-a[1]);
-  const dbc = Math.hypot(c[0]-b[0], c[1]-b[1]);
-  const dca = Math.hypot(a[0]-c[0], a[1]-c[1]);
-  const maxD = Math.max(dab, dbc, dca);
-  if(maxD < maxStepDeg){
-    out.push(a, b, c);
-    return;
-  }
-  // Subdividir el lado mas largo
-  if(dab >= dbc && dab >= dca){
-    const m = [(a[0]+b[0])/2, (a[1]+b[1])/2];
-    subdivideTriangle(a, m, c, maxStepDeg, out);
-    subdivideTriangle(m, b, c, maxStepDeg, out);
-  } else if(dbc >= dca){
-    const m = [(b[0]+c[0])/2, (b[1]+c[1])/2];
-    subdivideTriangle(a, b, m, maxStepDeg, out);
-    subdivideTriangle(a, m, c, maxStepDeg, out);
-  } else {
-    const m = [(c[0]+a[0])/2, (c[1]+a[1])/2];
-    subdivideTriangle(a, b, m, maxStepDeg, out);
-    subdivideTriangle(m, b, c, maxStepDeg, out);
-  }
-}
-
-function buildCountryMesh(geometry, region){
-  const polys = geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates;
-  const positions = [];
-  const indices  = [];
-  let vCount = 0;
-  for(let polyRaw of polys){
-    // 1. Normalizar orientacion (outer CCW, holes CW)
-    const poly = normalizeRings(polyRaw).map(cleanRing).filter(r => r.length >= 3);
-    if(poly.length === 0) continue;
-
-    // 2. Aplanar para earcut (todo en coords lat/lon planas, SIN densificar)
-    const flat = [];
-    const holes = [];
-    let idx = 0;
-    for(let r=0; r<poly.length; r++){
-      if(r>0) holes.push(idx);
-      for(const p of poly[r]){ flat.push(p[0], p[1]); idx++; }
-    }
-    if(flat.length < 6) continue;
-
-    // 3. Triangular en 2D
-    const tris = earcut(flat, holes, 2);
-    if(!tris || tris.length === 0) continue;
-
-    // 4. Para cada triangulo 2D, subdividirlo y proyectar a la esfera
-    for(let t=0; t<tris.length; t+=3){
-      const ia = tris[t]*2, ib = tris[t+1]*2, ic = tris[t+2]*2;
-      const a = [flat[ia],   flat[ia+1]];
-      const b = [flat[ib],   flat[ib+1]];
-      const c = [flat[ic],   flat[ic+1]];
-      const subTris = [];
-      subdivideTriangle(a, b, c, 5, subTris);
-      for(let i=0;i<subTris.length;i+=3){
-        const p1=subTris[i], p2=subTris[i+1], p3=subTris[i+2];
-        const v1=latLonToVec3(p1[1], p1[0], RADIUS*1.002);
-        const v2=latLonToVec3(p2[1], p2[0], RADIUS*1.002);
-        const v3=latLonToVec3(p3[1], p3[0], RADIUS*1.002);
-        positions.push(v1.x,v1.y,v1.z, v2.x,v2.y,v2.z, v3.x,v3.y,v3.z);
-        indices.push(vCount, vCount+1, vCount+2);
-        vCount += 3;
-      }
-    }
-  }
-  if(positions.length===0) return null;
-  const g = new THREE.BufferGeometry();
-  g.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-  g.setIndex(indices);
-  g.computeVertexNormals();
-  const color = REGION_COLORS[region] || REGION_COLORS.default;
-  const mat = new THREE.MeshPhongMaterial({
-    color: color.clone().multiplyScalar(0.75),
-    emissive: color.clone().multiplyScalar(0.18),
-    shininess: 14,
-    specular: 0x222222,
-    side: THREE.DoubleSide
-  });
-  const mesh = new THREE.Mesh(g, mat);
-  mesh.userData.region = region;
-  mesh.userData.baseColor = color.clone().multiplyScalar(0.75);
-  // Borde del pais
-  const edges = new THREE.LineSegments(
-    new THREE.EdgesGeometry(g, 22),
-    new THREE.LineBasicMaterial({ color: 0x000000, transparent:true, opacity:0.35 })
-  );
-  mesh.add(edges);
-  return mesh;
-}
-
-// Markers 3D para cada region con cards
-function buildMarkers(){
-  // limpiar
-  while(markers.children.length){ const c = markers.children[0]; markers.remove(c); c.geometry?.dispose?.(); c.material?.dispose?.(); }
-  const counts = window.regionCounts ? window.regionCounts() : {};
-  for(const [region, latlon] of Object.entries(REGION_LATLON)){
-    const n = counts[region] || 0;
-    if(!n) continue;
-    const pos = latLonToVec3(latlon[0], latlon[1], RADIUS*1.04);
-    const isHot = n>=5, isCool = n<=2;
-    const color = isHot ? 0xff5145 : (isCool ? 0x3fd673 : 0xffd24a);
-    // Pin
-    const pinH = 0.16 + Math.min(n,8)*0.015;
-    const pinG = new THREE.ConeGeometry(0.025, pinH, 12);
-    pinG.translate(0, pinH/2, 0);
-    const pinM = new THREE.MeshPhongMaterial({ color, emissive:color, emissiveIntensity:0.45, shininess:30 });
-    const pin = new THREE.Mesh(pinG, pinM);
-    pin.position.copy(pos);
-    pin.lookAt(new THREE.Vector3(0,0,0));
-    pin.rotateX(Math.PI/2);
-    pin.userData = { region, count:n, isMarker:true };
-    markers.add(pin);
-    // Halo pulsante
-    const haloG = new THREE.RingGeometry(0.04, 0.07, 24);
-    const haloM = new THREE.MeshBasicMaterial({ color, transparent:true, opacity:0.55, side:THREE.DoubleSide });
-    const halo = new THREE.Mesh(haloG, haloM);
-    halo.position.copy(pos);
-    halo.lookAt(new THREE.Vector3(0,0,0));
-    halo.userData = { region, count:n, isMarker:true, isHalo:true, baseScale:1 };
-    markers.add(halo);
-  }
-}
-window.regionCounts = regionCounts; // expose
-
-// === Raycasting para hover/click ===
-const raycaster = new THREE.Raycaster();
-const pointer = new THREE.Vector2();
-let hoverRegion = null;
-
-function onPointerMove(e){
-  const rect = renderer.domElement.getBoundingClientRect();
-  pointer.x = ((e.clientX - rect.left) / rect.width)*2 - 1;
-  pointer.y = -((e.clientY - rect.top) / rect.height)*2 + 1;
-  raycaster.setFromCamera(pointer, camera);
-  // primero markers
-  const mHits = raycaster.intersectObjects(markers.children, false);
-  if(mHits.length){
-    const o = mHits[0].object;
-    setHover(o.userData.region, e.clientX - rect.left, e.clientY - rect.top, o.userData.count);
-    return;
-  }
-  // luego continentes
-  const cHits = raycaster.intersectObjects(continents.children, false);
-  if(cHits.length){
-    const o = cHits[0].object;
-    const counts = regionCounts();
-    setHover(o.userData.region, e.clientX - rect.left, e.clientY - rect.top, counts[o.userData.region]||0);
-  }else{
-    setHover(null);
-  }
-}
-function setHover(region, x, y, count){
-  // Limpia highlight previo
-  continents.children.forEach(m=>{
-    const baseRegion = m.userData.region;
-    const isCurrent = baseRegion === region;
-    m.material.color.copy(isCurrent ? HIGHLIGHT : m.userData.baseColor);
-    m.material.emissiveIntensity = isCurrent ? 0.4 : 0.2;
-  });
-  if(region){
-    tooltipEl.textContent = '';
-    const label = REGION_LABELS[region] || region;
-    tooltipEl.innerHTML = `${label}${count>0?`<span class="tt-count">${count}</span>`:''}`;
-    tooltipEl.style.left = x + 'px';
-    tooltipEl.style.top  = y + 'px';
-    tooltipEl.classList.add('show');
-    renderer.domElement.style.cursor = count>0 ? 'pointer' : 'default';
-  }else{
-    tooltipEl.classList.remove('show');
-    renderer.domElement.style.cursor = '';
-  }
-  hoverRegion = region;
-}
-function onClick(e){
-  if(hoverRegion && (regionCounts()[hoverRegion]||0)>0){
-    window.selectRegion(hoverRegion);
-  }
-}
-renderer.domElement.addEventListener('pointermove', onPointerMove);
-renderer.domElement.addEventListener('click', onClick);
-
-// Resize
-function onResize(){
-  const w = wrap.clientWidth, h = wrap.clientHeight;
-  camera.aspect = w/h; camera.updateProjectionMatrix();
-  renderer.setSize(w, h);
-}
-window.addEventListener('resize', onResize);
-
-// Focus de camara al seleccionar region
-window.globe3D = {
-  focusRegion(region){
-    if(region==='all'||region==='global'){
-      // resetear vista
-      animateCameraTo({ x:0, y:0, z:3.2 });
-      controls.autoRotate = true;
-      return;
-    }
-    const ll = REGION_LATLON[region] || REGION_LATLON.argentina;
-    const target = latLonToVec3(ll[0], ll[1], 2.6);
-    animateCameraTo({ x:target.x, y:target.y, z:target.z });
-    controls.autoRotate = false;
-  }
-};
-function animateCameraTo(end){
-  const start = { x:camera.position.x, y:camera.position.y, z:camera.position.z };
-  const t0 = performance.now();
-  const dur = 900;
-  function step(now){
-    const t = Math.min((now-t0)/dur, 1);
-    const e = 1 - Math.pow(1-t, 3);
-    camera.position.set(
-      start.x + (end.x - start.x)*e,
-      start.y + (end.y - start.y)*e,
-      start.z + (end.z - start.z)*e
-    );
-    camera.lookAt(0,0,0);
-    if(t<1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-// Loop
-let t0 = performance.now();
-function tick(){
-  const t = (performance.now() - t0)/1000;
-  // pulso de halos
-  markers.children.forEach(m=>{
-    if(m.userData.isHalo){
-      const s = 1 + Math.sin(t*2 + m.position.x*8) * 0.35;
-      m.scale.setScalar(s);
-      m.material.opacity = 0.55 - (s-1)*0.5;
-    }
-  });
-  controls.update();
-  renderer.render(scene, camera);
-  requestAnimationFrame(tick);
-}
-tick();
-
-// world-atlas usa codigos numericos ISO 3166-1, mapeamos los relevantes
-const NUMERIC_TO_ISO3 = {
-  '004':'AFG','008':'ALB','012':'DZA','020':'AND','024':'AGO','032':'ARG','036':'AUS','040':'AUT','044':'BHS','048':'BHR','050':'BGD','051':'ARM','052':'BRB','056':'BEL','060':'BMU','064':'BTN','068':'BOL','070':'BIH','072':'BWA','076':'BRA','084':'BLZ','090':'SLB','096':'BRN','100':'BGR','104':'MMR','108':'BDI','112':'BLR','116':'KHM','120':'CMR','124':'CAN','132':'CPV','140':'CAF','144':'LKA','148':'TCD','152':'CHL','156':'CHN','158':'TWN','170':'COL','174':'COM','178':'COG','180':'COD','188':'CRI','191':'HRV','192':'CUB','196':'CYP','203':'CZE','204':'BEN','208':'DNK','214':'DOM','218':'ECU','222':'SLV','226':'GNQ','231':'ETH','232':'ERI','233':'EST','242':'FJI','246':'FIN','250':'FRA','260':'ATF','262':'DJI','266':'GAB','268':'GEO','270':'GMB','275':'PSE','276':'DEU','288':'GHA','296':'KIR','300':'GRC','304':'GRL','308':'GRD','320':'GTM','324':'GIN','328':'GUY','332':'HTI','340':'HND','348':'HUN','352':'ISL','356':'IND','360':'IDN','364':'IRN','368':'IRQ','372':'IRL','376':'ISR','380':'ITA','384':'CIV','388':'JAM','392':'JPN','398':'KAZ','400':'JOR','404':'KEN','408':'PRK','410':'KOR','414':'KWT','417':'KGZ','418':'LAO','422':'LBN','426':'LSO','428':'LVA','430':'LBR','434':'LBY','438':'LIE','440':'LTU','442':'LUX','450':'MDG','454':'MWI','458':'MYS','466':'MLI','478':'MRT','480':'MUS','484':'MEX','492':'MCO','496':'MNG','498':'MDA','499':'MNE','504':'MAR','508':'MOZ','512':'OMN','516':'NAM','524':'NPL','528':'NLD','540':'NCL','548':'VUT','554':'NZL','558':'NIC','562':'NER','566':'NGA','578':'NOR','586':'PAK','591':'PAN','598':'PNG','600':'PRY','604':'PER','608':'PHL','616':'POL','620':'PRT','626':'TLS','630':'PRI','634':'QAT','642':'ROU','643':'RUS','646':'RWA','662':'LCA','682':'SAU','686':'SEN','688':'SRB','694':'SLE','702':'SGP','703':'SVK','704':'VNM','705':'SVN','706':'SOM','710':'ZAF','716':'ZWE','724':'ESP','728':'SSD','729':'SDN','740':'SUR','748':'SWZ','752':'SWE','756':'CHE','760':'SYR','762':'TJK','764':'THA','768':'TGO','780':'TTO','784':'ARE','788':'TUN','792':'TUR','795':'TKM','798':'TUV','800':'UGA','804':'UKR','807':'MKD','818':'EGY','826':'GBR','834':'TZA','840':'USA','854':'BFA','858':'URY','860':'UZB','862':'VEN','882':'WSM','887':'YEM','894':'ZMB'
-};
-
-async function fetchFirstAvailable(urls){
-  for(const url of urls){
-    try{
-      const r = await fetch(url);
-      if(!r.ok) throw new Error('HTTP '+r.status);
-      return { url, json: await r.json() };
-    }catch(e){
-      console.warn('Intento fallido con', url, e.message);
-    }
-  }
-  throw new Error('Ningun CDN disponible');
-}
-
-(async ()=>{
-  try{
-    await loadEarcut();
-    const { url, json } = await fetchFirstAvailable(GEO_URLS);
-    let features;
-    if(json.type === 'Topology'){
-      // TopoJSON -> GeoJSON usando topojson-client desde CDN
-      const topo = await import('https://cdn.jsdelivr.net/npm/topojson-client@3/+esm');
-      const objKey = Object.keys(json.objects)[0]; // "countries"
-      const fc = topo.feature(json, json.objects[objKey]);
-      features = fc.features.map(f => ({
-        ...f,
-        properties: { ...f.properties, ISO_A3: NUMERIC_TO_ISO3[String(f.id).padStart(3,'0')] || '' }
-      }));
-    }else{
-      features = json.features;
-    }
-    let added = 0;
-    for(const f of features){
-      const iso = f.properties.ISO_A3 || f.properties.ADM0_A3 || '';
-      const region = COUNTRY_REGION[iso];
-      if(!region) continue;
-      const mesh = buildCountryMesh(f.geometry, region);
-      if(mesh){ continents.add(mesh); added++; }
-    }
-    console.log('Mapa cargado desde', url, '·', added, 'paises');
-    buildMarkers();
-    loadingEl.classList.add('hidden');
-  }catch(err){
-    console.error('No se pudo cargar el mapa', err);
-    loadingEl.innerHTML = `<div style="color:var(--r);font-size:13px;text-align:center">No se pudo cargar el mapa.<br><span style="color:var(--t3);font-size:11px">${err.message}</span><br>Revisá tu conexión y refrescá.</div>`;
-  }
-})();
-</script>
 </body>
 </html>
