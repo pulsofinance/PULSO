@@ -789,50 +789,58 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     <div class="rc-bottom-row">
       <div class="rc-badges">
         <span class="ibadge ib-a"><span class="ibdot"></span>IMPACTO ALTO</span>
-        <span class="ibadge ib-t">📈 Research</span>
-        <span class="ibadge ib-r">🇦🇷 Argentina</span>
       </div>
+      <div class="rc-pulso-hook">Upgrade Fitch + liquidez holgada = semana positiva para los pesos</div>
     </div>
   </div>
   <div class="rc-l1">
-    <div class="rc-l1-grid">
-      <div class="rc-l1-block">
-        <div class="rc-l1-label">EL CATALIZADOR</div>
-        <div class="rc-l1-text">El martes, Fitch subió la deuda soberana argentina de <span class="hl-r">CCC+</span> a <span class="hl-g">B−</span>. Los Globales subieron hasta <span class="hl-g">2,8%</span> el miércoles. El riesgo país cayó <span class="hl-g">40 pbs</span> hasta <span class="hl-g">510 pbs</span> al cierre de la semana. Las curvas en pesos — especialmente CER — se contagiaron del rally. El nuevo bono TXMJ9 subió <span class="hl-g">7,1%</span> desde su emisión en su primera semana de cotización.</div>
-      </div>
-      <div class="rc-l1-block">
-        <div class="rc-l1-label">ESTRATEGIA RECOMENDADA</div>
-        <div class="rc-l1-text">Balanz mantiene <span class="hl">TZXO6 con cobertura Rofex</span> como posición central: combina cobertura CER y cambiaria hasta junio. Para liquidez de corto plazo prefieren <span class="hl">TZX26</span> sobre Lecaps/Boncaps similares, porque estiman que vence algo por encima de T30J6 y TTJ26 según sus proyecciones de inflación. Evitan tomar duración larga en pesos.</div>
-      </div>
-      <div class="rc-l1-block">
-        <div class="rc-l1-label">QUÉ MIRAR ESTA SEMANA</div>
-        <div class="rc-l1-text">Hoy martes se publica la inflación de abril: el REM espera <span class="hl">2,6%</span>, Balanz estima <span class="hl">2,7%</span>. El miércoles hay licitación del Tesoro con <span class="hl-r">ARS 11.000M</span> en vencimientos (S15Y6, X15Y6, TX26, TX28) — el Tesoro tiene ARS 8.500M en depósitos en el BCRA. Si sigue estirando duración hacia post-2027, podría presionar el tramo largo.</div>
-      </div>
+    <div class="rc-summary">
+      <div class="rc-sum-tag">// Qué pasa con Argentina y qué tenés que tener en cuenta</div>
+      <div class="rc-sum-txt">El upgrade de Fitch de <span class="dato">CCC+</span> a <span class="dato">B−</span> fue el catalizador de la semana: los Globales subieron hasta <span class="dato">2,8%</span> y el riesgo país cerró en <span class="dato">510 pbs</span> (−40 pbs en el día). Las curvas en pesos se contagiaron, especialmente CER. El nuevo TXMJ9 subió <span class="dato">7,1%</span> en su primera semana. Balanz mantiene <span class="key">TZXO6 con cobertura Rofex como posición central</span> — combina cobertura CER y cambiaria hasta junio — y prefiere TZX26 para liquidez por encima de Lecaps/Boncaps comparables. El único riesgo a monitorear: si el Tesoro sigue estirando vencimientos hacia post-2027 pagando premio en el tramo largo, ese segmento se vería afectado.</div>
+      <div class="rc-sum-by">— PULSO</div>
     </div>
-    <button class="rc-l1-more" onclick="toggleL2(this.closest('.rc'))">Ver análisis completo ↓</button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
+      <span class="rc-exp-label">Leer análisis completo</span>
+      <span class="rc-exp-arr">▶</span>
+    </button>
   </div>
   <div class="rc-l2">
-    <div class="rc-l2-inner">
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">TXMJ9: EL BONO NUEVO PARA BANCOS</div>
-        <div class="rc-l2-text">El TXMJ9 fue emitido con algo de premio y subió 7,1% en su primera semana. Es atractivo para bancos porque sus pasivos se mueven con la TAMAR: si hay menos restricciones cambiarias y tasa real positiva, el bono paga TAMAR; si se endurecen controles y la tasa real es negativa, paga CER. Cubre ambos escenarios electorales posibles.</div>
+    <div class="rc-full">
+      <div class="rc-full-header">
+        <span class="rc-full-label">Balanz · 12 MAY — Curvas en pesos y estrategia semanal</span>
+        <span class="rc-full-source">Balanz Capital — Estrategia de Renta Fija · Mayo 2026</span>
       </div>
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">TASAS OVERNIGHT: VOLVIERON AL PISO</div>
-        <div class="rc-l2-text">La tasa de caución cerró la semana en <span class="hl">19,9% TNA</span>, bajando desde 23,9% TNA de la semana previa. Las presiones habían surgido de intervenciones del BCRA en la curva dollar-linked + rollover levemente por encima del 100% en la última licitación, que achicaron el stock de pases (llegó a ARS 1.300M). Luego se recuperó a ARS 2.000M. La normalización de tasas cortas facilita el rollover del Tesoro.</div>
+      <div class="rc-block">
+        <div class="rc-block-title">El catalizador: Fitch CCC+ → B−</div>
+        <div class="rc-block-body">
+          <p>El martes Fitch mejoró la calificación soberana argentina de <span class="dato">CCC+</span> a <span class="dato">B−</span>. El miércoles los Globales subieron hasta <span class="dato">2,8%</span>, el riesgo país cayó <span class="dato">40 pbs</span> a <span class="dato">514 pbs</span> y cerró la semana en <span class="dato">510 pbs</span>. Las curvas en pesos — especialmente CER — se beneficiaron de esa dinámica. El nuevo TXMJ9, en su primera semana de cotización, subió <span class="dato">7,1%</span> desde la emisión. Es atractivo para bancos porque cubre ambos escenarios: paga TAMAR con menos restricciones cambiarias y tasa real positiva, o CER si se endurecen los controles.</p>
+        </div>
       </div>
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">ROFEX Y DÓLAR LINKED</div>
-        <div class="rc-l2-text">La curva Rofex opera algo por debajo de las proyecciones de tipo de cambio de Balanz, lo que la hace atractiva para cubrir riesgo cambiario. La cobertura recomendada es hasta junio, en línea con el vencimiento del TZXO6. Los instrumentos dollar-linked también se ven bien pero Balanz prefiere la cobertura vía Rofex por su mayor flexibilidad.</div>
+      <div class="rc-block">
+        <div class="rc-block-title">Estrategia recomendada: TZXO6 + Rofex, TZX26 para liquidez</div>
+        <div class="rc-block-body">
+          <p>Balanz mantiene <strong>TZXO6 con cobertura Rofex</strong> como posición central: combina protección CER y cambiaria hasta junio. La curva Rofex opera algo por debajo de las proyecciones de tipo de cambio del banco, lo que la hace atractiva para cubrir riesgo FX. Para manejo de liquidez prefieren el <strong>TZX26</strong> sobre T30J6 y TTJ26 — estiman que vence algo por encima de esos comparables según sus proyecciones de inflación, y además brinda cobertura CER de abril.</p>
+          <p>Postura general: evitar tomar duración larga en pesos. El tramo largo tiene mayor carry y sería el más beneficiado por compresión del riesgo país, pero si el Tesoro continúa colocando allí pagando premio para estirar vencimientos, ese segmento se vería presionado.</p>
+        </div>
       </div>
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">RIESGO: ESTRATEGIA DE LICITACIÓN</div>
-        <div class="rc-l2-text">Si el Tesoro continúa colocando en el tramo largo pagando premio para estirar vencimientos hacia post-2027, ese segmento de la curva CER sería perjudicado. Por eso Balanz evita tomar duración larga en pesos. El tramo largo tiene mayor carry y es el que más gana con compresión de riesgo país — pero ese beneficio puede neutralizarse si hay oferta constante del Tesoro en ese tramo.</div>
+      <div class="rc-block">
+        <div class="rc-block-title">Tasas overnight: volvieron al piso del BCRA</div>
+        <div class="rc-block-body">
+          <p>La tasa de caución cerró la semana en <span class="dato">19,9% TNA</span> en A3, bajando desde <span class="dato">23,9% TNA</span> de la semana anterior. Las presiones habían surgido de intervenciones del BCRA en la curva dollar-linked + rollover levemente por encima del 100% en la última licitación, que redujeron el stock de pases a <span class="dato">ARS 1.300M</span>. Luego se recuperó a <span class="dato">ARS 2.000M</span> el jueves. La normalización de tasas cortas facilita el rollover del Tesoro.</p>
+        </div>
       </div>
-      <div class="rc-l2-close"><button onclick="toggleL2(this.closest('.rc'))">Cerrar ↑</button></div>
+      <div class="rc-block">
+        <div class="rc-block-title">Qué mirar: inflación de abril y licitación del miércoles</div>
+        <div class="rc-block-body">
+          <p>El martes INDEC publica la inflación de abril: la mediana del REM espera <span class="dato">2,6%</span>, Balanz estima <span class="dato">2,7%</span>. Un dato significativamente distinto del consenso podría impactar en las curvas. El miércoles hay licitación con <span class="dato">ARS 11.000M</span> en vencimientos (S15Y6, X15Y6, TX26, TX28). El Tesoro tiene <span class="dato">ARS 8.500M</span> en depósitos en el BCRA. Si sigue la estrategia de estirar duration hacia post-2027 — aprovechando el spread más atractivo con el tramo largo — habría que monitorear el impacto en ese segmento de la curva.</p>
+        </div>
+      </div>
+      <div class="rc-conclusion">
+        Semana positiva para los pesos con el upgrade Fitch como detonante. La posición TZXO6 + Rofex de Balanz sigue siendo la más equilibrada: captura carry CER y cubre el riesgo cambiario hasta junio sin tomar duración innecesaria. El único riesgo concreto es la licitación del Tesoro — si presiona el tramo largo, los CER largos podrían revertir parte de las ganancias de la semana.
+      </div>
     </div>
   </div>
-  </div>
+</div>
 
   <!-- BULL: TRADING IDEAS CER 13 MAY -->
   <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="bull-trading-cer-mayo26">
@@ -846,54 +854,58 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
         <span class="rc-arr">▶</span>
       </div>
     </div>
-    <div class="rc-gancho">Tres trades dentro de curvas arbitradas: salir de <span style="color:#FF5145;">TTS26</span> y <span style="color:#FF5145;">TZXM7</span>, y rotar el <span style="color:#FF5145;">TZXD7</span> — hay entre <span style="color:#3FD673;">77 y 300 bps</span> de pick-up disponibles</div>
+    <div class="rc-gancho">Tres trades de relative value dentro de curvas: salir de <span style="color:#FF5145;">TTS26</span> y <span style="color:#FF5145;">TZXM7</span>, y rotar el <span style="color:#FF5145;">TZXD7</span> — hay entre <span style="color:#3FD673;">77 y 300 bps</span> de pick-up disponibles</div>
     <div class="rc-bottom-row">
       <div class="rc-badges">
         <span class="ibadge ib-a"><span class="ibdot"></span>IMPACTO ALTO</span>
-        <span class="ibadge ib-t">📈 Research</span>
-        <span class="ibadge ib-r">🇦🇷 Argentina</span>
       </div>
+      <div class="rc-pulso-hook">Las curvas están arbitradas entre sí, pero adentro de cada una quedan dislocaciones aprovechables</div>
     </div>
   </div>
   <div class="rc-l1">
-    <div class="rc-l1-grid">
-      <div class="rc-l1-block">
-        <div class="rc-l1-label">CURVA TAMAR</div>
-        <div class="rc-l1-text">El <span class="hl-r">TTS26</span> quedó fuera de curva: su TAMAR break-even implica saltos inconsistentes con el resto de la curva. Parte se explica por menor liquidez tras el último canje, que redujo más de un tercio el VN en circulación. Bull prefiere la <span class="hl">M31G6</span>: mejora <span class="hl-g">95 bps</span> de yield y acorta marginalmente duration.</div>
-      </div>
-      <div class="rc-l1-block">
-        <div class="rc-l1-label">TRAMO MEDIO CER</div>
-        <div class="rc-l1-text">El <span class="hl-r">TZXM7</span> quedó caro vs. el resto: la forward M7-A7 está en ~<span class="hl-r">9%</span>, nivel elevado para una curva que hasta ese punto aún carece de tasa real. Rotar a <span class="hl">TZXA7</span> da un pick-up de <span class="hl-g">77 bps</span> de YTM alargando solo un mes de duration.</div>
-      </div>
-      <div class="rc-l1-block">
-        <div class="rc-l1-label">TRAMO LARGO CER</div>
-        <div class="rc-l1-text">El <span class="hl-r">TZXD7</span> vence justo después de las elecciones y rinde <span class="hl-r">5,4% real</span> — descuenta un escenario optimista pero está expuesto a sell-off ante resultado adverso. Rotar a <span class="hl">TZXS8</span> alarga duration menos de un año y mejora yield en <span class="hl-g">300 bps</span>: compensación más acorde por el riesgo electoral asumido.</div>
-      </div>
+    <div class="rc-summary">
+      <div class="rc-sum-tag">// Qué pasa con Argentina y qué tenés que tener en cuenta</div>
+      <div class="rc-sum-txt">Bull parte de que las curvas en pesos están mayormente arbitradas entre segmentos. Las oportunidades son dentro de cada curva. <span class="key">Tres ideas concretas:</span> (1) en la curva TAMAR, el TTS26 quedó fuera de curva por falta de liquidez — la M31G6 paga <span class="dato">95 bps</span> más de yield; (2) en el tramo medio CER, el TZXM7 está caro — la forward M7-A7 implica <span class="dato">9%</span>, nivel inconsistente con la curva circundante; rotando a TZXA7 se capturan <span class="dato">77 bps</span> adicionales de YTM; (3) en el tramo largo, el TZXD7 rinde <span class="dato">5,4% real</span> venciendo justo después de las elecciones — descuenta un escenario optimista con exposición a sell-off electoral; TZXS8 ofrece <span class="dato">300 bps</span> más de rendimiento por el mismo riesgo con menos de un año extra de duration.</div>
+      <div class="rc-sum-by">— PULSO</div>
     </div>
-    <button class="rc-l1-more" onclick="toggleL2(this.closest('.rc'))">Ver análisis completo ↓</button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
+      <span class="rc-exp-label">Leer análisis completo</span>
+      <span class="rc-exp-arr">▶</span>
+    </button>
   </div>
   <div class="rc-l2">
-    <div class="rc-l2-inner">
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">CONTEXTO: CURVAS MAYORMENTE ARBITRADAS</div>
-        <div class="rc-l2-text">Bull parte de la premisa de que las curvas en pesos están en gran medida arbitradas entre sí. Aun así, dentro de cada segmento persisten dislocaciones puntuales que generan oportunidades de relative value. Las tres ideas apuntan a capturar esas anomalías sin tomar grandes apuestas macro.</div>
+    <div class="rc-full">
+      <div class="rc-full-header">
+        <span class="rc-full-label">Bull Capital · 13 MAY — Trading ideas en curvas en pesos</span>
+        <span class="rc-full-source">Bull Capital — Research · Mayo 2026</span>
       </div>
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">CURVA CER CORTA: TASAS REALES NEGATIVAS HASTA Q1 2027</div>
-        <div class="rc-l2-text">En el tramo corto CER los rendimientos siguen en territorio de tasa real negativa hasta el primer trimestre de 2027. Las forwards recién pasan a positivo a partir del par O6-N6, anticipando normalización gradual de la tasa real. Esto hace poco atractivo extender mucho duración en el extremo corto sin compensación.</div>
+      <div class="rc-block">
+        <div class="rc-block-title">Curva TAMAR: salir TTS26, entrar M31G6 (+95 bps)</div>
+        <div class="rc-block-body">
+          <p>Al construir el sendero de TAMAR break-even del TTS26, la tasa nominal implica saltos en los días de referencia inconsistentes con la dinámica del resto de la curva TAMAR. La explicación: el último canje redujo el VN en circulación más de un tercio, achicando la liquidez y distorsionando el precio relativo del bono.</p>
+          <p>La <strong>M31G6</strong> no tiene ese problema. Mejora <span class="dato">95 bps</span> de yield contra el TTS26 y acorta marginalmente la duration — una rotación con buen perfil riesgo/retorno dentro del mismo segmento.</p>
+        </div>
       </div>
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">TTS26: POR QUÉ ESTÁ FUERA DE CURVA</div>
-        <div class="rc-l2-text">Al construir el sendero de TAMAR break-even del TTS26, la tasa nominal implica saltos en los días de referencia del bono que son inconsistentes con la dinámica del resto de la curva TAMAR. La causa: el último canje redujo el VN en circulación más de un tercio, achicando la liquidez y distorsionando el precio. La M31G6 no tiene ese problema y ofrece 95 bps adicionales de yield.</div>
+      <div class="rc-block">
+        <div class="rc-block-title">Tramo medio CER: rotar TZXM7 → TZXA7 (+77 bps YTM)</div>
+        <div class="rc-block-body">
+          <p>En el tramo corto CER los rendimientos siguen en tasa real negativa hasta el primer trimestre de 2027. Las forwards pasan a territorio positivo recién a partir del par O6-N6. Hacia el tramo medio, la operatoria se reduce considerablemente luego del TZXM7, que quedó caro: la forward M7-A7 se ubica en torno al <span class="dato">9%</span> — nivel elevado para una curva que hasta ese punto aún carece de tasa real, y que de revertirse probablemente lo haga en un nivel menor.</p>
+          <p>Rotar <strong>TZXM7 (−0,5%) por TZXA7</strong> da un pick-up de <span class="dato">77 bps</span> de YTM alargando apenas un mes de duration.</p>
+        </div>
       </div>
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">TZXD7 Y EL RIESGO ELECTORAL</div>
-        <div class="rc-l2-text">Más allá del quiebre visible en la curva CER a partir de 2028 — asociado al riesgo de los vencimientos post-octubre 2027 — el TZXD7 está en una zona ambigua: vence justo después de las elecciones, rinde 5,4% real y descuenta un resultado favorable. Ante un escenario adverso, el sell-off podría ser significativo. El TZXS8 ofrece 300 bps más de rendimiento por asumir ese mismo riesgo electoral con menos de un año adicional de duration: relación riesgo/retorno claramente superior.</div>
+      <div class="rc-block">
+        <div class="rc-block-title">Tramo largo CER: rotar TZXD7 → TZXS8 (+300 bps)</div>
+        <div class="rc-block-body">
+          <p>Más allá del quiebre visible en la curva a partir de 2028 — asociado al riesgo electoral de los vencimientos post-octubre 2027 — el TZXD7 está en zona ambigua: vence justo después de las elecciones, rinde <span class="dato">5,4% real</span> y descuenta un resultado favorable. Ante un escenario adverso, el sell-off podría ser considerable.</p>
+          <p>El <strong>TZXS8</strong> alarga la duration en menos de un año y mejora el yield en <span class="dato">300 bps</span> — una compensación mucho más acorde para asumir la misma exposición al riesgo electoral. Relación riesgo/retorno claramente superior.</p>
+        </div>
       </div>
-      <div class="rc-l2-close"><button onclick="toggleL2(this.closest('.rc'))">Cerrar ↑</button></div>
+      <div class="rc-conclusion">
+        Bull presenta el análisis más granular de la semana sobre las curvas en pesos. Las tres ideas son de relative value puro — no requieren tener una visión macro fuerte, solo identificar dónde el precio está dislocado respecto al resto de la curva. La más clara es la rotación en TAMAR (TTS26 → M31G6): la razón de la dislocación es estructural (menos liquidez post-canje) y el pick-up de 95 bps es difícil de justificar por riesgo. La de mayor potencial es TZXD7 → TZXS8: 300 bps de yield adicional por menos de un año más de duration es una compensación generosa por el riesgo electoral.
+      </div>
     </div>
   </div>
-  </div>
+</div>
 
   <!-- BAVSA: LICITACION TESORO 14 MAY -->
   <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="bavsa-licitacion-mayo26">
@@ -911,50 +923,52 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     <div class="rc-bottom-row">
       <div class="rc-badges">
         <span class="ibadge ib-a"><span class="ibdot"></span>IMPACTO ALTO</span>
-        <span class="ibadge ib-t">📈 Research</span>
-        <span class="ibadge ib-r">🇦🇷 Argentina</span>
       </div>
+      <div class="rc-pulso-hook">Rollover por debajo del 100% inyecta pesos — el sistema llega al viernes con la liquidez más alta desde diciembre</div>
     </div>
   </div>
   <div class="rc-l1">
-    <div class="rc-l1-grid">
-      <div class="rc-l1-block">
-        <div class="rc-l1-label">EL RESULTADO</div>
-        <div class="rc-l1-text">Tesoro recibió ofertas por <span class="hl">ARS 14,4 bn</span> y adjudicó <span class="hl">ARS 10,7 bn</span>. El rollover real fue <span class="hl-r">96%</span> (sumando los pagos de TX26 y TX28 del lunes, ARS 1,8 bn). Sin contabilizar esos pagos, el rolleo llega al ~<span class="hl-g">110%</span> según la Secretaría de Finanzas. El rollover por debajo del 100% implica una inyección neta de pesos de ~<span class="hl">ARS 0,5 bn</span>.</div>
-      </div>
-      <div class="rc-l1-block">
-        <div class="rc-l1-label">LIQUIDEZ DEL SISTEMA</div>
-        <div class="rc-l1-text">El BCRA absorbió en la rueda REPO de A3 unos <span class="hl">ARS 4,2 bn</span> al día de hoy. Con la liquidación el viernes, BAVSA estima que el sistema llegará a <span class="hl-g">~ARS 5 bn</span> — niveles no vistos desde el 5 de diciembre de 2025. Esto se suma a las compras de dólares del BCRA (mayores que las ventas en secundario de DLK), que también inyectan pesos.</div>
-      </div>
-      <div class="rc-l1-block">
-        <div class="rc-l1-label">QUÉ ESPERAR</div>
-        <div class="rc-l1-text">Con alta liquidez en el sistema y tasas razonables convalidadas en primario, BAVSA espera que en los próximos días <span class="hl-g">rallen en secundario los activos en pesos</span>. El TXMJ9 (TAMAR+9%) luce más atractivo que el TXMJ8 (TAMAR+7%, que cortó caro). La LECAP sorprendió con premio — inusual dado el patrón reciente de las licitaciones.</div>
-      </div>
+    <div class="rc-summary">
+      <div class="rc-sum-tag">// Qué pasa con Argentina y qué tenés que tener en cuenta</div>
+      <div class="rc-sum-txt">El Tesoro recibió <span class="dato">ARS 14,4 bn</span> en ofertas y adjudicó <span class="dato">ARS 10,7 bn</span>. El rollover real fue <span class="dato">96%</span> al incluir los pagos de TX26 y TX28 del lunes (ARS 1,8 bn), o ~<span class="dato">110%</span> según la Secretaría de Finanzas sin esos pagos. El resultado genera una inyección neta de pesos de <span class="dato">~ARS 0,5 bn</span>. Sumado a las compras de dólares del BCRA y la rueda REPO, <span class="key">BAVSA estima que la liquidez del sistema llegará a ~ARS 5 bn el viernes</span> — máximo desde el 5 de diciembre de 2025. Con ese contexto y tasas convalidadas en primario, espera rally en secundario de activos en pesos. El TXMJ9 (TAMAR+9%) luce más atractivo que el TXMJ8 (TAMAR+7%, que cortó caro).</div>
+      <div class="rc-sum-by">— PULSO</div>
     </div>
-    <button class="rc-l1-more" onclick="toggleL2(this.closest('.rc'))">Ver análisis completo ↓</button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
+      <span class="rc-exp-label">Leer análisis completo</span>
+      <span class="rc-exp-arr">▶</span>
+    </button>
   </div>
   <div class="rc-l2">
-    <div class="rc-l2-inner">
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">COMPOSICIÓN: 44% EN 2028-2029</div>
-        <div class="rc-l2-text">El <span class="hl">44%</span> de lo adjudicado se concentró en títulos con vencimiento 2028 y 2029: <span class="hl">ARS 4,7 bn</span> repartidos entre TXMJ8 y TXMJ9. El Tesoro incluyó también títulos a 2027, señalando que el objetivo no fue solo extender duration sino también <strong>flatear la curva CER</strong>, que quedó muy empinada por las últimas licitaciones donde se pagó premio relevante para que los inversores extendieran más allá de 2027.</div>
+    <div class="rc-full">
+      <div class="rc-full-header">
+        <span class="rc-full-label">BAVSA · 14 MAY — Resultado de licitación del Tesoro</span>
+        <span class="rc-full-source">BAVSA — Research · Mayo 2026</span>
       </div>
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">TXMJ8 vs. TXMJ9: NO ES LO MISMO</div>
-        <div class="rc-l2-text">El <span class="hl-r">TXMJ8</span> cortó en <span class="hl-r">TAMAR + 7%</span> — BAVSA lo ve caro frente al mercado secundario. El <span class="hl-g">TXMJ9</span> cortó en <span class="hl-g">TAMAR + 9%</span> — más atractivo y con mejor carry. La LECAP fue la sorpresa de la licitación al cortar con premio, algo que no se veía en las últimas ruedas donde la tasa fija tendía a cortar a mercado por el nivel de adhesión recibida.</div>
+      <div class="rc-block">
+        <div class="rc-block-title">Los números: rollover 96% con inyección neta de pesos</div>
+        <div class="rc-block-body">
+          <p>El Tesoro recibió ofertas por <span class="dato">ARS 14,4 bn</span> y adjudicó <span class="dato">ARS 10,7 bn</span>. Al sumar los pagos de TX26 y TX28 realizados el lunes (<span class="dato">ARS 1,8 bn</span>), los vencimientos totales a cubrir eran <span class="dato">ARS 11,2 bn</span> — de ahí el rollover del <span class="dato">96%</span>. Sin contabilizar esos pagos previos, el nivel de rolleo se acerca al <span class="dato">110%</span> informado por la Secretaría de Finanzas. El rollover por debajo del 100% implica financiamiento neto negativo de <span class="dato">~ARS 0,5 bn</span> — una inyección de pesos al sistema.</p>
+        </div>
       </div>
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">MECÁNICA DE LA LIQUIDEZ</div>
-        <div class="rc-l2-text">El nivel operado en REPO viene creciendo por un motivo concreto: el BCRA compra dólares en mayor cantidad de la que vende en el mercado secundario de dollar-linked (DLK), lo que inyecta pesos al sistema. A eso se suma el financiamiento neto negativo de la licitación. La liquidación del viernes terminará de consolidar ese exceso de liquidez, creando condiciones favorables para la deuda en pesos.</div>
+      <div class="rc-block">
+        <div class="rc-block-title">Liquidez: camino a ARS 5 bn el viernes</div>
+        <div class="rc-block-body">
+          <p>El nivel operado en REPO viene creciendo porque el BCRA compra dólares en mayor cantidad de la que vende en secundario de DLK, inyectando pesos. Al día de hoy, BAVSA estima que el BCRA absorbió en la rueda REPO de A3 unos <span class="dato">ARS 4,2 bn</span>. Con la liquidación de la licitación el viernes, la liquidez del sistema llegaría a <span class="dato">~ARS 5 bn</span> — niveles no vistos desde el <span class="dato">5 de diciembre de 2025</span>. Ese exceso de pesos crea condiciones favorables para los activos en pesos en los próximos días.</p>
+        </div>
       </div>
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">ESTRATEGIA DEL TESORO: LIMPIAR Y FLATEAR</div>
-        <div class="rc-l2-text">La lectura de BAVSA es que el Tesoro jugó en dos frentes: (1) limpiar vencimientos de 2026-2027 extendiendo duration hacia 2028-2029, y (2) flatear la curva CER que se había empinado demasiado al dar premio excesivo al tramo largo en licitaciones previas. Al incluir instrumentos de 2027 en el menú, dejó en claro que no abandona ese tramo y que apunta a una curva con pendiente más moderada.</div>
+      <div class="rc-block">
+        <div class="rc-block-title">Composición: 44% en 2028-2029, estrategia de flatear la curva</div>
+        <div class="rc-block-body">
+          <p>El <span class="dato">44%</span> de la emisión se concentró en títulos 2028-2029: <span class="dato">ARS 4,7 bn</span> entre TXMJ8 y TXMJ9. Pero a diferencia de licitaciones anteriores, el Tesoro también incluyó instrumentos a 2027 — señal de que el objetivo no es solo extender duration, sino también <strong>flatear la curva CER</strong>, que quedó muy empinada tras varias licitaciones que pagaron premio significativo al tramo largo. BAVSA lee esto como una intención explícita de normalizar la pendiente.</p>
+          <p>En tasas: el <strong>TXMJ8</strong> cortó en <span class="dato">TAMAR + 7%</span> (caro vs. secundario), el <strong>TXMJ9</strong> cortó en <span class="dato">TAMAR + 9%</span> (más atractivo). La <strong>LECAP</strong> sorprendió al cortar con premio — inusual dado que en las últimas ruedas la tasa fija cortaba a mercado.</p>
+        </div>
       </div>
-      <div class="rc-l2-close"><button onclick="toggleL2(this.closest('.rc'))">Cerrar ↑</button></div>
+      <div class="rc-conclusion">
+        Licitación favorable para el mercado de pesos. El resultado técnico (rollover 96%) pasa a segundo plano frente a la dinámica de liquidez: ARS 5 bn en el sistema el viernes es el dato más relevante. Con ese nivel de pesos y tasas primarias razonables, BAVSA anticipa rally en secundario. La lectura estratégica del Tesoro también es positiva — apunta a una curva más plana, lo que reduciría la presión vendedora en el tramo largo que se observaba en semanas previas.
+      </div>
     </div>
   </div>
-  </div>
+</div>
 
   <!-- 1816: MORA MARZO 07 MAY -->
   <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="1816-mora-marzo-mayo26">
@@ -968,54 +982,62 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
         <span class="rc-arr">▶</span>
       </div>
     </div>
-    <div class="rc-gancho">La mora de familias llegó al <span style="color:#FF5145;">11,5%</span> en marzo — récord desde 2004 y décimo-séptimo mes consecutivo al alza, aunque el ritmo se desacelera</div>
+    <div class="rc-gancho">La mora de familias llegó al <span style="color:#FF5145;">11,5%</span> en marzo — récord desde 2004 y decimoséptimo mes consecutivo al alza, aunque el ritmo se desacelera</div>
     <div class="rc-bottom-row">
       <div class="rc-badges">
         <span class="ibadge ib-a"><span class="ibdot"></span>IMPACTO ALTO</span>
-        <span class="ibadge ib-t">📈 Research</span>
-        <span class="ibadge ib-r">🇦🇷 Argentina</span>
       </div>
+      <div class="rc-pulso-hook">El PBI crece pero no derrama — eso explica una mora récord en un contexto que no es de recesión</div>
     </div>
   </div>
   <div class="rc-l1">
-    <div class="rc-l1-grid">
-      <div class="rc-l1-block">
-        <div class="rc-l1-label">PANORAMA</div>
-        <div class="rc-l1-text">La irregularidad crediticia subió por decimoséptimo mes consecutivo en marzo. La mora total del sector privado pasó de <span class="hl-r">6,7%</span> a <span class="hl-r">7,0%</span>. La mora de familias llegó a <span class="hl-r">11,5%</span> (vs. 11,2% en febrero) y la de empresas a <span class="hl-r">3,1%</span> (vs. 2,9%). El nivel de familias es récord desde 2004 — partió de 2,5% en octubre 2024 y se multiplicó por casi 5 en menos de un año y medio.</div>
-      </div>
-      <div class="rc-l1-block">
-        <div class="rc-l1-label">LA SEÑAL POSITIVA</div>
-        <div class="rc-l1-text">El aumento mensual de la mora de hogares fue de solo <span class="hl">0,3 pp</span>, el más pequeño en 12 meses. Si la inflación se desacelera en el 2T como se espera, podría traducirse en mejora de salarios reales y en que las cuotas se licúen menos — dos condiciones para que la mora haga su pico este trimestre.</div>
-      </div>
-      <div class="rc-l1-block">
-        <div class="rc-l1-label">CRÉDITO Y TASAS</div>
-        <div class="rc-l1-text">Los préstamos en pesos al sector privado cayeron en términos reales por cuarto mes consecutivo en abril. La tasa de préstamos personales sigue en <span class="hl-r">~68,3% TNA</span> — igual que en enero-febrero — reflejando que los bancos se cubren ante la alta mora y que el régimen de "tasa endógena" no ofrece certezas de techo a las tasas activas.</div>
-      </div>
+    <div class="rc-summary">
+      <div class="rc-sum-tag">// Qué pasa con Argentina y qué tenés que tener en cuenta</div>
+      <div class="rc-sum-txt">La irregularidad crediticia subió por decimoséptimo mes consecutivo en marzo. La mora de familias llegó al <span class="dato">11,5%</span> (vs. 11,2% en febrero) — récord desde 2004 y multiplicada por casi 5 desde el <span class="dato">2,5%</span> de octubre 2024. La mora total del sector privado pasó de <span class="dato">6,7%</span> a <span class="dato">7,0%</span>. <span class="key">La buena noticia: el incremento mensual fue de solo 0,3 pp, el más chico en 12 meses</span> — la señal más clara de que el pico podría estar cerca. Las tasas de préstamos personales siguen en <span class="dato">~68,3% TNA</span> sin bajar, reflejando que los bancos se cubren ante la mora alta y que el régimen de "tasa endógena" no da certezas de techo. Los préstamos en pesos cayeron en términos reales por cuarto mes consecutivo en abril.</div>
+      <div class="rc-sum-by">— PULSO</div>
     </div>
-    <button class="rc-l1-more" onclick="toggleL2(this.closest('.rc'))">Ver análisis completo ↓</button>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
+      <span class="rc-exp-label">Leer análisis completo</span>
+      <span class="rc-exp-arr">▶</span>
+    </button>
   </div>
   <div class="rc-l2">
-    <div class="rc-l2-inner">
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">¿POR QUÉ SUBIÓ TANTO LA MORA?</div>
-        <div class="rc-l2-text">Bausili (BCRA) explicó en una conferencia reciente que el boom de crédito de 2024 fue otorgado <em>"a ciegas, sin saber a quién se prestaba"</em>, y que luego el shock de tasas de 2025 exacerbó el problema. 1816 señala que esto no es suficiente explicación: en otros momentos históricos en que el crédito representaba ~12% del PBI (como ahora), la mora era mucho menor. Conclusión: hay algo estructuralmente nuevo — el PBI crece pero no derrama hacia amplios sectores. Los datos de salarios y empleo apuntan en la misma dirección.</div>
+    <div class="rc-full">
+      <div class="rc-full-header">
+        <span class="rc-full-label">1816 · 07 MAY — Mora de marzo: sube de nuevo, pero menos</span>
+        <span class="rc-full-source">1816 — Informe Especial · Mayo 2026</span>
       </div>
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">ENTIDADES NO FINANCIERAS: MORA AL 30%</div>
-        <div class="rc-l2-text">Las financieras (fintechs, tarjetas de tiendas, etc.) muestran una mora todavía más alta: <span class="hl-r">30,1%</span> en marzo vs. 29,0% en febrero. Representan el 17% del crédito total a familias. Este segmento presta a clientes de mayor riesgo y no figura en el Informe de Bancos estándar del BCRA — solo se ve en la base CENDEU.</div>
+      <div class="rc-block">
+        <div class="rc-block-title">Los números: mora total 7%, familias 11,5%, empresas 3,1%</div>
+        <div class="rc-block-body">
+          <p>Según el procesamiento de 1816 de la Central de Deudores del BCRA (CENDEU), la mora del sector privado subió en marzo: familias de <span class="dato">11,2%</span> a <span class="dato">11,5%</span>, empresas de <span class="dato">2,9%</span> a <span class="dato">3,1%</span>, total de <span class="dato">6,7%</span> a <span class="dato">7,0%</span>. Es el decimoséptimo mes consecutivo de suba en familias y un nuevo récord desde 2004. Partió de <span class="dato">2,5%</span> en octubre 2024 y se multiplicó por casi 5 en menos de un año y medio, pese a que el PBI subió <span class="dato">1,8%</span> en ese período.</p>
+        </div>
       </div>
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">COBERTURA POR ENTIDAD</div>
-        <div class="rc-l2-text">De las 30 entidades financieras más grandes (96%+ del crédito a familias), <span class="hl-r">24 de 30</span> registraron aumento de mora en marzo. El dato desagregado por banco ya está disponible en la plataforma web de 1816. El Informe de Bancos oficial del BCRA, que confirmará o matizará estas cifras, se publicará a fin de mayo.</div>
+      <div class="rc-block">
+        <div class="rc-block-title">¿Por qué es tan alta si el PBI crece?</div>
+        <div class="rc-block-body">
+          <p>Bausili (BCRA) argumentó en una conferencia que el boom de crédito de 2024 fue otorgado <em>"a ciegas, sin saber a quién se prestaba"</em>, y que el shock de tasas de 2025 exacerbó el problema. 1816 acepta el diagnóstico parcialmente, pero señala que en otros momentos históricos con crédito al ~12% del PBI (igual que hoy), la mora era mucho menor. La conclusión del banco: hay algo estructuralmente nuevo — el crecimiento del PBI no derrama hacia amplios sectores. Los datos de salarios y empleo apuntan en el mismo sentido.</p>
+          <p>De las 30 entidades financieras más grandes (96%+ del crédito a familias), <span class="dato">24 de 30</span> registraron aumento de mora en marzo.</p>
+        </div>
       </div>
-      <div class="rc-l2-block">
-        <div class="rc-l2-label">TASAS ACTIVAS: EL NUDO DIFÍCIL</div>
-        <div class="rc-l2-text">El Central flexibilizó encajes diarios para reducir volatilidad intraday, pero sin un corredor de tasas real. Los pases activos reactivados se liquidan al promedio REPO del día + 500bps — una ventanilla de liquidez de emergencia, no un techo. Mientras no haya certeza sobre el camino de tasas, los bancos seguirán prestando caro y el crédito al sector privado seguirá contrayéndose en términos reales.</div>
+      <div class="rc-block">
+        <div class="rc-block-title">La señal positiva: el incremento más chico en 12 meses</div>
+        <div class="rc-block-body">
+          <p>El aumento de <span class="dato">0,3 pp</span> mensual en familias es el más pequeño en un año. Si la inflación se desacelera en el 2T como se proyecta, podría traducirse en mejora de salarios reales y en que las cuotas se licúen menos — dos condiciones para que la mora haga su pico en el segundo trimestre. Las entidades no financieras (fintechs, tarjetas de tiendas) muestran mora del <span class="dato">30,1%</span> — siguen siendo el segmento más crítico y representan el 17% del crédito total a familias.</p>
+        </div>
       </div>
-      <div class="rc-l2-close"><button onclick="toggleL2(this.closest('.rc'))">Cerrar ↑</button></div>
+      <div class="rc-block">
+        <div class="rc-block-title">Tasas activas: el nudo difícil</div>
+        <div class="rc-block-body">
+          <p>La tasa de préstamos personales promedió <span class="dato">68,3% TNA</span> en los primeros días de mayo — prácticamente lo mismo que en enero y febrero, cuando la tasa overnight operaba con altísima volatilidad. El Central flexibilizó encajes diarios pero sin un corredor de tasas real: los pases activos reactivados se liquidan al promedio REPO del día + 500 bps — una ventanilla de emergencia, no un techo. Mientras no haya certeza sobre el camino de tasas, los bancos seguirán prestando caro y el crédito en pesos seguirá cayendo en términos reales.</p>
+        </div>
+      </div>
+      <div class="rc-conclusion">
+        El informe de 1816 es el más completo sobre la dinámica crediticia argentina. El dato de fondo es preocupante — mora récord en un contexto de crecimiento del PBI sugiere un problema estructural de distribución, no solo de ciclo. Pero la señal de desaceleración en el ritmo de suba es real y es el primer indicio concreto de que el pico podría estar en el 2T. Para el mercado, lo más relevante es el impacto sobre los bancos: con tasas activas que no bajan y crédito que se contrae, el negocio financiero está bajo presión. El Informe de Bancos del BCRA a fin de mes confirmará o matizará estos números.
+      </div>
     </div>
   </div>
-  </div>
+</div>
 
   <!-- FACIMEX: SÚPER RIGI 11 MAY -->
   <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="facimex-super-rigi-mayo26">
