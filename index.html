@@ -554,6 +554,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   .macro-nota{padding:.5rem .9rem}
 }
 </style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+}}
+</script>
 </head>
 <body>
 
@@ -726,6 +732,29 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   } else { init(); }
 })();
 </script>
+
+<section class="globe-section reveal">
+  <div class="globe-eyebrow">— Mapa global —</div>
+  <h2 class="globe-title">¿Dónde está pasando la noticia?</h2>
+  <p class="globe-help">Arrastrá para girar · rueda del mouse para zoom · click en un marker para filtrar</p>
+  <div class="globe3d-wrap" id="globe3d-wrap">
+    <div class="globe3d-loading" id="globe3d-loading">
+      <div class="globe3d-spinner"></div>
+      <div>Cargando mapa…</div>
+    </div>
+    <div class="globe3d-tooltip" id="globe3d-tooltip"></div>
+  </div>
+  <div class="region-row" id="region-row">
+    <button class="region-btn active" data-region="all">🌍 Todo el mundo <span class="rcount" data-rcount="all"></span></button>
+    <button class="region-btn" data-region="argentina">🇦🇷 Argentina <span class="rcount" data-rcount="argentina"></span></button>
+    <button class="region-btn" data-region="latam">🌎 Latam <span class="rcount" data-rcount="latam"></span></button>
+    <button class="region-btn" data-region="norteamerica">🇺🇸 Norteamérica <span class="rcount" data-rcount="norteamerica"></span></button>
+    <button class="region-btn" data-region="europa">🇪🇺 Europa <span class="rcount" data-rcount="europa"></span></button>
+    <button class="region-btn" data-region="medio-oriente">🕌 Medio Oriente <span class="rcount" data-rcount="medio-oriente"></span></button>
+    <button class="region-btn" data-region="asia">🌏 Asia <span class="rcount" data-rcount="asia"></span></button>
+    <button class="region-btn" data-region="global">🌐 Global <span class="rcount" data-rcount="global"></span></button>
+  </div>
+</section>
 
 <!-- ══ RESEARCH ══ -->
 <div class="sdiv reveal">
@@ -5218,6 +5247,252 @@ function toggleMacro(btn){
 }
 </script>
 
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const wrap = document.getElementById('globe3d-wrap');
+const loadingEl = document.getElementById('globe3d-loading');
+const tooltipEl = document.getElementById('globe3d-tooltip');
+if(!wrap){ throw new Error('globe wrap missing'); }
+
+const W = wrap.clientWidth, H = wrap.clientHeight;
+const RADIUS = 1;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, W/H, 0.1, 100);
+camera.position.set(0, 0, 3.2);
+
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(W, H);
+wrap.appendChild(renderer.domElement);
+
+scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+const dir = new THREE.DirectionalLight(0xffffff, 0.9);
+dir.position.set(3, 2, 5);
+scene.add(dir);
+const rim = new THREE.DirectionalLight(0x4a90c8, 0.45);
+rim.position.set(-3, -1, -2);
+scene.add(rim);
+
+const oceanMat = new THREE.MeshPhongMaterial({ color:0x0a2540, emissive:0x07172a, shininess:28, specular:0x224466 });
+const ocean = new THREE.Mesh(new THREE.SphereGeometry(RADIUS, 64, 64), oceanMat);
+scene.add(ocean);
+
+const atmosMat = new THREE.ShaderMaterial({
+  uniforms:{ c:{value:0.5}, p:{value:4.0}, glowColor:{value:new THREE.Color(0x66aadd)} },
+  vertexShader:`varying vec3 vN;varying vec3 vP;void main(){vN=normalize(normalMatrix*normal);vP=normalize((modelViewMatrix*vec4(position,1.0)).xyz);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,
+  fragmentShader:`uniform float c;uniform float p;uniform vec3 glowColor;varying vec3 vN;varying vec3 vP;void main(){float intensity=pow(c-dot(vN,-vP),p);gl_FragColor=vec4(glowColor,1.0)*intensity;}`,
+  side:THREE.BackSide, blending:THREE.AdditiveBlending, transparent:true
+});
+const atmos = new THREE.Mesh(new THREE.SphereGeometry(RADIUS*1.18, 64, 64), atmosMat);
+scene.add(atmos);
+
+const continents = new THREE.Group();
+scene.add(continents);
+const markers = new THREE.Group();
+scene.add(markers);
+
+const grid = new THREE.Group();
+const gridMat = new THREE.LineBasicMaterial({ color:0x4a90c8, transparent:true, opacity:0.13 });
+for(let lat=-60;lat<=60;lat+=30){ const pts=[];for(let lon=-180;lon<=180;lon+=4){pts.push(latLonToVec3(lat,lon,RADIUS*1.001));} grid.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),gridMat)); }
+for(let lon=-180;lon<180;lon+=30){ const pts=[];for(let lat=-90;lat<=90;lat+=4){pts.push(latLonToVec3(lat,lon,RADIUS*1.001));} grid.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),gridMat)); }
+scene.add(grid);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping=true; controls.dampingFactor=0.08; controls.rotateSpeed=0.55;
+controls.enablePan=false; controls.minDistance=1.6; controls.maxDistance=5.0;
+controls.autoRotate=true; controls.autoRotateSpeed=0.45;
+
+renderer.domElement.addEventListener('pointerdown',()=>{wrap.classList.add('dragging');controls.autoRotate=false;});
+renderer.domElement.addEventListener('pointerup',()=>{wrap.classList.remove('dragging');});
+wrap.addEventListener('mouseleave',()=>{controls.autoRotate=true;});
+
+function latLonToVec3(lat,lon,r){
+  const phi=(90-lat)*Math.PI/180, theta=(lon+180)*Math.PI/180;
+  return new THREE.Vector3(-r*Math.sin(phi)*Math.cos(theta), r*Math.cos(phi), r*Math.sin(phi)*Math.sin(theta));
+}
+
+const GEO_URLS=[
+  'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json',
+  'https://unpkg.com/world-atlas@2/countries-110m.json',
+  'https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_110m_admin_0_countries.geojson'
+];
+
+const COUNTRY_REGION={
+  ARG:'argentina',
+  BRA:'latam',CHL:'latam',URY:'latam',PRY:'latam',BOL:'latam',PER:'latam',COL:'latam',ECU:'latam',VEN:'latam',GUY:'latam',SUR:'latam',
+  MEX:'latam',GTM:'latam',BLZ:'latam',SLV:'latam',HND:'latam',NIC:'latam',CRI:'latam',PAN:'latam',CUB:'latam',DOM:'latam',HTI:'latam',JAM:'latam',PRI:'latam',TTO:'latam',BHS:'latam',
+  USA:'norteamerica',CAN:'norteamerica',GRL:'norteamerica',
+  GBR:'europa',IRL:'europa',FRA:'europa',DEU:'europa',ITA:'europa',ESP:'europa',PRT:'europa',BEL:'europa',NLD:'europa',LUX:'europa',CHE:'europa',AUT:'europa',POL:'europa',CZE:'europa',SVK:'europa',HUN:'europa',ROU:'europa',BGR:'europa',GRC:'europa',SWE:'europa',NOR:'europa',FIN:'europa',DNK:'europa',ISL:'europa',EST:'europa',LVA:'europa',LTU:'europa',BLR:'europa',UKR:'europa',MDA:'europa',SRB:'europa',HRV:'europa',SVN:'europa',BIH:'europa',MNE:'europa',MKD:'europa',ALB:'europa',RUS:'europa',
+  SAU:'medio-oriente',ARE:'medio-oriente',QAT:'medio-oriente',KWT:'medio-oriente',BHR:'medio-oriente',OMN:'medio-oriente',YEM:'medio-oriente',IRQ:'medio-oriente',IRN:'medio-oriente',SYR:'medio-oriente',JOR:'medio-oriente',LBN:'medio-oriente',ISR:'medio-oriente',PSE:'medio-oriente',TUR:'medio-oriente',
+  EGY:'africa',LBY:'africa',TUN:'africa',DZA:'africa',MAR:'africa',ESH:'africa',MRT:'africa',MLI:'africa',NER:'africa',TCD:'africa',SDN:'africa',SSD:'africa',ETH:'africa',ERI:'africa',DJI:'africa',SOM:'africa',KEN:'africa',UGA:'africa',RWA:'africa',BDI:'africa',TZA:'africa',SEN:'africa',GMB:'africa',GNB:'africa',GIN:'africa',SLE:'africa',LBR:'africa',CIV:'africa',GHA:'africa',TGO:'africa',BEN:'africa',NGA:'africa',CMR:'africa',CAF:'africa',GAB:'africa',GNQ:'africa',COG:'africa',COD:'africa',AGO:'africa',ZMB:'africa',MWI:'africa',MOZ:'africa',ZWE:'africa',BWA:'africa',NAM:'africa',ZAF:'africa',LSO:'africa',SWZ:'africa',MDG:'africa',
+  CHN:'asia',JPN:'asia',KOR:'asia',PRK:'asia',MNG:'asia',KAZ:'asia',UZB:'asia',TKM:'asia',TJK:'asia',KGZ:'asia',AFG:'asia',PAK:'asia',IND:'asia',NPL:'asia',BTN:'asia',BGD:'asia',LKA:'asia',MMR:'asia',THA:'asia',LAO:'asia',VNM:'asia',KHM:'asia',MYS:'asia',SGP:'asia',IDN:'asia',PHL:'asia',BRN:'asia',TLS:'asia',TWN:'asia',
+  AUS:'oceania',NZL:'oceania',PNG:'oceania',FJI:'oceania',SLB:'oceania',VUT:'oceania',NCL:'oceania'
+};
+
+const REGION_COLORS={
+  argentina:new THREE.Color(0xffd24a),latam:new THREE.Color(0x3fd673),norteamerica:new THREE.Color(0x6aa9ff),
+  europa:new THREE.Color(0xb78cff),africa:new THREE.Color(0xff9d5c),'medio-oriente':new THREE.Color(0xff7a8a),
+  asia:new THREE.Color(0x77e6d4),oceania:new THREE.Color(0xffd6a8),default:new THREE.Color(0x415a78)
+};
+const HIGHLIGHT=new THREE.Color(0xffd24a);
+
+function ringArea(ring){let a=0;for(let i=0,n=ring.length-1;i<n;i++){a+=(ring[i+1][0]-ring[i][0])*(ring[i+1][1]+ring[i][1]);}return -a/2;}
+function normalizeRings(coords){return coords.map((ring,i)=>{const a=ringArea(ring),wantCCW=i===0;if((wantCCW&&a<0)||(!wantCCW&&a>0))return ring.slice().reverse();return ring;});}
+function cleanRing(ring){const out=[];for(let i=0;i<ring.length;i++){const p=ring[i],prev=out[out.length-1];if(!prev||prev[0]!==p[0]||prev[1]!==p[1])out.push(p);}if(out.length>1){const f=out[0],l=out[out.length-1];if(f[0]===l[0]&&f[1]===l[1])out.pop();}return out;}
+function subdivideTriangle(a,b,c,maxD,out){const dab=Math.hypot(b[0]-a[0],b[1]-a[1]),dbc=Math.hypot(c[0]-b[0],c[1]-b[1]),dca=Math.hypot(a[0]-c[0],a[1]-c[1]),mx=Math.max(dab,dbc,dca);if(mx<maxD){out.push(a,b,c);return;}if(dab>=dbc&&dab>=dca){const m=[(a[0]+b[0])/2,(a[1]+b[1])/2];subdivideTriangle(a,m,c,maxD,out);subdivideTriangle(m,b,c,maxD,out);}else if(dbc>=dca){const m=[(b[0]+c[0])/2,(b[1]+c[1])/2];subdivideTriangle(a,b,m,maxD,out);subdivideTriangle(a,m,c,maxD,out);}else{const m=[(c[0]+a[0])/2,(c[1]+a[1])/2];subdivideTriangle(a,b,m,maxD,out);subdivideTriangle(m,b,c,maxD,out);}}
+
+let earcut;
+async function loadEarcut(){
+  if(earcut)return earcut;
+  const sources=['https://cdn.jsdelivr.net/npm/earcut@2.2.4/+esm','https://esm.sh/earcut@2.2.4','https://cdn.skypack.dev/earcut@2.2.4'];
+  let lastErr;
+  for(const src of sources){try{const mod=await import(src);earcut=mod.default||mod.earcut||mod;if(typeof earcut==='function')return earcut;throw new Error('export inesperado');}catch(e){lastErr=e;console.warn('earcut fallo en',src,e.message);}}
+  throw lastErr||new Error('earcut no disponible');
+}
+
+function buildCountryMesh(geometry,region){
+  const polys=geometry.type==='Polygon'?[geometry.coordinates]:geometry.coordinates;
+  const positions=[],indices=[];let vCount=0;
+  for(let polyRaw of polys){
+    const poly=normalizeRings(polyRaw).map(cleanRing).filter(r=>r.length>=3);
+    if(poly.length===0)continue;
+    const flat=[],holes=[];let idx=0;
+    for(let r=0;r<poly.length;r++){if(r>0)holes.push(idx);for(const p of poly[r]){flat.push(p[0],p[1]);idx++;}}
+    if(flat.length<6)continue;
+    const tris=earcut(flat,holes,2);
+    if(!tris||tris.length===0)continue;
+    for(let t=0;t<tris.length;t+=3){
+      const ia=tris[t]*2,ib=tris[t+1]*2,ic=tris[t+2]*2;
+      const a=[flat[ia],flat[ia+1]],b=[flat[ib],flat[ib+1]],c=[flat[ic],flat[ic+1]];
+      const subTris=[];subdivideTriangle(a,b,c,5,subTris);
+      for(let i=0;i<subTris.length;i+=3){
+        const p1=subTris[i],p2=subTris[i+1],p3=subTris[i+2];
+        const v1=latLonToVec3(p1[1],p1[0],RADIUS*1.002),v2=latLonToVec3(p2[1],p2[0],RADIUS*1.002),v3=latLonToVec3(p3[1],p3[0],RADIUS*1.002);
+        positions.push(v1.x,v1.y,v1.z,v2.x,v2.y,v2.z,v3.x,v3.y,v3.z);
+        indices.push(vCount,vCount+1,vCount+2);vCount+=3;
+      }
+    }
+  }
+  if(positions.length===0)return null;
+  const g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));
+  g.setIndex(indices);g.computeVertexNormals();
+  const color=REGION_COLORS[region]||REGION_COLORS.default;
+  const mat=new THREE.MeshPhongMaterial({color:color.clone().multiplyScalar(0.75),emissive:color.clone().multiplyScalar(0.18),shininess:14,specular:0x222222,side:THREE.DoubleSide});
+  const mesh=new THREE.Mesh(g,mat);
+  mesh.userData.region=region;mesh.userData.baseColor=color.clone().multiplyScalar(0.75);
+  const edges=new THREE.LineSegments(new THREE.EdgesGeometry(g,22),new THREE.LineBasicMaterial({color:0x000000,transparent:true,opacity:0.35}));
+  mesh.add(edges);return mesh;
+}
+
+function buildMarkers(){
+  while(markers.children.length){const c=markers.children[0];markers.remove(c);c.geometry?.dispose?.();c.material?.dispose?.();}
+  const counts=window.regionCounts?window.regionCounts():{};
+  for(const [region,latlon] of Object.entries(window.REGION_LATLON||{})){
+    const n=counts[region]||0;if(!n)continue;
+    const pos=latLonToVec3(latlon[0],latlon[1],RADIUS*1.04);
+    const isHot=n>=5,isCool=n<=2;
+    const color=isHot?0xff5145:(isCool?0x3fd673:0xffd24a);
+    const pinH=0.16+Math.min(n,8)*0.015;
+    const pinG=new THREE.ConeGeometry(0.025,pinH,12);pinG.translate(0,pinH/2,0);
+    const pinM=new THREE.MeshPhongMaterial({color,emissive:color,emissiveIntensity:0.45,shininess:30});
+    const pin=new THREE.Mesh(pinG,pinM);pin.position.copy(pos);pin.lookAt(new THREE.Vector3(0,0,0));pin.rotateX(Math.PI/2);
+    pin.userData={region,count:n,isMarker:true};markers.add(pin);
+    const haloG=new THREE.RingGeometry(0.04,0.07,24);
+    const haloM=new THREE.MeshBasicMaterial({color,transparent:true,opacity:0.55,side:THREE.DoubleSide});
+    const halo=new THREE.Mesh(haloG,haloM);halo.position.copy(pos);halo.lookAt(new THREE.Vector3(0,0,0));
+    halo.userData={region,count:n,isMarker:true,isHalo:true,baseScale:1};markers.add(halo);
+  }
+}
+
+const raycaster=new THREE.Raycaster();
+const pointer=new THREE.Vector2();
+let hoverRegion=null;
+
+function onPointerMove(e){
+  const rect=renderer.domElement.getBoundingClientRect();
+  pointer.x=((e.clientX-rect.left)/rect.width)*2-1;
+  pointer.y=-((e.clientY-rect.top)/rect.height)*2+1;
+  raycaster.setFromCamera(pointer,camera);
+  const mHits=raycaster.intersectObjects(markers.children,false);
+  if(mHits.length){const o=mHits[0].object;setHover(o.userData.region,e.clientX-rect.left,e.clientY-rect.top,o.userData.count);return;}
+  const cHits=raycaster.intersectObjects(continents.children,false);
+  if(cHits.length){const o=cHits[0].object;const counts=window.regionCounts?window.regionCounts():{};setHover(o.userData.region,e.clientX-rect.left,e.clientY-rect.top,counts[o.userData.region]||0);}
+  else{setHover(null);}
+}
+function setHover(region,x,y,count){
+  continents.children.forEach(m=>{const isCurrent=m.userData.region===region;m.material.color.copy(isCurrent?HIGHLIGHT:m.userData.baseColor);m.material.emissiveIntensity=isCurrent?0.4:0.2;});
+  if(region){
+    const label=(window.REGION_LABELS||{})[region]||region;
+    tooltipEl.innerHTML=`${label}${count>0?`<span class="tt-count">${count}</span>`:''}`;
+    tooltipEl.style.left=x+'px';tooltipEl.style.top=y+'px';tooltipEl.classList.add('show');
+    renderer.domElement.style.cursor=count>0?'pointer':'default';
+  }else{tooltipEl.classList.remove('show');renderer.domElement.style.cursor='';}
+  hoverRegion=region;
+}
+function onClick(){if(hoverRegion&&((window.regionCounts?window.regionCounts():{})[hoverRegion]||0)>0)window.selectRegion(hoverRegion);}
+renderer.domElement.addEventListener('pointermove',onPointerMove);
+renderer.domElement.addEventListener('click',onClick);
+
+window.addEventListener('resize',()=>{const w=wrap.clientWidth,h=wrap.clientHeight;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h);});
+
+window.globe3D={
+  focusRegion(region){
+    if(region==='all'||region==='global'){animateCameraTo({x:0,y:0,z:3.2});controls.autoRotate=true;return;}
+    const ll=(window.REGION_LATLON||{})[region]||(window.REGION_LATLON||{}).argentina||[-34,-64];
+    const target=latLonToVec3(ll[0],ll[1],2.6);
+    animateCameraTo({x:target.x,y:target.y,z:target.z});controls.autoRotate=false;
+  }
+};
+function animateCameraTo(end){
+  const start={x:camera.position.x,y:camera.position.y,z:camera.position.z},t0=performance.now(),dur=900;
+  function step(now){const t=Math.min((now-t0)/dur,1),e=1-Math.pow(1-t,3);camera.position.set(start.x+(end.x-start.x)*e,start.y+(end.y-start.y)*e,start.z+(end.z-start.z)*e);camera.lookAt(0,0,0);if(t<1)requestAnimationFrame(step);}
+  requestAnimationFrame(step);
+}
+
+let tickT0=performance.now();
+function tick(){
+  const t=(performance.now()-tickT0)/1000;
+  markers.children.forEach(m=>{if(m.userData.isHalo){const s=1+Math.sin(t*2+m.position.x*8)*0.35;m.scale.setScalar(s);m.material.opacity=0.55-(s-1)*0.5;}});
+  controls.update();renderer.render(scene,camera);requestAnimationFrame(tick);
+}
+tick();
+
+const NUMERIC_TO_ISO3={'004':'AFG','008':'ALB','012':'DZA','020':'AND','024':'AGO','032':'ARG','036':'AUS','040':'AUT','044':'BHS','048':'BHR','050':'BGD','051':'ARM','052':'BRB','056':'BEL','064':'BTN','068':'BOL','070':'BIH','072':'BWA','076':'BRA','084':'BLZ','090':'SLB','096':'BRN','100':'BGR','104':'MMR','108':'BDI','112':'BLR','116':'KHM','120':'CMR','124':'CAN','132':'CPV','140':'CAF','144':'LKA','148':'TCD','152':'CHL','156':'CHN','158':'TWN','170':'COL','178':'COG','180':'COD','188':'CRI','191':'HRV','192':'CUB','203':'CZE','204':'BEN','208':'DNK','214':'DOM','218':'ECU','222':'SLV','226':'GNQ','231':'ETH','232':'ERI','233':'EST','242':'FJI','246':'FIN','250':'FRA','262':'DJI','266':'GAB','268':'GEO','270':'GMB','275':'PSE','276':'DEU','288':'GHA','300':'GRC','304':'GRL','308':'GRD','320':'GTM','324':'GIN','328':'GUY','332':'HTI','340':'HND','348':'HUN','352':'ISL','356':'IND','360':'IDN','364':'IRN','368':'IRQ','372':'IRL','376':'ISR','380':'ITA','384':'CIV','388':'JAM','392':'JPN','398':'KAZ','400':'JOR','404':'KEN','408':'PRK','410':'KOR','414':'KWT','417':'KGZ','418':'LAO','422':'LBN','426':'LSO','428':'LVA','430':'LBR','434':'LBY','440':'LTU','442':'LUX','450':'MDG','454':'MWI','458':'MYS','466':'MLI','478':'MRT','484':'MEX','492':'MCO','496':'MNG','498':'MDA','499':'MNE','504':'MAR','508':'MOZ','512':'OMN','516':'NAM','524':'NPL','528':'NLD','540':'NCL','548':'VUT','554':'NZL','558':'NIC','562':'NER','566':'NGA','578':'NOR','586':'PAK','591':'PAN','598':'PNG','600':'PRY','604':'PER','608':'PHL','616':'POL','620':'PRT','626':'TLS','630':'PRI','634':'QAT','642':'ROU','643':'RUS','646':'RWA','682':'SAU','686':'SEN','688':'SRB','694':'SLE','702':'SGP','703':'SVK','704':'VNM','705':'SVN','706':'SOM','710':'ZAF','716':'ZWE','724':'ESP','728':'SSD','729':'SDN','740':'SUR','748':'SWZ','752':'SWE','756':'CHE','760':'SYR','762':'TJK','764':'THA','768':'TGO','780':'TTO','784':'ARE','788':'TUN','792':'TUR','795':'TKM','800':'UGA','804':'UKR','807':'MKD','818':'EGY','826':'GBR','834':'TZA','840':'USA','854':'BFA','858':'URY','860':'UZB','862':'VEN','887':'YEM','894':'ZMB'};
+
+async function fetchFirstAvailable(urls){for(const url of urls){try{const r=await fetch(url);if(!r.ok)throw new Error('HTTP '+r.status);return{url,json:await r.json()};}catch(e){console.warn('Intento fallido',url,e.message);}}throw new Error('Ningun CDN disponible');}
+
+(async()=>{
+  try{
+    await loadEarcut();
+    const{url,json}=await fetchFirstAvailable(GEO_URLS);
+    let features;
+    if(json.type==='Topology'){
+      const topo=await import('https://cdn.jsdelivr.net/npm/topojson-client@3/+esm');
+      const objKey=Object.keys(json.objects)[0];
+      const fc=topo.feature(json,json.objects[objKey]);
+      features=fc.features.map(f=>({...f,properties:{...f.properties,ISO_A3:NUMERIC_TO_ISO3[String(f.id).padStart(3,'0')]||''}}));
+    }else{features=json.features;}
+    let added=0;
+    for(const f of features){
+      const iso=f.properties.ISO_A3||f.properties.ADM0_A3||'';
+      const region=COUNTRY_REGION[iso];
+      if(!region)continue;
+      const mesh=buildCountryMesh(f.geometry,region);
+      if(mesh){continents.add(mesh);added++;}
+    }
+    console.log('Mapa cargado desde',url,'·',added,'paises');
+    buildMarkers();
+    loadingEl.classList.add('hidden');
+  }catch(err){
+    console.error('No se pudo cargar el mapa',err);
+    loadingEl.innerHTML=`<div style="color:var(--r);font-size:13px;text-align:center">No se pudo cargar el mapa.<br><span style="color:var(--t3);font-size:11px">${err.message}</span><br>Revisá tu conexión y refrescá.</div>`;
+  }
+})();
+</script>
 
 </body>
 </html>
