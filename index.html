@@ -52,8 +52,9 @@ a{text-decoration:none;color:inherit}
 
 /* Tooltip glosario */
 .glos{border-bottom:1px dotted var(--a);cursor:help;position:relative}
-.glos:hover::after,.glos:focus::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:var(--card3);color:var(--t);font-size:12px;font-weight:400;line-height:1.45;padding:8px 11px;border:1px solid var(--a);border-radius:4px;white-space:normal;width:240px;z-index:500;box-shadow:0 6px 20px rgba(0,0,0,.4);text-align:left}
-.glos:hover::before,.glos:focus::before{content:'';position:absolute;left:50%;bottom:calc(100% + 2px);transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--a);z-index:500}
+#glos-tooltip{position:fixed;z-index:9999;background:var(--card3);color:var(--t);font-size:12.5px;font-weight:400;line-height:1.5;padding:9px 13px;border:1px solid var(--a);border-radius:6px;white-space:normal;width:260px;box-shadow:0 8px 28px rgba(0,0,0,.5);text-align:left;pointer-events:none;opacity:0;transition:opacity .15s;font-family:'IBM Plex Sans',system-ui,sans-serif}
+#glos-tooltip.visible{opacity:1}
+#glos-tooltip::after{content:'';position:absolute;left:50%;top:100%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--a)}
 
 /* Chip de veredicto */
 .veredicto{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:20px;border:1px solid;line-height:1}
@@ -5672,6 +5673,61 @@ window.addEventListener('DOMContentLoaded',()=>{
   fetchBCRA();fetchDolar();fetchMerval();fetchCommodities();
 });
 setInterval(fetchDolar,60_000);setInterval(fetchMerval,60_000);setInterval(fetchCommodities,120_000);setInterval(fetchBCRA,300_000);
+
+// ── Tooltip global para .glos ──────────────────────────────────────────────
+(function(){
+  const tip=document.createElement('div');
+  tip.id='glos-tooltip';
+  document.body.appendChild(tip);
+
+  function show(e){
+    const el=e.currentTarget;
+    tip.textContent=el.dataset.tip||'';
+    tip.classList.add('visible');
+    position(e);
+  }
+  function hide(){tip.classList.remove('visible');}
+  function position(e){
+    const el=e.currentTarget;
+    const r=el.getBoundingClientRect();
+    const tw=260,th=tip.offsetHeight||80;
+    let left=r.left+r.width/2-tw/2;
+    let top=r.top-th-10;
+    // no salir por la izquierda o derecha
+    left=Math.max(8,Math.min(left,window.innerWidth-tw-8));
+    // si se sale por arriba, mostrarlo abajo
+    if(top<8){top=r.bottom+10;tip.style.setProperty('--arr','bottom');}
+    else{tip.style.removeProperty('--arr');}
+    tip.style.left=left+'px';
+    tip.style.top=top+'px';
+  }
+
+  function bindGlos(root){
+    root.querySelectorAll('.glos').forEach(el=>{
+      if(el.dataset.tipBound)return;
+      el.dataset.tipBound='1';
+      el.addEventListener('mouseenter',show);
+      el.addEventListener('mousemove',position);
+      el.addEventListener('mouseleave',hide);
+      el.addEventListener('focus',show);
+      el.addEventListener('blur',hide);
+    });
+  }
+
+  // bindear los que ya existen y los que se creen dinámicamente
+  document.addEventListener('DOMContentLoaded',()=>bindGlos(document));
+  const _orig=window.applyGlossary;
+  window.applyGlossary=function(root){if(_orig)_orig(root);bindGlos(root);};
+  // MutationObserver para glos creados por toggleL2
+  new MutationObserver(muts=>{
+    muts.forEach(m=>m.addedNodes.forEach(n=>{
+      if(n.nodeType===1){
+        if(n.classList&&n.classList.contains('glos'))bindGlos(n.parentElement);
+        else bindGlos(n);
+      }
+    }));
+  }).observe(document.body,{childList:true,subtree:true});
+})();
 
 function toggleMacro(btn){
   const body = btn.nextElementSibling;
