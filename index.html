@@ -5691,56 +5691,49 @@ window.addEventListener('DOMContentLoaded',()=>{
 });
 setInterval(fetchDolar,60_000);setInterval(fetchMerval,60_000);setInterval(fetchCommodities,120_000);setInterval(fetchBCRA,300_000);
 
-// ── Tooltip global para .glos ──────────────────────────────────────────────
+// ── Tooltip global para .glos (event delegation — siempre funciona) ─────────
 (function(){
   const tip=document.createElement('div');
   tip.id='glos-tooltip';
   document.body.appendChild(tip);
 
-  function show(e){
-    const el=e.currentTarget;
-    tip.textContent=el.dataset.tip||'';
+  let current=null;
+
+  function show(el){
+    const txt=el.dataset.tip||'';
+    if(!txt)return;
+    tip.textContent=txt;
+    current=el;
+    reposition();
     tip.classList.add('visible');
-    position(e);
   }
-  function hide(){tip.classList.remove('visible');}
-  function position(e){
-    const el=e.currentTarget;
-    const r=el.getBoundingClientRect();
+  function hide(){
+    tip.classList.remove('visible');
+    current=null;
+  }
+  function reposition(){
+    if(!current)return;
+    const r=current.getBoundingClientRect();
     const tw=260;
     let left=r.left+r.width/2-tw/2;
     let top=r.bottom+10;
-    // no salir por la izquierda o derecha
     left=Math.max(8,Math.min(left,window.innerWidth-tw-8));
+    // si se sale por abajo, mostrar arriba
+    if(top+120>window.innerHeight) top=r.top-130;
     tip.style.left=left+'px';
     tip.style.top=top+'px';
   }
 
-  function bindGlos(root){
-    root.querySelectorAll('.glos').forEach(el=>{
-      if(el.dataset.tipBound)return;
-      el.dataset.tipBound='1';
-      el.addEventListener('mouseenter',show);
-      el.addEventListener('mousemove',position);
-      el.addEventListener('mouseleave',hide);
-      el.addEventListener('focus',show);
-      el.addEventListener('blur',hide);
-    });
-  }
-
-  // bindear los que ya existen y los que se creen dinámicamente
-  document.addEventListener('DOMContentLoaded',()=>bindGlos(document));
-  const _orig=window.applyGlossary;
-  window.applyGlossary=function(root){if(_orig)_orig(root);bindGlos(root);};
-  // MutationObserver para glos creados por toggleL2
-  new MutationObserver(muts=>{
-    muts.forEach(m=>m.addedNodes.forEach(n=>{
-      if(n.nodeType===1){
-        if(n.classList&&n.classList.contains('glos'))bindGlos(n.parentElement);
-        else bindGlos(n);
-      }
-    }));
-  }).observe(document.body,{childList:true,subtree:true});
+  // Event delegation: un solo listener en document, funciona para cualquier .glos
+  // sin importar cuándo fue creado o si innerHTML fue reseteado
+  document.addEventListener('mouseover',function(e){
+    const el=e.target.closest('.glos');
+    if(el){show(el);}else{hide();}
+  });
+  document.addEventListener('mouseout',function(e){
+    if(!e.relatedTarget||!e.relatedTarget.closest('.glos')) hide();
+  });
+  document.addEventListener('scroll',hide,true);
 })();
 
 function toggleMacro(btn){
