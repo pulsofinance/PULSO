@@ -5649,8 +5649,26 @@ async function fetchMerval(){try{const r=await fetch('https://query1.finance.yah
 const SYMS={'CL=F':{ids:['gk-wti','gk-wti2'],fmt:v=>'USD '+v.toFixed(1)},'BZ=F':{ids:['gk-brent','gk-brent2'],fmt:v=>'USD '+v.toFixed(1)},'GC=F':{ids:['gk-gold','gk-gold2'],fmt:v=>'USD '+Math.round(v).toLocaleString('en-US')},'HG=F':{ids:['gk-copper','gk-copper2'],fmt:v=>'USD '+v.toFixed(3)+'/lb'},'DX-Y.NYB':{ids:['gk-dxy','gk-dxy2'],fmt:v=>v.toFixed(2)},'^GSPC':{ids:['gk-spx','gk-spx2'],fmt:v=>Math.round(v).toLocaleString('en-US')}};
 async function fetchCommodities(){let ok=0;for(const[sym,cfg]of Object.entries(SYMS)){try{const r=await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?interval=1d&range=2d`);const d=await r.json();const price=d?.chart?.result?.[0]?.meta?.regularMarketPrice;const prev=d?.chart?.result?.[0]?.meta?.previousClose;if(!price)continue;const pct=prev?((price-prev)/prev*100):null;const pctStr=pct?(' ('+(pct>=0?'+':'')+pct.toFixed(1)+'%)'):'';cfg.ids.forEach(id=>setEl(id,cfg.fmt(price)+pctStr,pct?(pct>=0?'gv up':'gv dn'):'gv'));ok++;}catch(e){}}if(ok>0)setEl('st-comm','OK · '+nowStr());setEl('st-time',nowStr());}
 
+function sortCardsByDate(){
+  const MON={ENE:1,FEB:2,MAR:3,ABR:4,MAY:5,JUN:6,JUL:7,AGO:8,SEP:9,OCT:10,NOV:11,DIC:12};
+  function parseFecha(el){
+    if(!el) return 0;
+    const parts=el.textContent.trim().toUpperCase().split(/\s+/);
+    const m=MON[parts[parts.length-1]]||0;
+    const d=parts.length>=2?parseInt(parts[0])||1:1;
+    return m*100+d; // sortable: MMDD
+  }
+  const grid=document.getElementById('rc-grid');
+  if(!grid) return;
+  const shdr=grid.querySelector('.rc-shdr');
+  const cards=[...grid.querySelectorAll('.rc')];
+  cards.sort((a,b)=>parseFecha(b.querySelector('.rc-fecha'))-parseFecha(a.querySelector('.rc-fecha')));
+  if(shdr) grid.insertBefore(shdr,grid.firstChild);
+  cards.forEach(c=>grid.appendChild(c));
+}
+
 window.addEventListener('DOMContentLoaded',()=>{
-  decorateCards();setupRegionButtons();initReveal();initCounts();setupFilters();openDeepLink();
+  sortCardsByDate();decorateCards();setupRegionButtons();initReveal();initCounts();setupFilters();openDeepLink();
   fetchBCRA();fetchDolar();fetchMerval();fetchCommodities();
 });
 setInterval(fetchDolar,60_000);setInterval(fetchMerval,60_000);setInterval(fetchCommodities,120_000);setInterval(fetchBCRA,300_000);
