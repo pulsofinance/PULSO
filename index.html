@@ -5668,8 +5668,25 @@ function sortCardsByDate(){
   cards.forEach(c=>grid.appendChild(c));
 }
 
+function updateNewBadges(){
+  const MON={ENE:1,FEB:2,MAR:3,ABR:4,MAY:5,JUN:6,JUL:7,AGO:8,SEP:9,OCT:10,NOV:11,DIC:12};
+  const now=Date.now();
+  const H48=48*60*60*1000;
+  document.querySelectorAll('.rc-new-badge').forEach(badge=>{
+    const card=badge.closest('.rc');
+    if(!card)return;
+    const fechaEl=card.querySelector('.rc-fecha');
+    if(!fechaEl)return;
+    const parts=fechaEl.textContent.trim().toUpperCase().split(/\s+/);
+    const mon=MON[parts[parts.length-1]]||0;
+    const day=parts.length>=2?parseInt(parts[0])||1:1;
+    const published=new Date(2026,mon-1,day).getTime();
+    if(now-published>H48)badge.style.display='none';
+  });
+}
+
 window.addEventListener('DOMContentLoaded',()=>{
-  sortCardsByDate();decorateCards();setupRegionButtons();initReveal();initCounts();setupFilters();openDeepLink();
+  sortCardsByDate();updateNewBadges();decorateCards();setupRegionButtons();initReveal();initCounts();setupFilters();openDeepLink();
   fetchBCRA();fetchDolar();fetchMerval();fetchCommodities();
 });
 setInterval(fetchDolar,60_000);setInterval(fetchMerval,60_000);setInterval(fetchCommodities,120_000);setInterval(fetchBCRA,300_000);
