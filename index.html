@@ -5662,11 +5662,18 @@ function applyGlossary(root){
   const targets=root.querySelectorAll('.rc-sum-txt, .rc-block-body, .rc-conclusion-body');
   targets.forEach(el=>{
     if(el.dataset.glosDone)return;el.dataset.glosDone='1';
+    // Procesar solo texto visible — nunca el interior de tags HTML
     let html=el.innerHTML;
-    Object.keys(GLOS).sort((a,b)=>b.length-a.length).forEach(term=>{
-      const escaped=term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-      const re=new RegExp(`(?<![\\w>])(${escaped})(?![\\w<])`,'g');
-      html=html.replace(re,`<span class="glos" tabindex="0" data-tip="${GLOS[term].replace(/"/g,'&quot;')}">$1</span>`);
+    const tip_map=Object.keys(GLOS).sort((a,b)=>b.length-a.length);
+    // Dividir en segmentos: <tag> vs texto plano
+    html=html.replace(/(<[^>]+>)|([^<]+)/g,(match,tag,text)=>{
+      if(tag) return tag; // devolver tags intactos
+      tip_map.forEach(term=>{
+        const escaped=term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+        const re=new RegExp(`(?<![\\w])(${escaped})(?![\\w])`,'g');
+        text=text.replace(re,`<span class="glos" tabindex="0" data-tip="${GLOS[term].replace(/"/g,'&quot;')}">$1</span>`);
+      });
+      return text;
     });
     el.innerHTML=html;
   });
