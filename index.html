@@ -473,7 +473,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 /* ══════════════════════════════════
    CONSENSO PANEL
 ══════════════════════════════════ */
-.cp{grid-column:1/-1!important;display:flex!important;flex-direction:column;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;border-top:3px solid var(--a)}
+.cp{grid-column:1/-1;flex-direction:column;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;border-top:3px solid var(--a)}
 .cp-head{padding:1.2rem 1.6rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;background:linear-gradient(135deg,rgba(255,210,74,.05),transparent)}
 .cp-head-l{display:flex;align-items:center;gap:.9rem}
 .cp-badge{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--a);color:#000;padding:3px 9px;border-radius:20px}
@@ -6564,7 +6564,10 @@ function applyFilters(){
   cards.forEach(c=>{
     const impactOk=filterState.impact==='all'||c.dataset.impact===filterState.impact;
     const topics=(c.dataset.topic||'').split(/\s+/);
-    const topicOk=filterState.topic==='all'||topics.includes(filterState.topic);
+    const isConsenso=topics.includes('consenso');
+    const topicOk=isConsenso
+      ? filterState.topic==='consenso'
+      : filterState.topic==='all'||topics.includes(filterState.topic);
     const regionOk=filterState.region==='all'||c.dataset.region===filterState.region||(filterState.region==='latam'&&c.dataset.region==='argentina');
     const q=filterState.q.trim().toLowerCase();
     const text=q?c.textContent.toLowerCase():'';
