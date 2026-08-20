@@ -445,6 +445,27 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 .geo-imp{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border:1px solid;margin-top:.45rem;border-radius:2px}
 .gc-c{color:var(--r);border-color:rgba(224,48,32,.4);background:var(--r-dim)}.gc-m{color:var(--a);border-color:rgba(212,188,0,.4);background:var(--a-dim)}.gc-l{color:var(--g);border-color:rgba(34,160,85,.4);background:var(--g-dim)}
 
+/* ACCIONES Y CEDEARS */
+.acc-hero{padding:.9rem 1.4rem 1.1rem}
+.acc-filter-row{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.acc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding:16px}
+.acc-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem 1.15rem;display:flex;flex-direction:column;gap:.6rem;transition:border-color .15s}
+.acc-card:hover{border-color:var(--border2)}
+.acc-top{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.acc-ticker{font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:800;color:var(--t)}
+.acc-nombre{font-size:12px;font-weight:500;color:var(--t3);margin-left:.4rem}
+.acc-sector{font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--t3);background:var(--bg3);border:1px solid var(--border);padding:2px 8px;border-radius:4px;white-space:nowrap}
+.acc-badges{display:flex;gap:.4rem;flex-wrap:wrap}
+.acc-body{font-size:13px;line-height:1.55;color:var(--t2)}
+.acc-body .dato{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--t);padding:0 3px;letter-spacing:.01em;background:var(--bg3);border-radius:2px}
+.acc-foot{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap;margin-top:.1rem;padding-top:.6rem;border-top:1px solid var(--border)}
+.acc-veredicto{font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:6px}
+.acc-v-comprar{color:var(--g);background:var(--g-dim);border:1px solid rgba(63,214,115,.4)}
+.acc-v-esperar{color:var(--a);background:var(--a-dim);border:1px solid rgba(255,210,74,.4)}
+.acc-v-evitar{color:var(--r);background:var(--r-dim);border:1px solid rgba(255,81,69,.4)}
+.acc-fuente{font-size:10.5px;color:var(--t3);font-style:italic}
+.acc-nota{margin:0 16px 16px;font-size:12px;color:var(--t2);line-height:1.6;padding:.6rem .8rem;border-left:2px solid var(--border2)}
+
 /* AGENDA */
 .eventos{background:var(--bg2);padding:1rem 1.4rem;border-bottom:1px solid var(--border)}
 .ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:.7rem}
@@ -556,7 +577,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 
 /* MOBILE */
 @media(max-width:980px){.research-grid{grid-template-columns:1fr 1fr}.geo-grid{grid-template-columns:1fr 1fr}.cartera-grid{grid-template-columns:1fr}.numeros-band{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:640px){.research-grid{grid-template-columns:1fr}.ev-grid,.geo-grid{grid-template-columns:1fr}.cartera-grid{grid-template-columns:1fr}.numeros-band{grid-template-columns:1fr 1fr}nav{padding:0 .9rem;height:50px}.nav-name{font-size:17px}.nav-sub,.nav-ed,.nav-temp,.nav-live{display:none}.rc-gancho{font-size:15.5px}.rc-banco{font-size:11px}.research-hero{padding:.6rem .9rem}.fbtn{font-size:11px;padding:4px 9px}.termo-grid{grid-template-columns:1fr}.esc-grid{grid-template-columns:1fr}.cp-two{grid-template-columns:1fr}.cp-col{border-right:none;border-bottom:1px solid var(--border)}.cp-col:last-child{border-bottom:none}.cp-head{padding:.9rem 1rem}.cp-section{padding:1rem}.cp-col{padding:1rem}.cp-editorial{padding:1rem}}
+@media(max-width:640px){.research-grid,.acc-grid{grid-template-columns:1fr}.ev-grid,.geo-grid{grid-template-columns:1fr}.cartera-grid{grid-template-columns:1fr}.numeros-band{grid-template-columns:1fr 1fr}nav{padding:0 .9rem;height:50px}.nav-name{font-size:17px}.nav-sub,.nav-ed,.nav-temp,.nav-live{display:none}.rc-gancho{font-size:15.5px}.rc-banco{font-size:11px}.research-hero{padding:.6rem .9rem}.fbtn{font-size:11px;padding:4px 9px}.termo-grid{grid-template-columns:1fr}.esc-grid{grid-template-columns:1fr}.cp-two{grid-template-columns:1fr}.cp-col{border-right:none;border-bottom:1px solid var(--border)}.cp-col:last-child{border-bottom:none}.cp-head{padding:.9rem 1rem}.cp-section{padding:1rem}.cp-col{padding:1rem}.cp-editorial{padding:1rem}}
 
 /* ═══════════════════════════════════
    MACRO PANEL — 7 bloques colapsables
@@ -884,7 +905,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       <div class="rc-shdr-title">Argentina esta semana</div>
       <div class="rc-shdr-sub">Reportes de bancos · 2026</div>
     </div>
-    <div class="rc-shdr-count">20 reportes</div>
+    <div class="rc-shdr-count">21 reportes</div>
   </div>
 
   <!-- VETA CAP: ESTRATEGIA 03 AGO -->
@@ -948,6 +969,75 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       <div class="rc-conclusion">
         <div class="rc-conclusion-title">Qué pasa con Argentina y qué tenés que tener en cuenta</div>
         <div class="rc-conclusion-body">Veta presenta una semana donde el ruido externo vuelve a dominar. La Fed más dividida que en años y las tasas reales en máximos desde 2007 son el techo estructural para cualquier compresión del riesgo país argentino — no importa cuán bien le vaya a la macro local, el piso de la tasa libre de riesgo mundial sube. En el frente local, el corte de la racha del BCRA fue técnico (vencimiento del D31L6) y no señala un quiebre del programa cambiario — el dólar cerró dentro de la banda y julio fue el tercer mejor mes de compras. Lo que hay que monitorear: la recaudación de julio del lunes (¿se sostiene el superávit fiscal?), el REM del jueves (expectativas del mercado) y el próximo vencimiento dólar linked del 26 de agosto (D31G6), que podría generar una nueva prueba para el BCRA. El Merval probó el techo sin volumen — no hay señal de ruptura alcista todavía.</div>
+        <div class="rc-by">— Análisis PULSO</div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- ALLARIA: SEMANAL RENTA FIJA MACRO 03 AGO -->
+  <div class="rc alto" data-impact="alto" data-topic="research" data-region="argentina" id="allaria-semanal-ago26">
+  <span class="rc-new-badge">NUEVO</span>
+  <div class="rc-hook" onclick="toggleL1(this.closest('.rc'))">
+    <div class="rc-hook-top">
+      <span class="rc-banco">Allaria — Informe Semanal Renta Fija Macro · Buenos Aires</span>
+      <div class="rc-hookright">
+        <span class="rc-fecha">03 AGO</span>
+        <button class="share-btn" onclick="shareCard(event,'allaria-semanal-ago26')" title="Compartir esta tarjeta" aria-label="Compartir">↗</button>
+        <span class="rc-arr">▶</span>
+      </div>
+    </div>
+    <div class="rc-gancho">La confianza en el Gobierno <span style="color:#FF5145;">se derrumbó -6,5% en julio</span> a niveles previos a las elecciones, pero el BCRA compró un <span style="color:#3FD673;">récord histórico de USD13.337M</span> en el año y la inflación de julio asoma <span style="color:#FFD24A;">por debajo de lo esperado</span></div>
+    <div class="rc-bottom-row">
+      <div class="rc-badges"><span class="ibadge ib-a"><span class="ibdot"></span>IMPACTO ALTO</span></div>
+      <div class="rc-pulso-hook">Allaria repite su favorito, el AO28, mientras la macro mejora y la política se enfría</div>
+    </div>
+  </div>
+  <div class="rc-l1">
+    <div class="rc-summary">
+      <div class="rc-sum-tag">// Qué pasa con Argentina y qué tenés que tener en cuenta</div>
+      <div class="rc-sum-txt">Julio mostró la macro y la política moviéndose en direcciones opuestas. La confianza en el Gobierno medida por la UTDT <span class="hl-r">cayó -6,5% mensual hasta 1,94</span>, el mismo nivel que tenía en septiembre de 2025, el último dato antes de las elecciones que le dieron el 41% de los votos al oficialismo — la caída fue más fuerte entre los jóvenes de 18 a 29 años (<span class="dato">-23%</span>) y en el GBA (<span class="dato">-11%</span>). En paralelo, el BCRA compró <span class="dato">USD226M</span> la semana pasada y ya acumula <span class="hl">USD13.337 millones en el año</span>, el mejor arranque de compras desde que hay registro. La primera lectura de inflación de julio sorprendió a la baja: <span class="dato">1,26%</span> según el IPC Online de Bahía Blanca, contra el 1,9%-2,1% que esperaba el mercado. Allaria mantiene al AO28 como su bono favorito.</div>
+      <div class="rc-sum-by">— PULSO</div>
+    </div>
+    <button class="rc-expand" onclick="toggleL2(this.closest('.rc'),event)">
+      <span class="rc-exp-label">Leer análisis completo</span>
+      <span class="rc-exp-arr">▶</span>
+    </button>
+  </div>
+  <div class="rc-l2">
+    <div class="rc-full">
+      <div class="rc-full-header">
+        <span class="rc-full-label">Allaria · 03 AGO 2026 — Informe Semanal Renta Fija Macro</span>
+        <span class="rc-full-source">Equipo de Research Allaria — Soledad Tortarolo (Gerente), Federico Pomi, Gabriela Carbajal, Matías Pascual, Magalí Reyna</span>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">Internacional: la Fed se mantiene pero cada vez más dividida</div>
+        <div class="rc-block-body"><p>La inflación PCE de junio fue <span class="dato">-0,1% mensual</span>, en línea con lo esperado y con la desaceleración de precios que ya se había visto en junio. La Fed mantuvo la tasa en <span class="dato">3,5%-3,75%</span>, también en línea, pero la decisión no fue unánime: 9 votos a favor de mantener y 3 a favor de subir 25 puntos básicos. Para la próxima reunión del 16 de septiembre, el mercado le asigna <span class="dato">65% de probabilidad</span> a una suba (desde 56% hace una semana). En la apertura de hoy: el oro sube <span class="dato">0,2%</span> hasta USD4.048, el petróleo cae <span class="hl-g">-7,5% hasta USD83,4</span> por rumores de un acuerdo entre Irán y EEUU, la soja baja -0,3% a USD429,54 y el dólar (DXY) se debilita -0,06% a 99,85. Allaria espera que la baja del petróleo siga presionando al DXY hacia abajo, lo que favorece a las monedas emergentes, incluido el peso.</p></div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">Inflación: la primera lectura de julio sorprende a la baja</div>
+        <div class="rc-block-body"><p>El IPC Online de Bahía Blanca marcó <span class="dato">1,26%</span> en julio, desde 1,76% en junio. Este indicador corre en promedio 25% por debajo de la inflación nacional — si se mantuviera esa relación, julio podría rondar el <span class="hl-g">1,6%</span>, muy por debajo de lo que esperan las consultoras y el REM (1,9%-2,1%). En la misma línea, la medición de Alberto Cavallo (PriceStats) dio <span class="dato">1,2%</span> para julio. Otras consultoras son más cautas: Eco Go proyecta 2,1% y PxQ 1,9%. Hay que tener en cuenta que julio suele tener una estacionalidad más alta por las vacaciones de invierno, así que si el dato termina confirmando la sorpresa a la baja sería una señal relevante para el mercado.</p></div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">Confianza en el Gobierno: cayó a niveles previos a las elecciones</div>
+        <div class="rc-block-body"><p>El índice de Confianza en el Gobierno de la UTDT cayó <span class="hl-r">-6,5% mensual hasta 1,94</span> en julio, un -21% respecto de julio de 2025. Es un índice volátil, pero ese valor es idéntico al que tuvo el oficialismo en septiembre de 2025, el último dato publicado antes de las elecciones que le dieron el 41% de los votos. Mirando los subíndices, la mayor caída se dio en el <span class="dato">GBA (-11%)</span>, en hombres (-11%), en jóvenes de 18 a 29 años (<span class="dato">-23%</span>) y en personas con estudios primarios como máximo nivel alcanzado (-25%). En el plano político, el presidente Milei confirmó que ya definió a su compañero de fórmula para ir por la reelección, aunque prefirió no revelar la identidad "por el momento", e insistió en la necesidad de eliminar las PASO por su costo fiscal. Patricia Bullrich, por su parte, escribió: "Después de la reelección de Milei, quiero ser Presidente".</p></div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">Balance cambiario y reservas: superávit comercial fuerte, pero se van dólares por ahorro</div>
+        <div class="rc-block-body"><p>La <span class="glos" data-tip="Cuenta corriente: mide el intercambio de bienes, servicios, intereses y utilidades de un país con el resto del mundo. Un superávit significa que entran más dólares por comercio y rentas de los que salen.">cuenta corriente</span> tuvo un superávit de <span class="dato">USD857M</span> en junio (desde USD2.158M un año antes), explicado por un superávit comercial de USD3.018M, parcialmente compensado por un déficit de servicios de USD627M, intereses netos de USD544M y giro de utilidades al exterior por USD1.023M. La <span class="glos" data-tip="Cuenta financiera: registra los movimientos de capital — inversiones, préstamos y compra de dólares para ahorro — entre un país y el resto del mundo. Un déficit significa que salen más dólares de los que entran por este canal.">cuenta financiera</span> tuvo déficit de <span class="hl-r">USD3.191M</span> (desde un superávit de USD745M el año pasado), por salidas del sector financiero, del Gobierno y del sector privado — dentro de este último, el FAE fue de USD2.065M, la mitad que un año atrás (USD4.051M). El agro liquidó USD2.918M en julio, -28% interanual. Con todo, el BCRA compró <span class="dato">USD226M</span> en la semana, USD2.163M en julio y <span class="hl">USD13.337M en el año</span>, el mayor monto para un período similar desde que hay registro. Las reservas brutas bajaron USD1.587M en la semana (por la baja estacional de encajes de principio de mes) hasta USD47.596M, aunque en julio completo subieron USD2.726M. Las reservas netas cerraron en USD10.445M, y medidas como pide el FMI rondarían los -USD8.133M — de todos modos, el Gobierno ya cumplió la meta de reservas de fin de año.</p></div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">Tasas, licitación y bonos: el Tesoro convalidó tasas más altas</div>
+        <div class="rc-block-body"><p>El Tesoro colocó $12,21 billones con un rollover de <span class="dato">144,5%</span> sobre los vencimientos. El instrumento más demandado fue un nuevo bono dual TAMAR-<span class="glos" data-tip="Dollar Linked: bono en pesos cuyo capital ajusta según el tipo de cambio oficial. Protege contra una devaluación.">Dollar Linked</span> a enero 2028, que se llevó el 38,7% de lo colocado a una TEA de 33,51% (pata TAMAR), seguido por una nueva Lecap a octubre (37,8% de lo colocado, TEA 27,59%, con un premio de 149 puntos básicos sobre lo que esperaba el mercado). La caución a 1 día subió <span class="dato">+400 pb hasta TNA 24%</span> y la TAMAR +19 pb hasta TNA 22,9%. Los bonos hard dollar operaron mixtos: subieron los de Ley NY (GD30 +0,4%) y bajaron los de Ley argentina (AO28 -1,5%, AL30 -0,1%) — el spread por legislación está en máximos de tres meses, lo que sugiere vender Ley NY y comprar Ley Argentina, con una ganancia potencial de capital de 4%-5% según el tramo. El riesgo país bajó -7 pb hasta 430.</p></div>
+      </div>
+      <div class="rc-block">
+        <div class="rc-block-title">Estrategia de Allaria y agenda de la semana</div>
+        <div class="rc-block-body"><p>Allaria mantiene al <span class="dato">AO28</span> (tramo medio) como su bono favorito, por la mejor relación entre el retorno esperado a diciembre de 2026 y la resistencia ante una eventual suba del riesgo país. En el frente sectorial, el comité del RIGI aprobó dos nuevos proyectos: "Fértil Pampa" de Pampa Energía (USD2.700M de inversión, 3.500 empleos) y la ampliación de Compañía Mega (USD360M de inversión, 800 empleos) — ya son 23 proyectos aprobados por más de USD49.000M. El Gobierno además amplió la devolución de IVA a las pymes a $50.000 millones mensuales.</p>
+        <p>Agenda de la semana: lunes 3-ago, recaudación de julio; jueves 6-ago, REM de julio; viernes 7-ago, inflación de CABA y el dato de desempleo de EEUU.</p></div>
+      </div>
+      <div class="rc-conclusion">
+        <div class="rc-conclusion-title">Qué pasa con Argentina y qué tenés que tener en cuenta</div>
+        <div class="rc-conclusion-body">Allaria describe una semana con la macro y la política moviéndose en direcciones opuestas. Del lado macro casi todo mejora: el BCRA compra dólares a un ritmo histórico, el superávit comercial sostiene la cuenta corriente y la primera lectura de inflación de julio sugiere que el dato podría sorprender a la baja. Pero la confianza en el Gobierno cayó a los mismos niveles que tenía justo antes de las elecciones de 2025 — y la propia UTDT señala que ese nivel (1,90) es una zona ambigua, donde en el pasado hubo tanto triunfos como derrotas del oficialismo. Para el inversor, la clave de la semana es la recaudación del lunes y el REM del jueves, que van a confirmar si el ajuste fiscal sigue firme y si el mercado también empieza a convalidar una inflación más baja. Mientras tanto, el mensaje de renta fija es claro: el spread entre bonos Ley NY y Ley Argentina está en máximos de tres meses, una oportunidad táctica poco frecuente.</div>
         <div class="rc-by">— Análisis PULSO</div>
       </div>
     </div>
@@ -5578,6 +5668,147 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 
 </div><!-- /rc-grid -->
 
+<!-- ══ ACCIONES Y CEDEARS ══ -->
+<div class="sdiv reveal">
+  <span class="sdiv-label">Acciones y CEDEARs</span>
+  <div class="sdiv-line"></div>
+  <span class="sdiv-meta">Salud financiera y precio, según el research que leemos</span>
+</div>
+
+<div class="acc-hero reveal">
+  <div class="acc-filter-row" data-filter-group="accregion">
+    <span class="filter-label">Mercado</span>
+    <button class="fbtn acc-fbtn active" data-accfilter="all">Todos <span class="fcount" id="acc-count-all"></span></button>
+    <button class="fbtn acc-fbtn" data-accfilter="argentina">🇦🇷 Argentina <span class="fcount" id="acc-count-argentina"></span></button>
+    <button class="fbtn acc-fbtn" data-accfilter="eeuu">🇺🇸 CEDEARs (EEUU) <span class="fcount" id="acc-count-eeuu"></span></button>
+  </div>
+</div>
+
+<div class="acc-grid reveal" id="acc-grid">
+
+  <!-- YPF -->
+  <div class="acc-card" data-region="argentina">
+    <div class="acc-top">
+      <div><span class="acc-ticker">YPFD</span><span class="acc-nombre">YPF</span></div>
+      <span class="acc-sector">Oil &amp; Gas</span>
+    </div>
+    <div class="acc-badges">
+      <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Sólida</span>
+      <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Precio justo</span>
+    </div>
+    <div class="acc-body">EBITDA trimestral récord de <span class="dato">USD1.750M</span> (margen 32%), con deuda/EBITDA bajando a <span class="dato">1,57x</span>. Cotiza a <span class="dato">5,5x EV/EBITDA</span> — CIMA prefiere a Pampa por mejor relación precio/potencial. JPMorgan ve upside adicional si avanza la reclasificación MSCI (hasta USD594M de flujos pasivos), pero aplica un descuento por ser mayoría estatal.</div>
+    <div class="acc-foot">
+      <span class="acc-veredicto acc-v-esperar">Esperar mejor punto de entrada</span>
+      <span class="acc-fuente">CIMA · JPMorgan</span>
+    </div>
+  </div>
+
+  <!-- Pampa Energía -->
+  <div class="acc-card" data-region="argentina">
+    <div class="acc-top">
+      <div><span class="acc-ticker">PAMP</span><span class="acc-nombre">Pampa Energía</span></div>
+      <span class="acc-sector">Oil &amp; Gas</span>
+    </div>
+    <div class="acc-badges">
+      <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Sólida</span>
+      <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
+    </div>
+    <div class="acc-body">EBITDA ajustado récord de <span class="dato">USD324M</span> en el trimestre, migrando de utility regulada a productora en Vaca Muerta. Cotiza a <span class="dato">4,5x EV/EBITDA</span>, la más baja del sector, con potencial de duplicar EBITDA a USD2.200M para 2030. Es la favorita de CIMA dentro del sector energético, por delante de YPF.</div>
+    <div class="acc-foot">
+      <span class="acc-veredicto acc-v-comprar">Comprar</span>
+      <span class="acc-fuente">CIMA</span>
+    </div>
+  </div>
+
+  <!-- Vista Energy -->
+  <div class="acc-card" data-region="argentina">
+    <div class="acc-top">
+      <div><span class="acc-ticker">VIST</span><span class="acc-nombre">Vista Energy</span></div>
+      <span class="acc-sector">Oil &amp; Gas</span>
+    </div>
+    <div class="acc-badges">
+      <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Sólida</span>
+      <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Precio justo</span>
+    </div>
+    <div class="acc-body">EBITDA trimestral récord de <span class="dato">USD400M</span>, con producción escalando a 158.000 boe/d proyectados para 2026. Cotiza a <span class="dato">6,2x EV/EBITDA</span>, un múltiplo que CIMA ve bajar a 3,7x para 2027 a medida que crece. JPMorgan la tiene en Overweight junto con GGAL, como vehículo preferido de energía por su perfil más simple que YPF.</div>
+    <div class="acc-foot">
+      <span class="acc-veredicto acc-v-comprar">Comprar pensando en 2027</span>
+      <span class="acc-fuente">CIMA · JPMorgan</span>
+    </div>
+  </div>
+
+  <!-- TGS -->
+  <div class="acc-card" data-region="argentina">
+    <div class="acc-top">
+      <div><span class="acc-ticker">TGSU2</span><span class="acc-nombre">Transportadora Gas del Sur</span></div>
+      <span class="acc-sector">Oil &amp; Gas · Midstream</span>
+    </div>
+    <div class="acc-badges">
+      <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Muy sólida</span>
+      <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Sin dato</span>
+    </div>
+    <div class="acc-body">El balance más sólido del sector: deuda neta <span class="hl-g">negativa</span> (le sobra caja), margen EBITDA de <span class="dato">55%</span> y ventas/EBITDA creciendo <span class="dato">+17%/+31%</span> interanual. Vencimientos despejados hasta 2031. CIMA no publicó un múltiplo de la acción — sobrepondera directamente su bono (TGS 2031, rindiendo ~7%) antes que el equity.</div>
+    <div class="acc-foot">
+      <span class="acc-veredicto acc-v-esperar">Mirar de cerca — sin múltiplo publicado</span>
+      <span class="acc-fuente">CIMA</span>
+    </div>
+  </div>
+
+  <!-- Microsoft -->
+  <div class="acc-card" data-region="eeuu">
+    <div class="acc-top">
+      <div><span class="acc-ticker">MSFT</span><span class="acc-nombre">Microsoft</span></div>
+      <span class="acc-sector">Tecnología · CEDEAR</span>
+    </div>
+    <div class="acc-badges">
+      <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Muy sólida</span>
+      <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata (relativa)</span>
+    </div>
+    <div class="acc-body">Azure creciendo <span class="dato">+40/43%</span>, el ejemplo más claro del mercado de monetizar la inversión en IA. Pese a eso, cotiza a un <span class="glos" data-tip="P/E: Price/Earnings, cuántas veces la ganancia anual vale el precio de la acción.">P/E</span> forward de <span class="dato">22,9x</span>, mínimo relativo frente al S&amp;P 500 en 10 años. Es la favorita de Veta Cap, que tomó ganancias tras subir 22% en la semana pero la mantiene como posición core.</div>
+    <div class="acc-foot">
+      <span class="acc-veredicto acc-v-comprar">Comprar</span>
+      <span class="acc-fuente">Veta Cap</span>
+    </div>
+  </div>
+
+  <!-- Meta -->
+  <div class="acc-card" data-region="eeuu">
+    <div class="acc-top">
+      <div><span class="acc-ticker">META</span><span class="acc-nombre">Meta Platforms</span></div>
+      <span class="acc-sector">Tecnología · CEDEAR</span>
+    </div>
+    <div class="acc-badges">
+      <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Sólida con ruido contable</span>
+      <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
+    </div>
+    <div class="acc-body">El negocio de publicidad crece <span class="dato">+28%</span>, pero el resultado del trimestre quedó distorsionado por cargos legales extraordinarios de <span class="dato">USD2.400M</span> y por elevar el piso de capex 2026 a USD145.000M. La acción cayó <span class="dato">-6,5%</span> en la semana y quedó en su múltiplo forward más bajo desde 2022 — Veta Cap sumó posición en la baja.</div>
+    <div class="acc-foot">
+      <span class="acc-veredicto acc-v-comprar">Comprar en la baja</span>
+      <span class="acc-fuente">Veta Cap</span>
+    </div>
+  </div>
+
+  <!-- Apple -->
+  <div class="acc-card" data-region="eeuu">
+    <div class="acc-top">
+      <div><span class="acc-ticker">AAPL</span><span class="acc-nombre">Apple</span></div>
+      <span class="acc-sector">Tecnología · CEDEAR</span>
+    </div>
+    <div class="acc-badges">
+      <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Sólida, pero rezagada</span>
+      <span class="ibadge ib-a"><span class="ibdot"></span>Valuación: Cara relativa</span>
+    </div>
+    <div class="acc-body">Ingresos creciendo <span class="dato">+16%</span> interanual, pero el mercado la castigó con una caída de <span class="dato">-7,2%</span> en la semana por no invertir lo suficiente en IA frente a sus pares. El mensaje del mercado es claro: dejó de premiarse el gasto en IA y empieza a exigirse monetización concreta — algo que Apple todavía no mostró.</div>
+    <div class="acc-foot">
+      <span class="acc-veredicto acc-v-evitar">Evitar por ahora</span>
+      <span class="acc-fuente">Veta Cap</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="acc-nota reveal">Esto es nuestra lectura de lo que dicen los research que seguimos — no es una recomendación de inversión ni releva de leer el informe completo en la sección de arriba. Vamos a sumar más empresas a medida que aparezcan en nuevos reportes.</div>
+
 <!-- ══ NÚMEROS EN CONTEXTO — 7 BLOQUES COLAPSABLES ══ -->
 <button class="section-toggle-btn reveal" onclick="toggleSection('numeros-section', this)">
   <div class="stb-left">
@@ -6185,6 +6416,25 @@ function setupFilters(){
   applyFilters();
 }
 
+function setupAccFilters(){
+  const btns=document.querySelectorAll('.acc-fbtn[data-accfilter]');
+  const cards=document.querySelectorAll('#acc-grid .acc-card');
+  if(!btns.length||!cards.length)return;
+  const apply=val=>{
+    cards.forEach(c=>{c.style.display=(val==='all'||c.dataset.region===val)?'':'none';});
+  };
+  btns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btns.forEach(b=>b.classList.toggle('active',b===btn));
+      apply(btn.dataset.accfilter);
+    });
+  });
+  document.getElementById('acc-count-all').textContent=`(${cards.length})`;
+  document.getElementById('acc-count-argentina').textContent=`(${[...cards].filter(c=>c.dataset.region==='argentina').length})`;
+  document.getElementById('acc-count-eeuu').textContent=`(${[...cards].filter(c=>c.dataset.region==='eeuu').length})`;
+  apply('all');
+}
+
 /* ═══ COMPARTIR + DEEP-LINK ═══ */
 function showToast(msg){
   const t=document.getElementById('toast');if(!t)return;
@@ -6326,6 +6576,9 @@ const GLOS={
   'CCL':'Contado con Liquidación: dólar que se obtiene comprando un activo en pesos y vendiéndolo en el exterior. Suele ser el más caro.',
   'licitación':'Proceso por el que el Tesoro emite nueva deuda. Los bancos y fondos ofertan tasas y el Tesoro acepta las mejores condiciones.',
   'rollover':'Renovación de deuda: cuando el Tesoro emite nueva deuda para pagar la que vence. Un rollover del 100% significa que renovó todo lo que vencía.',
+  'FAE':'Formación de Activos Externos: compra de dólares para ahorro de personas o empresas, fuera del sistema financiero. Es el principal canal de demanda de dólares en Argentina.',
+  'UTDT':'Universidad Torcuato Di Tella. Elabora mensualmente el Índice de Confianza en el Gobierno, una encuesta que mide cómo evalúa la población a la gestión.',
+  'PASO':'Elecciones Primarias, Abiertas, Simultáneas y Obligatorias. El Gobierno impulsa eliminarlas por el costo fiscal que representan.',
   /* ── Bonos y mercados ─────────────────────────────────────────── */
   'TIR':'Tasa Interna de Retorno: el rendimiento anual que te queda si comprás un bono hoy y lo mantenés hasta el vencimiento.',
   'TEA':'Tasa Efectiva Anual: el rendimiento anual real de un bono considerando el efecto del interés compuesto.',
@@ -6455,7 +6708,7 @@ function updateNewBadges(){
 }
 
 window.addEventListener('DOMContentLoaded',()=>{
-  sortCardsByDate();updateNewBadges();decorateCards();setupRegionButtons();initReveal();initCounts();setupFilters();openDeepLink();
+  sortCardsByDate();updateNewBadges();decorateCards();setupRegionButtons();initReveal();initCounts();setupFilters();setupAccFilters();openDeepLink();
   fetchBCRA();fetchDolar();fetchMerval();fetchCommodities();
 });
 setInterval(fetchDolar,60_000);setInterval(fetchMerval,60_000);setInterval(fetchCommodities,120_000);setInterval(fetchBCRA,300_000);
