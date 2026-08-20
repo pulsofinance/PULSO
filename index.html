@@ -466,18 +466,6 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 .acc-fuente{font-size:10.5px;color:var(--t3);font-style:italic}
 .acc-nota{margin:0 16px 16px;font-size:12px;color:var(--t2);line-height:1.6;padding:.6rem .8rem;border-left:2px solid var(--border2)}
 
-.acc-modal-backdrop{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.72);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:2.2rem 1rem;opacity:0;transition:opacity .2s}
-.acc-modal-backdrop.open{display:flex;opacity:1}
-.acc-modal{background:var(--card);border:1px solid var(--border2);border-radius:14px;width:100%;max-width:980px;max-height:88vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.5);transform:translateY(10px) scale(.98);transition:transform .2s}
-.acc-modal-backdrop.open .acc-modal{transform:translateY(0) scale(1)}
-.acc-modal-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.4rem;border-bottom:1px solid var(--border);flex-shrink:0}
-.acc-modal-title{font-size:16px;font-weight:800;color:var(--t);display:block}
-.acc-modal-sub{font-size:11.5px;color:var(--t3);display:block;margin-top:.2rem}
-.acc-modal-close{background:var(--bg3);border:1px solid var(--border2);color:var(--t2);font-size:15px;line-height:1;width:32px;height:32px;border-radius:50%;cursor:pointer;flex-shrink:0;transition:all .15s}
-.acc-modal-close:hover{background:var(--r-dim);border-color:rgba(255,81,69,.45);color:var(--r)}
-.acc-modal-body{overflow-y:auto}
-@media(max-width:640px){.acc-modal-backdrop{padding:0}.acc-modal{max-width:100%;max-height:100vh;height:100%;border-radius:0}}
-
 /* AGENDA */
 .eventos{background:var(--bg2);padding:1rem 1.4rem;border-bottom:1px solid var(--border)}
 .ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:.7rem}
@@ -887,6 +875,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     <button class="fbtn active" data-filter="topic" data-value="all"><span class="topic-emoji">📊</span>Todos <span class="fcount" data-count="all"></span></button>
     <button class="fbtn" data-filter="topic" data-value="research"><span class="topic-emoji">📈</span>Research <span class="fcount" data-count="research"></span></button>
     <button class="fbtn" data-filter="topic" data-value="consenso"><span class="topic-emoji">📡</span>Consenso PULSO</button>
+    <button class="fbtn" data-filter="topic" data-value="acciones"><span class="topic-emoji">📊</span>Acciones y CEDEARs</button>
   </div>
   <div class="filter-row" data-filter-group="impact">
     <span class="filter-label">Impacto</span>
@@ -5678,27 +5667,18 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 
  
 
-</div><!-- /rc-grid -->
-
 <!-- ══ ACCIONES Y CEDEARS ══ -->
-<button class="section-toggle-btn reveal" onclick="openAccModal()">
-  <div class="stb-left">
-    <span class="stb-label">📊 Acciones y CEDEARs</span>
-    <span class="stb-meta">Salud financiera y precio de 7 empresas · click para ver</span>
-  </div>
-  <span class="stb-arrow">▶</span>
-</button>
+<div class="rc cp" data-topic="acciones" data-impact="alto" data-region="argentina" id="acciones-cedears">
 
-<div class="acc-modal-backdrop" id="acc-modal-backdrop" onclick="closeAccModalBackdrop(event)">
-  <div class="acc-modal">
-    <div class="acc-modal-head">
-      <div>
-        <span class="acc-modal-title">📊 Acciones y CEDEARs</span>
-        <span class="acc-modal-sub">Salud financiera y precio, según el research que leemos</span>
+    <div class="cp-head">
+      <div class="cp-head-l">
+        <span class="cp-badge">📊 Screener</span>
+        <div>
+          <div class="cp-title">Acciones y CEDEARs</div>
+          <div class="cp-sub">Salud financiera y precio, según el research que leemos</div>
+        </div>
       </div>
-      <button class="acc-modal-close" onclick="closeAccModal()" aria-label="Cerrar">✕</button>
     </div>
-    <div class="acc-modal-body">
 
     <div class="acc-hero">
       <div class="acc-filter-row" data-filter-group="accregion">
@@ -5834,9 +5814,9 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 
     <div class="acc-nota">Esto es nuestra lectura de lo que dicen los research que seguimos — no es una recomendación de inversión ni releva de leer el informe completo en la sección de arriba. Vamos a sumar más empresas a medida que aparezcan en nuevos reportes.</div>
 
-    </div><!-- /acc-modal-body -->
-  </div><!-- /acc-modal -->
-</div><!-- /acc-modal-backdrop -->
+</div><!-- /acciones-cedears -->
+
+</div><!-- /rc-grid -->
 
 <!-- ══ NÚMEROS EN CONTEXTO — 7 BLOQUES COLAPSABLES ══ -->
 <button class="section-toggle-btn reveal" onclick="toggleSection('numeros-section', this)">
@@ -6404,9 +6384,10 @@ function applyFilters(){
   cards.forEach(c=>{
     const impactOk=filterState.impact==='all'||c.dataset.impact===filterState.impact;
     const topics=(c.dataset.topic||'').split(/\s+/);
-    const isConsenso=topics.includes('consenso');
-    const topicOk=isConsenso
-      ? filterState.topic==='consenso'
+    const exclusiveTopics=['consenso','acciones'];
+    const isExclusive=topics.some(t=>exclusiveTopics.includes(t));
+    const topicOk=isExclusive
+      ? topics.includes(filterState.topic)
       : filterState.topic==='all'||topics.includes(filterState.topic);
     const regionOk=filterState.region==='all'||c.dataset.region===filterState.region||(filterState.region==='latam'&&c.dataset.region==='argentina');
     const q=filterState.q.trim().toLowerCase();
@@ -6444,25 +6425,6 @@ function setupFilters(){
   });
   applyFilters();
 }
-
-function openAccModal(){
-  const bd=document.getElementById('acc-modal-backdrop');
-  if(!bd)return;
-  bd.classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeAccModal(){
-  const bd=document.getElementById('acc-modal-backdrop');
-  if(!bd)return;
-  bd.classList.remove('open');
-  document.body.style.overflow='';
-}
-function closeAccModalBackdrop(ev){
-  if(ev.target===ev.currentTarget)closeAccModal();
-}
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape')closeAccModal();
-});
 
 function setupAccFilters(){
   const btns=document.querySelectorAll('.acc-fbtn[data-accfilter]');
