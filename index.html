@@ -464,6 +464,10 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 .acc-v-esperar{color:var(--a);background:var(--a-dim);border:1px solid rgba(255,210,74,.4)}
 .acc-v-evitar{color:var(--r);background:var(--r-dim);border:1px solid rgba(255,81,69,.4)}
 .acc-fuente{font-size:10.5px;color:var(--t3);font-style:italic}
+.acc-updated{font-size:10px;color:var(--t3);margin-top:-.15rem;display:flex;align-items:center;gap:4px}
+.acc-updated.acc-fresh{color:var(--g)}
+.acc-updated.acc-aging{color:var(--a)}
+.acc-updated.acc-stale{color:var(--r);font-weight:600}
 .acc-nota{margin:0 16px 16px;font-size:12px;color:var(--t2);line-height:1.6;padding:.6rem .8rem;border-left:2px solid var(--border2)}
 
 /* AGENDA */
@@ -5817,7 +5821,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     <div class="acc-grid" id="acc-grid">
 
       <!-- YPF -->
-  <div class="acc-card" data-region="argentina">
+  <div class="acc-card" data-region="argentina" data-updated="2026-05-27">
     <div class="acc-top">
       <div><span class="acc-ticker">YPFD</span><span class="acc-nombre">YPF</span></div>
       <span class="acc-sector">Oil &amp; Gas</span>
@@ -5834,7 +5838,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 
   <!-- Pampa Energía -->
-  <div class="acc-card" data-region="argentina">
+  <div class="acc-card" data-region="argentina" data-updated="2026-05-27">
     <div class="acc-top">
       <div><span class="acc-ticker">PAMP</span><span class="acc-nombre">Pampa Energía</span></div>
       <span class="acc-sector">Oil &amp; Gas</span>
@@ -5851,7 +5855,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 
   <!-- Vista Energy -->
-  <div class="acc-card" data-region="argentina">
+  <div class="acc-card" data-region="argentina" data-updated="2026-05-27">
     <div class="acc-top">
       <div><span class="acc-ticker">VIST</span><span class="acc-nombre">Vista Energy</span></div>
       <span class="acc-sector">Oil &amp; Gas</span>
@@ -5868,7 +5872,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 
   <!-- TGS -->
-  <div class="acc-card" data-region="argentina">
+  <div class="acc-card" data-region="argentina" data-updated="2026-05-27">
     <div class="acc-top">
       <div><span class="acc-ticker">TGSU2</span><span class="acc-nombre">Transportadora Gas del Sur</span></div>
       <span class="acc-sector">Oil &amp; Gas · Midstream</span>
@@ -5885,7 +5889,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 
   <!-- Microsoft -->
-  <div class="acc-card" data-region="eeuu">
+  <div class="acc-card" data-region="eeuu" data-updated="2026-08-03">
     <div class="acc-top">
       <div><span class="acc-ticker">MSFT</span><span class="acc-nombre">Microsoft</span></div>
       <span class="acc-sector">Tecnología · CEDEAR</span>
@@ -5902,7 +5906,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 
   <!-- Meta -->
-  <div class="acc-card" data-region="eeuu">
+  <div class="acc-card" data-region="eeuu" data-updated="2026-08-03">
     <div class="acc-top">
       <div><span class="acc-ticker">META</span><span class="acc-nombre">Meta Platforms</span></div>
       <span class="acc-sector">Tecnología · CEDEAR</span>
@@ -5919,7 +5923,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
   </div>
 
   <!-- Apple -->
-  <div class="acc-card" data-region="eeuu">
+  <div class="acc-card" data-region="eeuu" data-updated="2026-08-03">
     <div class="acc-top">
       <div><span class="acc-ticker">AAPL</span><span class="acc-nombre">Apple</span></div>
       <span class="acc-sector">Tecnología · CEDEAR</span>
@@ -5968,7 +5972,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     <div class="acc-grid" id="bond-grid">
 
       <!-- AO28 -->
-      <div class="acc-card" data-category="soberano">
+      <div class="acc-card" data-category="soberano" data-updated="2026-08-03">
         <div class="acc-top">
           <div><span class="acc-ticker">AO28</span><span class="acc-nombre">Bonar 2028 · Ley Argentina</span></div>
           <span class="acc-sector">Soberano USD</span>
@@ -5985,7 +5989,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       </div>
 
       <!-- AO27 -->
-      <div class="acc-card" data-category="soberano">
+      <div class="acc-card" data-category="soberano" data-updated="2026-08-21">
         <div class="acc-top">
           <div><span class="acc-ticker">AO27</span><span class="acc-nombre">Bonar 2027 · Ley Argentina</span></div>
           <span class="acc-sector">Soberano USD</span>
@@ -6002,7 +6006,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       </div>
 
       <!-- AO29 -->
-      <div class="acc-card" data-category="soberano">
+      <div class="acc-card" data-category="soberano" data-updated="2026-08-03">
         <div class="acc-top">
           <div><span class="acc-ticker">AO29</span><span class="acc-nombre">Bonar 2029</span></div>
           <span class="acc-sector">Soberano USD</span>
@@ -6019,7 +6023,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       </div>
 
       <!-- Spread por legislación -->
-      <div class="acc-card" data-category="soberano">
+      <div class="acc-card" data-category="soberano" data-updated="2026-08-03">
         <div class="acc-top">
           <div><span class="acc-ticker">GD35/AL35</span><span class="acc-nombre">Arbitraje Ley NY vs. Ley Argentina</span></div>
           <span class="acc-sector">Soberano USD · Táctico</span>
@@ -6036,7 +6040,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       </div>
 
       <!-- Córdoba 2035 -->
-      <div class="acc-card" data-category="provincial">
+      <div class="acc-card" data-category="provincial" data-updated="2026-08-21">
         <div class="acc-top">
           <div><span class="acc-ticker">CO35</span><span class="acc-nombre">Córdoba 2035</span></div>
           <span class="acc-sector">Provincial USD</span>
@@ -6053,7 +6057,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       </div>
 
       <!-- ONs energéticas -->
-      <div class="acc-card" data-category="corporativo">
+      <div class="acc-card" data-category="corporativo" data-updated="2026-05-27">
         <div class="acc-top">
           <div><span class="acc-ticker">TGS 2031 / YPF 2031</span><span class="acc-nombre">Tecpetrol 2030</span></div>
           <span class="acc-sector">Corporativo (ON) · Oil &amp; Gas</span>
@@ -6070,7 +6074,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       </div>
 
       <!-- Cresud / Pluspetrol -->
-      <div class="acc-card" data-category="corporativo">
+      <div class="acc-card" data-category="corporativo" data-updated="2026-08-21">
         <div class="acc-top">
           <div><span class="acc-ticker">CS50O / PLC3O</span><span class="acc-nombre">Cresud 2039 · Pluspetrol 2028</span></div>
           <span class="acc-sector">Corporativo (ON) · Ley local</span>
@@ -6087,7 +6091,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       </div>
 
       <!-- TMVE8 -->
-      <div class="acc-card" data-category="pesos">
+      <div class="acc-card" data-category="pesos" data-updated="2026-08-21">
         <div class="acc-top">
           <div><span class="acc-ticker">TMVE8</span><span class="acc-nombre">Dual TAMAR / Dollar Linked · ene-2028</span></div>
           <span class="acc-sector">Pesos · Cobertura</span>
@@ -6104,7 +6108,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       </div>
 
       <!-- Boncer / duales CER -->
-      <div class="acc-card" data-category="pesos">
+      <div class="acc-card" data-category="pesos" data-updated="2026-08-21">
         <div class="acc-top">
           <div><span class="acc-ticker">Boncer corto / Duales CER-TAMAR</span><span class="acc-nombre">Cobertura inflación</span></div>
           <span class="acc-sector">Pesos · CER</span>
@@ -6755,6 +6759,24 @@ function setupAccFilters(){
   apply('all');
 }
 
+function updateFreshnessBadges(){
+  const now=new Date();
+  document.querySelectorAll('.acc-card[data-updated]').forEach(card=>{
+    const d=new Date(card.dataset.updated+'T00:00:00');
+    if(isNaN(d))return;
+    const days=Math.max(0,Math.round((now-d)/86400000));
+    let label,cls;
+    if(days<=20){label=days===0?'🕓 Actualizado hoy':days===1?'🕓 Actualizado ayer':`🕓 Actualizado hace ${days} días`;cls='acc-fresh';}
+    else if(days<=60){label=`🕓 Actualizado hace ${days} días`;cls='acc-aging';}
+    else{label=`⚠ Desactualizado — hace ${days} días, verificar`;cls='acc-stale';}
+    let el=card.querySelector('.acc-updated');
+    if(!el){el=document.createElement('div');el.className='acc-updated';card.appendChild(el);}
+    el.textContent=label;
+    el.classList.remove('acc-fresh','acc-aging','acc-stale');
+    el.classList.add(cls);
+  });
+}
+
 function setupBondFilters(){
   const btns=document.querySelectorAll('.bond-fbtn[data-bondfilter]');
   const cards=document.querySelectorAll('#bond-grid .acc-card');
@@ -7057,7 +7079,7 @@ function updateNewBadges(){
 }
 
 window.addEventListener('DOMContentLoaded',()=>{
-  sortCardsByDate();updateNewBadges();decorateCards();setupRegionButtons();initReveal();initCounts();setupFilters();setupAccFilters();setupBondFilters();openDeepLink();
+  sortCardsByDate();updateNewBadges();decorateCards();setupRegionButtons();initReveal();initCounts();setupFilters();setupAccFilters();setupBondFilters();updateFreshnessBadges();openDeepLink();
   fetchBCRA();fetchDolar();fetchMerval();fetchCommodities();
 });
 setInterval(fetchDolar,60_000);setInterval(fetchMerval,60_000);setInterval(fetchCommodities,120_000);setInterval(fetchBCRA,300_000);
