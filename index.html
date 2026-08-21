@@ -876,6 +876,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
     <button class="fbtn" data-filter="topic" data-value="research"><span class="topic-emoji">📈</span>Research <span class="fcount" data-count="research"></span></button>
     <button class="fbtn" data-filter="topic" data-value="consenso"><span class="topic-emoji">📡</span>Consenso PULSO</button>
     <button class="fbtn" data-filter="topic" data-value="acciones"><span class="topic-emoji">📊</span>Acciones y CEDEARs</button>
+    <button class="fbtn" data-filter="topic" data-value="bonos"><span class="topic-emoji">💵</span>Bonos</button>
   </div>
   <div class="filter-row" data-filter-group="impact">
     <span class="filter-label">Impacto</span>
@@ -5940,6 +5941,191 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 
 </div><!-- /acciones-cedears -->
 
+<!-- ══ BONOS ══ -->
+<div class="rc cp" data-topic="bonos" data-impact="alto" data-region="argentina" id="bonos-screener">
+
+    <div class="cp-head">
+      <div class="cp-head-l">
+        <span class="cp-badge">💵 Screener</span>
+        <div>
+          <div class="cp-title">Bonos</div>
+          <div class="cp-sub">Rendimientos y picks, según el research que leemos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-hero">
+      <div class="acc-filter-row" data-filter-group="bondtype">
+        <span class="filter-label">Tipo</span>
+        <button class="fbtn bond-fbtn active" data-bondfilter="all">Todos <span class="fcount" id="bond-count-all"></span></button>
+        <button class="fbtn bond-fbtn" data-bondfilter="soberano">🏛️ Soberano USD <span class="fcount" id="bond-count-soberano"></span></button>
+        <button class="fbtn bond-fbtn" data-bondfilter="provincial">📍 Provincial <span class="fcount" id="bond-count-provincial"></span></button>
+        <button class="fbtn bond-fbtn" data-bondfilter="corporativo">🏢 Corporativo (ON) <span class="fcount" id="bond-count-corporativo"></span></button>
+        <button class="fbtn bond-fbtn" data-bondfilter="pesos">💰 Pesos <span class="fcount" id="bond-count-pesos"></span></button>
+      </div>
+    </div>
+
+    <div class="acc-grid" id="bond-grid">
+
+      <!-- AO28 -->
+      <div class="acc-card" data-category="soberano">
+        <div class="acc-top">
+          <div><span class="acc-ticker">AO28</span><span class="acc-nombre">Bonar 2028 · Ley Argentina</span></div>
+          <span class="acc-sector">Soberano USD</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-b"><span class="ibdot"></span>TEA ~8,5-8,9%</span>
+          <span class="ibadge ib-m"><span class="ibdot"></span>Perfil: Moderado</span>
+        </div>
+        <div class="acc-body">El tramo medio favorito del consenso: Allaria lo elige por la mejor relación entre retorno esperado a diciembre 2026 y resistencia ante una suba del riesgo país; SBS lo recomienda para quienes tienen mayor convicción en los fundamentos; Comafi lo prefiere junto al AN29 por la relación riesgo/retorno más clara del tramo corto-medio.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-comprar">Comprar</span>
+          <span class="acc-fuente">Allaria · SBS · Comafi</span>
+        </div>
+      </div>
+
+      <!-- AO27 -->
+      <div class="acc-card" data-category="soberano">
+        <div class="acc-top">
+          <div><span class="acc-ticker">AO27</span><span class="acc-nombre">Bonar 2027 · Ley Argentina</span></div>
+          <span class="acc-sector">Soberano USD</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-b"><span class="ibdot"></span>TNA 4,8% + cupón 6%</span>
+          <span class="ibadge ib-b"><span class="ibdot"></span>Perfil: Conservador</span>
+        </div>
+        <div class="acc-body">Vence dentro del mandato actual y paga cupones mensuales del 6% TNA — el pick de IEB y SBS para perfiles conservadores que buscan renta mensual con menor riesgo de duration que el resto de la curva soberana.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-comprar">Comprar (conservador)</span>
+          <span class="acc-fuente">IEB · SBS</span>
+        </div>
+      </div>
+
+      <!-- AO29 -->
+      <div class="acc-card" data-category="soberano">
+        <div class="acc-top">
+          <div><span class="acc-ticker">AO29</span><span class="acc-nombre">Bonar 2029</span></div>
+          <span class="acc-sector">Soberano USD</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-b"><span class="ibdot"></span>TIR 8,3%</span>
+          <span class="ibadge ib-m"><span class="ibdot"></span>Perfil: Moderado</span>
+        </div>
+        <div class="acc-body">La mejor opción en dólares de la semana según Veta Cap, en un contexto de cautela generalizada con el carry en pesos por la suba de tasas reales globales.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-comprar">Comprar</span>
+          <span class="acc-fuente">Veta Cap</span>
+        </div>
+      </div>
+
+      <!-- Spread por legislación -->
+      <div class="acc-card" data-category="soberano">
+        <div class="acc-top">
+          <div><span class="acc-ticker">GD35/AL35</span><span class="acc-nombre">Arbitraje Ley NY vs. Ley Argentina</span></div>
+          <span class="acc-sector">Soberano USD · Táctico</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-m"><span class="ibdot"></span>Spread en máximos de 3 meses</span>
+          <span class="ibadge ib-a"><span class="ibdot"></span>Perfil: Agresivo</span>
+        </div>
+        <div class="acc-body">El spread entre bonos Ley NY (GD30/GD35) y Ley Argentina (AL30/AL35) está en máximos de tres meses: vender Ley NY y comprar Ley Argentina da una ganancia potencial de capital de 4% (tramo 2035) a 5% (tramo 2038). SBS también destaca GD35/GD41 por su mayor convexidad si el riesgo país sigue comprimiendo.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-comprar">Oportunidad táctica</span>
+          <span class="acc-fuente">Allaria · SBS</span>
+        </div>
+      </div>
+
+      <!-- Córdoba 2035 -->
+      <div class="acc-card" data-category="provincial">
+        <div class="acc-top">
+          <div><span class="acc-ticker">CO35</span><span class="acc-nombre">Córdoba 2035</span></div>
+          <span class="acc-sector">Provincial USD</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-b"><span class="ibdot"></span>TNA 8%</span>
+          <span class="ibadge ib-b"><span class="ibdot"></span>Perfil: Conservador</span>
+        </div>
+        <div class="acc-body">Perfil de deuda adecuado y fundamentos fiscales sólidos, con una mejora reciente en su calificación crediticia. IEB destaca que los bonos provinciales de mejor crédito vienen mostrándose más conservadores que los soberanos ante shocks negativos — top pick provincial.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-comprar">Comprar</span>
+          <span class="acc-fuente">IEB</span>
+        </div>
+      </div>
+
+      <!-- ONs energéticas -->
+      <div class="acc-card" data-category="corporativo">
+        <div class="acc-top">
+          <div><span class="acc-ticker">TGS 2031 / YPF 2031</span><span class="acc-nombre">Tecpetrol 2030</span></div>
+          <span class="acc-sector">Corporativo (ON) · Oil &amp; Gas</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-b"><span class="ibdot"></span>Rinden 7%-7,5%</span>
+          <span class="ibadge ib-m"><span class="ibdot"></span>Perfil: Moderado</span>
+        </div>
+        <div class="acc-body">CIMA prefiere la parte corta de la curva del sector energético, con spreads comprimidos en toda la curva tras más de USD10.000M en emisiones en siete meses. TGS es el balance más sólido: deuda neta negativa, margen EBITDA de 55% y vencimientos despejados hasta 2031.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-comprar">Comprar (tramo corto)</span>
+          <span class="acc-fuente">CIMA</span>
+        </div>
+      </div>
+
+      <!-- Cresud / Pluspetrol -->
+      <div class="acc-card" data-category="corporativo">
+        <div class="acc-top">
+          <div><span class="acc-ticker">CS50O / PLC3O</span><span class="acc-nombre">Cresud 2039 · Pluspetrol 2028</span></div>
+          <span class="acc-sector">Corporativo (ON) · Ley local</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-b"><span class="ibdot"></span>6,2% / 5,05%</span>
+          <span class="ibadge ib-m"><span class="ibdot"></span>Perfil: Moderado</span>
+        </div>
+        <div class="acc-body">Las dos ONs corporativas ley local que IEB prioriza esta semana dentro de sus estrategias en dólares, por fuera del universo puramente energético.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-comprar">Comprar</span>
+          <span class="acc-fuente">IEB</span>
+        </div>
+      </div>
+
+      <!-- TMVE8 -->
+      <div class="acc-card" data-category="pesos">
+        <div class="acc-top">
+          <div><span class="acc-ticker">TMVE8</span><span class="acc-nombre">Dual TAMAR / Dollar Linked · ene-2028</span></div>
+          <span class="acc-sector">Pesos · Cobertura</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-b"><span class="ibdot"></span>Dólar oficial+7% / TAMAR+7,1%</span>
+          <span class="ibadge ib-m"><span class="ibdot"></span>Perfil: Moderado</span>
+        </div>
+        <div class="acc-body">Salió en licitación con una tasa muy atractiva y cotiza prácticamente a la par de la curva TAMAR, pero incluye cobertura dólar linked casi gratis. Mencionado como pick defensivo por Veta Cap, Allaria e IEB en las últimas semanas.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-comprar">Comprar para cobertura</span>
+          <span class="acc-fuente">Veta Cap · Allaria · IEB</span>
+        </div>
+      </div>
+
+      <!-- Boncer / duales CER -->
+      <div class="acc-card" data-category="pesos">
+        <div class="acc-top">
+          <div><span class="acc-ticker">Boncer corto / Duales CER-TAMAR</span><span class="acc-nombre">Cobertura inflación</span></div>
+          <span class="acc-sector">Pesos · CER</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-m"><span class="ibdot"></span>Dual jun-29: TAMAR+9,8%</span>
+          <span class="ibadge ib-m"><span class="ibdot"></span>Perfil: Moderado</span>
+        </div>
+        <div class="acc-body">Comafi recomienda Boncer corto para manejo de liquidez con cobertura inflacionaria. IEB ve valor en los duales CER/TAMAR pese a que vienen "ofrecidos" por la abundancia de emisiones — el de junio 2029 rinde TAMAR+9,8% con la opcionalidad de CER+7,4%.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-esperar">Mantener para cobertura</span>
+          <span class="acc-fuente">Comafi · IEB</span>
+        </div>
+      </div>
+
+    </div><!-- /bond-grid -->
+
+    <div class="acc-nota">Esto es nuestra lectura de lo que dicen los research que seguimos — no es una recomendación de inversión ni releva de leer el informe completo en la sección de arriba. Vamos a sumar más instrumentos a medida que aparezcan en nuevos reportes.</div>
+
+</div><!-- /bonos-screener -->
+
 </div><!-- /rc-grid -->
 
 <!-- ══ NÚMEROS EN CONTEXTO — 7 BLOQUES COLAPSABLES ══ -->
@@ -6508,7 +6694,7 @@ function applyFilters(){
   cards.forEach(c=>{
     const impactOk=filterState.impact==='all'||c.dataset.impact===filterState.impact;
     const topics=(c.dataset.topic||'').split(/\s+/);
-    const exclusiveTopics=['consenso','acciones'];
+    const exclusiveTopics=['consenso','acciones','bonos'];
     const isExclusive=topics.some(t=>exclusiveTopics.includes(t));
     const topicOk=isExclusive
       ? topics.includes(filterState.topic)
@@ -6566,6 +6752,27 @@ function setupAccFilters(){
   document.getElementById('acc-count-all').textContent=`(${cards.length})`;
   document.getElementById('acc-count-argentina').textContent=`(${[...cards].filter(c=>c.dataset.region==='argentina').length})`;
   document.getElementById('acc-count-eeuu').textContent=`(${[...cards].filter(c=>c.dataset.region==='eeuu').length})`;
+  apply('all');
+}
+
+function setupBondFilters(){
+  const btns=document.querySelectorAll('.bond-fbtn[data-bondfilter]');
+  const cards=document.querySelectorAll('#bond-grid .acc-card');
+  if(!btns.length||!cards.length)return;
+  const apply=val=>{
+    cards.forEach(c=>{c.style.display=(val==='all'||c.dataset.category===val)?'':'none';});
+  };
+  btns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btns.forEach(b=>b.classList.toggle('active',b===btn));
+      apply(btn.dataset.bondfilter);
+    });
+  });
+  document.getElementById('bond-count-all').textContent=`(${cards.length})`;
+  ['soberano','provincial','corporativo','pesos'].forEach(cat=>{
+    const el=document.getElementById(`bond-count-${cat}`);
+    if(el)el.textContent=`(${[...cards].filter(c=>c.dataset.category===cat).length})`;
+  });
   apply('all');
 }
 
@@ -6850,7 +7057,7 @@ function updateNewBadges(){
 }
 
 window.addEventListener('DOMContentLoaded',()=>{
-  sortCardsByDate();updateNewBadges();decorateCards();setupRegionButtons();initReveal();initCounts();setupFilters();setupAccFilters();openDeepLink();
+  sortCardsByDate();updateNewBadges();decorateCards();setupRegionButtons();initReveal();initCounts();setupFilters();setupAccFilters();setupBondFilters();openDeepLink();
   fetchBCRA();fetchDolar();fetchMerval();fetchCommodities();
 });
 setInterval(fetchDolar,60_000);setInterval(fetchMerval,60_000);setInterval(fetchCommodities,120_000);setInterval(fetchBCRA,300_000);
