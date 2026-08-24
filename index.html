@@ -478,6 +478,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 .acc-explain-inner strong{color:var(--t)}
 .acc-nota{margin:0 16px 16px;font-size:12px;color:var(--t2);line-height:1.6;padding:.6rem .8rem;border-left:2px solid var(--border2)}
 .acc-grid-divider{grid-column:1/-1;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);padding:.6rem 0 .2rem;border-top:1px solid var(--border);margin-top:.4rem}
+.acc-market{display:flex;flex-wrap:wrap;gap:.3rem 1rem;font-size:11px;color:var(--t3);font-family:'IBM Plex Mono',monospace;padding:.4rem .65rem;background:var(--bg3);border:1px solid var(--border);border-radius:6px}
+.acc-market b{color:var(--t);font-weight:700}
 
 /* AGENDA */
 .eventos{background:var(--bg2);padding:1rem 1.4rem;border-bottom:1px solid var(--border)}
@@ -7052,6 +7054,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <div><span class="acc-ticker">YPFD</span><span class="acc-nombre">YPF · 2T26</span></div>
           <span class="acc-sector">Oil &amp; Gas</span>
         </div>
+        <div class="acc-market"><span><b>USD50,05</b> (ADR)</span><span>Mkt Cap <b>USD20,8B</b></span><span>P/E <b>5,4x</b></span><span>52w <b>USD22,8-57,5</b></span></div>
         <div class="acc-badges">
           <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Muy buena</span>
           <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Sobreponderada</span>
@@ -7071,6 +7074,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <div><span class="acc-ticker">PAMP</span><span class="acc-nombre">Pampa Energía · 2T26</span></div>
           <span class="acc-sector">Oil &amp; Gas</span>
         </div>
+        <div class="acc-market"><span><b>USD89,39</b> (ADR)</span><span>Mkt Cap <b>USD4,64B</b></span><span>P/E <b>11,6x</b></span><span>52w <b>USD54,9-94,5</b></span></div>
         <div class="acc-badges">
           <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Muy buena</span>
           <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
@@ -7090,6 +7094,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <div><span class="acc-ticker">VIST</span><span class="acc-nombre">Vista Energy · 2T26</span></div>
           <span class="acc-sector">Oil &amp; Gas</span>
         </div>
+        <div class="acc-market"><span><b>USD69,58</b> (ADR)</span><span>Mkt Cap <b>USD7,73B</b></span><span>P/E <b>9,1x</b></span><span>52w <b>USD31,6-81,4</b></span></div>
         <div class="acc-badges">
           <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Muy buena</span>
           <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Sobreponderada</span>
@@ -7109,6 +7114,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <div><span class="acc-ticker">TGSU2</span><span class="acc-nombre">TGS · 2T26</span></div>
           <span class="acc-sector">Oil &amp; Gas</span>
         </div>
+        <div class="acc-market"><span><b>USD29,75</b> (ADR)</span><span>Mkt Cap <b>USD4,68B</b></span><span>P/E <b>13,8x</b></span><span>Div. yield <b>2,7%</b></span></div>
         <div class="acc-badges">
           <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Buena, apalancamiento subirá</span>
           <span class="ibadge ib-a"><span class="ibdot"></span>Valuación: Cara relativa</span>
@@ -7128,11 +7134,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <div><span class="acc-ticker">GGAL</span><span class="acc-nombre">Grupo Financiero Galicia · 1T26</span></div>
           <span class="acc-sector">Bancos</span>
         </div>
+        <div class="acc-market"><span><b>USD41,81</b> (ADR)</span><span>Mkt Cap <b>~USD6B</b></span><span>EPS <b>USD0,37</b></span><span>52w <b>USD25,9-62,5</b></span></div>
         <div class="acc-badges">
           <span class="ibadge ib-a"><span class="ibdot"></span>Salud: Débil, en transición</span>
           <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
         </div>
-        <div class="acc-body">El trimestre más flojo en mucho tiempo: ganancia neta de $66.488M, -66% interanual, con un ROE de apenas <span class="dato">3,2%</span> (muy por debajo de la guía de la propia empresa de 10-11% para el año) y mora de 7,7%. El management espera mejora progresiva a medida que se estabiliza la macro. Pese al número flojo, el consenso de Wall Street mantiene "Comprar" (7 de 10 analistas), con un upside promedio superior al 30%. Reporta el 2T26 mañana 25 de agosto.</div>
+        <div class="acc-body">El trimestre más flojo en mucho tiempo: ganancia neta de $66.488M, -66% interanual, con un ROE de apenas <span class="dato">3,2%</span> (muy por debajo de la guía de la propia empresa de 10-11% para el año) y mora de 7,7%. El P/E que muestran los agregadores (entre 36x y más de 100x) está distorsionado justamente por esta ganancia tan baja — no es una lectura confiable de si está cara o barata en este momento. El management espera mejora progresiva a medida que se estabiliza la macro. Pese al número flojo, el consenso de Wall Street mantiene "Comprar" (7 de 10 analistas), con un upside promedio superior al 30%. Reporta el 2T26 mañana 25 de agosto.</div>
         <div class="acc-foot">
           <span class="acc-veredicto acc-v-comprar">Comprar (especulativo — turnaround)</span>
           <span class="acc-fuente">Reportes de la compañía · consenso Wall Street</span>
@@ -7147,6 +7154,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <div><span class="acc-ticker">BMA</span><span class="acc-nombre">Banco Macro · 2T26</span></div>
           <span class="acc-sector">Bancos</span>
         </div>
+        <div class="acc-market"><span><b>USD91,57</b> (ADR)</span><span>Mkt Cap <b>~USD5,3B</b></span><span>P/E <b>~6-8x</b></span><span>52w <b>USD38,3-118,4</b></span></div>
         <div class="acc-badges">
           <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Buena, con mora en alza</span>
           <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Infravalorada</span>
@@ -7166,17 +7174,18 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <div><span class="acc-ticker">BBAR</span><span class="acc-nombre">BBVA Argentina · 1T26</span></div>
           <span class="acc-sector">Bancos</span>
         </div>
+        <div class="acc-market"><span><b>USD19,30</b> (ADR)</span><span>P/E <b>21,8x</b></span><span>52w <b>USD7,8-23,1</b></span><span>+12% en el año</span></div>
         <div class="acc-badges">
           <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Mejorando</span>
-          <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
+          <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Justa — ya subió mucho</span>
         </div>
-        <div class="acc-body">Ganancia neta ajustada por inflación de $85.200M en el 1T26, +31,2% respecto al trimestre anterior, con ROE de <span class="dato">8,3%</span> y ROA de 1,2%. El índice de eficiencia mejoró a 51,4% (desde 53,9%). Bajó su proyección de crecimiento del crédito 2026 a 15-20% real (desde 25-30%). El consenso de Wall Street lo califica "Compra fuerte", con un upside promedio superior al 55%.</div>
+        <div class="acc-body">Ganancia neta ajustada por inflación de $85.200M en el 1T26, +31,2% respecto al trimestre anterior, con ROE de <span class="dato">8,3%</span> y ROA de 1,2%. El índice de eficiencia mejoró a 51,4% (desde 53,9%). Bajó su proyección de crecimiento del crédito 2026 a 15-20% real (desde 25-30%). Cotiza cerca de su máximo de 52 semanas y con un P/E de 21,8x, más caro que Banco Macro (~6-8x) — aun así, el consenso de Wall Street lo califica "Compra fuerte", con un upside promedio superior al 55%.</div>
         <div class="acc-foot">
           <span class="acc-veredicto acc-v-comprar">Comprar</span>
           <span class="acc-fuente">Reportes de la compañía · consenso Wall Street</span>
         </div>
         <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
-        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier acción del Merval, ticker <strong>BBAR</strong> (o ADR). Es un banco más chico que Macro o Galicia, por eso más volátil — el ROE todavía está por debajo del de Macro, pero mejora trimestre a trimestre, y el mercado lo tiene entre los más baratos del sector según el consenso de analistas.</div></div>
+        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier acción del Merval, ticker <strong>BBAR</strong> (o ADR). Es un banco más chico que Macro o Galicia, por eso más volátil — el ROE todavía está por debajo del de Macro, pero mejora trimestre a trimestre. Ojo: ya subió bastante y cotiza más caro por múltiplos que Macro, así que acá comprás más por la mejora que se viene que por estar "regalado" hoy.</div></div>
       </div>
 
       <!-- Telecom Argentina -->
@@ -7185,17 +7194,18 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <div><span class="acc-ticker">TECO2</span><span class="acc-nombre">Telecom Argentina · 1T26</span></div>
           <span class="acc-sector">Telecom</span>
         </div>
+        <div class="acc-market"><span><b>USD13,2-13,6</b> (ADR TEO)</span><span>Mkt Cap <b>USD5,78B</b></span><span>P/E <b>~24-31x</b></span><span>52w <b>USD6,4-16,3</b></span></div>
         <div class="acc-badges">
           <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena, desapalancando</span>
-          <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
+          <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Mixta (P/E rico, target con upside)</span>
         </div>
-        <div class="acc-body">Margen EBITDA del <span class="dato">34,8%</span> en el 1T26 (desde 33,2% un año atrás), con la deuda/EBITDA bajando a 2,04x (desde 2,47x) y un flujo de caja libre de USD642M — sigue integrando el negocio de Telefónica, adquirido en 2025. Allaria recomienda Comprar, con un precio objetivo a fin de 2026 que implica un upside cercano al 40%, tras una mejora de ganancias y EBITDA (+33,6% i.a.).</div>
+        <div class="acc-body">Margen EBITDA del <span class="dato">34,8%</span> en el 1T26 (desde 33,2% un año atrás), con la deuda/EBITDA bajando a 2,04x (desde 2,47x) y un flujo de caja libre de USD642M — sigue integrando el negocio de Telefónica, adquirido en 2025. El P/E actual (~24-31x) no es barato en términos absolutos, pero Allaria recomienda Comprar igual, con un precio objetivo a fin de 2026 que implica un upside cercano al 40%, apostando a que la mejora de ganancias y EBITDA (+33,6% i.a.) siga sosteniendo esa valuación.</div>
         <div class="acc-foot">
           <span class="acc-veredicto acc-v-comprar">Comprar</span>
           <span class="acc-fuente">Allaria · reportes de la compañía</span>
         </div>
         <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
-        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier acción del Merval, ticker <strong>TECO2</strong>. Es una empresa de flujo de caja predecible (telefonía, cable, internet) — perfil más defensivo que las petroleras o los bancos, con la ventaja de que además está barata según el research que la sigue de cerca.</div></div>
+        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier acción del Merval, ticker <strong>TECO2</strong>. Es una empresa de flujo de caja predecible (telefonía, cable, internet) — perfil más defensivo que las petroleras o los bancos. No está "barata" por P/E hoy, pero el research la recomienda igual apostando a que las ganancias sigan creciendo más rápido que el precio.</div></div>
       </div>
 
       <!-- Aluar -->
@@ -7204,11 +7214,12 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <div><span class="acc-ticker">ALUA</span><span class="acc-nombre">Aluar · 2T26 (cierre jun-26)</span></div>
           <span class="acc-sector">Materiales</span>
         </div>
+        <div class="acc-market"><span><b>ARS870-953</b> (local)</span><span>Mkt Cap <b>~ARS2,4-2,9bn</b></span><span>P/E TTM <b>negativo</b></span></div>
         <div class="acc-badges">
           <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Mejorando</span>
           <span class="ibadge ib-a"><span class="ibdot"></span>Valuación: Cara — upside acotado</span>
         </div>
-        <div class="acc-body">Ventas +29% interanual y margen EBITDA que saltó a <span class="dato">24,7%</span> (desde 17,9% el trimestre anterior y 15,8% un año atrás), de la mano del precio internacional del aluminio (USD3.000/ton, desde USD2.650). Pese a la mejora operativa, Allaria la mantiene en "Mantener", con apenas 11% de upside — una de las acciones con menor potencial del panel, condicionada a que repunte el consumo industrial local.</div>
+        <div class="acc-body">Ventas +29% interanual y margen EBITDA que saltó a <span class="dato">24,7%</span> (desde 17,9% el trimestre anterior y 15,8% un año atrás), de la mano del precio internacional del aluminio (USD3.000/ton, desde USD2.650). Ojo con el P/E: en los últimos doce meses da negativo, porque todavía carga resultados de trimestres previos más flojos — no refleja la mejora reciente. Pese a la mejora operativa, Allaria la mantiene en "Mantener", con apenas 11% de upside — una de las acciones con menor potencial del panel, condicionada a que repunte el consumo industrial local.</div>
         <div class="acc-foot">
           <span class="acc-veredicto acc-v-esperar">Mantener — upside acotado</span>
           <span class="acc-fuente">Allaria · reportes de la compañía</span>
@@ -7223,6 +7234,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <div><span class="acc-ticker">CRES</span><span class="acc-nombre">Cresud · 9 meses EF26 (a mar-26)</span></div>
           <span class="acc-sector">Agro &amp; Real Estate</span>
         </div>
+        <div class="acc-market"><span><b>USD11,16</b> (ADR CRESY)</span><span>Mkt Cap <b>USD727M</b></span><span>P/E <b>5,6x</b></span><span>52w <b>USD8,3-14,2</b></span></div>
         <div class="acc-badges">
           <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Mixta</span>
           <span class="ibadge ib-a"><span class="ibdot"></span>Valuación: Cara</span>
