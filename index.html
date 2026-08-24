@@ -477,6 +477,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 .acc-explain-inner{margin-top:.6rem;padding:.7rem .85rem;background:var(--bg3);border-left:3px solid var(--a);border-radius:0 6px 6px 0;font-size:12.5px;line-height:1.6;color:var(--t2)}
 .acc-explain-inner strong{color:var(--t)}
 .acc-nota{margin:0 16px 16px;font-size:12px;color:var(--t2);line-height:1.6;padding:.6rem .8rem;border-left:2px solid var(--border2)}
+.acc-grid-divider{grid-column:1/-1;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);padding:.6rem 0 .2rem;border-top:1px solid var(--border);margin-top:.4rem}
 
 /* AGENDA */
 .eventos{background:var(--bg2);padding:1rem 1.4rem;border-bottom:1px solid var(--border)}
@@ -7039,6 +7040,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
         <button class="fbtn bal-fbtn" data-balfilter="telecom">📡 Telecom <span class="fcount" id="bal-count-telecom"></span></button>
         <button class="fbtn bal-fbtn" data-balfilter="materiales">🏗️ Materiales <span class="fcount" id="bal-count-materiales"></span></button>
         <button class="fbtn bal-fbtn" data-balfilter="agro-re">🌾 Agro &amp; Real Estate <span class="fcount" id="bal-count-agro-re"></span></button>
+        <button class="fbtn bal-fbtn" data-balfilter="otras">📌 Otras <span class="fcount" id="bal-count-otras"></span></button>
       </div>
     </div>
 
@@ -7234,9 +7236,125 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
         <div class="acc-explain"><div class="acc-explain-inner"><strong>CRES</strong> es en realidad una forma indirecta de tener IRSA (su participación en real estate urbano) más un negocio de campo que hoy no acompaña. Si te gusta la tesis de real estate, capaz conviene mirar directamente IRSA en vez de Cresud — acá el research advierte que el precio ya corre de más frente a las ganancias reales.</div></div>
       </div>
 
+      <div class="acc-grid-divider" id="otras-divider">📌 Otras empresas que seguimos (fuera del top 10 por ponderación)</div>
+
+      <!-- Supervielle -->
+      <div class="acc-card" data-sector="otras" data-updated="2026-08-21">
+        <div class="acc-top">
+          <div><span class="acc-ticker">SUPV</span><span class="acc-nombre">Grupo Supervielle · 2T26</span></div>
+          <span class="acc-sector">Bancos</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Mejorando</span>
+          <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
+        </div>
+        <div class="acc-body">Venía de una pérdida neta de USD12M en el 1T26, pero en el 2T26 revirtió el resultado (ROE de -6,2% a <span class="dato">4,4%</span>) y bajó su mora a 5,5%. El crédito todavía cae 1,5% interanual, pero IEB rotó cartera para sumarla, viendo una valuación por múltiplos inferior a sus comparables.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-comprar">Comprar</span>
+          <span class="acc-fuente">Mariva · IEB</span>
+        </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier acción del Merval, ticker <strong>SUPV</strong>. Es una apuesta a la recuperación: viene de perder plata y recién ahora empieza a mostrar mejoras — más riesgo que YPF o Pampa, pero con potencial de mayor suba si la mejora continúa.</div></div>
+      </div>
+
+      <!-- Transener -->
+      <div class="acc-card" data-sector="otras" data-updated="2026-05-07">
+        <div class="acc-top">
+          <div><span class="acc-ticker">TRAN</span><span class="acc-nombre">Transener · 1T26</span></div>
+          <span class="acc-sector">Utilities</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena</span>
+          <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Sin dato de múltiplo</span>
+        </div>
+        <div class="acc-body">Ingresos de USD128M (+33% interanual) y EBITDA de <span class="dato">USD84M</span> (+68%), con margen del 66% — la revisión tarifaria quinquenal fue el principal impulsor. Uno de los balances más sólidos del sector regulado, aunque no tenemos un pick explícito de research sobre su valuación actual.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-esperar">Sin veredicto — monitorear</span>
+          <span class="acc-fuente">Mariva</span>
+        </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">El balance de <strong>TRAN</strong> es sólido, pero como no tenemos un pick de compra/venta explícito de ningún research sobre su precio actual, lo mejor es esperar a que aparezca una recomendación concreta antes de operar en base a esto.</div></div>
+      </div>
+
+      <!-- IRSA -->
+      <div class="acc-card" data-sector="otras" data-updated="2026-05-07">
+        <div class="acc-top">
+          <div><span class="acc-ticker">IRSA</span><span class="acc-nombre">IRSA · 1T26</span></div>
+          <span class="acc-sector">Real Estate</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena</span>
+          <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Sin dato de múltiplo</span>
+        </div>
+        <div class="acc-body">EBITDA de alquileres +3,5% interanual, con ocupación de shoppings al <span class="dato">97,8%</span> y oficinas premium al 100%. Deuda/EBITDA en 1,4x, un nivel manejable. Tiene varios proyectos grandes en danza (Mercado Libre, Distrito Regional, Ramblas del Plata) que podrían destrabar valor a mediano plazo.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-esperar">Positiva — sin pick de valuación</span>
+          <span class="acc-fuente">Mariva</span>
+        </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">El negocio de <strong>IRSA</strong> viene bien (shoppings casi llenos, oficinas 100% ocupadas), pero al no tener un research que diga explícitamente "cara" o "barata" a este precio, conviene esperar esa confirmación antes de comprar pensando en el corto plazo. Es, además, la forma "directa" de la tesis de real estate que Cresud tiene de forma indirecta.</div></div>
+      </div>
+
+      <!-- Edenor -->
+      <div class="acc-card" data-sector="otras" data-updated="2026-08-21">
+        <div class="acc-top">
+          <div><span class="acc-ticker">EDN</span><span class="acc-nombre">Edenor · 1T26</span></div>
+          <span class="acc-sector">Utilities</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena a nivel operativo</span>
+          <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Research salió del papel</span>
+        </div>
+        <div class="acc-body">Operativamente viene bien: EBITDA +127% interanual en el 1T26 y la mejor calidad de servicio (SAIDI/SAIFI) desde 2017. Pero es una señal a tener en cuenta: IEB vendió su posición en Edenor en agosto para pasarse a Supervielle, viendo mejor relación riesgo-retorno en el sector bancario.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-esperar">Neutral — research rotó afuera</span>
+          <span class="acc-fuente">PPI · IEB</span>
+        </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">Si ya tenés <strong>EDN</strong>, no es una señal de pánico, pero conviene saber que uno de los research que seguimos vendió su posición este mes — vale la pena mirar de cerca antes de sumar más.</div></div>
+      </div>
+
+      <!-- Loma Negra -->
+      <div class="acc-card" data-sector="otras" data-updated="2026-05-07">
+        <div class="acc-top">
+          <div><span class="acc-ticker">LOMA</span><span class="acc-nombre">Loma Negra · 1T26</span></div>
+          <span class="acc-sector">Materiales</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena, mejorando</span>
+          <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Mantener</span>
+        </div>
+        <div class="acc-body">EBITDA ajustado de USD45M en el 1T26 (+11,5% interanual, +21,5% trimestral), con margen de 29,8% y deuda neta/EBITDA bajando a <span class="dato">1,33x</span>. SBS la ve como una posición interesante de mediano plazo. Allaria mantiene "Mantener" con precio objetivo que implica ~20% de upside a fin de 2026 — el sector todavía necesita que la construcción y la obra pública confirmen volumen.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-esperar">Mantener — mirar a mediano plazo</span>
+          <span class="acc-fuente">Mariva · SBS · Allaria</span>
+        </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner"><strong>LOMA</strong> mejora balance a balance, pero es una historia de mediano plazo (infraestructura, no un catalizador inmediato) — no hay apuro en comprar ni en vender si ya la tenés.</div></div>
+      </div>
+
+      <!-- Ternium Argentina -->
+      <div class="acc-card" data-sector="otras" data-updated="2026-05-07">
+        <div class="acc-top">
+          <div><span class="acc-ticker">TXAR</span><span class="acc-nombre">Ternium Argentina · 1T26</span></div>
+          <span class="acc-sector">Materiales</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Mejorando</span>
+          <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
+        </div>
+        <div class="acc-body">Ventas de USD441M en el 1T26 (+25% interanual) y volvió a resultado operativo positivo, revirtiendo la pérdida de un año atrás. Allaria la recomienda Comprar con un precio objetivo que implica ~55% de upside a fin de 2026 — de las recomendaciones más claras del panel, apoyada en la valuación y la recuperación operativa esperada.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-comprar">Comprar</span>
+          <span class="acc-fuente">Mariva · SBS · Allaria</span>
+        </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner"><strong>TXAR</strong> recién está saliendo de un mal momento — comprarla es apostar a que la recuperación continúe. Es más volátil que el resto de esta lista, pensala como posición chica dentro de una cartera diversificada, no como núcleo.</div></div>
+      </div>
+
     </div><!-- /balances-grid -->
 
-    <div class="acc-nota">Estas son las 10 empresas de mayor ponderación del Merval (YPF pesa cerca de un tercio del índice, y el sector energético casi el 40%). Los datos de balance salen de reportes de las compañías y prensa especializada (Bolsar, Infobae, El Cronista, El Economista, Rava, entre otras) que buscamos en internet, combinados con lo que dicen los research que seguimos. Se actualiza con cada balance trimestral nuevo.</div>
+    <div class="acc-nota">Arriba están las 10 empresas de mayor ponderación del Merval (YPF pesa cerca de un tercio del índice, y el sector energético casi el 40%); abajo, "Otras empresas que seguimos", un grupo aparte con nombres relevantes pero de menor peso en el índice. Los datos de balance salen de reportes de las compañías y prensa especializada (Bolsar, Infobae, El Cronista, El Economista, Rava, entre otras) que buscamos en internet, combinados con lo que dicen los research que seguimos. Se actualiza con cada balance trimestral nuevo.</div>
 
 </div><!-- /balances-screener -->
 
@@ -7924,6 +8042,8 @@ function setupBalancesFilters(){
   if(!btns.length||!cards.length)return;
   const apply=val=>{
     cards.forEach(c=>{c.style.display=(val==='all'||c.dataset.sector===val)?'':'none';});
+    const divider=document.getElementById('otras-divider');
+    if(divider)divider.style.display=(val==='all'||val==='otras')?'':'none';
   };
   btns.forEach(btn=>{
     btn.addEventListener('click',()=>{
@@ -7932,7 +8052,7 @@ function setupBalancesFilters(){
     });
   });
   document.getElementById('bal-count-all').textContent=`(${cards.length})`;
-  ['oilgas','bancos','telecom','materiales','agro-re'].forEach(cat=>{
+  ['oilgas','bancos','telecom','materiales','agro-re','otras'].forEach(cat=>{
     const el=document.getElementById(`bal-count-${cat}`);
     if(el)el.textContent=`(${[...cards].filter(c=>c.dataset.sector===cat).length})`;
   });
