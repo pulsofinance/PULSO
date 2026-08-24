@@ -7025,7 +7025,7 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
         <span class="cp-badge">📋 Screener</span>
         <div>
           <div class="cp-title">Balances</div>
-          <div class="cp-sub">Últimos resultados de las principales empresas del Merval, según el research que leemos</div>
+          <div class="cp-sub">Las 10 empresas más pesadas del Merval — balances bajados de fuentes de mercado (Bolsar, prensa especializada, reportes de la compañía) + lo que dice el research que leemos</div>
         </div>
       </div>
     </div>
@@ -7036,72 +7036,73 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
         <button class="fbtn bal-fbtn active" data-balfilter="all">Todos <span class="fcount" id="bal-count-all"></span></button>
         <button class="fbtn bal-fbtn" data-balfilter="oilgas">⛽ Oil &amp; Gas <span class="fcount" id="bal-count-oilgas"></span></button>
         <button class="fbtn bal-fbtn" data-balfilter="bancos">🏦 Bancos <span class="fcount" id="bal-count-bancos"></span></button>
-        <button class="fbtn bal-fbtn" data-balfilter="utilities-re">🏢 Utilities &amp; Real Estate <span class="fcount" id="bal-count-utilities-re"></span></button>
+        <button class="fbtn bal-fbtn" data-balfilter="telecom">📡 Telecom <span class="fcount" id="bal-count-telecom"></span></button>
         <button class="fbtn bal-fbtn" data-balfilter="materiales">🏗️ Materiales <span class="fcount" id="bal-count-materiales"></span></button>
+        <button class="fbtn bal-fbtn" data-balfilter="agro-re">🌾 Agro &amp; Real Estate <span class="fcount" id="bal-count-agro-re"></span></button>
       </div>
     </div>
 
     <div class="acc-grid" id="balances-grid">
 
       <!-- YPF -->
-      <div class="acc-card" data-sector="oilgas" data-updated="2026-08-20">
+      <div class="acc-card" data-sector="oilgas" data-updated="2026-08-24">
         <div class="acc-top">
           <div><span class="acc-ticker">YPFD</span><span class="acc-nombre">YPF · 2T26</span></div>
           <span class="acc-sector">Oil &amp; Gas</span>
         </div>
         <div class="acc-badges">
-          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena</span>
+          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Muy buena</span>
           <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Sobreponderada</span>
         </div>
-        <div class="acc-body">El mejor trimestre de su historia: EBITDA ajustado récord de <span class="dato">USD2.804M</span> (+149% i.a.), margen de <span class="dato">43%</span> (máximo en 20 años) y apalancamiento en <span class="dato">1,09x</span>, mínimo en 11 años. Estrategias de Inversión y SBS la tienen como uno de sus top picks del sector.</div>
+        <div class="acc-body">El mejor trimestre de su historia: EBITDA ajustado récord de <span class="dato">USD2.804M</span> (+149% i.a., +76% t/t), margen de <span class="dato">43%</span> (máximo en 20 años) y ganancia neta de USD1.205M (casi el triple del 1T26). Apalancamiento en 1,09x, mínimo en 11 años. Prensa especializada la describe como "una joya para comprar y mantener"; Estrategias de Inversión y SBS la tienen como top pick del sector.</div>
         <div class="acc-foot">
           <span class="acc-veredicto acc-v-comprar">Comprar</span>
-          <span class="acc-fuente">Estrategias de Inversión · SBS</span>
+          <span class="acc-fuente">Estrategias de Inversión · SBS · Infobae</span>
         </div>
         <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
-        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier acción en tu cuenta comitente (ticker <strong>YPFD</strong> en el Merval) o como CEDEAR/ADR si preferís dólares. Un balance "Bueno" con valuación "Sobreponderada" significa que el negocio mejora y el research todavía ve upside al precio actual — no que esté regalado.</div></div>
+        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier acción en tu cuenta comitente (ticker <strong>YPFD</strong> en el Merval) o como CEDEAR/ADR si preferís dólares. Un balance "Muy bueno" con valuación "Sobreponderada" significa que el negocio mejora y el research todavía ve upside al precio actual — no que esté regalado.</div></div>
       </div>
 
       <!-- Pampa -->
-      <div class="acc-card" data-sector="oilgas" data-updated="2026-08-20">
+      <div class="acc-card" data-sector="oilgas" data-updated="2026-08-24">
         <div class="acc-top">
           <div><span class="acc-ticker">PAMP</span><span class="acc-nombre">Pampa Energía · 2T26</span></div>
           <span class="acc-sector">Oil &amp; Gas</span>
         </div>
         <div class="acc-badges">
-          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena</span>
+          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Muy buena</span>
           <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
         </div>
-        <div class="acc-body">EBITDA ajustado de <span class="dato">USD415M</span> en el 2T26 (+28% trimestral) con apalancamiento neto de 1,4x. Ya en el 1T26 había marcado un récord trimestral (USD325M, margen 57%) que superó el consenso por 19%. Aprobó el FID de FertilPampa, la mayor planta de urea de Latinoamérica.</div>
+        <div class="acc-body">EBITDA ajustado récord de <span class="dato">USD415M</span> (+75% i.a. desde USD237M), ventas por USD746M (+53% i.a.) y ganancia neta de USD172M, 4,3 veces la del 2T25. Producción de petróleo y gas en récord histórico: 107.500 boe/d (+28% i.a.). Aprobó el FID de FertilPampa, la mayor planta de urea de Latinoamérica. Prensa especializada la ubica entre las acciones con mayor potencial de suba del panel (hasta +41% según algunas casas).</div>
         <div class="acc-foot">
           <span class="acc-veredicto acc-v-comprar">Comprar</span>
-          <span class="acc-fuente">Mariva · Estrategias de Inversión</span>
+          <span class="acc-fuente">Mariva · Estrategias de Inversión · El Economista</span>
         </div>
         <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
         <div class="acc-explain"><div class="acc-explain-inner">Se compra igual que cualquier acción del Merval, ticker <strong>PAMP</strong> (o CEDEAR). "Barata" acá significa que cotiza a un múltiplo bajo frente a lo que genera de caja — no que esté exenta de riesgo, sino que el precio actual paga poco por sus resultados.</div></div>
       </div>
 
       <!-- Vista -->
-      <div class="acc-card" data-sector="oilgas" data-updated="2026-08-20">
+      <div class="acc-card" data-sector="oilgas" data-updated="2026-08-24">
         <div class="acc-top">
           <div><span class="acc-ticker">VIST</span><span class="acc-nombre">Vista Energy · 2T26</span></div>
           <span class="acc-sector">Oil &amp; Gas</span>
         </div>
         <div class="acc-badges">
-          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena</span>
+          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Muy buena</span>
           <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Sobreponderada</span>
         </div>
-        <div class="acc-body">Casi duplicó su EBITDA ajustado en el 2T26 (<span class="dato">USD805M</span>, +99% i.a.) tras consolidar los activos de Equinor, con apalancamiento bajando a 1,4x. JPMorgan y Estrategias de Inversión la tienen como uno de sus top picks del sector energético.</div>
+        <div class="acc-body">Ingresos de USD1.150M (+89% i.a.) y EBITDA ajustado de <span class="dato">USD805M</span> (+99% i.a., margen del 70%) tras consolidar los activos de Equinor. Ganancia neta ajustada de USD259,6M, casi 5 veces la del año anterior, con el apalancamiento neto bajando a 1,25x EBITDA y caja de USD605M. JPMorgan y Estrategias de Inversión la tienen como top pick del sector energético.</div>
         <div class="acc-foot">
           <span class="acc-veredicto acc-v-comprar">Comprar</span>
           <span class="acc-fuente">JPMorgan · Estrategias de Inversión</span>
         </div>
         <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
-        <div class="acc-explain"><div class="acc-explain-inner">Cotiza en el Merval como <strong>VIST</strong> y también como CEDEAR. Al ser más chica que YPF, un mismo dato bueno o malo mueve más el precio — la contracara de un balance "Bueno" tan marcado es que ya está bastante en el precio.</div></div>
+        <div class="acc-explain"><div class="acc-explain-inner">Cotiza en el Merval como <strong>VIST</strong> y también como CEDEAR. Al ser más chica que YPF, un mismo dato bueno o malo mueve más el precio — la contracara de un balance "Muy bueno" tan marcado es que ya está bastante en el precio.</div></div>
       </div>
 
       <!-- TGS -->
-      <div class="acc-card" data-sector="oilgas" data-updated="2026-08-20">
+      <div class="acc-card" data-sector="oilgas" data-updated="2026-08-24">
         <div class="acc-top">
           <div><span class="acc-ticker">TGSU2</span><span class="acc-nombre">TGS · 2T26</span></div>
           <span class="acc-sector">Oil &amp; Gas</span>
@@ -7110,13 +7111,32 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Buena, apalancamiento subirá</span>
           <span class="ibadge ib-a"><span class="ibdot"></span>Valuación: Cara relativa</span>
         </div>
-        <div class="acc-body">Buen trimestre (EBITDA USD185,6M, utilidad neta +147% i.a.), pero el nuevo proyecto de NGLs (USD3.000M de CapEx) llevaría el apalancamiento a un pico de ~3x hacia 2028-2029. Estrategias de Inversión bajó su calificación a Neutral por eso y por múltiplos algo elevados dentro del sector.</div>
+        <div class="acc-body">Buen trimestre: EBITDA consolidado de ARS278.413M (+24,9% i.a.), margen del <span class="dato">52%</span> (desde 48%) y ganancia neta de ARS133.000M (vs ARS53.800M un año atrás), impulsada por el negocio de líquidos (+143% i.a.). Pero el nuevo proyecto de NGLs (USD3.000M de CapEx) llevaría el apalancamiento a un pico de ~3x hacia 2028-2029. Estrategias de Inversión bajó su calificación a Neutral por eso y por múltiplos algo elevados.</div>
         <div class="acc-foot">
           <span class="acc-veredicto acc-v-esperar">Neutral — esperar</span>
-          <span class="acc-fuente">Mariva · Estrategias de Inversión</span>
+          <span class="acc-fuente">Mariva · Estrategias de Inversión · Criteria</span>
         </div>
         <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
         <div class="acc-explain"><div class="acc-explain-inner">Si ya tenés <strong>TGSU2</strong>, no hace falta vender por esto — pero el research recomienda no sumar más hasta ver cómo evoluciona el endeudamiento con el nuevo proyecto de gas.</div></div>
+      </div>
+
+      <!-- Grupo Financiero Galicia -->
+      <div class="acc-card" data-sector="bancos" data-updated="2026-08-24">
+        <div class="acc-top">
+          <div><span class="acc-ticker">GGAL</span><span class="acc-nombre">Grupo Financiero Galicia · 1T26</span></div>
+          <span class="acc-sector">Bancos</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-a"><span class="ibdot"></span>Salud: Débil, en transición</span>
+          <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
+        </div>
+        <div class="acc-body">El trimestre más flojo en mucho tiempo: ganancia neta de $66.488M, -66% interanual, con un ROE de apenas <span class="dato">3,2%</span> (muy por debajo de la guía de la propia empresa de 10-11% para el año) y mora de 7,7%. El management espera mejora progresiva a medida que se estabiliza la macro. Pese al número flojo, el consenso de Wall Street mantiene "Comprar" (7 de 10 analistas), con un upside promedio superior al 30%. Reporta el 2T26 mañana 25 de agosto.</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-comprar">Comprar (especulativo — turnaround)</span>
+          <span class="acc-fuente">Reportes de la compañía · consenso Wall Street</span>
+        </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner"><strong>GGAL</strong> es el "banco más grande" del país y se compra como cualquier acción del Merval o CEDEAR. El balance actual es débil, pero el mercado ya lo sabe y lo tiene bastante incorporado al precio — comprar acá es apostar a que el 2T26 (que sale mañana) confirme la mejora que promete el management, no a que el negocio ya esté sólido hoy.</div></div>
       </div>
 
       <!-- Banco Macro -->
@@ -7129,132 +7149,94 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Buena, con mora en alza</span>
           <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Infravalorada</span>
         </div>
-        <div class="acc-body">ROE de <span class="dato">13,4%</span> y ROA de 3,3% en el 2T26, con el menor apalancamiento de todo el sistema bancario (4,1x activos/patrimonio) — el balance más sólido entre los bancos. La mora subió a 6,3% y el margen de interés se comprimió, pero IEB considera que el mercado castigó su valuación más de lo justificado.</div>
+        <div class="acc-body">ROE de <span class="dato">13,4%</span> y ROA de 3,3% en el 2T26, con el menor apalancamiento de todo el sistema bancario (4,1x activos/patrimonio) — el balance más sólido entre los bancos, y el que mejor viene sosteniendo la rentabilidad de todo el sector. La mora subió a 6,3% y el margen de interés se comprimió, pero IEB considera que el mercado castigó su valuación más de lo justificado.</div>
         <div class="acc-foot">
           <span class="acc-veredicto acc-v-comprar">Comprar</span>
           <span class="acc-fuente">IEB</span>
         </div>
         <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
-        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier acción del Merval, ticker <strong>BMA</strong> (o CEDEAR). "Infravalorada" quiere decir que, según el research, el precio de mercado no refleja todavía la solidez real del balance — es una apuesta a que el mercado lo termine reconociendo.</div></div>
+        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier acción del Merval, ticker <strong>BMA</strong> (o CEDEAR). "Infravalorada" quiere decir que, según el research, el precio de mercado no refleja todavía la solidez real del balance — es una apuesta a que el mercado lo termine reconociendo. Es, hoy, el banco con el balance más prolijo de los tres que seguimos.</div></div>
       </div>
 
-      <!-- Supervielle -->
-      <div class="acc-card" data-sector="bancos" data-updated="2026-08-21">
+      <!-- BBVA Argentina -->
+      <div class="acc-card" data-sector="bancos" data-updated="2026-08-24">
         <div class="acc-top">
-          <div><span class="acc-ticker">SUPV</span><span class="acc-nombre">Grupo Supervielle · 2T26</span></div>
+          <div><span class="acc-ticker">BBAR</span><span class="acc-nombre">BBVA Argentina · 1T26</span></div>
           <span class="acc-sector">Bancos</span>
         </div>
         <div class="acc-badges">
           <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Mejorando</span>
           <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
         </div>
-        <div class="acc-body">Venía de una pérdida neta de USD12M en el 1T26, pero en el 2T26 revirtió el resultado (ROE de -6,2% a <span class="dato">4,4%</span>) y bajó su mora a 5,5%. El crédito todavía cae 1,5% interanual, pero IEB rotó cartera para sumarla, viendo una valuación por múltiplos inferior a sus comparables.</div>
+        <div class="acc-body">Ganancia neta ajustada por inflación de $85.200M en el 1T26, +31,2% respecto al trimestre anterior, con ROE de <span class="dato">8,3%</span> y ROA de 1,2%. El índice de eficiencia mejoró a 51,4% (desde 53,9%). Bajó su proyección de crecimiento del crédito 2026 a 15-20% real (desde 25-30%). El consenso de Wall Street lo califica "Compra fuerte", con un upside promedio superior al 55%.</div>
         <div class="acc-foot">
           <span class="acc-veredicto acc-v-comprar">Comprar</span>
-          <span class="acc-fuente">Mariva · IEB</span>
+          <span class="acc-fuente">Reportes de la compañía · consenso Wall Street</span>
         </div>
         <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
-        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier acción del Merval, ticker <strong>SUPV</strong>. Es una apuesta a la recuperación: viene de perder plata y recién ahora empieza a mostrar mejoras — más riesgo que YPF o Pampa, pero con potencial de mayor suba si la mejora continúa.</div></div>
+        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier acción del Merval, ticker <strong>BBAR</strong> (o ADR). Es un banco más chico que Macro o Galicia, por eso más volátil — el ROE todavía está por debajo del de Macro, pero mejora trimestre a trimestre, y el mercado lo tiene entre los más baratos del sector según el consenso de analistas.</div></div>
       </div>
 
-      <!-- Transener -->
-      <div class="acc-card" data-sector="utilities-re" data-updated="2026-05-07">
+      <!-- Telecom Argentina -->
+      <div class="acc-card" data-sector="telecom" data-updated="2026-08-24">
         <div class="acc-top">
-          <div><span class="acc-ticker">TRAN</span><span class="acc-nombre">Transener · 1T26</span></div>
-          <span class="acc-sector">Utilities</span>
+          <div><span class="acc-ticker">TECO2</span><span class="acc-nombre">Telecom Argentina · 1T26</span></div>
+          <span class="acc-sector">Telecom</span>
         </div>
         <div class="acc-badges">
-          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena</span>
-          <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Sin dato de múltiplo</span>
+          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena, desapalancando</span>
+          <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
         </div>
-        <div class="acc-body">Ingresos de USD128M (+33% interanual) y EBITDA de <span class="dato">USD84M</span> (+68%), con margen del 66% — la revisión tarifaria quinquenal fue el principal impulsor. Uno de los balances más sólidos del sector regulado, aunque no tenemos un pick explícito de research sobre su valuación actual.</div>
+        <div class="acc-body">Margen EBITDA del <span class="dato">34,8%</span> en el 1T26 (desde 33,2% un año atrás), con la deuda/EBITDA bajando a 2,04x (desde 2,47x) y un flujo de caja libre de USD642M — sigue integrando el negocio de Telefónica, adquirido en 2025. Allaria recomienda Comprar, con un precio objetivo a fin de 2026 que implica un upside cercano al 40%, tras una mejora de ganancias y EBITDA (+33,6% i.a.).</div>
         <div class="acc-foot">
-          <span class="acc-veredicto acc-v-esperar">Sin veredicto — monitorear</span>
-          <span class="acc-fuente">Mariva</span>
+          <span class="acc-veredicto acc-v-comprar">Comprar</span>
+          <span class="acc-fuente">Allaria · reportes de la compañía</span>
         </div>
         <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
-        <div class="acc-explain"><div class="acc-explain-inner">El balance de <strong>TRAN</strong> es sólido, pero como no tenemos un pick de compra/venta explícito de ningún research sobre su precio actual, lo mejor es esperar a que aparezca una recomendación concreta antes de operar en base a esto.</div></div>
+        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier acción del Merval, ticker <strong>TECO2</strong>. Es una empresa de flujo de caja predecible (telefonía, cable, internet) — perfil más defensivo que las petroleras o los bancos, con la ventaja de que además está barata según el research que la sigue de cerca.</div></div>
       </div>
 
-      <!-- IRSA -->
-      <div class="acc-card" data-sector="utilities-re" data-updated="2026-05-07">
+      <!-- Aluar -->
+      <div class="acc-card" data-sector="materiales" data-updated="2026-08-24">
         <div class="acc-top">
-          <div><span class="acc-ticker">IRSA</span><span class="acc-nombre">IRSA · 1T26</span></div>
-          <span class="acc-sector">Real Estate</span>
-        </div>
-        <div class="acc-badges">
-          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena</span>
-          <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Sin dato de múltiplo</span>
-        </div>
-        <div class="acc-body">EBITDA de alquileres +3,5% interanual, con ocupación de shoppings al <span class="dato">97,8%</span> y oficinas premium al 100%. Deuda/EBITDA en 1,4x, un nivel manejable. Tiene varios proyectos grandes en danza (Mercado Libre, Distrito Regional, Ramblas del Plata) que podrían destrabar valor a mediano plazo.</div>
-        <div class="acc-foot">
-          <span class="acc-veredicto acc-v-esperar">Positiva — sin pick de valuación</span>
-          <span class="acc-fuente">Mariva</span>
-        </div>
-        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
-        <div class="acc-explain"><div class="acc-explain-inner">El negocio de <strong>IRSA</strong> viene bien (shoppings casi llenos, oficinas 100% ocupadas), pero al no tener un research que diga explícitamente "cara" o "barata" a este precio, conviene esperar esa confirmación antes de comprar pensando en el corto plazo.</div></div>
-      </div>
-
-      <!-- Edenor -->
-      <div class="acc-card" data-sector="utilities-re" data-updated="2026-08-21">
-        <div class="acc-top">
-          <div><span class="acc-ticker">EDN</span><span class="acc-nombre">Edenor · 1T26</span></div>
-          <span class="acc-sector">Utilities</span>
-        </div>
-        <div class="acc-badges">
-          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena a nivel operativo</span>
-          <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Research salió del papel</span>
-        </div>
-        <div class="acc-body">Operativamente viene bien: EBITDA +127% interanual en el 1T26 y la mejor calidad de servicio (SAIDI/SAIFI) desde 2017. Pero es una señal a tener en cuenta: IEB vendió su posición en Edenor en agosto para pasarse a Supervielle, viendo mejor relación riesgo-retorno en el sector bancario.</div>
-        <div class="acc-foot">
-          <span class="acc-veredicto acc-v-esperar">Neutral — research rotó afuera</span>
-          <span class="acc-fuente">PPI · IEB</span>
-        </div>
-        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
-        <div class="acc-explain"><div class="acc-explain-inner">Si ya tenés <strong>EDN</strong>, no es una señal de pánico, pero conviene saber que uno de los research que seguimos vendió su posición este mes — vale la pena mirar de cerca antes de sumar más.</div></div>
-      </div>
-
-      <!-- Loma Negra -->
-      <div class="acc-card" data-sector="materiales" data-updated="2026-05-07">
-        <div class="acc-top">
-          <div><span class="acc-ticker">LOMA</span><span class="acc-nombre">Loma Negra · 1T26</span></div>
-          <span class="acc-sector">Materiales</span>
-        </div>
-        <div class="acc-badges">
-          <span class="ibadge ib-b"><span class="ibdot"></span>Salud: Buena, mejorando</span>
-          <span class="ibadge ib-m"><span class="ibdot"></span>Valuación: Sin dato de múltiplo</span>
-        </div>
-        <div class="acc-body">EBITDA ajustado de USD45M en el 1T26 (+11,5% interanual, +21,5% trimestral), con margen de 29,8% y deuda neta/EBITDA bajando a <span class="dato">1,33x</span>. SBS la ve como una posición interesante de mediano plazo por la necesidad de inversión en infraestructura de energía y minería.</div>
-        <div class="acc-foot">
-          <span class="acc-veredicto acc-v-esperar">Mantener — mirar a mediano plazo</span>
-          <span class="acc-fuente">Mariva · SBS</span>
-        </div>
-        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
-        <div class="acc-explain"><div class="acc-explain-inner"><strong>LOMA</strong> mejora balance a balance, pero es una historia de mediano plazo (infraestructura, no un catalizador inmediato) — no hay apuro en comprar ni en vender si ya la tenés.</div></div>
-      </div>
-
-      <!-- Ternium Argentina -->
-      <div class="acc-card" data-sector="materiales" data-updated="2026-05-07">
-        <div class="acc-top">
-          <div><span class="acc-ticker">TXAR</span><span class="acc-nombre">Ternium Argentina · 1T26</span></div>
+          <div><span class="acc-ticker">ALUA</span><span class="acc-nombre">Aluar · 2T26 (cierre jun-26)</span></div>
           <span class="acc-sector">Materiales</span>
         </div>
         <div class="acc-badges">
           <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Mejorando</span>
-          <span class="ibadge ib-b"><span class="ibdot"></span>Valuación: Barata</span>
+          <span class="ibadge ib-a"><span class="ibdot"></span>Valuación: Cara — upside acotado</span>
         </div>
-        <div class="acc-body">Ventas de USD441M en el 1T26 (+25% interanual) y volvió a resultado operativo positivo, revirtiendo la pérdida de un año atrás. SBS ve valuaciones atractivas en el sector materiales, con TXAR y ALUA históricamente bien posicionadas en años electorales por su exposición al tipo de cambio.</div>
+        <div class="acc-body">Ventas +29% interanual y margen EBITDA que saltó a <span class="dato">24,7%</span> (desde 17,9% el trimestre anterior y 15,8% un año atrás), de la mano del precio internacional del aluminio (USD3.000/ton, desde USD2.650). Pese a la mejora operativa, Allaria la mantiene en "Mantener", con apenas 11% de upside — una de las acciones con menor potencial del panel, condicionada a que repunte el consumo industrial local.</div>
         <div class="acc-foot">
-          <span class="acc-veredicto acc-v-comprar">Comprar especulativo</span>
-          <span class="acc-fuente">Mariva · SBS</span>
+          <span class="acc-veredicto acc-v-esperar">Mantener — upside acotado</span>
+          <span class="acc-fuente">Allaria · reportes de la compañía</span>
         </div>
         <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
-        <div class="acc-explain"><div class="acc-explain-inner"><strong>TXAR</strong> recién está saliendo de un mal momento — comprarla es apostar a que la recuperación continúe. Es más volátil que el resto de esta lista, pensala como posición chica dentro de una cartera diversificada, no como núcleo.</div></div>
+        <div class="acc-explain"><div class="acc-explain-inner"><strong>ALUA</strong> mejora de a poco, pero el research no la ve con mucho recorrido desde estos precios — si ya la tenés, no hay apuro en vender, pero tampoco es la primera opción para sumar plata nueva hoy.</div></div>
+      </div>
+
+      <!-- Cresud -->
+      <div class="acc-card" data-sector="agro-re" data-updated="2026-08-24">
+        <div class="acc-top">
+          <div><span class="acc-ticker">CRES</span><span class="acc-nombre">Cresud · 9 meses EF26 (a mar-26)</span></div>
+          <span class="acc-sector">Agro &amp; Real Estate</span>
+        </div>
+        <div class="acc-badges">
+          <span class="ibadge ib-m"><span class="ibdot"></span>Salud: Mixta</span>
+          <span class="ibadge ib-a"><span class="ibdot"></span>Valuación: Cara</span>
+        </div>
+        <div class="acc-body">Ganancia neta de $231.308M en los primeros 9 meses del ejercicio fiscal (vs $77.358M un año atrás), pero el EBITDA ajustado cayó <span class="dato">-12%</span> interanual a $202.839M — la mejora vino casi toda de su participación en IRSA (propiedades urbanas), no del negocio agropecuario propio. El consenso de Wall Street la califica "Compra fuerte", aunque algunos análisis la ven cara: su P/E actual (6,8x) está por encima del valor justo estimado (4,7x).</div>
+        <div class="acc-foot">
+          <span class="acc-veredicto acc-v-esperar">Neutral — cara por múltiplos</span>
+          <span class="acc-fuente">Reportes de la compañía · consenso Wall Street</span>
+        </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner"><strong>CRES</strong> es en realidad una forma indirecta de tener IRSA (su participación en real estate urbano) más un negocio de campo que hoy no acompaña. Si te gusta la tesis de real estate, capaz conviene mirar directamente IRSA en vez de Cresud — acá el research advierte que el precio ya corre de más frente a las ganancias reales.</div></div>
       </div>
 
     </div><!-- /balances-grid -->
 
-    <div class="acc-nota">No llegamos todavía a las 10 empresas más pesadas del Merval con datos completos (nos faltan balances propios de GGAL, Telecom, Cresud y algunas más) — esto es lo que el research que seguimos vino confirmando con números concretos. Se va a ir completando con cada balance nuevo que aparezca.</div>
+    <div class="acc-nota">Estas son las 10 empresas de mayor ponderación del Merval (YPF pesa cerca de un tercio del índice, y el sector energético casi el 40%). Los datos de balance salen de reportes de las compañías y prensa especializada (Bolsar, Infobae, El Cronista, El Economista, Rava, entre otras) que buscamos en internet, combinados con lo que dicen los research que seguimos. Se actualiza con cada balance trimestral nuevo.</div>
 
 </div><!-- /balances-screener -->
 
@@ -7950,7 +7932,7 @@ function setupBalancesFilters(){
     });
   });
   document.getElementById('bal-count-all').textContent=`(${cards.length})`;
-  ['oilgas','bancos','utilities-re','materiales'].forEach(cat=>{
+  ['oilgas','bancos','telecom','materiales','agro-re'].forEach(cat=>{
     const el=document.getElementById(`bal-count-${cat}`);
     if(el)el.textContent=`(${[...cards].filter(c=>c.dataset.sector===cat).length})`;
   });
