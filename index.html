@@ -468,6 +468,14 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
 .acc-updated.acc-fresh{color:var(--g)}
 .acc-updated.acc-aging{color:var(--a)}
 .acc-updated.acc-stale{color:var(--r);font-weight:600}
+.acc-explain-btn{background:none;border:1px dashed var(--border2);color:var(--a);font-family:inherit;font-size:11px;font-weight:600;padding:5px 10px;border-radius:6px;cursor:pointer;margin-top:.15rem;display:inline-flex;align-items:center;gap:6px;transition:all .15s;align-self:flex-start}
+.acc-explain-btn:hover{background:var(--a-dim);border-color:var(--a)}
+.acc-explain-btn .acc-explain-arr{transition:transform .2s;font-size:9px}
+.acc-explain-btn.open .acc-explain-arr{transform:rotate(90deg)}
+.acc-explain{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1)}
+.acc-explain.open{max-height:600px}
+.acc-explain-inner{margin-top:.6rem;padding:.7rem .85rem;background:var(--bg3);border-left:3px solid var(--a);border-radius:0 6px 6px 0;font-size:12.5px;line-height:1.6;color:var(--t2)}
+.acc-explain-inner strong{color:var(--t)}
 .acc-nota{margin:0 16px 16px;font-size:12px;color:var(--t2);line-height:1.6;padding:.6rem .8rem;border-left:2px solid var(--border2)}
 
 /* AGENDA */
@@ -6391,6 +6399,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       <span class="acc-veredicto acc-v-comprar">Comprar</span>
       <span class="acc-fuente">CIMA · JPMorgan · Estrategias de Inversión</span>
     </div>
+    <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+    <div class="acc-explain"><div class="acc-explain-inner">Comprás la acción como cualquier otra en tu cuenta comitente (ticker <strong>YPFD</strong> en el Merval) o, si preferís mantenerte en dólares, como CEDEAR o directo en NYSE (ticker YPF). Te da participación en el boom de Vaca Muerta. El precio ya refleja parte de la mejora reciente, así que no esperes una "oferta" — comprás al valor de mercado del día, pensando en varios años, no en una jugada de corto plazo.</div></div>
   </div>
 
   <!-- Pampa Energía -->
@@ -6408,6 +6418,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       <span class="acc-veredicto acc-v-comprar">Comprar</span>
       <span class="acc-fuente">CIMA · Estrategias de Inversión</span>
     </div>
+    <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+    <div class="acc-explain"><div class="acc-explain-inner">Se compra igual que cualquier acción del Merval, ticker <strong>PAMP</strong> (o como CEDEAR si querés mantenerte en dólares). Es la favorita de varios research por combinar buen balance con un proyecto grande a futuro (la planta de urea). Pensala para varios años: los proyectos nuevos recién van a mostrar resultados completos hacia 2028-2030, no es una apuesta de corto plazo.</div></div>
   </div>
 
   <!-- Vista Energy -->
@@ -6425,6 +6437,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       <span class="acc-veredicto acc-v-comprar">Comprar</span>
       <span class="acc-fuente">CIMA · JPMorgan · Estrategias de Inversión</span>
     </div>
+    <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+    <div class="acc-explain"><div class="acc-explain-inner">Cotiza en el Merval como <strong>VIST</strong> y también como CEDEAR. Al ser una petrolera más chica y "pura" (sin el peso de ser mayoría estatal, a diferencia de YPF), suele moverse más fuerte tanto para arriba como para abajo — si entrás, prepárate para más volatilidad que con YPF o Pampa.</div></div>
   </div>
 
   <!-- TGS -->
@@ -6442,6 +6456,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       <span class="acc-veredicto acc-v-esperar">Neutral — esperar mejor punto de entrada</span>
       <span class="acc-fuente">CIMA · Estrategias de Inversión</span>
     </div>
+    <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+    <div class="acc-explain"><div class="acc-explain-inner">"Neutral" quiere decir: si ya tenés <strong>TGSU2</strong>, no hace falta salir corriendo a vender, pero tampoco es momento de sumar más. Si estás por comprarla por primera vez, mejor esperar a ver cómo evoluciona el endeudamiento con el nuevo proyecto de gas antes de entrar — no hay apuro.</div></div>
   </div>
 
   <!-- Microsoft -->
@@ -6459,6 +6475,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       <span class="acc-veredicto acc-v-comprar">Comprar</span>
       <span class="acc-fuente">Veta Cap</span>
     </div>
+    <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+    <div class="acc-explain"><div class="acc-explain-inner">Microsoft no cotiza directo en Argentina, pero la comprás como <strong>CEDEAR</strong> desde tu cuenta comitente, en pesos, sin necesidad de tener cuenta en el exterior. Cada CEDEAR representa una fracción de la acción real que cotiza en EEUU — el precio en pesos sube o baja también con el dólar CCL, no solo con la acción.</div></div>
   </div>
 
   <!-- Meta -->
@@ -6476,6 +6494,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       <span class="acc-veredicto acc-v-comprar">Comprar en la baja</span>
       <span class="acc-fuente">Veta Cap</span>
     </div>
+    <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+    <div class="acc-explain"><div class="acc-explain-inner">Igual que Microsoft, a Meta la comprás como <strong>CEDEAR</strong> en pesos desde tu broker argentino. "Comprar en la baja" significa aprovechar que cayó de precio esta semana por un motivo puntual (cargos legales), no por un problema del negocio — no tiene sentido perseguirla si ya volvió a subir mucho.</div></div>
   </div>
 
   <!-- Apple -->
@@ -6493,6 +6513,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
       <span class="acc-veredicto acc-v-evitar">Evitar por ahora</span>
       <span class="acc-fuente">Veta Cap</span>
     </div>
+    <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+    <div class="acc-explain"><div class="acc-explain-inner">"Evitar por ahora" no es "vender": si ya tenés CEDEARs de <strong>Apple</strong>, no implica salir corriendo, pero el research no ve motivo para sumar más hasta que la empresa muestre un plan más claro de inversión en inteligencia artificial frente a competidores como Microsoft o Meta.</div></div>
   </div>
 
     </div><!-- /acc-grid -->
@@ -6542,6 +6564,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="acc-veredicto acc-v-comprar">Comprar</span>
           <span class="acc-fuente">Allaria · SBS · Comafi</span>
         </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">Se compra como cualquier bono, desde tu cuenta comitente o ALyC — con pesos (que se convierten a dólar MEP/CCL en la misma operación) o directo con dólares si ya los tenés. El <strong>AO28</strong> paga una tasa buena y vence antes que los bonos largos, por eso te expone menos si suben las tasas internacionales. Es de los picks más repetidos entre los research que seguimos.</div></div>
       </div>
 
       <!-- AO27 -->
@@ -6559,6 +6583,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="acc-veredicto acc-v-comprar">Comprar (conservador)</span>
           <span class="acc-fuente">IEB · SBS</span>
         </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">El <strong>AO27</strong> vence pronto (dentro del mandato actual) y paga renta todos los meses — comprás el bono desde tu cuenta comitente y listo, cobrás el cupón mensual hasta el vencimiento. Es la opción "tranquila" dentro de los bonos argentinos en dólares, pensada para quien no quiere sorpresas de precio.</div></div>
       </div>
 
       <!-- AO29 -->
@@ -6576,6 +6602,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="acc-veredicto acc-v-comprar">Comprar</span>
           <span class="acc-fuente">Veta Cap</span>
         </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">Se compra igual que el resto de los bonos soberanos, desde tu cuenta comitente. El <strong>AO29</strong> no tiene una característica especial más allá de que, según Veta Cap, hoy ofrece la mejor relación entre lo que rinde y el riesgo dentro de la curva en dólares — es un pick de esta semana puntual, no algo estructural.</div></div>
       </div>
 
       <!-- Spread por legislación -->
@@ -6593,6 +6621,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="acc-veredicto acc-v-comprar">Oportunidad táctica</span>
           <span class="acc-fuente">Allaria · SBS · Balanz</span>
         </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">Esta es una recomendación para quien <strong>ya tiene</strong> bonos argentinos en dólares, no para comprar de cero. El mismo bono existe en dos "versiones": Ley Nueva York (GD, se rige por tribunales de EEUU) y Ley Argentina (AL, se rige por tribunales locales) — es el mismo crédito, el mismo país, pero hoy el mercado le exige más rendimiento a la versión Ley Argentina, o sea la vende más barata, aunque el riesgo real es casi el mismo. La operación concreta: si tenés GD35, lo vendés y con esa plata comprás AL35 (aproximadamente la misma cantidad). Ganás si esa diferencia de precio se achica con el tiempo, como se espera. Es una operación de canje entre dos bonos parecidos, pensada para perfiles con más experiencia — no es "comprar y listo".</div></div>
       </div>
 
       <!-- Córdoba 2035 -->
@@ -6610,6 +6640,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="acc-veredicto acc-v-comprar">Comprar</span>
           <span class="acc-fuente">IEB</span>
         </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">El <strong>CO35</strong> es un bono provincial en dólares, se compra igual que un bono soberano desde tu cuenta comitente. Al ser de una provincia con buenas cuentas (Córdoba) y no del Tesoro nacional, sirve para diversificar sin depender 100% del crédito del Gobierno nacional.</div></div>
       </div>
 
       <!-- Provinciales Balanz -->
@@ -6627,6 +6659,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="acc-veredicto acc-v-comprar">Comprar</span>
           <span class="acc-fuente">Balanz</span>
         </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">Son tres bonos de provincias distintas (Santa Fe, Córdoba, Buenos Aires) que Balanz recomienda como grupo — no hace falta comprar los tres, podés elegir uno o repartir entre ellos para diversificar el riesgo entre provincias. Se compran igual que cualquier título público, desde tu cuenta comitente.</div></div>
       </div>
 
       <!-- ONs energéticas -->
@@ -6644,6 +6678,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="acc-veredicto acc-v-comprar">Comprar (tramo corto)</span>
           <span class="acc-fuente">CIMA · BAVSA · Balanz</span>
         </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">Son <strong>Obligaciones Negociables (ONs)</strong>: deuda de empresas, no del Estado. Se compran igual que un bono desde tu cuenta comitente, pero fijate el monto mínimo de inversión — a veces es más alto que para los bonos soberanos. Si buscás algo más tranquilo, mirá TECPET 2030; si buscás el rendimiento más alto asumiendo más riesgo, MSUNRG 2030 es la que señalan como preferida en ese segmento.</div></div>
       </div>
 
       <!-- BPOD7 -->
@@ -6661,6 +6697,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="acc-veredicto acc-v-comprar">Comprar (conservador)</span>
           <span class="acc-fuente">BAVSA</span>
         </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">El <strong>BPOD7</strong> lo emite el BCRA, no el Tesoro — por eso lo recomiendan para el perfil más conservador: aunque cambie el Gobierno en 2027, este bono depende del Banco Central, no de la gestión de turno. Se compra igual que cualquier título público, desde tu cuenta comitente.</div></div>
       </div>
 
       <!-- Cresud / Pluspetrol -->
@@ -6678,6 +6716,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="acc-veredicto acc-v-comprar">Comprar</span>
           <span class="acc-fuente">IEB · SBS</span>
         </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">Dos <strong>Obligaciones Negociables</strong> de empresas privadas (Cresud y Pluspetrol), se compran igual que un bono desde tu cuenta comitente. Sirven para diversificar fuera del sector puramente energético (Cresud es agropecuaria) sin perder el perfil de crédito corporativo argentino.</div></div>
       </div>
 
       <!-- TMVE8 -->
@@ -6695,6 +6735,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="acc-veredicto acc-v-comprar">Comprar para cobertura</span>
           <span class="acc-fuente">Veta Cap · Allaria · IEB</span>
         </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">El <strong>TMVE8</strong> te protege de dos formas a la vez: si sube la tasa en pesos, ganás por ese lado (TAMAR); si sube fuerte el dólar, también estás cubierto (dollar linked). Se compra en pesos desde tu cuenta comitente, como cualquier bono en moneda local. Sirve si no querés apostar a un solo escenario, sino cubrirte de los dos a la vez.</div></div>
       </div>
 
       <!-- Boncer / duales CER -->
@@ -6712,6 +6754,8 @@ nav{position:sticky;top:0;z-index:400;background:rgba(11,11,11,.94);backdrop-fil
           <span class="acc-veredicto acc-v-esperar">Priorizar lo corto, cautela en el carry largo</span>
           <span class="acc-fuente">Comafi · IEB · 1816 · Galicia · BAVSA · Balanz</span>
         </div>
+        <button class="acc-explain-btn" onclick="toggleAccExplain(this)"><span class="acc-label">💡 ¿Qué hago con esto?</span><span class="acc-explain-arr">▶</span></button>
+        <div class="acc-explain"><div class="acc-explain-inner">Son bonos en pesos que ajustan por inflación (<strong>CER</strong>). "Priorizar lo corto" significa elegir los que vencen antes (TZXO6, TZXD6, TZXM7, todos entre 2026 y 2027) en vez de los que vencen en 2028-2029, porque hoy las tasas largas están más castigadas. Se compran en pesos desde tu cuenta comitente. Si buscás más potencial de suba a cambio de más riesgo, los duales CER/TAMAR son la opción, pero con la advertencia de que pueden tardar meses en moverse.</div></div>
       </div>
 
     </div><!-- /bond-grid -->
@@ -7347,6 +7391,16 @@ function setupAccFilters(){
   document.getElementById('acc-count-argentina').textContent=`(${[...cards].filter(c=>c.dataset.region==='argentina').length})`;
   document.getElementById('acc-count-eeuu').textContent=`(${[...cards].filter(c=>c.dataset.region==='eeuu').length})`;
   apply('all');
+}
+
+function toggleAccExplain(btn){
+  const card=btn.closest('.acc-card');
+  const panel=card?.querySelector('.acc-explain');
+  if(!panel)return;
+  const isOpen=panel.classList.toggle('open');
+  btn.classList.toggle('open',isOpen);
+  const label=btn.querySelector('.acc-label');
+  if(label)label.textContent=isOpen?'Ocultar explicación':'¿Qué hago con esto?';
 }
 
 function updateFreshnessBadges(){
